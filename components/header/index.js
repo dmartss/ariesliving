@@ -1,0 +1,33 @@
+import { memo } from 'react'
+import cn from 'classnames'
+
+import Nav from './navbar'
+
+const Header = ({ sticky = true }) => {
+  return (
+    <>
+      <header className={cn({ sticky })}>
+        <Nav />
+      </header>
+
+      <style jsx>{`
+        header {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          background: var(--accents-4);
+          z-index: 1000;
+          border-bottom: 1px solid var(--accents-4);
+        }
+        header.sticky {
+          position: sticky;
+          top: 0;
+        }
+      `}</style>
+    </>
+  )
+}
+
+export default memo(Header)

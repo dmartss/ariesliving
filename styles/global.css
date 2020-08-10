@@ -1,0 +1,254 @@
+@import './nprogress.css';
+@import './inter.css';
+
+:root {
+  /* Spacing */
+  --gap-quarter: 0.25rem;
+  --gap-half: 0.5rem;
+  --gap: 1rem;
+  --gap-double: 2rem;
+  --gap-triple: 3rem;
+  --small-gap: 4rem;
+  --big-gap: 10rem;
+  --radius: 7px;
+  --inline-radius: 5px;
+  --header-height: 5rem;
+
+  /* Static Colors */
+  --accents-1: #00b0ee;
+  --accents-2: #ffffff;
+  --accents-3: #000000;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+
+  /* Transitions */
+  --transition: 0.1s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 320px;
+  direction: ltr;
+  font-feature-settings: 'kern';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+html,
+body {
+  background-color: var(--accents-4);
+  color: #111;
+}
+
+.mute {
+  color: var(--accents-1);
+}
+
+::selection {
+  background-color: var(--accents-1);
+  color: var(--white);
+}
+
+svg {
+  text-rendering: optimizeLegibility;
+  shape-rendering: crispEdges;
+}
+
+svg path,
+svg circle {
+  shape-rendering: geometricprecision;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: currentColor;
+  transition: color 200ms ease-in-out;
+}
+
+a:hover {
+  color: var(--accents-4);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+
+.f-reset {
+  font-size: 1rem;
+}
+.subtitle {
+  color: var(--accents-3);
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.tl {
+  text-align: left;
+}
+.row {
+  display: flex;
+  align-items: center;
+  margin: 0 -1.5rem;
+}
+.column {
+  flex: 1;
+  padding: 0 1.5rem;
+}
+.display-none {
+  display: none;
+}
+.display-mobile {
+  display: none;
+}
+.display-tablet {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .display-mobile {
+    display: unset;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 960px) {
+  .display-tablet {
+    display: unset;
+  }
+  .hide-tablet {
+    display: none;
+  }
+}
+a[role='button'] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.no-tap-highlight,
+a {
+  -webkit-touch-callout: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.no-tap-callout {
+  -webkit-touch-callout: none;
+}
+.no-drag {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.f0 {
+  font-size: 1.802032470703125em;
+}
+.f1 {
+  font-size: 1.601806640625em;
+}
+.f2 {
+  font-size: 1.423828125em;
+}
+.f3 {
+  font-size: 1.265625em;
+}
+.f4 {
+  font-size: 1.125em;
+}
+.f5 {
+  font-size: 0.8888888888888888em;
+}
+.f6 {
+  font-size: 0.7901234567901234em;
+}
+.fw1 {
+  font-weight: 100;
+}
+.fw2 {
+  font-weight: 200;
+}
+.fw3 {
+  font-weight: 300;
+}
+.fw4 {
+  font-weight: 400;
+}
+.fw5 {
+  font-weight: 500;
+}
+.fw6 {
+  font-weight: 600;
+}
+.fw7 {
+  font-weight: 700;
+}
+.fw8 {
+  font-weight: 800;
+}
+.fw9 {
+  font-weight: 900;
+}
