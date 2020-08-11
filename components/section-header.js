@@ -1,6 +1,4 @@
-import withPure from './hoc/pure'
-
-export default withPure(function SectionHeader({
+export default function SectionHeader({
   id,
   title,
   description,
@@ -32,4 +30,4 @@ export default withPure(function SectionHeader({
       {description && <p className="f-reset mute fw4">{description}</p>}
     </div>
   )
-})
+}
