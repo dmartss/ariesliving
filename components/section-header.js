@@ -13,7 +13,6 @@ export default withPure(function SectionHeader({
         {`
           h2 {
             letter-spacing: -1px;
-            margin-top: var(--gap-double);
           }
           div {
             position: relative;
