@@ -87,13 +87,13 @@ class Image extends Component {
                 transform: translate3d(0, 0, 0); /* Work around for Chrome bug */
                 position: relative;
               }
-              figure :global(img),
-              figure :global(video) {
+              figure :global(img) {
                 height: 100%;
                 left: 0;
                 position: absolute;
                 top: 0;
                 width: 100%;
+                border-radius: 7px;
                 ${shadow ? 'box-shadow: 0 8px 30px rgba(0,0,0,0.12)' : ''}
               }
               figcaption {
