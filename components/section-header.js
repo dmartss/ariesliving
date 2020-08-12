@@ -9,13 +9,13 @@ export default function SectionHeader({
     <div className={className}>
       <style jsx>
         {`
-          h2 {
-            letter-spacing: -1px;
-          }
           div {
             position: relative;
             text-align: center;
             margin: ${margin};
+          }
+          h2 {
+            letter-spacing: -1px;
           }
           @media screen and (max-width: 640px) {
             div {

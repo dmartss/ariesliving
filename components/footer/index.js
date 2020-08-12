@@ -1,13 +1,13 @@
 import { Facebook, Instagram, Twitter } from '../icons'
 import {
-  LLC_NAME,
+  LLCE,
   ADDRESS_TOP,
   ADDRESS_BOTTOM,
-  TWITTER_USER_NAME,
-  FACEBOOK_URL,
-  INSTAGRAM_USER_NAME,
-  EMAIL_ADDRESS,
-  PHONE_NUMBER
+  TWITTER,
+  FACEBOOK,
+  INSTAGRAM,
+  EMAIL,
+  PHONE
 } from 'lib/constants'
 import Container from 'components/container'
 import styles from './footer.module.css'
@@ -19,19 +19,19 @@ export default function Footer() {
         <footer className={styles.root}>
           <nav className={styles.content}>
             <div className="tl">
-              <p>{PHONE_NUMBER}</p>
-              <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
+              <p>{PHONE}</p>
+              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </div>
 
             <div className={styles.center}>
               <span className={styles.social}>
-                <a href={FACEBOOK_URL} target="_blank" aria-label="Facebook">
+                <a href={FACEBOOK} target="_blank" aria-label="Facebook">
                   <Facebook />
                 </a>
-                <a href={TWITTER_USER_NAME} target="_blank" aria-label="Twitter">
+                <a href={TWITTER} target="_blank" aria-label="Twitter">
                   <Twitter />
                 </a>
-                <a href={INSTAGRAM_USER_NAME} target="_blank" aria-label="Instagram">
+                <a href={INSTAGRAM} target="_blank" aria-label="Instagram">
                   <Instagram />
                 </a>
               </span>
@@ -40,7 +40,7 @@ export default function Footer() {
                 {ADDRESS_TOP} {ADDRESS_BOTTOM}
               </p>
               <p>
-                Copyright © {`${new Date().getFullYear()}`} {LLC_NAME}, All rights reserved.
+                Copyright © {`${new Date().getFullYear()}`} {LLCE}, All rights reserved.
               </p>
             </div>
 

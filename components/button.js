@@ -52,7 +52,7 @@ const cachedStyles = css`
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 6px 20px rgba(93, 93, 93, 0.23);
   }
-  .btn.small {
+  /* .btn.small {
     font-size: 0.875rem;
     height: 1.5rem;
     padding: 0 0.75rem;
@@ -73,7 +73,7 @@ const cachedStyles = css`
   }
   .btn > .loading-dots {
     position: absolute;
-  }
+  } */
 `
 
 export default withPure(function Button({

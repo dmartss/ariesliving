@@ -123,7 +123,7 @@ class Image extends Component {
   }
 }
 
-export const Video = props => <Image {...props} video />
+// export const Video = props => <Image {...props} video />
 
 const ImageComponent = props => <Image {...props} />
 
