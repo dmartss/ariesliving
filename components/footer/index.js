@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Twitter } from '../icons'
 import {
-  LLCE,
+  LLC,
   ADDRESS_TOP,
   ADDRESS_BOTTOM,
   TWITTER,
@@ -40,7 +40,7 @@ export default function Footer() {
                 {ADDRESS_TOP} {ADDRESS_BOTTOM}
               </p>
               <p>
-                Copyright © {`${new Date().getFullYear()}`} {LLCE}, All rights reserved.
+                Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
               </p>
             </div>
 

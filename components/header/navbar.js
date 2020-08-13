@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { EMAIL_ADDRESS, PHONE, NAME_LONG } from 'lib/constants'
+import { EMAIL, PHONE, NAME_LONG } from 'lib/constants'
 
 import Logo from 'components/icons/logo'
 import Container from 'components/container'
@@ -15,7 +15,6 @@ function Navbar() {
     <Container>
       <nav className="f-reset">
         <div className="mobile-top">
-          <p style={{ color: 'var(--accents-1)' }}>{NAME_LONG}</p>
           <Link href="/">
             <a className="mobile-logo" title="Go to the homepage">
               <Logo />
@@ -29,42 +28,42 @@ function Navbar() {
 
         <div className="links">
           <Link href="/">
-            <div className="hotel">
-              <a style={{ color: 'var(--accents-1)' }}>{NAME_LONG}</a>
-            </div>
-          </Link>
-
-          <Link href="/">
-            <a className="logo">
+            <a className="logo" title="Go to the homepage">
               <Logo />
             </a>
           </Link>
+
           <Link href="/about">
             <a className={cn('mute', { selected: route.startsWith('/about') })} title="About">
               About
             </a>
           </Link>
-          <Link href="/hotels">
-            <a className={cn('mute', { selected: route.startsWith('/hotels') })} title="Hotels">
-              Hotels
+          <Link href="/portfolio">
+            <a
+              className={cn('mute', { selected: route.startsWith('/portfolio') })}
+              title="Portfolio"
+            >
+              Portfolio
             </a>
           </Link>
-          <Link href="/photos">
-            <a className={cn('mute', { selected: route.startsWith('/photos') })} title="Photos">
-              Photos
+          <Link href="/investments">
+            <a
+              className={cn('mute', { selected: route.startsWith('/investments') })}
+              title="Investments"
+            >
+              Investments
             </a>
           </Link>
-          <Link href="/team">
-            <a className={cn('mute', { selected: route.startsWith('/team') })} title="Team">
-              Team
+          <Link href="/contact">
+            <a className={cn('mute', { selected: route.startsWith('/contact') })} title="Contact">
+              Contact
             </a>
           </Link>
-          <div className="book">
-            <Button href="/">Book</Button>
-          </div>
-          <div className="icon mute">
-            <p>{PHONE}</p>
-            <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
+          <div className="icon">
+            <p className="subtitle">{PHONE}</p>
+            <a className="subtitle" href={`mailto:${EMAIL}`}>
+              {EMAIL}
+            </a>
           </div>
         </div>
       </nav>
@@ -89,28 +88,20 @@ function Navbar() {
         .links a {
           text-decoration: none;
           transition: color 0.2s ease;
-          flex: 1;
-        }
-
-        .links .hotel {
-          margin-right: -2rem;
-          overflow: hidden;
-          white-space: nowrap;
+          margin-left: 1rem;
         }
 
         .links a:hover {
-          color: var(--accents-3);
+          color: #000;
         }
 
         .links a.selected {
-          color: var(--accents-1);
-          text-shadow: 0px 0px 1px var(--accents-1);
+          color: #0070f3;
+          text-shadow: 0px 0px 1px #0070f3;
         }
 
         .links a:first-child {
           display: flex;
-          overflow: hidden;
-          white-space: nowrap;
           margin: 0;
         }
 
@@ -131,17 +122,19 @@ function Navbar() {
           display: none;
         }
 
-        .book :global(a) {
-          background-color: var(--accents-1);
-          color: var(--white);
-          border: 1px solid var(--accents-1);
-          padding: var(--gap-quarter) var(--gap);
+         {
+          /* .book :global(a) {
+          background-color: rgba(0, 118, 255, 0.9);
+          color: #fff;
+          border: 1px solid rgba(0, 118, 255, 0.9);
+          padding: 0.25rem 1rem;
           margin: 0;
         }
         .book :global(a:focus),
         .book :global(a:hover) {
           background-color: transparent;
-          color: var(--accents-1);
+          color: rgba(0, 118, 255, 0.9);
+        } */
         }
 
         .icon {

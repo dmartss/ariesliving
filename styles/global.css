@@ -76,7 +76,7 @@ body {
 }
 
 .mute {
-  color: var(--accents-1);
+  color: #696969;
 }
 
 ::selection {
