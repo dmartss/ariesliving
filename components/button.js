@@ -106,7 +106,7 @@ export default withPure(function Button({
     return isExternal ? (
       a
     ) : (
-      <Link href={href} as={as} passHref>
+      <Link href={href} passHref>
         {a}
       </Link>
     )

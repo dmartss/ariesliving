@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { EMAIL_ADDRESS, PHONE_NUMBER, NAME_SHORT, NAME_LONG } from 'lib/constants'
+import { EMAIL_ADDRESS, PHONE, NAME_LONG } from 'lib/constants'
 
 import Logo from 'components/icons/logo'
 import Container from 'components/container'
@@ -63,7 +63,7 @@ function Navbar() {
             <Button href="/">Book</Button>
           </div>
           <div className="icon mute">
-            <p>{PHONE_NUMBER}</p>
+            <p>{PHONE}</p>
             <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
           </div>
         </div>
