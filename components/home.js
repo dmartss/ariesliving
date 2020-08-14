@@ -6,12 +6,7 @@ export default function Home() {
   return (
     <Container role="main" wide dotBackground aria-labelledby="welcome">
       <Container center padding>
-        <SectionHeader
-          id="welcome"
-          title={NAME_LONG}
-          className="no-drag no-tap-highlight"
-          description={TEXT}
-        />
+        <SectionHeader id="welcome" title={NAME_LONG} description={TEXT} />
       </Container>
     </Container>
   )

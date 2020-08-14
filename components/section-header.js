@@ -24,10 +24,10 @@ export default function SectionHeader({
           }
         `}
       </style>
-      <h2 id={id} className="subtitle fw3">
+      <h2 id={id} className="fs fw3">
         {title}
       </h2>
-      {description && <p className="f-reset mute fw4">{description}</p>}
+      {description && <p className="f-reset fp fw4">{description}</p>}
     </div>
   )
 }
