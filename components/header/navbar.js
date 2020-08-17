@@ -57,8 +57,8 @@ function Navbar() {
             </a>
           </Link>
           <div className="icon">
-            <p className="fs">{PHONE}</p>
-            <a className="fs" href={`mailto:${EMAIL}`}>
+            <p className="fp">{PHONE}</p>
+            <a className="fp" href={`mailto:${EMAIL}`}>
               {EMAIL}
             </a>
           </div>

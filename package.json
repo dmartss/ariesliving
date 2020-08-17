@@ -1,7 +1,11 @@
 {
   "name": "aries-living",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Aries Living Homepage",
+  "repository": "dmartss/ariesliving",
+  "author": "Dan Martin",
+  "homepage": "https://ariesliving.com",
+  "license": "MIT",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
