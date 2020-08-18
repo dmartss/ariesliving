@@ -25,13 +25,18 @@ export default function Footer() {
 
             <div className={styles.center}>
               <span className={styles.social}>
-                <a href={FACEBOOK} target="_blank" aria-label="Facebook">
+                <a href={FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <Facebook />
                 </a>
-                <a href={TWITTER} target="_blank" aria-label="Twitter">
+                <a href={TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                   <Twitter />
                 </a>
-                <a href={INSTAGRAM} target="_blank" aria-label="Instagram">
+                <a
+                  href={INSTAGRAM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <Instagram />
                 </a>
               </span>
