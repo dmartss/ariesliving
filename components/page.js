@@ -1,13 +1,13 @@
 import Head from './head'
 import Header from './header'
 import Footer from './footer'
-import { NAME_LONG } from 'lib/constants'
+import { NAME } from 'lib/constants'
 
 export default function Page({ title, sticky, description, image, children }) {
   return (
     <>
       <Head
-        title={`${NAME_LONG}${title ? ` - ${title}` : ''}`}
+        title={`${NAME}${title ? ` - ${title}` : ''}`}
         description={description}
         image={image}
       />

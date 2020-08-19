@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import cn from 'classnames'
-
 import Nav from './navbar'
 
 const Header = ({ sticky = true }) => {

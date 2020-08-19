@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { EMAIL, PHONE, NAME_LONG } from 'lib/constants'
+import { EMAIL, PHONE } from 'lib/constants'
 
 import Logo from 'components/icons/logo'
 import Container from 'components/container'
@@ -58,7 +58,7 @@ function Navbar() {
           </Link>
           <div className="icon">
             <p className="fp">{PHONE}</p>
-            <a className="fp" href={`mailto:${EMAIL}`}>
+            <a className="fp" href={`mailto:${EMAIL}?subject=Hello`}>
               {EMAIL}
             </a>
           </div>
@@ -89,17 +89,20 @@ function Navbar() {
         }
 
         .links a:hover {
-          color: #000;
+          color: var(--accents-1);
         }
 
         .links a.selected {
-          color: #0070f3;
+          color: var(--accents-1);
           text-shadow: 0px 0px 1px #0070f3;
         }
 
         .links a:first-child {
           display: flex;
           margin: 0;
+        }
+        .links a:last-child:hover {
+          color: var(--accents-1);
         }
 
         .logo,
@@ -117,21 +120,6 @@ function Navbar() {
         .mobile-logo,
         .mobile-top {
           display: none;
-        }
-
-         {
-          /* .book :global(a) {
-          background-color: rgba(0, 118, 255, 0.9);
-          color: #fff;
-          border: 1px solid rgba(0, 118, 255, 0.9);
-          padding: 0.25rem 1rem;
-          margin: 0;
-        }
-        .book :global(a:focus),
-        .book :global(a:hover) {
-          background-color: transparent;
-          color: rgba(0, 118, 255, 0.9);
-        } */
         }
 
         .icon {

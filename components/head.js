@@ -1,9 +1,9 @@
 import NextHead from 'next/head'
-import { NAME_SHORT, NAME_LONG, PLATFORM_URL, defaultOgImage } from 'lib/constants'
+import { NAME, PLATFORM_URL, defaultOgImage } from 'lib/constants'
 
 export default function Head({
-  title = NAME_SHORT,
-  description = NAME_LONG,
+  title = NAME,
+  description = NAME,
   image = defaultOgImage,
   children
 }) {
@@ -29,7 +29,7 @@ export default function Head({
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@aries_living" />
-      <meta name="apple-mobile-web-app-title" content={NAME_SHORT} />
+      <meta name="apple-mobile-web-app-title" content={NAME} />
       <meta name="author" content="Aries Living" />
 
       {/* Favicons */}

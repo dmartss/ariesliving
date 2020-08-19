@@ -1,26 +1,17 @@
 import { Facebook, Instagram, Twitter } from '../icons'
-import {
-  LLC,
-  ADDRESS_TOP,
-  ADDRESS_BOTTOM,
-  TWITTER,
-  FACEBOOK,
-  INSTAGRAM,
-  EMAIL,
-  PHONE
-} from 'lib/constants'
+import { LLC, ADDRESS, TWITTER, FACEBOOK, INSTAGRAM, EMAIL, PHONE } from 'lib/constants'
 import Container from 'components/container'
 import styles from './footer.module.css'
 
 export default function Footer() {
   return (
-    <Container wide dark>
+    <Container wide dark center>
       <Container>
         <footer className={styles.root}>
           <nav className={styles.content}>
             <div className="tl">
               <p>{PHONE}</p>
-              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              <a href={`mailto:${EMAIL}?subject=Hello`}>{EMAIL}</a>
             </div>
 
             <div className={styles.center}>
@@ -42,7 +33,7 @@ export default function Footer() {
               </span>
 
               <p className={styles.mobile}>
-                {ADDRESS_TOP} {ADDRESS_BOTTOM}
+                {ADDRESS[0]} {ADDRESS[1]}
               </p>
               <p>
                 Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
@@ -50,8 +41,8 @@ export default function Footer() {
             </div>
 
             <div className="tr">
-              <p>{ADDRESS_TOP}</p>
-              <p>{ADDRESS_BOTTOM}</p>
+              <p>{ADDRESS[0]}</p>
+              <p>{ADDRESS[1]}</p>
             </div>
           </nav>
         </footer>
