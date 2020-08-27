@@ -1,16 +1,11 @@
 import NextHead from 'next/head'
 import { NAME, PLATFORM_URL, defaultOgImage } from 'lib/constants'
 
-export default function Head({
-  title = NAME,
-  description = NAME,
-  image = defaultOgImage,
-  children
-}) {
+export default function Head({ title, description = NAME, image = defaultOgImage, children }) {
   return (
     <NextHead>
       {/* Title */}
-      <title>{title}</title>
+      <title>{`${NAME}${title ? ` - ${title}` : ''}`}</title>
       <meta name="og:title" content={title} />
 
       {/* Description */}
