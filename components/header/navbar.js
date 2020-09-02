@@ -33,35 +33,26 @@ function Navbar() {
             </a>
           </Link>
 
-          <Link href="/about">
+          <Link href="#About">
             <a className={cn('fp', { selected: route.startsWith('/about') })} title="About">
               About
             </a>
           </Link>
-          <Link href="/portfolio">
+          <Link href="#Portfolio">
             <a className={cn('fp', { selected: route.startsWith('/portfolio') })} title="Portfolio">
               Portfolio
             </a>
           </Link>
-          <Link href="/investments">
-            <a
-              className={cn('fp', { selected: route.startsWith('/investments') })}
-              title="Investments"
-            >
-              Investments
+          <Link href="#Investors">
+            <a className={cn('fp', { selected: route.startsWith('/investors') })} title="Investors">
+              Investors
             </a>
           </Link>
-          <Link href="/contact">
-            <a className={cn('fp', { selected: route.startsWith('/contact') })} title="Contact">
-              Contact
+          <Link href="#Team">
+            <a className={cn('fp', { selected: route.startsWith('/team') })} title="Team">
+              Team
             </a>
           </Link>
-          <div className="icon">
-            <p className="fp">{PHONE}</p>
-            <a className="fp" href={`mailto:${EMAIL}?subject=Hello`}>
-              {EMAIL}
-            </a>
-          </div>
         </div>
       </nav>
 
@@ -101,8 +92,8 @@ function Navbar() {
           display: flex;
           margin: 0;
         }
-        .links a:last-child:hover {
-          color: var(--accents-1);
+        .links a:not(:first-child) {
+          margin-left: auto;
         }
 
         .logo,

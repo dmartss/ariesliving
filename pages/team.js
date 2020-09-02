@@ -3,12 +3,12 @@ import { NAME, TEXT } from 'lib/constants'
 import Container from 'components/container'
 import Page from 'components/page'
 
-export default function Investments() {
+export default function Team() {
   return (
-    <Page title="Investments">
-      <Container role="main" wide dotBackground aria-labelledby="investments">
+    <Page title="Team">
+      <Container role="main" wide dotBackground aria-labelledby="team">
         <Container center padding>
-          <SectionHeader id="investments" title={NAME} description={TEXT} />
+          <SectionHeader id="team" title={NAME} description={TEXT} />
         </Container>
       </Container>
     </Page>
