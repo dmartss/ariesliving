@@ -2,11 +2,9 @@ import { memo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { EMAIL, PHONE } from 'lib/constants'
 
 import Logo from 'components/icons/logo'
 import Container from 'components/container'
-import Button from 'components/button'
 
 function Navbar() {
   const { route } = useRouter()
@@ -20,10 +18,6 @@ function Navbar() {
               <Logo />
             </a>
           </Link>
-
-          <div className="book">
-            <Button href="/">Book</Button>
-          </div>
         </div>
 
         <div className="links">
@@ -92,9 +86,6 @@ function Navbar() {
           display: flex;
           margin: 0;
         }
-        .links a:not(:first-child) {
-          margin-left: auto;
-        }
 
         .logo,
         .icon,
@@ -104,32 +95,12 @@ function Navbar() {
           justify-content: center;
         }
 
-        .icon > :global(div.container) {
-          overflow: visible;
-        }
-
         .mobile-logo,
         .mobile-top {
           display: none;
         }
 
-        .icon {
-          text-align: right;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          line-height: 0.5;
-          color: var(--accents-1);
-          margin: 0 0 var(--gap) var(--gap);
-        }
-
         /* Mobile */
-
-        @media (max-width: 960px) {
-          .links .logo {
-            padding-left: var(--gap);
-          }
-        }
 
         @media (max-width: 640px) {
           .mobile-logo {
@@ -139,8 +110,8 @@ function Navbar() {
           nav {
             height: unset;
             flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
+            align-items: center;
+            justify-content: center;
             padding: var(--gap) 0;
           }
 
@@ -154,20 +125,15 @@ function Navbar() {
           nav p {
             font-size: 14px;
           }
-          nav .links a:nth-child(2) {
+          nav .links a:nth-child(1) {
             margin: 0;
           }
 
           .mobile-top {
             width: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--gap-half);
-          }
-
-          .book {
-            margin-left: var(--gap-half);
           }
         }
       `}</style>
