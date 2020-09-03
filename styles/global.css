@@ -24,6 +24,7 @@
   --accents-6: #999999;
   --accents-7: #888888;
   --accents-8: #666666;
+  --footer-text: #8c8c8c;
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
@@ -203,4 +204,41 @@ a[role='button'] {
 }
 .fw4 {
   font-weight: 400;
+}
+.fw5 {
+  font-weight: 500;
+}
+.fw6 {
+  font-weight: 600;
+}
+.fw7 {
+  font-weight: 700;
+}
+.fw8 {
+  font-weight: 800;
+}
+.fw9 {
+  font-weight: 900;
+}
+
+.f0 {
+  font-size: 1.802032470703125em;
+}
+.f1 {
+  font-size: 1.601806640625em;
+}
+.f2 {
+  font-size: 1.423828125em;
+}
+.f3 {
+  font-size: 1.265625em;
+}
+.f4 {
+  font-size: 1.125em;
+}
+.f5 {
+  font-size: 0.8888888888888888em;
+}
+.f6 {
+  font-size: 0.7901234567901234em;
 }

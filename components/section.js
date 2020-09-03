@@ -18,12 +18,7 @@ export default function Section({ description, reverse, title, alt, src, width, 
             justify-content: center;
           }
           .content > h2 {
-            margin: var(--gap-double);
-          }
-           {
-            /* .content :global(a) {
-            align-self: center;
-          } */
+            margin-bottom: var(--gap-double);
           }
           @media screen and (max-width: 960px) {
             .main {
