@@ -56,7 +56,7 @@ const LinesGallery = () => (
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 12rem 0 8rem;
+        padding: 6rem 0 4rem;
       }
 
       .images {
