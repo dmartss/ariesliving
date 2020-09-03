@@ -4,6 +4,7 @@ import Container from 'components/container'
 import Section from 'components/section'
 import Page from 'components/page'
 import SectionHeader from 'components/section-header'
+import LinesGallery from 'components/lines-gallery'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
               height={2000 / 6}
             />
           ))}
+          <LinesGallery />
           <SectionHeader title={TEAM.title} description={TEAM.description} id={TEAM.title} />
         </Container>
       </Container>
