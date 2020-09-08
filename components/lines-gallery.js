@@ -6,43 +6,60 @@ const LinesGallery = () => (
     <div className="images">
       <div>
         <Image
+          shadow
+          oversize={false}
           width={282}
           height={166}
           src="/showcase-thumbnails/ithaca/rooms/cks/5.jpg"
           alt="Ithaca Classic King Suite"
+          layout="responsive"
+          margin={0}
         />
       </div>
       <div>
         <Image
+          shadow
+          oversize={false}
           width={282}
           height={166}
           src="/showcase-thumbnails/villa-paradiso/rooms/multi-unit/1.jpg"
           alt="Villa Paradiso Suite"
+          layout="responsive"
+          margin={0}
         />
       </div>
       <div>
         <Image
+          shadow
           width={282}
           height={166}
           src="/showcase-thumbnails/ithaca/rooms/sk/2.jpg"
           alt="Ithaca Superior King"
+          layout="responsive"
+          margin={0}
         />
       </div>
 
       <div>
         <Image
+          shadow
           width={282}
           height={166}
           src="/showcase-thumbnails/treehouse/rooms/ql/1.jpg"
           alt="Treehouse Queen Loft"
+          layout="responsive"
+          margin={0}
         />
       </div>
       <div>
         <Image
+          shadow
           width={282}
           height={166}
           src="/showcase-thumbnails/villa-paradiso/rooms/16/1.jpg"
           alt="Villa Paradiso Multi Unit"
+          layout="responsive"
+          margin={0}
         />
       </div>
     </div>
@@ -56,12 +73,14 @@ const LinesGallery = () => (
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 6rem 0 4rem;
+        padding: 12rem 0 8rem;
       }
 
       .images {
         max-width: 1440px;
         display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .lines-container {

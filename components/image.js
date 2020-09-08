@@ -40,18 +40,11 @@ class Image extends Component {
 
     return (
       <IObserver once onIntersect={this.handleIntersect} rootMargin="20%" disabled={!lazy}>
-        <figure
-          className={cn({
-            oversize: width > 650 && oversize,
-            float: float && width < 520
-          })}
-        >
+        <figure className={cn({ oversize: width > 650 && oversize, float: float && width < 520 })}>
           <div className="container">
             <div style={{ paddingBottom: aspectRatio, ...style }}>
               {this.state.src ? (
-                videoSrc || video ? (
-                  <video src={this.state.src} muted autoPlay loop playsInline />
-                ) : renderImage ? (
+                renderImage ? (
                   renderImage(rest)
                 ) : (
                   <img className={className} src={this.state.src || null} alt={rest.alt} />
