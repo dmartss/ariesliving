@@ -1,8 +1,4 @@
-// Packages
-import React from 'react'
 import { validate } from 'email-validator'
-
-// Components
 import cn from 'classnames'
 import AutoComplete from './auto-complete'
 import Button from './button'
@@ -113,6 +109,7 @@ class EmailForm extends React.Component {
         />
         <form
           method="POST"
+          action-xhr="//contact-api.inguest.com/bundles/revinatecontactapi/js/revinate-form.js?v=1"
           id="revinate_contact_api_form"
           token="0a0bd4dc-ac51-487c-85ca-05d751d70287"
           className={cn(classes)}

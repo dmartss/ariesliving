@@ -16,8 +16,12 @@ class Newsletter extends React.PureComponent {
     this.setState({ loading: true })
     fetch('//contact-api.inguest.com/bundles/revinatecontactapi/js/revinate-form.js?v=1', {
       method: 'POST',
-      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'text/plain' },
-      token: '0a0bd4dc-ac51-487c-85ca-05d751d70287',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Content-Type': 'text/plain',
+        token: '0a0bd4dc-ac51-487c-85ca-05d751d70287'
+      },
       body: JSON.stringify({ email: val })
     })
       .then(res => {
