@@ -5,6 +5,7 @@ import Section from 'components/section'
 import Page from 'components/page'
 import SectionHeader from 'components/section-header'
 import LinesGallery from 'components/lines-gallery'
+import Newsletter from 'components/newsletter'
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
           ))}
           <LinesGallery />
           <SectionHeader title={TEAM.title} description={TEAM.description} id={TEAM.title} />
+          <Newsletter />
         </Container>
       </Container>
     </Page>
