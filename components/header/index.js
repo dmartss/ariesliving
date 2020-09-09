@@ -16,9 +16,10 @@ const Header = ({ sticky = true }) => {
           justify-content: space-around;
           align-items: center;
           width: 100%;
-          background: var(--accents-4);
           z-index: 1000;
-          border-bottom: 1px solid #eaeaea;
+          box-shadow: var(--header-border-bottom);
+          background: var(--header-background);
+          transition: box-shadow 0.2s ease 0s;
         }
         header.sticky {
           position: sticky;
