@@ -75,7 +75,6 @@ class EmailForm extends React.Component {
   }
 
   submit = ev => {
-    'revFormOnSubmit()'
     if (ev) ev.preventDefault()
 
     const { email } = this.state
@@ -388,7 +387,7 @@ class EmailForm extends React.Component {
             }
           }
 
-          @media (max-width: 700px) {
+          @media (max-width: 640px) {
             form > div.flex {
               display: flex;
               flex-direction: column;

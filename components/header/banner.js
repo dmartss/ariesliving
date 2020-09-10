@@ -24,10 +24,10 @@ const Banner = () => {
   return (
     <div className="banner">
       <div className="inner">
-        <p>DON'T MISS OUT</p>
         <p>Share your email with us for special offers</p>
 
         <div className="email-form">
+          <p className="mobile">Share your email with us for special offers</p>
           <EmailForm
             errorMessage={state.errorMessage}
             loading={state.loading}
@@ -46,7 +46,7 @@ const Banner = () => {
           width: 100%;
           background: #000;
           color: #fff;
-          height: 75px;
+          min-height: 75px;
           display: flex;
           align-items: center;
         }
@@ -79,9 +79,15 @@ const Banner = () => {
           p {
             display: none;
           }
+          .email-form {
+            padding: 5px;
+            margin: auto;
+            text-align: center;
+          }
 
           .mobile {
             display: block;
+            padding-bottom: 5px;
           }
         }
       `}</style>
