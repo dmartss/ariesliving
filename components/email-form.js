@@ -75,6 +75,7 @@ class EmailForm extends React.Component {
   }
 
   submit = ev => {
+    'revFormOnSubmit()'
     if (ev) ev.preventDefault()
 
     const { email } = this.state
