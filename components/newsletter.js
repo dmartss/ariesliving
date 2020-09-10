@@ -10,17 +10,17 @@ export default function Newsletter() {
 
   const onEmail = async val => {
     setState({ loading: true })
-    const res = await fetch('/api/subscribe', {
-      body: JSON.stringify({ email: val }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
+    try {
+      const res = await fetch('/api/subscribe', {
+        body: JSON.stringify({ email: val }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      })
 
-    if (res.status === 200) {
       setState({ loading: false, success: true })
-    } else {
+    } catch (err) {
       setState({ loading: false, errorMessage: true })
     }
   }

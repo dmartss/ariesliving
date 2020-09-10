@@ -104,7 +104,6 @@ class EmailForm extends React.Component {
 
     return (
       <form
-        method="POST"
         id="revinate_contact_api_form"
         token="0a0bd4dc-ac51-487c-85ca-05d751d70287"
         className={cn(classes)}
