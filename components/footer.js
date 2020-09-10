@@ -127,7 +127,7 @@ export default withPure(() => (
             </a>
           </span>
           <div>
-            Copyright © {`${new Date().getFullYear()}`} {LLC}, Inc. All rights reserved.
+            Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
           </div>
         </div>
       </footer>
