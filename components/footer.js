@@ -27,7 +27,7 @@ export default withPure(() => (
               color: inherit;
             }
             a:hover {
-              color: var(--accents-3);
+              color: var(--black);
             }
             .copyright {
               margin-top: var(--gap);

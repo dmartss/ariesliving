@@ -1,10 +1,13 @@
 import { memo } from 'react'
 import cn from 'classnames'
+import Banner from './banner'
 import Nav from './navbar'
 
 const Header = ({ sticky = true }) => {
   return (
     <>
+      <Banner />
+
       <header className={cn({ sticky })}>
         <Nav />
       </header>

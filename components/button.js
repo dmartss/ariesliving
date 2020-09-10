@@ -41,7 +41,7 @@ const cachedStyles = css`
     box-shadow: 0 6px 20px rgba(0, 154, 148, 0.23);
   }
   .btn.invert:active {
-    background: var(--accents-2);
+    background: var(--white);
   }
   .btn.invert.outline {
     background: var(--white);
