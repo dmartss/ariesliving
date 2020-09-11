@@ -4,27 +4,6 @@ import Container from './container'
 import EmailForm from './email-form'
 
 export default function Newsletter() {
-  const [state, setState] = useState({ loading: false, success: false, errorMessage: false })
-  // const [success, setSuccess] = useState(false)
-  // const [errorMessage, setErrorMessage] = useState(false)
-
-  const onEmail = async val => {
-    setState({ loading: true })
-    try {
-      const res = await fetch('/api/subscribe', {
-        body: JSON.stringify({ email: val }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'POST'
-      })
-
-      setState({ loading: false, success: true })
-    } catch (err) {
-      setState({ loading: false, errorMessage: true })
-    }
-  }
-
   return (
     <Container wide overflow center padding role="region" aria-labelledby="customers">
       <div className="content">
@@ -33,21 +12,9 @@ export default function Newsletter() {
           <h3>Share your email with us for special offers</h3>
         </aside>
         <aside>
-          {state.success ? (
-            <p className="subscribe-success">Thanks for subscribing!</p>
-          ) : (
-            <div className="email-form">
-              <EmailForm
-                errorMessage={state.errorMessage}
-                loading={state.loading}
-                onEmail={onEmail}
-                buttonLabel="SUBSCRIBE"
-                message="Subscribe"
-                align="left"
-                withIcon
-              />
-            </div>
-          )}
+          <div className="email-form">
+            <EmailForm buttonLabel="SUBSCRIBE" message="Subscribe" align="left" withIcon />
+          </div>
         </aside>
       </div>
       <style jsx>{`
@@ -78,9 +45,6 @@ export default function Newsletter() {
           position: relative;
         }
 
-        .subscribe-success {
-          text-align: right;
-        }
         @media screen and (max-width: 640px) {
           .content {
             display: grid;
@@ -93,9 +57,6 @@ export default function Newsletter() {
           .email-form {
             margin: auto;
             margin-top: 2rem;
-            text-align: center;
-          }
-          .subscribe-success {
             text-align: center;
           }
         }

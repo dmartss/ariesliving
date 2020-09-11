@@ -1,26 +1,6 @@
-import { useState } from 'react'
 import EmailForm from '../email-form'
 
 const Banner = () => {
-  const [state, setState] = useState({ loading: false, success: false, errorMessage: false })
-
-  const onEmail = async val => {
-    setState({ loading: true })
-    const res = await fetch('/api/subscribe', {
-      body: JSON.stringify({ email: val }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
-
-    if (res.status === 200) {
-      setState({ loading: false, success: true })
-    } else {
-      setState({ loading: false, errorMessage: true })
-    }
-  }
-
   return (
     <div className="banner">
       <div className="inner">
@@ -28,16 +8,7 @@ const Banner = () => {
 
         <div className="email-form">
           <p className="mobile">Share your email with us for special offers</p>
-          <EmailForm
-            errorMessage={state.errorMessage}
-            loading={state.loading}
-            onEmail={onEmail}
-            buttonLabel="SUBSCRIBE"
-            message="Subscribe"
-            align="left"
-            withIcon
-            flex
-          />
+          <EmailForm buttonLabel="SUBSCRIBE" flex />
         </div>
       </div>
 
@@ -69,6 +40,10 @@ const Banner = () => {
 
         .mobile {
           display: none;
+        }
+
+        .email-form {
+          padding-top: 5px;
         }
 
         @media (max-width: 640px) {
