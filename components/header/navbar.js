@@ -12,14 +12,6 @@ function Navbar() {
   return (
     <Container>
       <nav className="f-reset">
-        <div className="mobile-top">
-          <Link href="/">
-            <a className="mobile-logo" title="Go to the homepage">
-              <Logo />
-            </a>
-          </Link>
-        </div>
-
         <div className="links">
           <Link href="/">
             <a className="logo" title="Go to the homepage">
@@ -70,7 +62,7 @@ function Navbar() {
         .links a {
           text-decoration: none;
           transition: color 0.2s ease;
-          margin-left: 1rem;
+          margin: 1rem;
         }
 
         .links a:hover {
@@ -87,53 +79,12 @@ function Navbar() {
           margin: 0;
         }
 
-        .logo,
-        .icon,
-        .icon > :global(div.container) {
-          /* Remove additional space from SVG */
-          display: inline-flex;
-          justify-content: center;
-        }
-
-        .mobile-logo,
-        .mobile-top {
-          display: none;
-        }
-
         /* Mobile */
 
         @media (max-width: 640px) {
-          .mobile-logo {
-            display: block;
-          }
-
-          nav {
-            height: unset;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: var(--gap) 0;
-          }
-
-          nav .links .logo,
-          nav .links .hotel,
-          nav .links .book {
-            display: none;
-          }
-
           nav a,
           nav p {
             font-size: 14px;
-          }
-          nav .links a:nth-child(1) {
-            margin: 0;
-          }
-
-          .mobile-top {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
           }
         }
       `}</style>

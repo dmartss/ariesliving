@@ -134,7 +134,7 @@ export default function EmailForm({ flex }) {
             color: var(--accents-1);
           }
 
-          @media (max-width: 700px) {
+          @media (max-width: 640px) {
             form > div.flex {
               display: flex;
               flex-direction: column;
