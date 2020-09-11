@@ -13,7 +13,7 @@ export default function Newsletter() {
         </aside>
         <aside>
           <div className="email-form">
-            <EmailForm buttonLabel="SUBSCRIBE" message="Subscribe" align="left" withIcon />
+            <EmailForm />
           </div>
         </aside>
       </div>
@@ -22,19 +22,19 @@ export default function Newsletter() {
           display: grid;
           grid-template-columns: 1fr 0.8fr;
           align-items: center;
-          margin: 2rem auto;
+          margin: var(--gap-double) auto;
           padding: 0 1.5rem;
           max-width: 1024px;
         }
         .content h2 {
-          font-size: 2rem;
+          font-size: var(--gap-double);
           letter-spacing: -1px;
           line-height: 1.2;
           text-align: left;
           margin-bottom: 0.8rem;
         }
         .content h3 {
-          font-size: 1rem;
+          font-size: var(--gap);
           line-height: 1.8;
           text-align: left;
           font-weight: 400;

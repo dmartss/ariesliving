@@ -1,13 +1,13 @@
 export default function EmailForm({ flex }) {
+  const token = process.env.NEXT_PUBLIC_TOKEN
   return (
-    <>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `
           <script type="text/javascript" src="//contact-api.inguest.com/bundles/revinatecontactapi/js/revinate-form.js?v=1"></script>
-          <form id="revinate_contact_api_form" token="0a0bd4dc-ac51-487c-85ca-05d751d70287"
+          <form id="revinate_contact_api_form" token="${token}"
                 onsubmit="revFormOnSubmit(); event.preventDefault();">
-            <div class=${flex ? 'flex' : 'email'}>
+            <div class=${flex ? 'flex' : ''}>
               <div>
                 <input placeholder="you@domain.com" class=${
                   flex ? 'flex' : ''
@@ -146,8 +146,7 @@ export default function EmailForm({ flex }) {
 
           </style>
       </form>`
-        }}
-      />
-    </>
+      }}
+    />
   )
 }
