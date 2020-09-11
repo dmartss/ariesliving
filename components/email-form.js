@@ -1,6 +1,5 @@
 export default function EmailForm({ flex }) {
   const token = process.env.NEXT_PUBLIC_TOKEN
-  console.log('token', token)
   return (
     <div
       dangerouslySetInnerHTML={{
