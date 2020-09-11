@@ -15,8 +15,8 @@ const Banner = () => {
       <style jsx>{`
         .banner {
           width: 100%;
-          background: #000;
-          color: #fff;
+          background: var(--black);
+          color: var(--white);
           min-height: 75px;
           display: flex;
           align-items: center;
@@ -26,24 +26,20 @@ const Banner = () => {
           width: 100%;
           max-width: 1024px;
           margin: 0 auto;
-          padding: 0 1rem;
+          padding: 0 var(--gap);
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
 
         p {
-          color: #fff;
+          color: var(--white);
           margin: 0;
           transition: color 0.15s ease;
         }
 
         .mobile {
           display: none;
-        }
-
-        .email-form {
-          padding-top: 5px;
         }
 
         @media (max-width: 640px) {
