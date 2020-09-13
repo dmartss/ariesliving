@@ -1,8 +1,8 @@
 import Image from './image'
 
-export default function Section({ description, reverse, title, alt, src, width, height }) {
+export default function Section({ description, id, reverse, title, alt, src, width, height }) {
   return (
-    <div className="main" id={title}>
+    <div className="main" id={id}>
       <style jsx>
         {`
           .main {

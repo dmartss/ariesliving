@@ -21,21 +21,21 @@ export default function Home() {
             width={3000 / 2}
             height={2000 / 2}
           />
-          {CONTENT.map(({ title, description, src }, i) => (
+          {CONTENT.map(({ title, id, description, src, alt }, i) => (
             <Section
-              id={title}
+              id={id}
               key={i}
               title={title}
               description={description}
               reverse={i % 2}
-              alt="Room 2"
+              alt={alt}
               src={src}
               width={3000 / 6}
               height={2000 / 6}
             />
           ))}
           <LinesGallery />
-          <SectionHeader title={TEAM.title} description={TEAM.description} id={TEAM.title} />
+          <SectionHeader title={TEAM.title} id={TEAM.id} description={TEAM.description} />
           <Newsletter />
         </Container>
       </Container>

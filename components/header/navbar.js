@@ -19,22 +19,22 @@ function Navbar() {
             </a>
           </Link>
 
-          <Link href="#About">
+          <Link href="#about">
             <a className={cn('fp', { selected: route.startsWith('/about') })} title="About">
               About
             </a>
           </Link>
-          <Link href="#Portfolio">
+          <Link href="#portfolio">
             <a className={cn('fp', { selected: route.startsWith('/portfolio') })} title="Portfolio">
               Portfolio
             </a>
           </Link>
-          <Link href="#Investors">
+          <Link href="#investors">
             <a className={cn('fp', { selected: route.startsWith('/investors') })} title="Investors">
               Investors
             </a>
           </Link>
-          <Link href="#Team">
+          <Link href="#team">
             <a className={cn('fp', { selected: route.startsWith('/team') })} title="Team">
               Team
             </a>
