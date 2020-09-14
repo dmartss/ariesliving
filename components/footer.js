@@ -2,12 +2,14 @@ import { ADDRESS, HOTELS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constant
 import { Facebook, Instagram, Twitter } from './icons'
 import Container from 'components/container'
 import withPure from 'components/hoc/pure'
+import styles from './footer.module.css'
+import cn from 'classnames'
 
 export default withPure(() => (
   <Container wide gray>
     <Container>
-      <footer>
-        <div className="grid f5">
+      <footer className={styles.footer}>
+        <div className={cn(styles.grid, 'f5')}>
           <div>
             <h4 className="fw5">Brands</h4>
             {HOTELS.map(({ name, url }) => (
@@ -55,7 +57,7 @@ export default withPure(() => (
             </p>
           </div>
         </div>
-        <div className="copyright f6">
+        <div className={cn(styles.copyright, 'f6')}>
           <span>
             <a href={FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Facebook />
@@ -72,65 +74,7 @@ export default withPure(() => (
           </div>
         </div>
       </footer>
-      <style jsx>
-        {`
-          .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-row-gap: var(--gap-double);
-          }
-          footer {
-            padding: var(--gap-double) 0 var(--gap);
-            min-height: 150px;
-          }
-          a,
-          p,
-          .copyright {
-            color: var(--footer-text);
-          }
-          h4 a {
-            color: inherit;
-          }
-          a:hover {
-            color: var(--black);
-          }
-          .copyright {
-            margin-top: var(--gap);
-          }
-          .copyright span {
-            display: inline-flex;
-          }
-          .copyright span a {
-            padding-right: var(--gap-half);
-          }
-          .copyright div {
-            margin-top: 0.5rem;
-          }
-          h4 {
-            margin-bottom: 0.75rem;
-          }
-          p {
-            margin-top: 0;
-            margin-bottom: 0.25rem;
-          }
-          @media screen and (max-width: 800px) {
-            .grid {
-              grid-template-columns: 1fr 1fr;
-            }
-
-            h4,
-            p {
-              margin: 0;
-            }
-
-            a {
-              display: block;
-              padding-top: 15px;
-              padding-bottom: 15px;
-            }
-          }
-        `}
-      </style>
+      <style jsx>{``}</style>
     </Container>
   </Container>
 ))

@@ -32,6 +32,7 @@ class Image extends Component {
       lazy,
       shadow,
       style,
+      noBorder,
       className,
       ...rest
     } = this.props
@@ -86,7 +87,7 @@ class Image extends Component {
                 position: absolute;
                 top: 0;
                 width: 100%;
-                border-radius: 7px;
+                border-radius: ${noBorder ? '0px' : '7px'};
                 ${shadow ? 'box-shadow: 0 8px 30px rgba(0,0,0,0.12)' : ''}
               }
               figcaption {

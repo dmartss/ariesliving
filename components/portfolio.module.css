@@ -30,6 +30,6 @@
   }
   .images {
     flex-direction: column;
-    margin: 0 auto;
+    margin: var(--gap) auto auto;
   }
 }

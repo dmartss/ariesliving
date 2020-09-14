@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 12rem 0 8rem;
+  padding: 6rem 0 4rem;
 }
 
 .images {
@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 640px) {
   .container {
-    padding: 10rem 0 6rem;
+    padding: 0rem;
   }
   .images {
     max-width: unset;

@@ -24,10 +24,12 @@
 }
 
 @media screen and (max-width: 960px) {
-  .main {
+  .main,
+  .main.reverse {
     flex-direction: column;
     text-align: center;
   }
+  .main.reverse .content,
   .content {
     padding: 0 var(--gap);
     margin: 0;
