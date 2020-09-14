@@ -1,7 +1,7 @@
 import Image from 'components/image'
 import Section from 'components/section'
 import Page from 'components/page'
-import SectionHeader from 'components/section-header'
+import Team from 'components/team'
 import LinesGallery from 'components/lines-gallery'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
@@ -49,11 +49,7 @@ export default function Home() {
         height={2000 / 6}
       />
       <LinesGallery />
-      <SectionHeader
-        title="Team"
-        id="team"
-        description="The Aires Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
-      />
+      <Team />
       <Newsletter />
     </Page>
   )

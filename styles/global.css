@@ -35,8 +35,8 @@
 
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --gradient-1: linear-gradient(270deg, #111111, #333333, #333333, #111111);
-  --gradient-2: linear-gradient(90deg, #ed6292 25%, #ed5760 87.5%);
-  --gradient-3: linear-gradient(135deg, #000 50%, transparent 50%);
+  --gradient-2: linear-gradient(135deg, #000 50%, transparent 50%);
+  --gradient-3: linear-gradient(135deg, transparent 50%, #000 50%);
   --gradient-4: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
   --gradient-5: linear-gradient(135deg, #b4b6b8, #7f8183);
 
