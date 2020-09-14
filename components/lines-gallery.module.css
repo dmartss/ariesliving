@@ -9,8 +9,6 @@
 .images {
   max-width: 1440px;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .lines-container {
@@ -52,7 +50,7 @@
 
 @media screen and (max-width: 640px) {
   .container {
-    padding: 0rem;
+    display: none;
   }
   .images {
     max-width: unset;

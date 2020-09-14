@@ -28,7 +28,13 @@
   .main.reverse {
     flex-direction: column;
     text-align: center;
+    margin: 0;
   }
+
+  .content > h2 {
+    margin-bottom: 0;
+  }
+
   .main.reverse .content,
   .content {
     padding: 0 var(--gap);
