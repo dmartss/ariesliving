@@ -13,6 +13,7 @@
   --radius: 8px;
   --inline-radius: 5px;
   --header-height: 5rem;
+  --banner-height: 75px;
   --header-border-bottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   --header-background: hsla(0, 0%, 100%, 0.8);
 
