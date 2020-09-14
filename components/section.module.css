@@ -1,0 +1,35 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: var(--gap) 0;
+}
+
+.main.reverse {
+  flex-direction: row-reverse;
+}
+.main.reverse .content {
+  margin: 0 var(--gap-triple) 0 0;
+}
+
+.content {
+  margin: 0 0 0 var(--gap-triple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content > h2 {
+  margin-bottom: var(--gap-double);
+}
+
+@media screen and (max-width: 960px) {
+  .main {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content {
+    padding: 0 var(--gap);
+    margin: 0;
+  }
+}
