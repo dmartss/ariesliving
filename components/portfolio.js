@@ -6,7 +6,7 @@ import styles from './portfolio.module.css'
 
 export default function Portfolio({ description, id, title, width, height }) {
   return (
-    <Container gray wide overflow center role="region" aria-labelledby="portfolio">
+    <Container gray wide dotBackground overflow center role="region" aria-labelledby="portfolio">
       <Container center padding>
         <div className={styles['main']} id={id}>
           <h2 className="fs fw4">{title}</h2>
