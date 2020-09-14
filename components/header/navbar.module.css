@@ -1,0 +1,44 @@
+.nav {
+  position: relative;
+  flex: 1;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.links a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin: 1rem;
+}
+
+.links a:hover {
+  color: var(--accents-1);
+}
+
+.links a.selected {
+  color: var(--accents-1);
+  text-shadow: 0px 0px 1px #0070f3;
+}
+
+.links a:first-child {
+  display: flex;
+  margin: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .nav :global(a),
+  .nav :global(p) {
+    font-size: 14px;
+  }
+}

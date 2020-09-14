@@ -1,0 +1,32 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--gap) 0;
+}
+.links a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.links :global(a.vp:hover) {
+  color: var(--vp);
+}
+.links :global(a.ithaca:hover) {
+  color: var(--ithaca);
+}
+.links :global(a.treehouse:hover) {
+  color: var(--treehouse);
+}
+
+@media screen and (max-width: 960px) {
+  .main {
+    flex-direction: column;
+    text-align: center;
+  }
+}

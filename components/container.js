@@ -24,15 +24,15 @@ export default function Container({
             margin: 0 auto;
             padding: ${padding ? '2rem' : '0'} ${wide ? '0' : '1rem'};
             ${wide && !small ? '' : 'max-width: 1024px;'}
-            ${small ? 'max-width: 682px;' : ''}
+            ${small ? 'max-width: 768px;' : ''}
         ${center
               ? 'text-align: center;'
               : ''}
-        ${dark ? 'background-color: var(--accents-1);' : ''}
+        ${dark ? 'background: #111;' : ''}
         ${dark
               ? 'color: #f1f1f1;'
               : ''}
-        ${gray ? 'background-color: var(--white);' : ''}
+        ${gray ? 'background-color: #fafafa;' : ''}
         ${gray
               ? 'border-top: 1px solid #eaeaea;'
               : ''}

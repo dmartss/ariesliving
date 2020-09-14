@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--header-border-bottom);
+  background: var(--header-background);
+  transition: box-shadow 0.2s ease 0s;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+}
