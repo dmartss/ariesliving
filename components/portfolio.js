@@ -13,23 +13,18 @@ export default function Portfolio({ description, id, title, width, height }) {
           <p className="f-reset fp fw4">{description}</p>
           <div className={styles['images']}>
             {HOTELS.map(({ src, alt, name, url }) => (
-              <div className={styles['links']} key={name}>
-                <a
-                  className={cn('fs fw4', alt)}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {name}
+              <div className={styles['card']} key={name}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <p className={cn('fs fw4', alt)}>{name}</p>
+                  <Image
+                    className="no-drag"
+                    shadow
+                    alt={alt}
+                    src={src}
+                    width={width}
+                    height={height}
+                  />
                 </a>
-                <Image
-                  className="no-drag"
-                  shadow
-                  alt={alt}
-                  src={src}
-                  width={width}
-                  height={height}
-                />
               </div>
             ))}
           </div>

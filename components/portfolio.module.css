@@ -10,17 +10,32 @@
   align-items: center;
   margin: var(--gap) 0;
 }
-.links a {
+.card p {
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.links :global(a.vp:hover) {
+
+.card {
+  border-radius: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-medium);
+  background: var(--gradient-3);
+}
+
+.card:hover :global(p.vp) {
   color: var(--vp);
 }
-.links :global(a.ithaca:hover) {
+.card:hover :global(p.ithaca) {
   color: var(--ithaca);
 }
-.links :global(a.treehouse:hover) {
+.card:hover :global(p.treehouse) {
   color: var(--treehouse);
 }
 

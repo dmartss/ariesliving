@@ -13,6 +13,7 @@ export default function Container({
   children,
   mobileStyle,
   divider,
+  gradient,
   ...props
 }) {
   return (
@@ -23,6 +24,9 @@ export default function Container({
             width: 100%;
             margin: 0 auto;
             padding: ${padding ? '2rem' : '0'} ${wide ? '0' : '1rem'};
+            background-image: ${gradient
+              ? 'linear-gradient(270deg, #111111, #333333, #333333, #111111);'
+              : ''};
             ${wide && !small ? '' : 'max-width: 1024px;'}
             ${small ? 'max-width: 768px;' : ''}
         ${center

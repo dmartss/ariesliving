@@ -1,6 +1,6 @@
 .banner {
   width: 100%;
-  background: var(--black);
+  background-image: var(--gradient-1);
   color: var(--white);
   min-height: var(--banner-height);
   display: flex;
