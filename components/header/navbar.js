@@ -11,7 +11,7 @@ function Navbar() {
   const { route } = useRouter()
 
   return (
-    <Container>
+    <Container center>
       <nav className={cn(styles['nav'], 'f-reset')}>
         <div className={styles['links']}>
           <Link href="/">

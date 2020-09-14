@@ -10,14 +10,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 1;
 }
 
 .links a {
   text-decoration: none;
   transition: color 0.2s ease;
-  margin: 1rem;
 }
 
 .links a:hover {
@@ -37,8 +36,10 @@
 /* Mobile */
 
 @media (max-width: 640px) {
-  .nav a,
-  .nav p {
+  .links a:not(:first-child) {
+    padding: 0 5px;
+  }
+  .links {
     font-size: 14px;
   }
 }
