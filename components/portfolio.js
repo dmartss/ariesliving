@@ -20,7 +20,6 @@ export default function Portfolio({ description, id, title, width, height }) {
             </div>
           ))}
         </div>
-        <style jsx>{``}</style>
       </div>
     </Container>
   )

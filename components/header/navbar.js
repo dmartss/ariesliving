@@ -12,10 +12,10 @@ function Navbar() {
 
   return (
     <Container>
-      <nav className={cn(styles.nav, 'f-reset')}>
-        <div className={styles.links}>
+      <nav className={cn(styles['nav'], 'f-reset')}>
+        <div className={styles['links']}>
           <Link href="/">
-            <a className={styles.logo} title="Go to the homepage">
+            <a className={styles['logo']} title="Go to the homepage">
               <Logo />
             </a>
           </Link>

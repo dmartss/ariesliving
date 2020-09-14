@@ -37,8 +37,8 @@
 /* Mobile */
 
 @media (max-width: 640px) {
-  .nav :global(a),
-  .nav :global(p) {
+  .nav a,
+  .nav p {
     font-size: 14px;
   }
 }
