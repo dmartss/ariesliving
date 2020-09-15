@@ -2,14 +2,13 @@ export default function Logo({ className, color }) {
   return (
     <svg
       className={className}
-      height="140"
-      width="140"
-      viewBox="0 0 1600 1600"
+      height="100"
+      viewBox="0 0 1000 1000"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
-        transform="translate(0.000000,1600.000000) scale(0.100000,-0.100000)"
-        fill={color ?? '#000000'}
+        transform="translate(-300,1300) scale(0.1,-0.1)"
+        fill={color ?? 'var(--black)'}
         stroke="none"
       >
         <path

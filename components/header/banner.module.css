@@ -2,7 +2,7 @@
   width: 100%;
   background-image: var(--gradient-1);
   color: var(--white);
-  min-height: var(--banner-height);
+  height: var(--banner-height);
   display: flex;
   align-items: center;
 }
@@ -28,6 +28,9 @@
 }
 
 @media (max-width: 640px) {
+  .banner {
+    height: unset;
+  }
   .desktop {
     display: none;
   }

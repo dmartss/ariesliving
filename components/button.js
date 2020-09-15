@@ -1,7 +1,7 @@
+import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
-import withPure from 'components/hoc/pure'
 
 const cachedStyles = css`
   .btn {
@@ -52,31 +52,9 @@ const cachedStyles = css`
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 6px 20px rgba(93, 93, 93, 0.23);
   }
-  /* .btn.small {
-    font-size: 0.875rem;
-    height: 1.5rem;
-    padding: 0 0.75rem;
-    line-height: inherit;
-    border-radius: 5px;
-  }
-  .btn.loading {
-    background: #fafafa;
-    color: #888888;
-    border: 1px solid #000;
-    border-color: #eaeaea;
-    box-shadow: none;
-    cursor: default;
-    pointer-events: none;
-  }
-  .btn.loading > .text {
-    visibility: hidden;
-  }
-  .btn > .loading-dots {
-    position: absolute;
-  } */
 `
 
-export default withPure(function Button({
+export default memo(function Button({
   children,
   invert,
   outline,

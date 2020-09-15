@@ -5,7 +5,7 @@ import styles from './lines-gallery.module.css'
 import cn from 'classnames'
 
 const LinesGallery = () => (
-  <Container wide role="region" aria-labelledby="lines-gallery">
+  <Container dotBackground wide role="region" aria-labelledby="lines-gallery">
     <div className={cn(styles['container'], 'hide-tablet')}>
       <div className={styles['images']}>
         <div>

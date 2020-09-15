@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .images {
   display: flex;
   justify-content: space-between;
@@ -24,7 +25,7 @@
 .card:hover {
   cursor: pointer;
   transition: box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-hover);
   background: var(--gradient-2);
 }
 
@@ -49,7 +50,7 @@
   }
 
   .card {
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-hover);
     background: var(--gradient-3);
     margin: var(--gap-half) 0;
   }
