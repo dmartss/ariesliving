@@ -10,11 +10,11 @@ export default function Container({
   overflow = false,
   minHeight = null,
   dotBackground = false,
-  children,
   mobileStyle = null,
   divider = false,
   gradient = false,
   boxShadow = false,
+  children,
   ...props
 }) {
   return (

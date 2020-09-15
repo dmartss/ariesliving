@@ -1,9 +1,8 @@
+import { useRouter } from 'next/router'
 import { memo } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import cn from 'classnames'
 import styles from './navbar.module.css'
-
 import Logo from 'components/icons/logo'
 import Container from 'components/container'
 

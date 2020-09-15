@@ -65,12 +65,6 @@ const Image = ({
               border-radius: ${noBorder ? '0px' : avatar ? '50%' : 'var(--radius)'};
               ${shadow ? 'box-shadow: var(--shadow-hover)' : ''}
             }
-            figcaption {
-              color: #999;
-              font-size: 12px;
-              margin: 0;
-              text-align: center;
-            }
 
             @media (min-width: 1200px) {
               figure.oversize {
