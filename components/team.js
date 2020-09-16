@@ -11,7 +11,7 @@ export default function Team() {
         <SectionHeader
           title="Team"
           id="team"
-          description="The Aires Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
+          description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
         <div className={styles['wrapper']}>
           {TEAM.map(({ name, position, img }) => (
