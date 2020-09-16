@@ -32,13 +32,13 @@ export default function Container({
         ${small ? 'max-width: 768px;' : ''}
         ${center ? 'text-align: center;' : ''}
         ${dark ? `
-            background: #111; 
-            color: #f1f1f1;` 
+            background: var(--black2); 
+            color: var(--light-gray);` 
             : ''}
         ${gray ? `
-            background-color: #fafafa; 
-            border-top: 1px solid #eaeaea; 
-            border-bottom: 1px solid #eaeaea;`
+            background-color: var(--accents-3); 
+            border-top: 1px solid var(--accents-4); 
+            border-bottom: 1px solid var(--accents-4);`
             : ''}
         ${wide && !overflow ? 'overflow: hidden;' : ''}
         ${minHeight ? `min-height: ${minHeight}px;` : ''}

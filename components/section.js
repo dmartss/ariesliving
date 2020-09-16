@@ -11,7 +11,7 @@ export default function Section({ description, id, reverse, title, alt, src, wid
           <Image className="no-drag" shadow alt={alt} src={src} width={width} height={height} />
           <div className={styles.content}>
             <h2 className="fp fw4">{title}</h2>
-            <p className="f-reset fs fw4">{description}</p>
+            <p className="f-reset fs f4 fw3">{description}</p>
           </div>
         </div>
       </Container>

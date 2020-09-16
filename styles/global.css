@@ -1,5 +1,5 @@
 @import './nprogress.css';
-@import './inter.css';
+@import './fonts.css';
 
 :root {
   /* Spacing */
@@ -16,6 +16,8 @@
   /* Static Colors */
   --white: #ffffff;
   --black: #000000;
+  --black2: #111;
+  --light-gray: #f1f1f1;
   --accents-1: #00b0ee;
   --accents-2: #0070f3;
   --accents-3: #fafafa;
@@ -45,8 +47,10 @@
   --gradient-5: linear-gradient(135deg, #b4b6b8, #7f8183);
 
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  /* Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   --font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
 }
 
@@ -102,6 +106,26 @@ body {
   color: var(--accents-9);
 }
 
+.lines {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.lines:before,
+.lines:after {
+  content: '';
+  border-top: 1px solid var(--black);
+  border-color: rgba(0, 0, 0, 0.25);
+  margin: 0 var(--gap) 0 0;
+  flex: 1 0 20px;
+}
+
+.lines:after {
+  margin: 0 0 0 var(--gap);
+}
+
 ::selection {
   background-color: var(--accents-1);
   color: var(--white);
@@ -132,6 +156,16 @@ a {
 
 a:hover {
   color: var(--accents-1);
+}
+
+p:hover a.vp {
+  color: var(--vp);
+}
+p:hover a.treehouse {
+  color: var(--treehouse);
+}
+p:hover a.ithaca {
+  color: var(--ithaca);
 }
 
 iframe {
@@ -191,6 +225,15 @@ img {
   }
   .hide-tablet {
     display: none;
+  }
+  p.vp {
+    color: var(--vp);
+  }
+  p.ithaca {
+    color: var(--ithaca);
+  }
+  p.treehouse {
+    color: var(--treehouse);
   }
 }
 a[role='button'] {

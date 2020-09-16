@@ -7,15 +7,15 @@ import cn from 'classnames'
 
 function Footer() {
   return (
-    <Container wide gray>
+    <Container wide dark>
       <Container>
         <footer className={styles.footer}>
           <div className={cn(styles.grid, 'f5')}>
             <div>
               <h4 className="fw5">Brands</h4>
-              {HOTELS.map(({ name, url }) => (
+              {HOTELS.map(({ name, url, alt }) => (
                 <p key={name}>
-                  <a href={url} rel="noopener noreferrer" target="_blank">
+                  <a className={alt} href={url} rel="noopener noreferrer" target="_blank">
                     {name}
                   </a>
                 </p>
@@ -47,12 +47,8 @@ function Footer() {
             </div>
             <div>
               <h4 className="fw5">Contact</h4>
-              <p>
-                <a>{ADDRESS[0]}</a>
-              </p>
-              <p>
-                <a>{ADDRESS[1]}</a>
-              </p>
+              <p>{ADDRESS[0]}</p>
+              <p>{ADDRESS[1]}</p>
               <p>
                 <a>Contact Form</a>
               </p>

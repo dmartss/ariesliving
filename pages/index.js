@@ -32,11 +32,11 @@ export default function Home() {
         height={2000 / 6}
       />
       <Portfolio
-        title="Our Portfolio"
+        title="Our Collection"
         id="portfolio"
         description="The Aries Living Portfolio consists of select service hotels in Eastern United States concentrated in the Miami Area. Our growth strategy is to increase our footprint with similar style accommodations properties on the East Coast both North and South."
-        width={3000 / 10}
-        height={2000 / 10}
+        width={375}
+        height={234.375}
       />
       <Section
         id="investors"

@@ -39,11 +39,7 @@
   .nav {
     height: unset;
   }
-  .nav .links {
-    font-size: 14px;
-  }
-
-  .nav .links a:nth-child(2) {
-    margin: 0;
+  .links a:not(:first-child) {
+    display: none;
   }
 }

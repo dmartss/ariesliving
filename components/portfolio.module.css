@@ -1,20 +1,23 @@
 .main {
-  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.main p {
+  padding: var(--gap) var(--gap-double);
 }
 
 .images {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: var(--gap) 0;
 }
 
 .card {
   border-radius: 15px;
-  flex: 1;
   display: flex;
+  flex: 33%;
   flex-direction: column;
   transition: box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -26,7 +29,7 @@
   cursor: pointer;
   transition: box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: var(--shadow-hover);
-  background: var(--gradient-2);
+  background: var(--gradient-3);
 }
 
 .card:hover :global(p) {
@@ -46,25 +49,10 @@
 @media screen and (max-width: 960px) {
   .images {
     flex-direction: column;
-    margin: var(--gap) auto auto;
+    margin: auto;
   }
 
-  .card {
-    box-shadow: var(--shadow-hover);
-    background: var(--gradient-3);
-    margin: var(--gap-half) 0;
-  }
   .card p {
     text-decoration: underline;
-  }
-
-  .card :global(p.vp) {
-    color: var(--vp);
-  }
-  .card :global(p.ithaca) {
-    color: var(--ithaca);
-  }
-  .card :global(p.treehouse) {
-    color: var(--treehouse);
   }
 }
