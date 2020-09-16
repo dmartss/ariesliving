@@ -1,23 +1,19 @@
 .main {
   display: flex;
-  flex-wrap: wrap;
-}
-
-.main p {
-  padding: var(--gap) var(--gap-double);
+  flex-direction: column;
 }
 
 .images {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin: var(--gap) 0;
 }
 
 .card {
   border-radius: 15px;
   display: flex;
-  flex: 33%;
+  flex: 1 1 33.33%;
+  margin: 0 var(--gap-half);
   flex-direction: column;
   transition: box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -27,13 +23,8 @@
 }
 .card:hover {
   cursor: pointer;
-  transition: box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: var(--shadow-hover);
   background: var(--gradient-2);
-}
-
-.card:hover :global(p) {
-  text-decoration: underline;
 }
 
 .card:hover :global(p.vp) {
@@ -49,7 +40,6 @@
 @media screen and (max-width: 960px) {
   .images {
     flex-direction: column;
-    margin: auto;
   }
 
   .card p {
