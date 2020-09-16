@@ -8,9 +8,13 @@
 }
 
 .team-member {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
+}
+
+.team-member p {
+  margin: auto auto 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -18,7 +22,6 @@
     font-size: 14px;
   }
   .team-member {
-    margin-top: 2rem;
     flex: 33%;
   }
 }
