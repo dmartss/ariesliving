@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.main .padding {
+  padding: 1rem 10rem 0;
+}
+
 .images {
   display: flex;
   justify-content: center;

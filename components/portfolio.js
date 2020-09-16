@@ -9,7 +9,7 @@ export default function Portfolio({ description, id, title, width, height }) {
     <Container center padding wide role="region" aria-labelledby="portfolio">
       <div className={styles['main']} id={id}>
         <h2 className="lines fp fw4">{title}</h2>
-        <p className="fs f4 fw3">{description}</p>
+        <p className={cn(styles['padding'], 'fs f4 fw3')}>{description}</p>
         <Container padding wide>
           <div className={styles['images']}>
             {HOTELS.map(({ src, alt, name, url }) => (
