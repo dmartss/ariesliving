@@ -46,6 +46,7 @@ const Image = ({
               margin: 0 auto;
               ${width ? `width: ${width}px;` : ''}
               max-width: 100%;
+              background: transparent;
             }
             @media screen and (max-width: 320px) {
               .container {

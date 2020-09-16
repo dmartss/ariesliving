@@ -4,13 +4,23 @@ import Team from 'components/team'
 import LinesGallery from 'components/lines-gallery'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
-import Slider from 'components/slider'
-import { IMAGES } from 'lib/constants'
+import Image from 'components/image'
+import { randomImage } from 'lib/constants'
 
 export default function Home() {
   return (
     <Page title="Home">
-      <Slider slides={IMAGES} autoPlay={3} />
+      <Image
+        shadow
+        layout="responsive"
+        noBorder
+        margin={0}
+        oversize={false}
+        alt="Hero Image"
+        src={randomImage}
+        width={3000 / 2}
+        height={2000 / 2}
+      />
       <Section
         id="about"
         title="About"
