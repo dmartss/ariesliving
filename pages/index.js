@@ -1,33 +1,23 @@
-import Image from 'components/image'
 import Section from 'components/section'
 import Page from 'components/page'
 import Team from 'components/team'
 import LinesGallery from 'components/lines-gallery'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
+import Slider from 'components/slider'
+import { IMAGES } from 'lib/constants'
 
 export default function Home() {
   return (
     <Page title="Home">
-      <Image
-        shadow
-        noBorder
-        margin={0}
-        layout="responsive"
-        className="no-drag"
-        oversize={false}
-        alt="Room 1"
-        src="/showcase/ithaca/entrance/1.jpg"
-        width={3000 / 2}
-        height={2000 / 2}
-      />
+      <Slider slides={IMAGES} autoPlay={3} />
       <Section
         id="about"
         title="About"
         description="Aries Living is a quickly growing independent owner and operator of design forward, select service hotels. We cater to a new type of traveler; those who prefers fresh, modern accommodations delivered with simplicity and independence. It’s our belief that luxury isn’t defined by being expensive, but rather it’s considered."
         reverse={false}
         alt="treehouse"
-        src="/showcase/treehouse/back/1.jpg"
+        src="/showcase/ithaca/rooms/sk/3.jpg"
         width={3000 / 6}
         height={2000 / 6}
       />
