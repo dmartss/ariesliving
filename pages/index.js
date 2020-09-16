@@ -43,8 +43,8 @@ export default function Home() {
         title="Investors"
         description="Aries Living is well positioned for quick, disciplined, growth in the hospitality space and is seeking partners for joint ventures and management contracts in diverse markets and for a wide range of property types. To speak with our team about new opportunities please contact us at info@ariesliving.com or +1 (813) 575-4532"
         reverse={true}
-        alt="ithaca"
-        src="/showcase/ithaca/entrance/1.jpg"
+        alt="Villa Paradiso"
+        src="/showcase/villa-paradiso/rooms/multi-unit/4.jpg"
         width={3000 / 6}
         height={2000 / 6}
       />
