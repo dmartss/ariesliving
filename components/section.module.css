@@ -8,9 +8,6 @@
 .main.reverse {
   flex-direction: row-reverse;
 }
-.main.reverse .content {
-  margin: 0 var(--gap-triple) 0 0;
-}
 
 .content {
   margin: 0 0 0 var(--gap-triple);
@@ -19,8 +16,12 @@
   justify-content: center;
 }
 
+.main.reverse .content {
+  margin: 0 var(--gap-triple) 0 0;
+}
+
 .content > h2 {
-  margin-bottom: var(--gap-double);
+  margin-bottom: var(--gap);
 }
 
 @media screen and (max-width: 960px) {

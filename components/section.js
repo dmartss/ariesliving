@@ -5,7 +5,7 @@ import cn from 'classnames'
 
 export default function Section({ description, id, reverse, title, alt, src, width, height }) {
   return (
-    <Container wide>
+    <Container wide dotBackground={title === 'About'}>
       <Container padding center>
         <div className={cn(styles.main, { [styles.reverse]: reverse })} id={id}>
           <Image className="no-drag" shadow alt={alt} src={src} width={width} height={height} />
