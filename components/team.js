@@ -9,8 +9,8 @@ export default function Team() {
     <Container wide gray>
       <Container center padding>
         <SectionHeader
-          title="Team"
           id="team"
+          title="Team"
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
         <div className={styles['wrapper']}>

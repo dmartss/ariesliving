@@ -3,7 +3,7 @@ import Lines from './icons/lines'
 import Image from './image'
 import styles from './lines-gallery.module.css'
 import cn from 'classnames'
-import { shuffled } from 'lib/constants'
+import { shuffled } from 'lib/images'
 
 const LinesGallery = () => (
   <Container dotBackground wide role="region" aria-labelledby="lines-gallery">

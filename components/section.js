@@ -3,7 +3,16 @@ import Image from './image'
 import styles from './section.module.css'
 import cn from 'classnames'
 
-export default function Section({ description, id, reverse, title, alt, src, width, height }) {
+export default function Section({
+  description,
+  id,
+  reverse = false,
+  title,
+  alt,
+  src,
+  width,
+  height
+}) {
   return (
     <Container wide dotBackground={title === 'About'}>
       <Container padding center>
