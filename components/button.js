@@ -32,25 +32,46 @@ const cachedStyles = css`
     height: 2.81rem;
     line-height: 2.8rem;
     border-radius: var(--radius);
-    background-color: var(--accents-1);
-    box-shadow: 0 4px 14px 0 rgba(0, 154, 148, 0.39);
-    color: white;
+    background-color: var(--black2);
+    box-shadow: var(shadow-medium);
+    color: var(--white);
   }
   .btn.invert:hover {
-    background: var(--accents-1);
-    box-shadow: 0 6px 20px rgba(0, 154, 148, 0.23);
+    background: var(--accents-2);
+    box-shadow: var(--shadow-hover);
   }
   .btn.invert:active {
     background: var(--white);
   }
   .btn.invert.outline {
     background: var(--white);
-    color: #696969;
-    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+    color: var(--black2);
+    box-shadow: var(--shadow-small);
   }
   .btn.invert.outline:hover {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 6px 20px rgba(93, 93, 93, 0.23);
+    box-shadow: var(--shadow-large);
+  }
+
+  .btn.vp.invert:hover {
+    background: var(--vp);
+  }
+  .btn.ithaca.invert.outline:hover {
+    background: var(--white);
+    color: var(--ithaca);
+  }
+  .btn.ithaca.invert:hover {
+    background: var(--ithaca);
+  }
+  .btn.vp.invert.outline:hover {
+    background: var(--white);
+    color: var(--vp);
+  }
+  .btn.treehouse.invert:hover {
+    background: var(--treehouse);
+  }
+  .btn.treehouse.invert.outline:hover {
+    background: var(--white);
+    color: var(--treehouse);
   }
 `
 
