@@ -48,9 +48,9 @@ export default function Home() {
         width={3000 / 6}
         height={2000 / 6}
       />
-      <LinesGallery />
       <Team />
       <Newsletter />
+      <LinesGallery />
     </Page>
   )
 }

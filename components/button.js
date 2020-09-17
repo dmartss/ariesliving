@@ -33,12 +33,13 @@ const cachedStyles = css`
     line-height: 2.8rem;
     border-radius: var(--radius);
     background-color: var(--black2);
-    box-shadow: var(shadow-medium);
+    box-shadow: var(--shadow-small);
     color: var(--white);
   }
   .btn.invert:hover {
     background: var(--accents-2);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-medium);
+    color: var(--black);
   }
   .btn.invert:active {
     background: var(--white);
@@ -49,23 +50,25 @@ const cachedStyles = css`
     box-shadow: var(--shadow-small);
   }
   .btn.invert.outline:hover {
-    box-shadow: var(--shadow-large);
+    box-shadow: var(--shadow-medium);
   }
 
   .btn.vp.invert:hover {
     background: var(--vp);
   }
-  .btn.ithaca.invert.outline:hover {
-    background: var(--white);
-    color: var(--ithaca);
-  }
-  .btn.ithaca.invert:hover {
-    background: var(--ithaca);
-  }
   .btn.vp.invert.outline:hover {
     background: var(--white);
     color: var(--vp);
   }
+
+  .btn.ithaca.invert:hover {
+    background: var(--ithaca);
+  }
+  .btn.ithaca.invert.outline:hover {
+    background: var(--white);
+    color: var(--ithaca);
+  }
+
   .btn.treehouse.invert:hover {
     background: var(--treehouse);
   }
