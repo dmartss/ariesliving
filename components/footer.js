@@ -27,7 +27,7 @@ function Footer() {
                 <a>Contact</a>
               </p>
               <p>
-                <a>Privcy Policy</a>
+                <a>Privacy Policy</a>
               </p>
               <p>
                 <a>Sitemap</a>
