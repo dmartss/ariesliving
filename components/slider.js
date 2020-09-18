@@ -71,7 +71,7 @@ export default function Slider({ slides = [], autoPlay = null }) {
                   oversize={false}
                   alt="Hero Image"
                   width={3000 / 2}
-                  height={2000 / 2}
+                  height={2000 / 2.2}
                 />
               </div>
             ))}
