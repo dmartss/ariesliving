@@ -1,22 +1,20 @@
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.main .padding {
-  padding: 1rem 10rem 0;
 }
 
 .images {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .card {
   border-radius: 15px;
   display: flex;
-  flex: 0 1 33%;
+  flex: 1;
   margin: 0 var(--gap-half);
   flex-direction: column;
   transition: box-shadow 0.2s ease, background 0.2s ease;
@@ -55,21 +53,16 @@
 }
 
 @media screen and (max-width: 960px) {
-  .main .padding {
-    padding: 1rem 5rem 0;
-  }
   .images {
     flex-direction: column;
   }
 
   .buttons {
-    display: inline-flex;
-    justify-content: space-evenly;
-    white-space: nowrap;
+    justify-content: space-between;
+    margin: auto;
   }
-
-  .button-spacer :global(a) {
-    width: unset;
+  .button-spacer {
+    padding: 0.5rem;
   }
 
   .card p {

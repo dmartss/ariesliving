@@ -35,8 +35,9 @@ export default function Home() {
         id={SECTIONS[1].id}
         title={SECTIONS[1].title}
         description={SECTIONS[1].description}
-        width={375}
-        height={234.375}
+        width={3000 / 8}
+        height={2000 / 8}
+        mobileStyle={{ width: 3000 / 6, height: 2000 / 6 }}
       />
       <Section
         id={SECTIONS[2].id}
