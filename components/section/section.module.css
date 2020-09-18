@@ -5,7 +5,7 @@
   margin: var(--gap) 0;
 }
 
-.main.reverse {
+.reverse {
   flex-direction: row-reverse;
 }
 
@@ -16,8 +16,12 @@
   justify-content: center;
 }
 
-.main.reverse .content {
+.reverse .content {
   margin: 0 var(--gap-triple) 0 0;
+}
+
+.content.team {
+  margin: 0 auto;
 }
 
 .content > h2 {
@@ -32,7 +36,7 @@
   }
 
   .content,
-  .main.reverse .content {
+  .reverse .content {
     padding: 0 var(--gap);
     margin: 0;
   }

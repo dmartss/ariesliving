@@ -1,5 +1,5 @@
-import Container from './container'
-import EmailForm from './email-form'
+import Container from '../container'
+import EmailForm from '../email-form'
 import styles from './newsletter.module.css'
 
 export default function Newsletter() {

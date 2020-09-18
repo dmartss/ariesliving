@@ -1,6 +1,6 @@
 import Container from 'components/container'
-import Lines from './icons/lines'
-import Image from './image'
+import { Lines } from '../icons'
+import Image from '../image'
 import styles from './lines-gallery.module.css'
 import cn from 'classnames'
 import { shuffled } from 'lib/images'

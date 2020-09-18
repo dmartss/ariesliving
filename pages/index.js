@@ -1,12 +1,12 @@
-import Section from 'components/section'
-import Page from 'components/page'
-import Team from 'components/team'
 import LinesGallery from 'components/lines-gallery'
+import { randomImage, IMAGES } from 'lib/images'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
-import { randomImage, IMAGES } from 'lib/images'
 import { SECTIONS } from 'lib/constants'
+import Section from 'components/section'
 import Slider from 'components/slider'
+import Page from 'components/page'
+import Team from 'components/team'
 
 export default function Home() {
   return (

@@ -84,10 +84,10 @@ export default function Slider({ slides = [], autoPlay = null }) {
             box-shadow: var(--shadow-hover);
           }
           .slider-content {
+            display: flex;
             transform: translateX(-${translate}px);
             transition: transform ease-out ${transition}s;
             width: ${1500 * slides.length}px;
-            display: flex;
           }
         `}</style>
       </div>

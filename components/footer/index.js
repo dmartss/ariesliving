@@ -1,9 +1,9 @@
-import { memo } from 'react'
 import { ADDRESS, HOTELS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constants'
-import { Facebook, Instagram, Twitter } from './icons'
+import { Facebook, Instagram, Twitter } from '../icons'
 import Container from 'components/container'
 import styles from './footer.module.css'
 import cn from 'classnames'
+import { memo } from 'react'
 
 function Footer() {
   return (
