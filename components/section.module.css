@@ -28,7 +28,6 @@
   .main,
   .main.reverse {
     flex-direction: column;
-    text-align: center;
     margin: 0;
   }
 

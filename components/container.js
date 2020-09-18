@@ -67,7 +67,7 @@ export default function Container({
       // CSS only media query for mobile
       @media screen and (max-width: 640px) {
         div {
-          padding: ${padding ? '4rem' : '0'} ${wide || wideOnMobile ? '0' : '1rem'};
+          padding: ${padding ? '3rem' : '0'} ${wide || wideOnMobile ? '0' : '1rem'};
           ${mobileStyle || ''}
         }
       }

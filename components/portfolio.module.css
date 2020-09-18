@@ -8,13 +8,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .card {
   border-radius: 15px;
   display: flex;
-  flex: 1;
+  flex: 0 1 33%;
   margin: 0 var(--gap-half);
   flex-direction: column;
   transition: box-shadow 0.2s ease, background 0.2s ease;
@@ -31,15 +31,15 @@
 
 .buttons {
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: center;
   white-space: nowrap;
 }
 
 .button-spacer {
-  padding: 1rem 0;
+  padding: var(--gap) var(--gap-three-quarter);
 }
 .button-spacer :global(a) {
-  width: 177.5px;
+  width: 153.66666666666665px;
 }
 
 .card:hover :global(p.vp) {
@@ -55,14 +55,7 @@
 @media screen and (max-width: 960px) {
   .images {
     flex-direction: column;
-  }
-
-  .buttons {
-    justify-content: space-between;
-    margin: auto;
-  }
-  .button-spacer {
-    padding: 0.5rem;
+    padding: 0 var(--gap);
   }
 
   .card p {
