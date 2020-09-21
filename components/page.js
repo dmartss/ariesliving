@@ -1,14 +1,21 @@
-import Head from './head'
+import PageContainer from './page-container'
+import { NAME, PLATFORM_URL, defaultOgImage } from 'lib/constants'
 import Header from './header'
 import Footer from './footer'
 
-export default function Page({ title, sticky, description, image, children }) {
+export default function Page({
+  title,
+  description = NAME,
+  url = PLATFORM_URL,
+  image = defaultOgImage,
+  sticky = undefined,
+  children
+}) {
   return (
-    <>
-      <Head title={title} description={description} image={image} />
+    <PageContainer title={title} description={description} url={url} image={image}>
       <Header sticky={sticky} />
       {children}
       <Footer />
-    </>
+    </PageContainer>
   )
 }
