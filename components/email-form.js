@@ -9,9 +9,10 @@ export default function EmailForm({ flex }) {
                 onsubmit="revFormOnSubmit(); event.preventDefault();">
             <div class=${flex ? 'flex' : ''}>
               <div>
-                <input placeholder="you@domain.com" class=${
+                <input class=${
                   flex ? 'flex' : ''
-                } type="email" name="email" required/>
+                } placeholder="you@domain.com" type="email" name="email" required 
+                 />
               </div>
               <div class="button">
                 <button class=${flex ? 'flex' : ''} type="submit">Subscribe</button>

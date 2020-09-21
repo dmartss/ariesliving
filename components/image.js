@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAmp } from 'next/amp'
 import cn from 'classnames'
 import IObserver from './intersection-observer'
 
@@ -17,6 +18,7 @@ const Image = ({
   ...rest
 }) => {
   const [src, setSrc] = useState(!lazy ? src : undefined)
+  const isAmp = useAmp()
 
   const handleIntersect = entry => {
     if (entry.isIntersecting) {
@@ -30,8 +32,18 @@ const Image = ({
     <IObserver once onIntersect={handleIntersect} rootMargin="20%" disabled={!lazy}>
       <figure className={cn({ oversize: width > 650 && oversize, float: float && width < 520 })}>
         <div className="container">
-          <div style={{ paddingBottom: aspectRatio, ...style }}>
-            {src && <img className={className} src={src || null} alt={rest.alt} />}
+          <div style={isAmp ? undefined : { paddingBottom: aspectRatio, ...style }}>
+            {isAmp ? (
+              <amp-img
+                layout="responsive"
+                src={rest.src}
+                width={width}
+                height={height}
+                alt={rest.alt}
+              />
+            ) : (
+              src && <img className={className} src={src || null} alt={rest.alt} />
+            )}
           </div>
         </div>
 
@@ -46,7 +58,6 @@ const Image = ({
               margin: 0 auto;
               ${width ? `width: ${width}px;` : ''}
               max-width: 100%;
-              background: transparent;
             }
             @media screen and (max-width: 320px) {
               .container {
@@ -58,11 +69,17 @@ const Image = ({
               position: relative;
             }
             figure :global(img) {
+              ${
+                isAmp
+                  ? 'position: inherit;'
+                  : `
               height: 100%;
               left: 0;
               position: absolute;
               top: 0;
               width: 100%;
+              `
+              };
               border-radius: ${noBorder ? '0px' : avatar ? '50%' : 'var(--radius)'};
               ${shadow ? 'box-shadow: var(--shadow-hover)' : ''}
             }
@@ -72,6 +89,11 @@ const Image = ({
                 width: ${width}px;
                 margin: ${margin}px 0 ${margin}px calc(((${width}px - 650px) / 2) * -1);
               }
+              figure.float {
+                  float: ${float};
+                  margin: ${margin}px;
+                  margin-${float}: -150px;
+                }
             }
           `}
         </style>

@@ -78,7 +78,7 @@ const cachedStyles = css`
   }
 `
 
-export default memo(function Button({ children, invert, outline, href, className, ...props }) {
+export default memo(function Button({ children, invert, outline, href, className, amp, ...props }) {
   const cachedClassNames = cn(className, 'btn', 'fw4 no-drag', { outline, invert })
 
   if (href) {
@@ -96,7 +96,7 @@ export default memo(function Button({ children, invert, outline, href, className
       </a>
     )
 
-    return isExternal ? (
+    return amp || isExternal ? (
       a
     ) : (
       <Link href={href} passHref>
