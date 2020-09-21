@@ -78,23 +78,8 @@ const cachedStyles = css`
   }
 `
 
-export default memo(function Button({
-  children,
-  invert,
-  outline,
-  small,
-  href,
-  as,
-  className,
-  loading,
-  ...props
-}) {
-  const cachedClassNames = cn(className, 'btn', 'fw4 no-drag', {
-    outline,
-    invert,
-    small,
-    loading
-  })
+export default memo(function Button({ children, invert, outline, href, className, ...props }) {
+  const cachedClassNames = cn(className, 'btn', 'fw4 no-drag', { outline, invert })
 
   if (href) {
     const isExternal = href && href.startsWith('http')

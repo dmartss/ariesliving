@@ -1,4 +1,5 @@
 import LinesGallery from 'components/lines-gallery'
+import { SkipNavContent } from '@reach/skip-nav'
 import { randomImage, IMAGES } from 'lib/images'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
@@ -11,6 +12,7 @@ import Team from 'components/team'
 export default function Home() {
   return (
     <Page title="Home">
+      <SkipNavContent />
       <Slider slides={IMAGES} autoPlay={5} />
       <Section
         id={SECTIONS[0].id}
