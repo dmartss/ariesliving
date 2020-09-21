@@ -2,7 +2,7 @@
   width: 100%;
   background-image: var(--gradient-1);
   color: var(--white);
-  height: var(--banner-height);
+  height: 75px;
   display: flex;
   align-items: center;
 }
@@ -11,15 +11,14 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 0 var(--gap);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .banner p {
   color: var(--white);
-  margin: 0;
+  margin: 0 2rem;
   transition: color 0.15s ease;
 }
 

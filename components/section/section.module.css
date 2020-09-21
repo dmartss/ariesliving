@@ -10,17 +10,20 @@
 }
 
 .content {
-  margin: 0 0 0 var(--gap-triple);
+  margin: 0 0 0 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: right;
 }
 
 .reverse .content {
-  margin: 0 var(--gap-triple) 0 0;
+  margin: 0 3rem 0 0;
+  text-align: left;
 }
 
 .content.team {
+  text-align: center;
   margin: 0 auto;
 }
 

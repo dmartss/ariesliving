@@ -177,15 +177,6 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             .hide-tablet {
               display: none;
             }
-            p.vp {
-              color: var(--vp);
-            }
-            p.ithaca {
-              color: var(--ithaca);
-            }
-            p.treehouse {
-              color: var(--treehouse);
-            }
           }
           a[role='button'] {
             -webkit-user-select: none;

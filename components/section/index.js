@@ -15,7 +15,7 @@ export default function Section({
   id
 }) {
   return (
-    <Container id={id} wide dotBackground={title === 'About'} divider={title === 'Investors'}>
+    <Container id={id} wide divider={title === 'Investors'}>
       <Container padding center>
         <div className={cn(styles['main'], { [styles.reverse]: reverse })}>
           <Image className="no-drag" shadow alt={alt} src={src} width={width} height={height} />

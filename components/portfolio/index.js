@@ -10,7 +10,7 @@ export default function Portfolio({ description, id, title, width, height }) {
       <div className={styles['main']}>
         <h2 className="lines fp fw4">{title}</h2>
         <Container center padding>
-          <p className={'f-reset fs f4 fw3'}>{description}</p>
+          <p className={'fs fw3'}>{description}</p>
           <div className={styles['images']}>
             {HOTELS.map(({ src, alt, name, url, rezUrl }) => (
               <div className={styles['card']} key={name}>
@@ -18,12 +18,12 @@ export default function Portfolio({ description, id, title, width, height }) {
                 <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
                 <div className={styles['buttons']}>
                   <div className={styles['button-spacer']}>
-                    <Button href={url} className={alt} invert outline>
+                    <Button href={url} invert>
                       Learn More
                     </Button>
                   </div>
                   <div className={styles['button-spacer']}>
-                    <Button href={rezUrl} className={alt} invert>
+                    <Button href={rezUrl} invert outline>
                       Book Now
                     </Button>
                   </div>

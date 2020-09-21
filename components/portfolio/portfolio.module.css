@@ -42,23 +42,13 @@
   width: 153.66666666666665px;
 }
 
-.card:hover :global(p.vp) {
-  color: var(--vp);
-}
-.card:hover :global(p.ithaca) {
-  color: var(--ithaca);
-}
-.card:hover :global(p.treehouse) {
-  color: var(--treehouse);
+.card:hover :global(p) {
+  color: var(--accents-1);
 }
 
 @media screen and (max-width: 960px) {
   .images {
     flex-direction: column;
     padding: 0 var(--gap);
-  }
-
-  .card p {
-    text-decoration: underline;
   }
 }

@@ -1,11 +1,10 @@
-import LinesGallery from 'components/lines-gallery'
 import { SkipNavContent } from '@reach/skip-nav'
-import { randomImage, IMAGES } from 'lib/images'
+import { randomImage } from 'lib/images'
+import Image from 'components/image'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
 import { SECTIONS } from 'lib/constants'
 import Section from 'components/section'
-import Slider from 'components/slider'
 import Page from 'components/page'
 import Team from 'components/team'
 
@@ -13,7 +12,17 @@ export default function Home() {
   return (
     <Page title="Home">
       <SkipNavContent />
-      <Slider slides={IMAGES} autoPlay={5} />
+      <Image
+        src={randomImage[0]}
+        shadow
+        layout="responsive"
+        noBorder
+        margin={0}
+        oversize={false}
+        alt="Hero Image"
+        width={3000 / 2}
+        height={2000 / 2.2}
+      />
       <Section
         id={SECTIONS[0].id}
         title={SECTIONS[0].title}
