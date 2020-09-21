@@ -42,7 +42,6 @@ export default function Home() {
       />
       <Team />
       <Newsletter />
-      <LinesGallery />
     </Page>
   )
 }
