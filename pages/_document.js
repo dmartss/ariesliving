@@ -9,7 +9,7 @@ function AmpWrap({ ampOnly, nonAmp }) {
   return !isAmp && nonAmp
 }
 
-export default class MyDocument extends Document {
+class AriesLiving extends Document {
   render() {
     return (
       <Html lang="en">
@@ -97,3 +97,5 @@ export default class MyDocument extends Document {
     )
   }
 }
+
+export default AriesLiving
