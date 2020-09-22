@@ -5,6 +5,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import styles from './navbar.module.css'
+import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
 
@@ -23,7 +24,10 @@ function Navbar() {
       <nav className={cn(styles['nav'], 'f-reset')}>
         <div className={styles['links']}>
           <Link href="/">
-            <a className={styles['logo']} title="Go to the homepage">
+            <a
+              className={cn(styles['logo'], styleUtils['appear'], styleUtils['appear-first'])}
+              title="Go to the homepage"
+            >
               <Logo />
             </a>
           </Link>
@@ -31,7 +35,9 @@ function Navbar() {
           <div className={styles['not-logo']}>
             <Link href="#about">
               <a
-                className={cn('fp', { [styles.selected]: route.startsWith('/about') })}
+                className={cn('fp', styleUtils['appear'], styleUtils['appear-second'], {
+                  [styles.selected]: route.startsWith('/about')
+                })}
                 title="About"
               >
                 About
@@ -39,7 +45,9 @@ function Navbar() {
             </Link>
             <Link href="#portfolio">
               <a
-                className={cn('fp', { [styles.selected]: route.startsWith('/portfolio') })}
+                className={cn('fp', styleUtils['appear'], styleUtils['appear-third'], {
+                  [styles.selected]: route.startsWith('/portfolio')
+                })}
                 title="Portfolio"
               >
                 Portfolio
@@ -47,7 +55,9 @@ function Navbar() {
             </Link>
             <Link href="#investors">
               <a
-                className={cn('fp', { [styles.selected]: route.startsWith('/investors') })}
+                className={cn('fp', styleUtils['appear'], styleUtils['appear-fourth'], {
+                  [styles.selected]: route.startsWith('/investors')
+                })}
                 title="Investors"
               >
                 Investors
@@ -55,13 +65,19 @@ function Navbar() {
             </Link>
             <Link href="#team">
               <a
-                className={cn('fp', { [styles.selected]: route.startsWith('/team') })}
+                className={cn('fp', styleUtils['appear'], styleUtils['appear-fifth'], {
+                  [styles.selected]: route.startsWith('/team')
+                })}
                 title="Team"
               >
                 Team
               </a>
             </Link>
-            <Hamburger toggle={toggle} open={open} />
+            <Hamburger
+              className={cn('fp', styleUtils['appear'], styleUtils['appear-sixth'])}
+              toggle={toggle}
+              open={open}
+            />
           </div>
         </div>
       </nav>

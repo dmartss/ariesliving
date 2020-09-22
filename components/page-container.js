@@ -33,8 +33,8 @@ export default function PageContainer({
           />
         )}
         {!shouldIndex && <meta name="robots" content="noindex" />}
+        <SocialMeta title={title} description={description} url={url} image={image} />
       </Head>
-      <SocialMeta title={title} description={description} url={url} image={image} />
       {children}
       <GlobalStyles />
     </div>

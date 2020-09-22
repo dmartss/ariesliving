@@ -3,7 +3,7 @@ import cn from 'classnames'
 import styles from './banner.module.css'
 import Container from 'components/container'
 
-const Banner = () => {
+export default function Banner() {
   return (
     <Container wide>
       <div className={styles['banner']}>
@@ -19,5 +19,3 @@ const Banner = () => {
     </Container>
   )
 }
-
-export default Banner

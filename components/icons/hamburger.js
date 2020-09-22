@@ -1,9 +1,15 @@
 import cn from 'classnames'
 import styles from './hamburger.module.css'
 
-export default function Hamburger({ toggle, open }) {
+export default function Hamburger({ toggle, open, className }) {
   return (
-    <div role="button" aria-expanded={open} aria-label="Main Menu" onClick={toggle}>
+    <div
+      role="button"
+      aria-expanded={open}
+      aria-label="Main Menu"
+      onClick={toggle}
+      className={className}
+    >
       <svg
         width="30"
         height="30"
