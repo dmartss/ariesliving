@@ -50,7 +50,7 @@ export default css.global`
     --gradient-4: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
     --gradient-5: linear-gradient(135deg, #b4b6b8, #7f8183);
 
-    /* Typography */
+    --cubic-transition: cubic-bezier(0.4, 0, 0.2, 1);
     --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji,
       Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;

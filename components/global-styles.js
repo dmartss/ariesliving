@@ -1,4 +1,4 @@
-import { FONT_FAMILY_SANS } from 'lib/css-config'
+import { FONT_FAMILY_SANS } from 'lib/constants'
 
 export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
   return (

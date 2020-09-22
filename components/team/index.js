@@ -13,7 +13,7 @@ export default function Team() {
           title="Team"
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
-        <div className={styles['wrapper']}>
+        <div className={styles.wrapper}>
           {TEAM.map(({ name, position, img }) => (
             <div key={name} className={styles['team-member']}>
               <Image avatar shadow width={100} height={100} margin={5} src={img} alt={name} />

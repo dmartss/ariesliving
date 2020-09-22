@@ -21,11 +21,11 @@ function Navbar() {
       <h1 className="visually-hidden" aria-hidden="true">
         Aries Living
       </h1>
-      <nav className={cn(styles['nav'], 'f-reset')}>
-        <div className={styles['links']}>
+      <nav className={cn(styles.nav, 'f-reset')}>
+        <div className={styles.links}>
           <Link href="/">
             <a
-              className={cn(styles['logo'], styleUtils['appear'], styleUtils['appear-first'])}
+              className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'])}
               title="Go to the homepage"
             >
               <Logo />
@@ -34,20 +34,13 @@ function Navbar() {
 
           <div className={styles['not-logo']}>
             <Link href="#about">
-              <a
-                className={cn('fp', styleUtils['appear'], styleUtils['appear-second'], {
-                  [styles.selected]: route.startsWith('/about')
-                })}
-                title="About"
-              >
+              <a className={cn('fp', styleUtils.appear, styleUtils['appear-second'])} title="About">
                 About
               </a>
             </Link>
             <Link href="#portfolio">
               <a
-                className={cn('fp', styleUtils['appear'], styleUtils['appear-third'], {
-                  [styles.selected]: route.startsWith('/portfolio')
-                })}
+                className={cn('fp', styleUtils.appear, styleUtils['appear-third'])}
                 title="Portfolio"
               >
                 Portfolio
@@ -55,26 +48,19 @@ function Navbar() {
             </Link>
             <Link href="#investors">
               <a
-                className={cn('fp', styleUtils['appear'], styleUtils['appear-fourth'], {
-                  [styles.selected]: route.startsWith('/investors')
-                })}
+                className={cn('fp', styleUtils.appear, styleUtils['appear-fourth'])}
                 title="Investors"
               >
                 Investors
               </a>
             </Link>
             <Link href="#team">
-              <a
-                className={cn('fp', styleUtils['appear'], styleUtils['appear-fifth'], {
-                  [styles.selected]: route.startsWith('/team')
-                })}
-                title="Team"
-              >
+              <a className={cn('fp', styleUtils.appear, styleUtils['appear-fifth'])} title="Team">
                 Team
               </a>
             </Link>
             <Hamburger
-              className={cn('fp', styleUtils['appear'], styleUtils['appear-sixth'])}
+              className={cn('fp', styleUtils.appear, styleUtils['appear-sixth'])}
               toggle={toggle}
               open={open}
             />

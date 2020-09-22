@@ -11,12 +11,12 @@ export default function Portfolio({ description, id, title, width, height }) {
         <h2 className="lines fp fw4">{title}</h2>
         <Container center padding>
           <p className={'fs fw3'}>{description}</p>
-          <div className={styles['images']}>
+          <div className={styles.images}>
             {HOTELS.map(({ src, alt, name, url, rezUrl }) => (
-              <div className={styles['card']} key={name}>
+              <div className={styles.card} key={name}>
                 <p className={('f-reset fs f4 fw3', alt)}>{name}</p>
                 <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
-                <div className={styles['buttons']}>
+                <div className={styles.buttons}>
                   <div className={styles['button-spacer']}>
                     <Button href={url} invert>
                       Learn More

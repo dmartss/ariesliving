@@ -9,8 +9,8 @@ function Footer() {
   return (
     <Container wide dark>
       <Container>
-        <footer className={styles['footer']}>
-          <div className={cn(styles['grid'], 'f5')}>
+        <footer className={styles.footer}>
+          <div className={cn(styles.grid, 'f5')}>
             <div>
               <h4 className="fw5">Brands</h4>
               {HOTELS.map(({ name, url, alt }) => (
@@ -54,7 +54,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className={cn(styles['copyright'], 'f6')}>
+          <div className={cn(styles.copyright, 'f6')}>
             <span>
               <a href={FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook />

@@ -49,11 +49,7 @@ const manager = (function makeManager() {
     }
   }
 
-  return {
-    getObserver,
-    observeTarget,
-    unobserveTarget
-  }
+  return { getObserver, observeTarget, unobserveTarget }
 })()
 
 export default manager
