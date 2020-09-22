@@ -10,17 +10,17 @@ export default function Portfolio({ description, id, title, width, height }) {
   const [cardClickable, setCardClickable] = useState(false)
 
   useEffect(() => {
-    if (window.matchMedia('(hover: hover)').matches) {
-      setCardClickable(true)
-    }
+    if (window.matchMedia('(hover: hover)').matches) setCardClickable(true)
   }, [])
 
   return (
     <Container center wide aria-labelledby="portfolio" id={id}>
       <div className={styles['main']}>
         <h2 className="lines fp fw4">{title}</h2>
-        <Container center padding>
-          <p className={'fs fw3'}>{description}</p>
+        <Container>
+          <div className={styles['button-spacer']}>
+            <p className={'fs fw3'}>{description}</p>
+          </div>
           <div className={styles.images}>
             {HOTELS.map(({ src, alt, name, url, rezUrl }) => {
               const card = (

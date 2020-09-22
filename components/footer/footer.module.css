@@ -29,7 +29,7 @@
   padding-right: var(--gap-half);
 }
 .copyright div {
-  margin-top: 0.5rem;
+  margin-top: var(--gap-half);
 }
 .footer h4 {
   margin-bottom: 0.75rem;
@@ -48,7 +48,7 @@
     margin: 0;
   }
 
-  .footer a {
+  .footer p {
     display: block;
     padding-top: 15px;
     padding-bottom: 15px;

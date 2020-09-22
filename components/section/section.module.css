@@ -18,7 +18,7 @@
 }
 
 .reverse .content {
-  margin: 0 3rem 0 0;
+  margin: 0 var(--gap-triple) 0 0;
   text-align: left;
 }
 
@@ -46,5 +46,8 @@
 
   .content > h2 {
     margin-bottom: 0;
+  }
+  .content p {
+    font-size: 16px;
   }
 }

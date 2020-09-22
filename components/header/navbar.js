@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
-import { useRouter } from 'next/router'
 import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
@@ -9,8 +8,14 @@ import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
 
+const LINKS = [
+  { src: 'about', title: 'About', index: 'second' },
+  { src: 'portfolio', title: 'Portfolio', index: 'third' },
+  { src: 'investors', title: 'Investors', index: 'fourth' },
+  { src: 'team', title: 'Team', index: 'fifth' }
+]
+
 function Navbar() {
-  const { route } = useRouter()
   const [open, setOpen] = useState(false)
 
   const toggle = useCallback(() => setOpen(!open), [open])
@@ -33,32 +38,16 @@ function Navbar() {
           </Link>
 
           <div className={styles['not-logo']}>
-            <Link href="#about">
-              <a className={cn('fp', styleUtils.appear, styleUtils['appear-second'])} title="About">
-                About
-              </a>
-            </Link>
-            <Link href="#portfolio">
-              <a
-                className={cn('fp', styleUtils.appear, styleUtils['appear-third'])}
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </Link>
-            <Link href="#investors">
-              <a
-                className={cn('fp', styleUtils.appear, styleUtils['appear-fourth'])}
-                title="Investors"
-              >
-                Investors
-              </a>
-            </Link>
-            <Link href="#team">
-              <a className={cn('fp', styleUtils.appear, styleUtils['appear-fifth'])} title="Team">
-                Team
-              </a>
-            </Link>
+            {LINKS.map(({ src, title, index }) => (
+              <Link href={`#${src}`}>
+                <a
+                  className={cn('fp', styleUtils.appear, styleUtils[`appear-${index}`])}
+                  title={title}
+                >
+                  {title}
+                </a>
+              </Link>
+            ))}
             <Hamburger
               className={cn('fp', styleUtils.appear, styleUtils['appear-sixth'])}
               toggle={toggle}
