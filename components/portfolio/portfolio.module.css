@@ -12,21 +12,27 @@
 }
 
 .card {
+  padding: var(--gap-half);
   border-radius: 15px;
+  flex: 1;
   display: flex;
-  flex: 0 1 33%;
-  margin: 0 var(--gap-half);
   flex-direction: column;
   transition: box-shadow 0.2s ease, background 0.2s ease;
 }
-.card p {
-  text-decoration: none;
-  transition: color 0.5s ease;
+.card.clickable p {
+  transition: color 0.2s ease-in;
 }
-.card:hover {
+
+.card.clickable {
   cursor: pointer;
+}
+.card.clickable:hover {
   box-shadow: var(--shadow-small);
   background: var(--gradient-2);
+}
+
+.card.clickable:hover :global(p) {
+  color: var(--accents-1);
 }
 
 .buttons {
@@ -40,10 +46,6 @@
 }
 .button-spacer :global(a) {
   width: 153.66666666666665px;
-}
-
-.card:hover :global(p) {
-  color: var(--accents-1);
 }
 
 @media screen and (max-width: 960px) {

@@ -81,7 +81,7 @@ const Image = ({
               `
               };
               border-radius: ${noBorder ? '0px' : avatar ? '50%' : 'var(--radius)'};
-              ${shadow ? 'box-shadow: var(--shadow-hover)' : ''}
+              ${shadow ? 'box-shadow: var(--shadow-large)' : ''}
             }
 
             @media (min-width: 1200px) {
