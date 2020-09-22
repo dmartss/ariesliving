@@ -1,6 +1,5 @@
 export { default } from './logo'
+export { default as Hamburger } from './hamburger'
 export { default as Instagram } from './instagram'
 export { default as Facebook } from './facebook'
 export { default as Twitter } from './twitter'
-export { default as Arrow } from './arrow'
-export { default as Lines } from './lines'

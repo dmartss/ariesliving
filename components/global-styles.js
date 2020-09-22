@@ -45,95 +45,90 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             background-color: var(--white);
             color: var(--black);
           }
-
-          [role='grid']:focus {
-            outline: none;
-          }
-
-          .fp {
-            color: var(--black);
-          }
-          .fs {
-            color: var(--accents-9);
-          }
-
-          .lines {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .lines:before,
-          .lines:after {
-            content: '';
-            border-top: 1px solid var(--black);
-            border-color: rgba(0, 0, 0, 0.25);
-            margin: 0 var(--gap) 0 0;
-            flex: 1 0 20px;
-          }
-
-          .lines:after {
-            margin: 0 0 0 var(--gap);
-          }
-
           ::selection {
             background-color: var(--accents-1);
             color: var(--white);
           }
-
+          [role='grid']:focus {
+            outline: none;
+          }
           svg {
             text-rendering: optimizeLegibility;
-            shape-rendering: crispEdges;
           }
-
-          svg path,
-          svg circle {
-            shape-rendering: geometricprecision;
-          }
-
           h1,
           h2,
           h3 {
             margin: 0;
           }
-
           a {
             text-decoration: none;
-            transition: color 0.2s ease;
             color: currentColor;
             transition: color 200ms ease-in-out;
           }
-
           a:hover {
             color: var(--accents-1);
           }
-
-          p:hover a.vp {
-            color: var(--vp);
-          }
-          p:hover a.treehouse {
-            color: var(--treehouse);
-          }
-          p:hover a.ithaca {
-            color: var(--ithaca);
-          }
-
           iframe {
             width: 100%;
             height: 100%;
             border: none;
           }
-
-          img {
-            max-width: 100%;
-            width: auto;
-            margin: auto;
-            display: block;
-          }
-
           .f-reset {
             font-size: 1rem;
+          }
+          .f0 {
+            font-size: 1.802032470703125em;
+          }
+          .f1 {
+            font-size: 1.601806640625em;
+          }
+          .f2 {
+            font-size: 1.423828125em;
+          }
+          .f3 {
+            font-size: 1.265625em;
+          }
+          .f4 {
+            font-size: 1.125em;
+          }
+          .f5 {
+            font-size: 0.8888888888888888em;
+          }
+          .f6 {
+            font-size: 0.7901234567901234em;
+          }
+          .fw1 {
+            font-weight: 100;
+          }
+          .fw2 {
+            font-weight: 200;
+          }
+          .fw3 {
+            font-weight: 300;
+          }
+          .fw4 {
+            font-weight: 400;
+          }
+          .fw5 {
+            font-weight: 500;
+          }
+          .fw6 {
+            font-weight: 600;
+          }
+          .fw7 {
+            font-weight: 700;
+          }
+          .fw8 {
+            font-weight: 800;
+          }
+          .fw9 {
+            font-weight: 900;
+          }
+          .fp {
+            color: var(--black);
+          }
+          .fs {
+            color: var(--accents-9);
           }
           .tc {
             text-align: center;
@@ -185,6 +180,16 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             -khtml-user-select: none;
             user-select: none;
           }
+          .no-tap-highlight,
+          a {
+            -webkit-touch-callout: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+          }
+          .no-tap-callout {
+            -webkit-touch-callout: none;
+          }
           .no-drag {
             user-drag: none;
             user-select: none;
@@ -193,55 +198,74 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             -webkit-user-select: none;
             -ms-user-select: none;
           }
-
-          .fw1 {
-            font-weight: 100;
-          }
-          .fw2 {
-            font-weight: 200;
-          }
-          .fw3 {
-            font-weight: 300;
-          }
-          .fw4 {
-            font-weight: 400;
-          }
-          .fw5 {
-            font-weight: 500;
-          }
-          .fw6 {
-            font-weight: 600;
-          }
-          .fw7 {
-            font-weight: 700;
-          }
-          .fw8 {
-            font-weight: 800;
-          }
-          .fw9 {
-            font-weight: 900;
+          .visually-hidden {
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+            position: absolute;
           }
 
-          .f0 {
-            font-size: 1.802032470703125em;
+          svg {
+            shape-rendering: crispEdges;
           }
-          .f1 {
-            font-size: 1.601806640625em;
+          svg path,
+          svg circle {
+            shape-rendering: geometricprecision;
           }
-          .f2 {
-            font-size: 1.423828125em;
+          [data-reach-skip-link] {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            position: absolute;
           }
-          .f3 {
-            font-size: 1.265625em;
+          [data-reach-skip-link]:focus {
+            padding: 1rem;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: white;
+            z-index: 1;
+            width: auto;
+            height: auto;
+            clip: auto;
           }
-          .f4 {
-            font-size: 1.125em;
+
+          .lines {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
           }
-          .f5 {
-            font-size: 0.8888888888888888em;
+
+          .lines:before,
+          .lines:after {
+            content: '';
+            border-top: 1px solid var(--black);
+            border-color: rgba(0, 0, 0, 0.25);
+            margin: 0 var(--gap) 0 0;
+            flex: 1 0 20px;
           }
-          .f6 {
-            font-size: 0.7901234567901234em;
+
+          .lines:after {
+            margin: 0 0 0 var(--gap);
+          }
+
+          p:hover a.vp {
+            color: var(--vp);
+          }
+          p:hover a.treehouse {
+            color: var(--treehouse);
+          }
+          p:hover a.ithaca {
+            color: var(--ithaca);
           }
         `}
       </style>
