@@ -39,7 +39,7 @@ function Navbar() {
 
           <div className={styles['not-logo']}>
             {LINKS.map(({ src, title, index }) => (
-              <Link href={`#${src}`}>
+              <Link href={`#${src}`} key={src}>
                 <a
                   className={cn('fp', styleUtils.appear, styleUtils[`appear-${index}`])}
                   title={title}
