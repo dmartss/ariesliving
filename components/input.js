@@ -156,7 +156,7 @@ class Input extends Component {
             width: ${width || 'initial'};
             ${maxWidth ? `max-width: ${maxWidth};` : ''};
             background: var(--aries-bg);
-            height: ${height ? `${px(height)}` : 'calc(9 * var(--geist-space));'};
+            height: ${height ? `${px(height)}` : 'calc(9 * var(--gap-quarter));'};
           }
 
           .wrapper.focused {
@@ -190,7 +190,7 @@ class Input extends Component {
             align-items: center;
             display: flex;
             height: 100%;
-            padding: 0 var(--geist-gap-half);
+            padding: 0 var(--gap-three-quarter);
             vertical-align: middle;
           }
 
@@ -267,7 +267,7 @@ class Input extends Component {
             }
 
             .wrapper {
-              height: calc(2 * var(--geist-gap));
+              height: var(--gap-triple);
             }
           }
         `}</style>

@@ -1,10 +1,10 @@
 import { memo, useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
 
-import ClickOutside from './click-outside'
-import Button from './button'
-import Input from './input'
-import Textarea from './textarea'
+import ClickOutside from '../click-outside'
+import Button from '../button'
+import Input from '../input'
+import Textarea from '../textarea'
 import Checkmark from 'components/icons/checkmark'
 import { useFeedback } from './feedback-context'
 import styles from './header-feedback.module.css'
@@ -102,8 +102,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
     e => {
       if (e.keyCode === 27) {
         handleClickOutside()
-        // we still need to make the container's DOM focused programmatically
-        // to keep the current tab position
         if (containerRef.current) containerRef.current.focus()
       } else if (e.key === 'Enter' && e.metaKey) {
         onSubmit(e)
@@ -113,8 +111,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   )
 
   useEffect(() => {
-    // Inputs were hidden if we were showing an error message and
-    // now we hide it
     if (focused && inputFocused.current && errorMessage === null) {
       inputFocused.current.focus({ preventScroll: true })
     }
@@ -150,7 +146,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   useEffect(() => {
     let clearSuccessTimer
     if (success) {
-      // collapse in 5s
       clearSuccessTimer = setTimeout(() => {
         if (!document.hidden) {
           setSuccess(false)
@@ -205,18 +200,14 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
   const handleChange = useCallback(
     e => {
-      if (focused) {
-        setValue(e)
-      }
+      if (focused) setValue(e)
     },
     [focused]
   )
 
   const handleEmailChange = useCallback(
     e => {
-      if (focused) {
-        setEmailValue(e)
-      }
+      if (focused) setEmailValue(e)
     },
     [focused]
   )
@@ -235,23 +226,14 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
     const checkFinalState = () => {
       setTimeout(() => {
         if (isFocusedInside !== lastState) {
-          if (isFocusedInside) {
-            eventListeners.current.focus()
-          } else {
-            eventListeners.current.blur()
-          }
+          if (isFocusedInside) eventListeners.current.focus()
+          else eventListeners.current.blur()
+
           lastState = isFocusedInside
         }
       }, 0)
     }
 
-    // when hitting tab, there might be 2 things happening:
-    //   1. an element inside is focused
-    //   2. an element inside is unfocused
-    // and they can happen in any order inside one tick:
-    //   1 -> needs to stay open (outside -> inside)
-    //   2 -> needs to be closed (inside -> outside)
-    //   2 -> 1 needs to stay open (inside -> inside)
     const focusIn = () => {
       isFocusedInside = true
       checkFinalState()
@@ -261,7 +243,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
       checkFinalState()
     }
 
-    // we add these 2 events manually because react doesn't yet support them as props
     containerRef.current.addEventListener('focusout', blurIn)
     containerRef.current.addEventListener('focusin', focusIn)
     return () => {
@@ -284,7 +265,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
           onClick={onFocus}
           tabIndex={0}
           className={cn(
-            styles['geist-feedback-input'],
+            styles['feedback-input'],
             {
               [styles.focused]: focused || open,
               [styles.error]: errorMessage,
@@ -341,6 +322,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
                 <span>{errorMessage}</span>
                 <Button
                   invert
+                  outline
                   small
                   autoFocus
                   onClick={e => {
@@ -397,7 +379,7 @@ const EmojiSelector = ({ onEmojiSelect, loading }) => {
   }
 
   return (
-    <div className={cn(styles['geist-emoji-selector'], { loading })}>
+    <div className={cn(styles['emoji-selector'], { loading })}>
       {Array.from(EMOJIS.values()).map(emoji => (
         <button
           type="button"

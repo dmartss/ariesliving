@@ -1,4 +1,4 @@
-.geist-feedback-input {
+.feedback-input {
   --open-width: 339px;
   --open-height: 213px;
   --closed-width: 90px;
@@ -14,18 +14,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.geist-feedback-input.email {
+.feedback-input.email {
   --open-height: 277px;
 }
 
-.geist-feedback-input .feedback-wrapper {
+.feedback-input .feedback-wrapper {
   appearance: none;
   background: var(--aries-bg);
   border: 1px solid var(--accents-2);
   display: flex;
   line-height: 1.5;
   font-size: 0.875rem;
-  border-radius: var(--geist-radius);
+  border-radius: 5px;
   font-family: var(--font-sans);
   width: var(--closed-width);
   height: var(--closed-height);
@@ -49,7 +49,7 @@
   }
 }
 
-.geist-feedback-input.focused .feedback-wrapper {
+.feedback-input.focused .feedback-wrapper {
   width: var(--open-width);
   height: var(--open-height);
   border: none;
@@ -59,12 +59,12 @@
   transition: all 0ms ease-in-out, border-radius 0ms step-start, border 100ms ease-in-out;
 }
 
-.geist-feedback-input:focus,
-.geist-feedback-input:active {
+.feedback-input:focus,
+.feedback-input:active {
   outline: 0;
 }
 
-.geist-feedback-input .feedback-wrapper .placeholder {
+.feedback-input .feedback-wrapper .placeholder {
   display: flex;
   position: absolute;
   top: -1px;
@@ -83,7 +83,7 @@
   cursor: text;
 }
 
-.geist-feedback-input.focused .placeholder {
+.feedback-input.focused .placeholder {
   opacity: 0;
   pointer-events: none;
   top: 0px;
@@ -92,8 +92,8 @@
   transition: opacity 0.005s linear;
 }
 
-.geist-feedback-input .input-wrapper {
-  padding: var(--geist-gap-half);
+.feedback-input .input-wrapper {
+  padding: var(--gap-three-quarter);
   opacity: 0;
   transition: opacity 0.2s ease;
   position: relative;
@@ -101,15 +101,15 @@
   text-align: initial;
 }
 
-.geist-feedback-input.focused .input-wrapper {
+.feedback-input.focused .input-wrapper {
   opacity: 1;
 }
 
-.geist-feedback-input .input:not(:last-child) {
-  margin-bottom: var(--geist-gap-half);
+.feedback-input .input:not(:last-child) {
+  margin-bottom: var(--gap-three-quarter);
 }
 
-.geist-feedback-input .input h5 {
+.feedback-input .input h5 {
   margin: 0;
   font-weight: 500;
   font-size: 12px;
@@ -119,47 +119,47 @@
   color: var(--accents-5);
 }
 
-.geist-feedback-input:hover .feedback-wrapper,
-.geist-feedback-input:focus .feedback-wrapper,
-.geist-feedback-input:active .feedback-wrapper {
+.feedback-input:hover .feedback-wrapper,
+.feedback-input:focus .feedback-wrapper,
+.feedback-input:active .feedback-wrapper {
   border-color: var(--aries-fg);
 }
 
-.geist-feedback-input:hover .input > *::placeholder,
-.geist-feedback-input:focus .input > *::placeholder,
-.geist-feedback-input:active .input > *::placeholder {
+.feedback-input:hover .input > *::placeholder,
+.feedback-input:focus .input > *::placeholder,
+.feedback-input:active .input > *::placeholder {
   color: var(--aries-fg);
 }
 
-.geist-feedback-input .input > *::placeholder {
+.feedback-input .input > *::placeholder {
   color: var(--accents-5);
   transition: color 0.2s ease-in-out;
 }
 
-.geist-feedback-input.error textarea,
-.geist-feedback-input.loading textarea,
-.geist-feedback-input.success textarea {
+.feedback-input.error textarea,
+.feedback-input.loading textarea,
+.feedback-input.success textarea {
   pointer-events: none;
 }
 
-.geist-feedback-input.error textarea,
-.geist-feedback-input.success textarea {
+.feedback-input.error textarea,
+.feedback-input.success textarea {
   color: transparent;
   user-select: none;
 }
 
-.geist-feedback-input.loading textarea {
+.feedback-input.loading textarea {
   color: var(--accents-3);
 }
 
-.geist-feedback-input .textarea-wrapper {
+.feedback-input .textarea-wrapper {
   height: var(--closed-height);
   width: var(--closed-width);
   transition: all 150ms ease-in-out, border-radius 150ms step-start;
 }
 
-.geist-feedback-input .error-message,
-.geist-feedback-input .success-message {
+.feedback-input .error-message,
+.feedback-input .success-message {
   z-index: 1001;
   position: absolute;
   left: 0;
@@ -175,39 +175,39 @@
   flex-direction: column;
 }
 
-.geist-feedback-input .success-message p {
+.feedback-input .success-message p {
   line-height: normal;
   margin: 0;
   opacity: 0;
   animation: appear 500ms ease forwards;
 }
 
-.geist-feedback-input .success-message .checkmark {
+.feedback-input .success-message .checkmark {
   opacity: 0;
   animation: appear 200ms 100ms ease forwards;
 }
 
-.geist-feedback-input .success-message p:first-of-type {
-  margin-top: var(--geist-gap-half);
-  margin-bottom: var(--geist-gap-quarter);
+.feedback-input .success-message p:first-of-type {
+  margin-top: var(--gap-three-quarter);
+  margin-bottom: var(--gap-half);
   animation-delay: 300ms;
 }
 
-.geist-feedback-input .success-message p:nth-of-type(2) {
+.feedback-input .success-message p:nth-of-type(2) {
   animation-delay: 500ms;
 }
 
-.geist-feedback-input .error-message > span {
+.feedback-input .error-message > span {
   color: var(--aries-error);
-  margin-bottom: var(--geist-gap-half);
+  margin-bottom: var(--gap-three-quarter);
 }
 
-.geist-feedback-input .error-message a {
+.feedback-input .error-message a {
   color: var(--aries-fg);
   text-decoration: none;
 }
 
-.geist-feedback-input .controls {
+.feedback-input .controls {
   pointer-events: none;
   width: var(--open-width);
   height: 64px;
@@ -218,21 +218,21 @@
   border-bottom-right-radius: 5px;
   background: var(--accents-1);
   border-top: 1px solid var(--accents-2);
-  padding: var(--geist-gap-half);
+  padding: var(--gap-three-quarter);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-.geist-feedback-input.focused .controls {
+.feedback-input.focused .controls {
   pointer-events: inherit;
   opacity: 1;
 }
 
-.geist-feedback-input .controls .emojis {
+.feedback-input .controls .emojis {
   width: 160px;
 }
 
-.geist-feedback-input .controls .buttons {
+.feedback-input .controls .buttons {
   flex: 1;
   text-align: right;
   transition: opacity 200ms ease;
@@ -250,30 +250,30 @@
 
 /* At 951px the dots menu disappears and changes the width */
 @media (max-width: 951px) {
-  .geist-feedback-input {
+  .feedback-input {
     --open-width: 300px;
   }
 }
 
 /* Emoji selector */
-.geist-emoji-selector {
+.emoji-selector {
   display: flex;
   width: 210px;
   pointer-events: none;
 }
 
-.geist-emoji-selector.loading {
+.emoji-selector.loading {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   cursor: default;
   pointer-events: none;
 }
 
-.geist-feedback-input.focused .geist-emoji-selector {
+.feedback-input.focused .emoji-selector {
   pointer-events: all;
 }
 
-.geist-emoji-selector > button {
+.emoji-selector > button {
   outline: none;
   background: transparent;
   border: 0;
@@ -284,45 +284,45 @@
   border: 1px solid var(--accents-2);
 }
 
-.geist-emoji-selector > .option.active {
+.emoji-selector > .option.active {
   transform: scale(1.12);
   border-color: var(--aries-warning);
 }
 
-.geist-emoji-selector > button:hover,
-.geist-emoji-selector > button:focus {
+.emoji-selector > button:hover,
+.emoji-selector > button:focus {
   background: var(--aries-bg);
   transform: scale(1.08);
 }
 
-.geist-emoji-selector > button,
-.geist-emoji-selector > button .inner {
+.emoji-selector > button,
+.emoji-selector > button .inner {
   display: inline-flex;
 }
 
-.geist-emoji-selector > button {
+.emoji-selector > button {
   cursor: pointer;
   text-align: center;
 }
 
-.geist-emoji-selector button + button {
-  margin-left: var(--geist-gap-quarter);
+.emoji-selector button + button {
+  margin-left: var(--gap-half);
 }
 
-.geist-emoji-selector.loading > button {
+.emoji-selector.loading > button {
   cursor: default;
 }
 
-.geist-emoji-selector > button:first-child {
+.emoji-selector > button:first-child {
   outline: none;
   pointer-events: all;
 }
 
-.geist-emoji-selector.loading > button:first-child {
+.emoji-selector.loading > button:first-child {
   outline: none;
 }
 
-.geist-emoji-selector > button .inner {
+.emoji-selector > button .inner {
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -331,6 +331,6 @@
   align-items: center;
 }
 
-.geist-emoji-selector > button.option {
+.emoji-selector > button.option {
   transition: all 200ms cubic-bezier(0.5, -1, 0.5, 2);
 }

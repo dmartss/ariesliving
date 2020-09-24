@@ -1,5 +1,5 @@
 import { SkipNavContent } from '@reach/skip-nav'
-import FeedbackContext from 'components/feedback-context'
+import FeedbackContext from 'components/header-feedback/feedback-context'
 import { randomImage } from 'lib/images'
 import Image from 'components/image'
 import Newsletter from 'components/newsletter'

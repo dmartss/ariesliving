@@ -8,13 +8,13 @@ import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/header-feedback'
-import FeedbackContext from 'components/feedback-context'
+import FeedbackContext from 'components/header-feedback/feedback-context'
 
 const LINKS = [
-  { src: 'about', title: 'About', index: 'second' },
-  { src: 'portfolio', title: 'Portfolio', index: 'third' },
-  { src: 'investors', title: 'Investors', index: 'fourth' },
-  { src: 'team', title: 'Team', index: 'fifth' }
+  { src: 'about', title: 'About', index: 'third' },
+  { src: 'portfolio', title: 'Portfolio', index: 'fourth' },
+  { src: 'investors', title: 'Investors', index: 'fifth' },
+  { src: 'team', title: 'Team', index: 'sixth' }
 ]
 
 function Navbar() {
@@ -45,7 +45,7 @@ function Navbar() {
               className={cn(
                 styles['header-feedback'],
                 styleUtils.appear,
-                styleUtils['appear-first']
+                styleUtils['appear-second']
               )}
             >
               <HeaderFeedback email />
@@ -66,7 +66,7 @@ function Navbar() {
               </Link>
             ))}
             <Hamburger
-              className={cn('fp', styleUtils.appear, styleUtils['appear-sixth'])}
+              className={cn('fp', styleUtils.appear, styleUtils['appear-seventh'])}
               toggle={toggle}
               open={open}
             />
