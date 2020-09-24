@@ -310,7 +310,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
                     onChange={handleChange}
                     aria-label="Feedback input"
                     disabled={loading === true || errorMessage != null}
-                    // Disable the Grammarly extension on this textarea
                     data-gramm-editor="false"
                   />
                 </div>

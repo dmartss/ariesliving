@@ -40,21 +40,20 @@ function Navbar() {
               <Logo />
             </a>
           </Link>
-          {!isAmp && feedback ? (
-            <div
-              className={cn(
-                styles['header-feedback'],
-                styleUtils.appear,
-                styleUtils['appear-second']
-              )}
-            >
-              <HeaderFeedback email />
-            </div>
-          ) : (
-            <div className={styles['no-feedback']} />
-          )}
 
           <div className={styles['not-logo']}>
+            {!isAmp && feedback ? (
+              <div
+                className={cn(
+                  styles['header-feedback'],
+                  styleUtils.appear,
+                  styleUtils['appear-second']
+                )}
+              >
+                <HeaderFeedback email />
+              </div>
+            ) : null}
+
             {LINKS.map(({ src, title, index }) => (
               <Link href={`#${src}`} key={src}>
                 <a
