@@ -1,36 +1,39 @@
 import fetch from 'node-fetch'
 import { SENDGRID_API } from 'lib/constants'
 
+const sendEmail = async ({ note, email, emotion }) => {
+  await fetch(SENDGRID_API, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SENDGRID_API_KEY}`
+    },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [
+            {
+              email: 'dan@ariesliving.com'
+            }
+          ],
+          subject: `New Website Email From ${email}`
+        }
+      ],
+      from: { email: 'website@ariesliving.com', name: email },
+      content: [
+        {
+          type: 'text/html',
+          value: `Note: ${note} ${emotion ?? ''}`
+        }
+      ]
+    })
+  })
+}
+
 export default async (req, res) => {
   if (req.method === 'POST') {
     const { note, email, emotion } = req.body
-    await fetch(SENDGRID_API, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SENDGRID_API_KEY}`
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [
-              {
-                email: 'dan@ariesliving.com',
-                name: 'Aries Living'
-              }
-            ],
-            subject: 'Aries Living Website Email'
-          }
-        ],
-        from: { email, name: 'Test' },
-        content: [
-          {
-            type: 'text/html',
-            value: `Note: ${note}, Reaction: ${emotion}`
-          }
-        ]
-      })
-    })
+    await sendEmail({ note, email, emotion })
 
     return res.status(200).end()
   }
