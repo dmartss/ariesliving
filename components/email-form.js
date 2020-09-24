@@ -60,7 +60,7 @@ export default function EmailForm({ flex }) {
           }
 
           form.email input.flex {
-            color: var(--white);
+            color: var(--aries-bg);
           }
 
           form.email input::placeholder {
@@ -80,7 +80,7 @@ export default function EmailForm({ flex }) {
           }
 
           form.email input.flex:focus {
-            border-color: var(--white);;
+            border-color: var(--aries-bg);;
           }
 
           form.email input:disabled {
