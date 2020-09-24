@@ -17,7 +17,7 @@
   color: inherit;
 }
 .footer a:hover {
-  color: var(--accents-1);
+  color: var(--aries-1);
 }
 .copyright {
   margin-top: var(--gap);

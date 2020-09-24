@@ -32,7 +32,7 @@
 }
 
 .card.clickable:hover :global(p) {
-  color: var(--accents-1);
+  color: var(--aries-1);
 }
 
 .buttons {

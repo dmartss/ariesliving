@@ -8,7 +8,7 @@
 .line {
   fill: none;
   stroke-width: 4;
-  stroke: var(--black);
+  stroke: var(--aries-fg);
   transition: stroke-dasharray 600ms var(--cubic-transition),
     stroke-dashoffset 600ms var(--cubic-transition), stroke 1200ms var(--cubic-transition);
 }
@@ -20,7 +20,7 @@
   stroke-dasharray: 60 60;
 }
 .opened .line {
-  stroke: var(--accents-1);
+  stroke: var(--aries-1);
 }
 .opened .line1,
 .opened .line3 {

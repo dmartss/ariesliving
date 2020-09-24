@@ -40,7 +40,7 @@ export default function EmailForm({ flex }) {
             align-items: center;
             justify-content: space-between;
           }
-          
+
           input {
             background-color: transparent;
             box-sizing: border-box;
@@ -54,15 +54,15 @@ export default function EmailForm({ flex }) {
             line-height: 27px;
             width: 100%;
             box-shadow: none;
-            color: var(--black);
-            border: 1px solid var(--accents-5);
+            color: var(--aries-fg);
+            border: 1px solid var(--accents-3);
             border-radius: var(--radius);
           }
 
           input.flex {
-            color: var(--white);
+            color: var(--aries-bg);
           }
-          
+
           input::placeholder {
             color: #999;
             transition: color 100ms ease-in;
@@ -76,11 +76,11 @@ export default function EmailForm({ flex }) {
             outline: none;
             background: none;
             transition: border-color 100ms ease-in;
-            border-color: var(--accents-8);
+            border-color: var(--accents-7);
           }
 
           input.flex:focus {
-            border-color: var(--white);;
+            border-color: var(--aries-bg);;
           }
 
           input:disabled {
@@ -101,9 +101,9 @@ export default function EmailForm({ flex }) {
             padding: var(--gap-quarter) var(--gap-half);
             margin: calc(-1 * var(--gap-quarter)) calc(-1 * var(--gap-half));
             border-radius: var(--radius);
-            color: var(--accents-1);
-            background-color: var(--black);
-            border: 1px solid var(--black);
+            color: var(--aries-1);
+            background-color: var(--aries-fg);
+            border: 1px solid var(--aries-fg);
             font-size: inherit;
             line-height: inherit;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -111,12 +111,12 @@ export default function EmailForm({ flex }) {
             height: 45px;
             margin: 10px 0;
             width: 100%;
-            color: var(--white);
+            color: var(--aries-bg);
           }
 
           button.flex {
-            background-color: var(--accents-1);
-            color: var(--black);
+            background-color: var(--aries-1);
+            color: var(--aries-fg);
             width: 175px;
           }
 
@@ -124,14 +124,14 @@ export default function EmailForm({ flex }) {
           button:hover {
             background-color: transparent;
             outline: none;
-            border-color: var(--black);
-            color: var(--black);
+            border-color: var(--aries-fg);
+            color: var(--aries-fg);
           }
 
           button.flex:focus,
           button.flex:hover {
-            border-color: var(--accents-1);
-            color: var(--accents-1);
+            border-color: var(--aries-1);
+            color: var(--aries-1);
           }
 
           @media (max-width: 640px) {

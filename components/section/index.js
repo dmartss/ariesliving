@@ -5,8 +5,8 @@ import cn from 'classnames'
 import SectionHeader from './section-header'
 
 export default function Section({
-  description,
   reverse = false,
+  description,
   height,
   width,
   title,

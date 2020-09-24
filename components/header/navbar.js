@@ -1,12 +1,14 @@
-import { useState, useCallback } from 'react'
+import { memo, useContext, useState, useCallback } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
-import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
+import { useAmp } from 'next/amp'
 import styles from './navbar.module.css'
 import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
+import HeaderFeedback from 'components/header-feedback'
+import FeedbackContext from 'components/feedback-context'
 
 const LINKS = [
   { src: 'about', title: 'About', index: 'second' },
@@ -16,6 +18,8 @@ const LINKS = [
 ]
 
 function Navbar() {
+  const isAmp = useAmp()
+  const feedback = useContext(FeedbackContext)
   const [open, setOpen] = useState(false)
 
   const toggle = useCallback(() => setOpen(!open), [open])
@@ -36,6 +40,19 @@ function Navbar() {
               <Logo />
             </a>
           </Link>
+          {!isAmp && feedback ? (
+            <div
+              className={cn(
+                styles['header-feedback'],
+                styleUtils.appear,
+                styleUtils['appear-first']
+              )}
+            >
+              <HeaderFeedback email />
+            </div>
+          ) : (
+            <div className={styles['no-feedback']} />
+          )}
 
           <div className={styles['not-logo']}>
             {LINKS.map(({ src, title, index }) => (

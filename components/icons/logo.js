@@ -8,7 +8,7 @@ export default function Logo({ className, color }) {
     >
       <g
         transform="translate(-300,1300) scale(0.1,-0.1)"
-        fill={color ?? 'var(--black)'}
+        fill={color ?? 'var(--aries-fg)'}
         stroke="none"
       >
         <path

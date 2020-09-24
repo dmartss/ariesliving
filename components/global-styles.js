@@ -42,12 +42,12 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
 
           html,
           body {
-            background-color: var(--white);
-            color: var(--black);
+            background-color: var(--aries-bg);
+            color: var(--aries-fg);
           }
           ::selection {
-            background-color: var(--accents-1);
-            color: var(--white);
+            background-color: var(--aries-1);
+            color: var(--aries-bg);
           }
           [role='grid']:focus {
             outline: none;
@@ -66,7 +66,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             transition: color 200ms ease-in-out;
           }
           a:hover {
-            color: var(--accents-1);
+            color: var(--aries-1);
           }
           iframe {
             width: 100%;
@@ -125,7 +125,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             font-weight: 900;
           }
           .fp {
-            color: var(--black);
+            color: var(--aries-fg);
           }
           .fs {
             color: var(--accents-9);
@@ -248,7 +248,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           .lines:before,
           .lines:after {
             content: '';
-            border-top: 1px solid var(--black);
+            border-top: 1px solid var(--aries-fg);
             border-color: rgba(0, 0, 0, 0.25);
             margin: 0 var(--gap) 0 0;
             flex: 1 0 20px;
@@ -259,7 +259,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           }
 
           p:hover a.vp {
-            color: var(--vp);
+            color: var(--aries-vp);
           }
           p:hover a.treehouse {
             color: var(--treehouse);

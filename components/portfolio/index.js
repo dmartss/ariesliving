@@ -29,25 +29,29 @@ export default function Portfolio({ description, id, title, width, height }) {
                   <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
                   <div className={styles.buttons}>
                     <div className={styles['button-spacer']}>
-                      <Button href={url} invert>
+                      <Button href={url} invert target="_blank" rel="noopener noreferrer">
                         Learn More
                       </Button>
                     </div>
                     <div className={styles['button-spacer']}>
-                      <Button href={rezUrl} invert outline>
+                      <Button
+                        href={rezUrl}
+                        invert
+                        outline
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Book Now
                       </Button>
                     </div>
                   </div>
                 </div>
               )
-              return cardClickable ? (
-                <a key={name} href={url} target="_blank" rel="noopener noreferrer">
-                  {card}
-                </a>
-              ) : (
-                card
-              )
+              return cardClickable
+                ? // <a key={name} href={url} target="_blank" rel="noopener noreferrer">
+                  card
+                : // </a>
+                  card
             })}
           </div>
         </Container>
