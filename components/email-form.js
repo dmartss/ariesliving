@@ -5,9 +5,9 @@ export default function EmailForm({ flex }) {
       dangerouslySetInnerHTML={{
         __html: `
           <script type="text/javascript" src="//contact-api.inguest.com/bundles/revinatecontactapi/js/revinate-form.js?v=1"></script>
-          <form id="revinate_contact_api_form" token="${token}"
+          <form class="email" id="revinate_contact_api_form" token="${token}"
                 onsubmit="revFormOnSubmit(); event.preventDefault();">
-            <div class=${flex ? 'flex' : ''}>
+            <div class=${flex ? 'flex' : 'div'}>
               <div>
                 <input placeholder="you@domain.com" class=${
                   flex ? 'flex' : ''
@@ -19,13 +19,13 @@ export default function EmailForm({ flex }) {
             </div>
 
           <style scoped>
-          form {
+          form.email {
             display: inline-block;
             position: relative;
             max-width: 100%;
           }
 
-          form div {
+          form.email div {
             width: 240px;
             max-width: 100%;
             text-align: center;
@@ -33,7 +33,7 @@ export default function EmailForm({ flex }) {
             transition: border-bottom-color 100ms ease-in, color 100ms ease-in;
           }
 
-          form div.flex {
+          form.email div.flex {
             display: flex;
             flex-direction: row;
             width: 490px;
@@ -41,7 +41,7 @@ export default function EmailForm({ flex }) {
             justify-content: space-between;
           }
 
-          input {
+          form.email input {
             background-color: transparent;
             box-sizing: border-box;
             display: block;
@@ -59,39 +59,39 @@ export default function EmailForm({ flex }) {
             border-radius: var(--radius);
           }
 
-          input.flex {
-            color: var(--aries-bg);
+          form.email input.flex {
+            color: var(--white);
           }
 
-          input::placeholder {
+          form.email input::placeholder {
             color: #999;
             transition: color 100ms ease-in;
           }
 
-          input:focus::placeholder {
+          form.email input:focus::placeholder {
             color: #999;
           }
 
-          input:focus {
+          form.email input:focus {
             outline: none;
             background: none;
             transition: border-color 100ms ease-in;
             border-color: var(--accents-7);
           }
 
-          input.flex:focus {
-            border-color: var(--aries-bg);;
+          form.email input.flex:focus {
+            border-color: var(--white);;
           }
 
-          input:disabled {
+          form.email input:disabled {
             color: #666;
           }
 
-          input::-ms-clear {
+          form.email input::-ms-clear {
             display: none;
           }
 
-          button {
+           form.email button {
             position: relative;
             display: inline-flex;
             align-items: center;
@@ -111,31 +111,31 @@ export default function EmailForm({ flex }) {
             height: 45px;
             margin: 10px 0;
             width: 100%;
-            color: var(--aries-bg);
+            color: var(--white);
           }
 
-          button.flex {
+          form.email button.flex {
             background-color: var(--aries-1);
             color: var(--aries-fg);
             width: 175px;
           }
 
-          button:focus,
-          button:hover {
+          form.email button:focus,
+          form.email button:hover {
             background-color: transparent;
             outline: none;
             border-color: var(--aries-fg);
             color: var(--aries-fg);
           }
 
-          button.flex:focus,
-          button.flex:hover {
+          form.email button.flex:focus,
+          form.email button.flex:hover {
             border-color: var(--aries-1);
             color: var(--aries-1);
           }
 
           @media (max-width: 640px) {
-            form > div.flex {
+            form.email div.flex {
               display: flex;
               flex-direction: column;
               width: 80vw;

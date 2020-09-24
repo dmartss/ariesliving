@@ -14,8 +14,15 @@
   z-index: 1;
 }
 
+.logo {
+  display: flex;
+  margin-right: auto;
+}
+
 .header-feedback {
   display: inline-flex;
+  margin: var(--gap);
+  z-index: 1001;
 }
 
 .no-feedback {
@@ -23,13 +30,8 @@
   width: 90px;
 }
 
-.logo {
-  display: flex;
-  margin-right: auto;
-}
-
 .not-logo a {
-  margin: var(--gap-double);
+  margin: 1.5rem;
 }
 
 .not-logo {

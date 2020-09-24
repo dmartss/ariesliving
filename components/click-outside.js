@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 function isInDOM(obj) {
   return Boolean(obj.closest('body'))
@@ -9,12 +10,20 @@ function hasParent(element, root) {
 }
 
 export default class ClickOutside extends Component {
+  static propTypes = {
+    active: PropTypes.bool,
+    onClick: PropTypes.func,
+    render: PropTypes.func
+  }
+
   static defaultProps = {
     active: true
   }
 
   constructor(props) {
     super(props)
+    this.handleRef = this.handleRef.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -43,11 +52,11 @@ export default class ClickOutside extends Component {
     }
   }
 
-  handleRef = element => {
+  handleRef(element) {
     this.element = element
   }
 
-  handleClick = event => {
+  handleClick(event) {
     if (!hasParent(event.target, this.element)) {
       if (typeof this.props.onClick === 'function') {
         this.props.onClick(event)

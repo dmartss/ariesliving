@@ -1,8 +1,38 @@
+// From Vercel styleguide
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 import cn from 'classnames'
 import px from 'lib/to-pixels'
 
 class Input extends Component {
+  static propTypes = {
+    autoFocus: PropTypes.bool,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    errored: PropTypes.bool,
+    icon: PropTypes.node,
+    iconRight: PropTypes.node,
+    innerRef: PropTypes.func,
+    maxLength: PropTypes.number,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onKeyDown: PropTypes.func,
+    onInput: PropTypes.func,
+    onFocus: PropTypes.func,
+    onPaste: PropTypes.func,
+    placeholder: PropTypes.string,
+    typeName: PropTypes.string,
+    value: PropTypes.any,
+    defaultValue: PropTypes.string,
+    border: PropTypes.bool,
+    margin: PropTypes.string,
+    max: PropTypes.number,
+    min: PropTypes.number,
+    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    height: PropTypes.number,
+    title: PropTypes.string
+  }
+
   state = {
     focused: this.props.autoFocus
   }
@@ -120,7 +150,7 @@ class Input extends Component {
             align-items: center;
             ${border ? 'border-radius: 5px;' : ''}
             ${border ? `border: 1px solid var(--accents-2);` : 'border: 1px solid transparent;'}
-                display: inline-flex;
+            display: inline-flex;
             position: relative;
             transition: border 0.2s ease, color 0.2s ease;
             width: ${width || 'initial'};

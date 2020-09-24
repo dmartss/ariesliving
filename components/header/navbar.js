@@ -19,8 +19,8 @@ const LINKS = [
 
 function Navbar() {
   const isAmp = useAmp()
-  const feedback = useContext(FeedbackContext)
   const [open, setOpen] = useState(false)
+  const feedback = useContext(FeedbackContext)
 
   const toggle = useCallback(() => setOpen(!open), [open])
 

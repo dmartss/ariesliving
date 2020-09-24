@@ -372,7 +372,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
                   />
                 </span>
                 <span className={cn(styles.buttons, { [styles.hidden]: emojiShown })}>
-                  <Button type="submit" invert small loading={loading} width={60}>
+                  <Button type="submit" invert outline small loading={loading} width={60}>
                     Send
                   </Button>
                 </span>
