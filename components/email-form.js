@@ -111,7 +111,7 @@ export default function EmailForm({ flex }) {
             height: 45px;
             margin: 10px 0;
             width: 100%;
-            color: var(--white);
+            color: var(--aries-bg);
           }
 
           form.email button.flex {
