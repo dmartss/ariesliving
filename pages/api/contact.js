@@ -3,7 +3,7 @@ import { SENDGRID_API } from 'lib/constants'
 
 export default async (req, res) => {
   if (req.method === 'POST') {
-    const { note, email } = req.body
+    const { note, email, emotion } = req.body
     await fetch(SENDGRID_API, {
       method: 'POST',
       headers: {
@@ -26,7 +26,7 @@ export default async (req, res) => {
         content: [
           {
             type: 'text/html',
-            value: `Note: ${note}, Emotion: ${emotion}`
+            value: `Note: ${note}, Reaction: ${emotion}`
           }
         ]
       })
