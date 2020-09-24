@@ -59,15 +59,15 @@ const cachedStyles = css`
   .btn.small {
     font-size: 0.875rem;
     height: 1.5rem;
-    padding: 0 0.75rem;
+    padding: 0 var(--gap-three-quarter);
     line-height: inherit;
     border-radius: 5px;
   }
   .btn.loading {
-    background: #fafafa;
-    color: #888888;
+    background: var(--accents-1);
+    color: var(--accents-4);
     border: 1px solid #000;
-    border-color: #eaeaea;
+    border-color: var(--accents-2);
     box-shadow: none;
     cursor: default;
     pointer-events: none;

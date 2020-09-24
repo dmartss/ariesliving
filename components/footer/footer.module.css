@@ -32,11 +32,11 @@
   margin-top: var(--gap-half);
 }
 .footer h4 {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--gap-three-quarter);
 }
 .footer p {
   margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--gap-quarter);
 }
 @media screen and (max-width: 800px) {
   .grid {

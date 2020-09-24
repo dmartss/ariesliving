@@ -25,7 +25,7 @@ export default function Container({
       {
         width: 100%;
         margin: 0 auto;
-        padding: ${padding ? '2rem' : '0'} ${wide ? '0' : '1rem'};
+        padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
         ${gradient ? 'background: var(--gradient-3)' : ''};
         ${boxShadow ? 'box-shadow: var(--shadow-medium)' : ''};
         ${wide && !small ? '' : 'max-width: 1024px;'}
@@ -60,14 +60,14 @@ export default function Container({
       // CSS only media query for tablet
       @media screen and (max-width: 960px) {
         div {
-          padding: ${padding ? '4rem' : '0'} ${wide || wideOnMobile ? '0' : '2rem'};
+          padding: ${padding ? 'var(--gap-four)' : '0'} ${wide || wideOnMobile ? '0' : 'var(--gap-double)'};
           ${wideOnMobile && !overflow ? 'overflow: hidden;' : ''}
         }
       }
       // CSS only media query for mobile
       @media screen and (max-width: 640px) {
         div {
-          padding: ${padding ? '3rem' : '0'} ${wide || wideOnMobile ? '0' : '1rem'};
+          padding: ${padding ? 'var(--gap-triple)' : '0'} ${wide || wideOnMobile ? '0' : 'var(--gap'};
           ${mobileStyle || ''}
         }
       }
