@@ -21,8 +21,8 @@ export default function Home() {
           layout="responsive"
           oversize={false}
           alt="Hero Image"
-          width={3000 / 2.5}
-          height={2000 / 2.5}
+          width={3000 / 2.75}
+          height={2000 / 2.75}
         />
         <Section
           id={SECTIONS.about.id}

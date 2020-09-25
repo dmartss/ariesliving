@@ -11,11 +11,11 @@ Router.events.on('routeChangeComplete', url => {
 })
 
 export default function PageContainer({
-  title,
-  description,
   url,
   image,
+  title,
   children,
+  description,
   shouldIndex = true
 }) {
   return (
@@ -33,8 +33,8 @@ export default function PageContainer({
           />
         )}
         {!shouldIndex && <meta name="robots" content="noindex" />}
-        <SocialMeta title={title} description={description} url={url} image={image} />
       </Head>
+      <SocialMeta title={title} description={description} url={url} image={image} />
       {children}
       <GlobalStyles />
     </div>
