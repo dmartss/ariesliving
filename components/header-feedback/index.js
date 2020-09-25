@@ -1,6 +1,7 @@
-import { memo, useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
 
+import EmojiSelector from './emoji-selector'
 import ClickOutside from '../click-outside'
 import Button from '../button'
 import Input from '../input'
@@ -36,6 +37,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   const [emailValue, setEmailValue] = useState(null)
   const [inputFocused, setInputFocused] = useState(null)
   const [value, setValue] = useState(null)
+
   const textAreaRef = useRef()
   const emailInputRef = useRef()
   const containerRef = useRef()
@@ -60,7 +62,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   }, [onErrorDismiss, onSuccessDismiss])
 
   const onSubmit = useCallback(
-    event => {
+    async event => {
       event.preventDefault()
       containerRef.current.focus()
 
@@ -75,7 +77,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
       setLoading(true)
 
-      fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -85,15 +87,16 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
           label: feedback.label
         })
       })
-        .then(() => {
-          setLoading(false)
-          setSuccess(true)
-          setValue('')
-        })
-        .catch(err => {
-          setLoading(false)
-          setErrorMessage(err?.message || 'An error ocurred. Try again in a few minutes.')
-        })
+      const text = await res.text()
+
+      if (res.status === 200) {
+        setLoading(false)
+        setSuccess(true)
+        setValue('')
+      } else {
+        setLoading(false)
+        setErrorMessage(text || 'An error ocurred. Try again in a few minutes.')
+      }
     },
     [emoji, value, emailValue, feedback.label]
   )
@@ -103,9 +106,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
       if (e.keyCode === 27) {
         handleClickOutside()
         if (containerRef.current) containerRef.current.focus()
-      } else if (e.key === 'Enter' && e.metaKey) {
-        onSubmit(e)
-      }
+      } else if (e.key === 'Enter' && e.metaKey) onSubmit(e)
     },
     [handleClickOutside, onSubmit]
   )
@@ -118,19 +119,14 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
   useEffect(() => {
     if (focused) {
-      if (textAreaRef && textAreaRef.current) {
-        textAreaRef.current.value = value
-      }
+      if (textAreaRef && textAreaRef.current) textAreaRef.current.value = value
 
-      if (emailInputRef && emailInputRef.current) {
-        emailInputRef.current.value = emailValue
-      }
+      if (emailInputRef && emailInputRef.current) emailInputRef.current.value = emailValue
 
       window.addEventListener('keydown', onKeyDown)
     } else if (!focused && inputFocused && inputFocused.current) {
       inputFocused.current.blur()
 
-      // Remove value visibly from textarea while it's unfocused
       textAreaRef.current.value = ''
 
       if (email) emailInputRef.current.value = ''
@@ -346,6 +342,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
               <div className={styles.controls}>
                 <span className={styles.emojis}>
                   <EmojiSelector
+                    EMOJIS={EMOJIS}
                     onShow={onEmojiShown}
                     onHide={onEmojiHidden}
                     onEmojiSelect={onEmojiSelect}
@@ -365,44 +362,5 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
     />
   )
 }
-
-const EmojiSelector = ({ onEmojiSelect, loading }) => {
-  const [current, setCurrent] = useState(null)
-
-  useEffect(() => {
-    if (onEmojiSelect) onEmojiSelect(current)
-  }, [current, onEmojiSelect])
-
-  const onSelect = emoji => {
-    if (emoji !== current) setCurrent(emoji)
-  }
-
-  return (
-    <div className={cn(styles['emoji-selector'], { loading })}>
-      {Array.from(EMOJIS.values()).map(emoji => (
-        <button
-          type="button"
-          className={cn(styles.option, { [styles.active]: emoji === current })}
-          key={emoji}
-          onClick={() => onSelect(emoji)}
-        >
-          <span className={cn(styles.inner)}>
-            <Emoji code={emoji} />
-          </span>
-        </button>
-      ))}
-    </div>
-  )
-}
-
-const Emoji = memo(({ code }) => (
-  <img
-    decoding="async"
-    width={20}
-    height={20}
-    src={`https://assets.vercel.com/twemoji/1${code}.svg`}
-    alt="emoji"
-  />
-))
 
 export default HeaderFeedback
