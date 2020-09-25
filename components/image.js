@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useAmp } from 'next/amp'
 import cn from 'classnames'
 import IObserver from './intersection-observer'

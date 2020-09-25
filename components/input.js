@@ -1,4 +1,3 @@
-// From Vercel styleguide
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
@@ -33,9 +32,7 @@ class Input extends Component {
     title: PropTypes.string
   }
 
-  state = {
-    focused: this.props.autoFocus
-  }
+  state = { focused: this.props.autoFocus }
 
   handleChange = event => {
     this.props.onChange(event.target.value)
@@ -43,23 +40,17 @@ class Input extends Component {
 
   handleRef = node => {
     this.innerRef = node
-    if (this.props.innerRef) {
-      this.props.innerRef(node)
-    }
+    if (this.props.innerRef) this.props.innerRef(node)
   }
 
   handleFocus = event => {
     this.setState({ focused: true })
-    if (this.props.onFocus) {
-      this.props.onFocus(event)
-    }
+    if (this.props.onFocus) this.props.onFocus(event)
   }
 
   handleBlur = event => {
     this.setState({ focused: false })
-    if (this.props.onBlur) {
-      this.props.onBlur(event)
-    }
+    if (this.props.onBlur) this.props.onBlur(event)
   }
 
   render() {
