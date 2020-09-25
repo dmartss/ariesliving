@@ -4,18 +4,10 @@ import styles from './section.module.css'
 import cn from 'classnames'
 import SectionHeader from './section-header'
 
-export default function Section({
-  reverse = false,
-  description,
-  height,
-  width,
-  title,
-  alt,
-  src,
-  id
-}) {
+export default function Section({ description, height, width, title, alt, src, id }) {
+  const reverse = title === 'Investors'
   return (
-    <Container id={id} wide divider={title === 'Investors'}>
+    <Container id={id} wide divider={reverse}>
       <Container padding center>
         <div className={cn(styles.main, { [styles.reverse]: reverse })}>
           <Image className="no-drag" shadow alt={alt} src={src} width={width} height={height} />

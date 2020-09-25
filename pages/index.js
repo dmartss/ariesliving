@@ -1,11 +1,10 @@
-import { SkipNavContent } from '@reach/skip-nav'
 import FeedbackContext from 'components/header-feedback/feedback-context'
-import { randomImage } from 'lib/images'
-import Image from 'components/image'
+import { SkipNavContent } from '@reach/skip-nav'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
 import { SECTIONS } from 'lib/constants'
 import Section from 'components/section'
+import Image from 'components/image'
 import Page from 'components/page'
 import Team from 'components/team'
 
@@ -15,41 +14,41 @@ export default function Home() {
       <Page title="Home">
         <SkipNavContent />
         <Image
-          src={randomImage[0]}
+          src="/showcase/hero.jpg"
           shadow
-          layout="responsive"
-          noBorder
           margin={0}
+          noBorder
+          layout="responsive"
           oversize={false}
           alt="Hero Image"
-          width={3000 / 2}
-          height={2000 / 2.2}
+          width={3000 / 2.5}
+          height={2000 / 2.5}
         />
         <Section
-          id={SECTIONS[0].id}
-          title={SECTIONS[0].title}
-          description={SECTIONS[0].description}
+          id={SECTIONS.about.id}
+          title={SECTIONS.about.title}
+          description={SECTIONS.about.description}
+          src={SECTIONS.about.src}
           alt="Aries Hotel"
-          src={randomImage[1]}
-          width={3000 / 6}
-          height={2000 / 6}
+          width={3000 / 5.5}
+          height={2000 / 5.5}
         />
         <Portfolio
-          id={SECTIONS[1].id}
-          title={SECTIONS[1].title}
-          description={SECTIONS[1].description}
+          id={SECTIONS.portfolio.id}
+          title={SECTIONS.portfolio.title}
+          description={SECTIONS.portfolio.description}
           width={3000 / 9}
           height={2000 / 9}
         />
         <Section
-          id={SECTIONS[2].id}
-          title={SECTIONS[2].title}
-          description={SECTIONS[2].description}
-          reverse={true}
+          id={SECTIONS.investors.id}
+          title={SECTIONS.investors.title}
+          description={SECTIONS.investors.description}
+          src={SECTIONS.investors.src}
           alt="Aries Hotel"
-          src={randomImage[2]}
           width={3000 / 6}
           height={2000 / 6}
+          reverse
         />
         <Team />
         <Newsletter />

@@ -11,7 +11,7 @@ export default css.global`
     --gap: 1rem;
     --gap-double: 2rem;
     --gap-triple: 3rem;
-    --small-four: 4rem;
+    --gap-four: 4rem;
     --radius: 8px;
     --header-height: 5rem;
     --banner-height: 75px;

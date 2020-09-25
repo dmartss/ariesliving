@@ -42,6 +42,7 @@
   .reverse .content {
     padding: 0 var(--gap);
     margin: 0;
+    text-align: center;
   }
 
   .content > h2 {
