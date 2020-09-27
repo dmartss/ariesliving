@@ -26,7 +26,7 @@ export default function Progress() {
         }
 
         #nprogress .bar {
-          background: #00b0ee;
+          background: var(--aries-1);
           position: fixed;
           z-index: 1031;
           top: 0;
@@ -35,14 +35,13 @@ export default function Progress() {
           height: 2px;
         }
 
-        /* Fancy blur effect */
         #nprogress .peg {
           display: block;
           position: absolute;
           right: 0px;
           width: 100px;
           height: 100%;
-          box-shadow: 0 0 10px #00b0ee, 0 0 5px #00b0ee;
+          box-shadow: 0 0 10px var(--aries-1), 0 0 5px var(--aries-1);
           opacity: 1;
 
           -webkit-transform: rotate(3deg) translate(0px, -4px);

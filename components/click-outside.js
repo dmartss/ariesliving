@@ -1,13 +1,9 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-function isInDOM(obj) {
-  return Boolean(obj.closest('body'))
-}
+const isInDOM = obj => Boolean(obj.closest('body'))
 
-function hasParent(element, root) {
-  return root.contains(element) && isInDOM(element)
-}
+const hasParent = (element, root) => root.contains(element) && isInDOM(element)
 
 export default class ClickOutside extends Component {
   static propTypes = {
@@ -16,14 +12,10 @@ export default class ClickOutside extends Component {
     render: PropTypes.func
   }
 
-  static defaultProps = {
-    active: true
-  }
+  static defaultProps = { active: true }
 
   constructor(props) {
     super(props)
-    this.handleRef = this.handleRef.bind(this)
-    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -52,21 +44,17 @@ export default class ClickOutside extends Component {
     }
   }
 
-  handleRef(element) {
+  handleRef = element => {
     this.element = element
   }
 
-  handleClick(event) {
+  handleClick = event => {
     if (!hasParent(event.target, this.element)) {
-      if (typeof this.props.onClick === 'function') {
-        this.props.onClick(event)
-      }
+      if (typeof this.props.onClick === 'function') this.props.onClick(event)
     }
   }
 
   render() {
-    return this.props.render({
-      innerRef: this.handleRef
-    })
+    return this.props.render({ innerRef: this.handleRef })
   }
 }

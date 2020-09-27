@@ -66,7 +66,7 @@ const cachedStyles = css`
   .btn.loading {
     background: var(--accents-1);
     color: var(--accents-4);
-    border: 1px solid #000;
+    border: 1px solid var(--aries-fg);
     border-color: var(--accents-2);
     box-shadow: none;
     cursor: default;

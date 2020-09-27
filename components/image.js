@@ -21,9 +21,7 @@ const Image = ({
   const isAmp = useAmp()
 
   const handleIntersect = entry => {
-    if (entry.isIntersecting) {
-      setSrc(rest.src)
-    }
+    if (entry.isIntersecting) setSrc(rest.src)
   }
 
   const aspectRatio = `${String((height / width) * 100)}%`
@@ -65,20 +63,18 @@ const Image = ({
               }
             }
             div {
-              transform: translate3d(0, 0, 0); /* Work around for Chrome bug */
+              transform: translate3d(0, 0, 0);
               position: relative;
             }
             figure :global(img) {
               ${
                 isAmp
                   ? 'position: inherit;'
-                  : `
-              height: 100%;
-              left: 0;
-              position: absolute;
-              top: 0;
-              width: 100%;
-              `
+                  : `height: 100%;
+                     left: 0;
+                     position: absolute;
+                     top: 0;
+                     width: 100%;`
               };
               border-radius: ${noBorder ? '0px' : avatar ? '50%' : 'var(--radius)'};
               ${shadow ? 'box-shadow: var(--shadow-large)' : ''}
