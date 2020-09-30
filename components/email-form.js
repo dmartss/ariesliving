@@ -1,9 +1,11 @@
-import EmailClosedIcon from './icons/email-closed'
 import { renderToString } from 'react-dom/server'
-
-const Icon = renderToString(<EmailClosedIcon height="15" width="15" fill="currentColor" />)
+import EmailClosedIcon from './icons/email-closed'
+// import cn from 'classnames'
+// import Button from './button'
 
 export default function EmailForm({ flex }) {
+  const Icon = renderToString(<EmailClosedIcon height="15" width="15" fill="currentColor" />)
+  // const _Button = renderToString(<Button className={cn('email-form', { flex })}>Subscribe</Button>)
   const token = process.env.NEXT_PUBLIC_TOKEN
   return (
     <div
@@ -117,7 +119,7 @@ export default function EmailForm({ flex }) {
             display: none;
           }
 
-           form.form button {
+          form.form button {
             position: relative;
             display: inline-flex;
             align-items: center;

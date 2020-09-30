@@ -15,18 +15,40 @@ const cachedStyles = css`
     padding: var(--gap-quarter) var(--gap-half);
     margin: calc(-1 * var(--gap-quarter)) calc(-1 * var(--gap-half));
     border-radius: var(--radius);
-    color: var(--aries-1);
-    background-color: transparent;
-    border: none;
+    background-color: var(--aries-fg);
+    border: 1px solid var(--aries-fg);
+    color: var(--aries-bg);
     font-size: inherit;
     line-height: inherit;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     outline: none;
   }
-  .btn:hover {
-    color: var(--aries-1);
-    background: rgba(0, 154, 148, 0.1);
+  .btn.email-form {
+    height: 45px;
+    margin: 10px 0;
+    width: 100%;
+    color: var(--aries-bg);
   }
+  .btn.email-form:focus,
+  .btn.email-form:hover {
+    background-color: transparent;
+    outline: none;
+    border-color: var(--aries-fg);
+    color: var(--aries-fg);
+  }
+
+  .btn.email-form.flex {
+    background-color: var(--aries-1);
+    color: var(--aries-fg);
+    width: 175px;
+  }
+  .btn.email-form.flex:focus,
+  .btn.email-form.flex:hover {
+    background-color: transparent;
+    border-color: var(--aries-1);
+    color: var(--aries-1);
+  }
+
   .btn.invert {
     margin: 0;
     padding: 0 3.5rem;
@@ -44,6 +66,7 @@ const cachedStyles = css`
   .btn.invert:active {
     background: var(--aries-bg);
   }
+
   .btn.invert.outline {
     background-color: var(--accents-8);
     box-shadow: var(--shadow-small);
