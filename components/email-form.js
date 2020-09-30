@@ -13,11 +13,11 @@ export default function EmailForm({ flex }) {
           <form class="form" id="revinate_contact_api_form" token="${token}"
                 onsubmit="revFormOnSubmit(); event.preventDefault();">
             <div class=${flex ? 'flex' : 'div'}>
-            <div>
-            <label class="label">
-              <span class="icon">
-                ${Icon}
-              </span>
+              <div>
+                <label class="label">
+                  <span class="icon">
+                  ${Icon}
+                  </span>
                 <input placeholder="you@domain.com" class=${
                   flex ? 'flex' : ''
                 } type="email" name="email" required/>
@@ -43,6 +43,7 @@ export default function EmailForm({ flex }) {
             align-items: center;
             margin: 0 auto;
           }
+
           form.form span.icon {
             margin: 0 14px;
             display: inline-flex;
