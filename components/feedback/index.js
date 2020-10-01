@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
 
-import styles from './header-feedback.module.css'
+import styles from './feedback.module.css'
 import { useFeedback } from './feedback-context'
 import EmojiSelector from './emoji-selector'
+
 import ClickOutside from 'components/click-outside'
 import { Checkmark } from 'components/icons'
 import Textarea from 'components/textarea'
@@ -24,7 +25,7 @@ function getEmoji(code) {
   return EMOJI_CODES.get(code)
 }
 
-const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
+const Feedback = ({ className, open, onClick, email, ...props }) => {
   const [emoji, setEmoji] = useState(null)
   const [loading, setLoading] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -54,7 +55,6 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
     onSuccessDismiss()
 
     if (textAreaRef.current) textAreaRef.current.value = ''
-
     if (emailInputRef.current) emailInputRef.current.value = ''
   }, [onErrorDismiss, onSuccessDismiss])
 
@@ -80,8 +80,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
         body: JSON.stringify({
           note: textAreaRef.current.value,
           email: emailValue || '',
-          emotion: getEmoji(emoji),
-          label: feedback.label
+          emotion: getEmoji(emoji)
         })
       })
       const text = await res.text()
@@ -95,7 +94,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
         setErrorMessage(text || 'An error ocurred. Try again in a few minutes.')
       }
     },
-    [emoji, value, emailValue, feedback.label]
+    [emoji, value, emailValue]
   )
 
   const onKeyDown = useCallback(
@@ -126,7 +125,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
       textAreaRef.current.value = ''
 
-      if (email) emailInputRef.current.value = ''
+      emailInputRef.current.value = ''
 
       window.removeEventListener('keydown', onKeyDown)
     }
@@ -134,7 +133,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [focused, inputFocused, handleClickOutside, emailValue, value, email, onSubmit, onKeyDown])
+  }, [focused, inputFocused, handleClickOutside, emailValue, value, onSubmit, onKeyDown])
 
   useEffect(() => {
     let clearSuccessTimer
@@ -170,14 +169,11 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   }, [inputFocused])
 
   const onFocus = useCallback(() => {
-    if (email && emailInputRef.current && !focused) {
-      focusEmailInput()
-    } else if (textAreaRef.current && !focused) {
-      focusTextArea()
-    }
+    if (emailInputRef.current && !focused) focusEmailInput()
+    else if (textAreaRef.current && !focused) focusTextArea()
 
     setFocused(true)
-  }, [email, emailInputRef, textAreaRef, focused, focusEmailInput, focusTextArea])
+  }, [emailInputRef, textAreaRef, focused, focusEmailInput, focusTextArea])
 
   const onEmojiShown = useCallback(() => {
     setEmojiShown(true)
@@ -193,14 +189,14 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
   const handleChange = useCallback(
     e => {
-      if (focused) setValue(e)
+      focused && setValue(e)
     },
     [focused]
   )
 
   const handleEmailChange = useCallback(
     e => {
-      if (focused) setEmailValue(e)
+      focused && setEmailValue(e)
     },
     [focused]
   )
@@ -324,7 +320,12 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
 
             {success && (
               <div className={styles['success-message']}>
-                <Checkmark color="var(--aries-success)" fill size="2rem" className="checkmark" />
+                <Checkmark
+                  fill
+                  color="var(--aries-success)"
+                  size="var(--gap-double)"
+                  className={styles.checkmark}
+                />
                 <p>Your feedback has been received!</p>
                 <p>Thank you for your help.</p>
               </div>
@@ -355,4 +356,4 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   )
 }
 
-export default HeaderFeedback
+export default Feedback

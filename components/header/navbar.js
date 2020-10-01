@@ -1,4 +1,4 @@
-import { memo, useContext, useState, useCallback } from 'react'
+import { memo, useState, useCallback } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'next/link'
 import cn from 'classnames'
@@ -7,8 +7,8 @@ import styles from './navbar.module.css'
 import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
-import HeaderFeedback from 'components/header-feedback'
-import FeedbackContext from 'components/header-feedback/feedback-context'
+import HeaderFeedback from 'components/feedback'
+import { useFeedback } from 'components/feedback/feedback-context'
 
 const LINKS = [
   { src: 'about', title: 'About', index: 'third' },
@@ -20,7 +20,7 @@ const LINKS = [
 function Navbar() {
   const isAmp = useAmp()
   const [open, setOpen] = useState(false)
-  const feedback = useContext(FeedbackContext)
+  const feedback = useFeedback()
 
   const toggle = useCallback(() => setOpen(!open), [open])
 

@@ -80,7 +80,7 @@ export default css`
     height: 1.5rem;
     padding: 0 var(--gap-three-quarter);
     line-height: inherit;
-    border-radius: 5px;
+    border-radius: var(--text-radius);
   }
   .btn.loading {
     background: var(--accents-1);

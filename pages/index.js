@@ -1,4 +1,4 @@
-import FeedbackContext from 'components/header-feedback/feedback-context'
+import FeedbackContext from 'components/feedback/feedback-context'
 import { SkipNavContent } from '@reach/skip-nav'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'

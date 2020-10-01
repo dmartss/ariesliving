@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from 'react'
 import cn from 'classnames'
-import styles from './header-feedback.module.css'
+import styles from './feedback.module.css'
 
 const Emoji = memo(({ code }) => (
   <img
