@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
 
-import EmojiSelector from './emoji-selector'
-import ClickOutside from '../click-outside'
-import Button from '../button'
-import Input from '../input'
-import Textarea from '../textarea'
-import Checkmark from 'components/icons/checkmark'
-import { useFeedback } from './feedback-context'
 import styles from './header-feedback.module.css'
+import { useFeedback } from './feedback-context'
+import EmojiSelector from './emoji-selector'
+import ClickOutside from 'components/click-outside'
+import { Checkmark } from 'components/icons'
+import Textarea from 'components/textarea'
+import Button from 'components/button'
+import Input from 'components/input'
 
 const EMOJIS = new Map([
   ['🤩', 'f929'],
@@ -20,10 +20,7 @@ const EMOJIS = new Map([
 let EMOJI_CODES = null
 function getEmoji(code) {
   if (code === null) return code
-
-  if (EMOJI_CODES === null) {
-    EMOJI_CODES = new Map([...EMOJIS].map(([k, v]) => [v, k]))
-  }
+  if (EMOJI_CODES === null) EMOJI_CODES = new Map([...EMOJIS].map(([k, v]) => [v, k]))
   return EMOJI_CODES.get(code)
 }
 
@@ -62,8 +59,8 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   }, [onErrorDismiss, onSuccessDismiss])
 
   const onSubmit = useCallback(
-    async event => {
-      event.preventDefault()
+    async e => {
+      e.preventDefault()
       containerRef.current.focus()
 
       if (!value || value.trim() === '') {
@@ -209,10 +206,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
   )
 
   const eventListeners = useRef()
-  eventListeners.current = {
-    focus: onFocus,
-    blur: handleClickOutside
-  }
+  eventListeners.current = { focus: onFocus, blur: handleClickOutside }
 
   useEffect(() => {
     if (!containerRef || !containerRef.current) return
@@ -274,7 +268,7 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
           {...props}
         >
           <form
-            className={cn(styles['feedback-wrapper'], focused ? '' : styles.blur)}
+            className={cn(styles['feedback-wrapper'], focused ?? styles.blur)}
             onSubmit={onSubmit}
           >
             <div className={styles.placeholder}>Contact</div>
@@ -284,14 +278,13 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
                   <div className={styles.input}>
                     <h5>Email</h5>
                     <Input
-                      innerRef={ref => (emailInputRef.current = ref)}
-                      onFocus={() => setInputFocused(emailInputRef)}
                       type="email"
                       placeholder="Your email address..."
                       aria-label="Your email address"
-                      width="100%"
-                      disabled={loading === true || errorMessage != null}
                       onChange={handleEmailChange}
+                      innerRef={ref => (emailInputRef.current = ref)}
+                      onFocus={() => setInputFocused(emailInputRef)}
+                      disabled={loading === true || errorMessage != null}
                     />
                   </div>
                 )}
@@ -299,14 +292,13 @@ const HeaderFeedback = ({ className, open, onClick, email, ...props }) => {
                 <div className={styles.input}>
                   <h5>Feedback</h5>
                   <Textarea
-                    innerRef={ref => (textAreaRef.current = ref)}
                     placeholder="Your feedback..."
-                    width="100%"
-                    onFocus={() => setInputFocused(textAreaRef)}
-                    onChange={handleChange}
                     aria-label="Feedback input"
-                    disabled={loading === true || errorMessage != null}
                     data-gramm-editor="false"
+                    onChange={handleChange}
+                    innerRef={ref => (textAreaRef.current = ref)}
+                    onFocus={() => setInputFocused(textAreaRef)}
+                    disabled={loading === true || errorMessage != null}
                   />
                 </div>
               </div>
