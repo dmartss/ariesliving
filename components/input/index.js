@@ -1,5 +1,5 @@
-import styles from './input.module.css'
 import { Component } from 'react'
+import styles from './input.module.css'
 import cn from 'classnames'
 
 export default class Input extends Component {
@@ -54,3 +54,64 @@ export default class Input extends Component {
     )
   }
 }
+
+// import { useRef, useEffect, forwardRef, useState } from 'react'
+// import styles from './input.module.css'
+// import cn from 'classnames'
+
+// // export default forwardRef((props, ref) => <Input innerRef={ref} {...props} />)
+
+// const useForwardedRef = ref => {
+//   const innerRef = useRef(null)
+//   useEffect(() => {
+//     if (!ref) return
+//     if (typeof ref === 'function') ref(innerRef.current)
+//     else ref.current = innerRef.current
+//   })
+
+//   return innerRef
+// }
+
+// export default function Input({
+//   autoFocus,
+//   onChange,
+//   innerRef,
+//   onFocus,
+//   onBlur,
+//   type,
+//   disabled,
+//   placeholder,
+//   children,
+//   ...props
+// }) {
+//   const [focused, setFocused] = useState(autoFocus)
+//   const ref = useForwardedRef(innerRef)
+
+//   return (
+//     <div className={cn(styles.wrapper, { focused, disabled })} {...props}>
+//       <div className={styles['input-wrapper']}>
+//         <input
+//           autoCapitalize="off"
+//           autoComplete="off"
+//           autoCorrect="off"
+//           spellCheck="false"
+//           type={type || 'text'}
+//           autoFocus={typeof window !== 'undefined' && window.innerWidth <= 600 && false}
+//           disabled={disabled}
+//           placeholder={placeholder}
+//           title={placeholder}
+//           onBlur={() => setFocused(false)}
+//           onChange={e => {
+//             onChange(e.target.value)
+//           }}
+//           onFocus={e => {
+//             setFocused(true)
+//             if (onFocus) onFocus(e)
+//           }}
+//           ref={ref}
+//         />
+//         {children}
+//       </div>
+//     </div>
+//   )
+// }

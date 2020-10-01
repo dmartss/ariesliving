@@ -216,6 +216,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           svg circle {
             shape-rendering: geometricprecision;
           }
+
           [data-reach-skip-link] {
             border: 0;
             clip: rect(0 0 0 0);
