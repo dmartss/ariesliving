@@ -2,11 +2,11 @@ import { memo, useState, useEffect } from 'react'
 import cn from 'classnames'
 import styles from './feedback.module.css'
 
-const Emoji = memo(({ code }) => (
+const Emoji = memo(({ code, size = 20 }) => (
   <img
     decoding="async"
-    width={20}
-    height={20}
+    width={size}
+    height={size}
     src={`https://assets.vercel.com/twemoji/1${code}.svg`}
     alt="emoji"
   />
@@ -16,12 +16,10 @@ export default function EmojiSelector({ onEmojiSelect, loading, EMOJIS }) {
   const [current, setCurrent] = useState(null)
 
   useEffect(() => {
-    if (onEmojiSelect) onEmojiSelect(current)
+    onEmojiSelect && onEmojiSelect(current)
   }, [current, onEmojiSelect])
 
-  const onSelect = emoji => {
-    if (emoji !== current) setCurrent(emoji)
-  }
+  const onSelect = emoji => emoji !== current && setCurrent(emoji)
 
   return (
     <div className={cn(styles['emoji-selector'], { loading })}>

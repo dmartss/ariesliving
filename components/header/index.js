@@ -4,13 +4,18 @@ import Banner from './banner'
 import Nav from './navbar'
 import styles from './header.module.css'
 
-const Header = ({ sticky = true }) => {
+const Header = ({ sticky = true, errorPage }) => {
   return (
     <>
       <Banner />
 
-      <header className={cn(styles.header, { [styles.sticky]: sticky })}>
-        <Nav />
+      <header
+        className={cn(styles.header, {
+          [styles.sticky]: sticky,
+          [styles.hideBorder]: errorPage
+        })}
+      >
+        <Nav errorPage={errorPage} />
       </header>
     </>
   )

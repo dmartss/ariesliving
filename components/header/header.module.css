@@ -6,10 +6,15 @@
   width: 100%;
   z-index: 1000;
   box-shadow: var(--header-border-bottom);
-  background: var(--header-background);
+  background: var(--header-bg);
   transition: box-shadow 0.2s ease 0s;
 }
-.sticky {
+
+.header.sticky {
   position: sticky;
   top: 0;
+}
+
+.header.hideBorder {
+  box-shadow: none;
 }

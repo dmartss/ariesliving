@@ -2,6 +2,9 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from 'lib/analytics'
 import { useAmp } from 'next/amp'
+import { themeStorageKey } from 'lib/theme'
+
+const backgrounds = { dark: '#000000', light: '#fff' }
 
 function AmpWrap({ ampOnly, nonAmp }) {
   const isAmp = useAmp()
@@ -44,6 +47,25 @@ class AriesLiving extends Document {
           />
         </Head>
         <body>
+          <AmpWrap
+            nonAmp={
+              <>
+                <script
+                  dangerouslySetInnerHTML={{
+                    __html: `(function() {
+                      try {
+                        var mode = localStorage.getItem('${themeStorageKey}');
+                        if (!mode) return;
+                        document.documentElement.setAttribute('data-theme', mode);
+                        document.documentElement.style.background =
+                          mode === 'dark' ? '${backgrounds.dark}' : '${backgrounds.light}';
+                      } catch (e) {}
+                    })()`
+                  }}
+                />
+              </>
+            }
+          />
           <Main />
           <NextScript />
           <AmpWrap
@@ -56,16 +78,9 @@ class AriesLiving extends Document {
                       vars: {
                         account: GA_TRACKING_ID,
                         gtag_id: GA_TRACKING_ID,
-                        config: {
-                          GA_TRACKING_ID: { groups: 'default' }
-                        }
+                        config: { GA_TRACKING_ID: { groups: 'default' } }
                       },
-                      triggers: {
-                        trackPageview: {
-                          on: 'visible',
-                          request: 'pageview'
-                        }
-                      }
+                      triggers: { trackPageview: { on: 'visible', request: 'pageview' } }
                     })
                   }}
                 />

@@ -53,7 +53,7 @@
   width: var(--open-width);
   height: var(--open-height);
   border: none;
-  border-color: white;
+  border-color: var(--aries-fg);
   box-shadow: var(--shadow-large);
   background: var(--aries-bg);
   transition: all 0ms ease-in-out, border-radius 0ms step-start, border 100ms ease-in-out;

@@ -18,6 +18,9 @@
   display: flex;
   margin-right: auto;
 }
+.logo.error {
+  margin: auto;
+}
 
 .header-feedback {
   display: inline-flex;

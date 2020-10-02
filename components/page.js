@@ -9,13 +9,15 @@ export default function Page({
   url = PLATFORM_URL,
   image = defaultOgImage,
   sticky = undefined,
-  children
+  children,
+  hideFooter,
+  errorPage
 }) {
   return (
     <PageContainer title={title} description={description} url={url} image={image}>
-      <Header sticky={sticky} />
+      <Header errorPage={errorPage} sticky={sticky} />
       {children}
-      <Footer />
+      {!hideFooter && <Footer />}
     </PageContainer>
   )
 }

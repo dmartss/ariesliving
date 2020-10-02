@@ -41,7 +41,7 @@ export default function Container({
             border-bottom: 1px solid var(--accents-2);`
             : ''}
         ${wide && !overflow ? 'overflow: hidden;' : ''}
-        ${minHeight ? `min-height: ${minHeight}px;` : ''}
+        ${minHeight ? `min-height: ${minHeight}vh;` : ''}
         ${vCenter ? 'display: flex; align-items: center;' : ''}
         ${dotBackground ? `
             background-image: radial-gradient(#D7D7D7 1px, transparent 1px), radial-gradient(#d7d7d7 1px, transparent 1px);

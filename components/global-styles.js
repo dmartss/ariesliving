@@ -139,40 +139,6 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           .tl {
             text-align: left;
           }
-          .row {
-            display: flex;
-            align-items: center;
-            margin: 0 -1.5rem;
-          }
-          .column {
-            flex: 1;
-            padding: 0 1.5rem;
-          }
-          .display-none {
-            display: none;
-          }
-          .display-mobile {
-            display: none;
-          }
-          .display-tablet {
-            display: none;
-          }
-          @media screen and (max-width: 640px) {
-            .display-mobile {
-              display: unset;
-            }
-            .hide-mobile {
-              display: none;
-            }
-          }
-          @media screen and (max-width: 960px) {
-            .display-tablet {
-              display: unset;
-            }
-            .hide-tablet {
-              display: none;
-            }
-          }
           a[role='button'] {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -217,6 +183,14 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             shape-rendering: geometricprecision;
           }
 
+          blockquote {
+            font-style: italic;
+            margin: 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--light-gray);
+            transition: border-color var(--transition);
+          }
+
           [data-reach-skip-link] {
             border: 0;
             clip: rect(0 0 0 0);
@@ -232,7 +206,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             position: fixed;
             top: 10px;
             left: 10px;
-            background: white;
+            background: var(--aries-fg);
             z-index: 1;
             width: auto;
             height: auto;

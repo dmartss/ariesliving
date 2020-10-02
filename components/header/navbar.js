@@ -17,12 +17,14 @@ const LINKS = [
   { src: 'team', title: 'Team', index: 'sixth' }
 ]
 
-function Navbar() {
+function Navbar({ errorPage }) {
   const isAmp = useAmp()
   const [open, setOpen] = useState(false)
   const feedback = useFeedback()
 
-  const toggle = useCallback(() => setOpen(!open), [open])
+  const toggle = useCallback(() => {
+    setOpen(!open)
+  }, [open])
 
   return (
     <Container center>
@@ -34,42 +36,46 @@ function Navbar() {
         <div className={styles.links}>
           <Link href="/">
             <a
-              className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'])}
+              className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'], {
+                [styles.error]: errorPage
+              })}
               title="Go to the homepage"
             >
               <Logo />
             </a>
           </Link>
 
-          <div className={styles['not-logo']}>
-            {!isAmp && feedback ? (
-              <div
-                className={cn(
-                  styles['header-feedback'],
-                  styleUtils.appear,
-                  styleUtils['appear-second']
-                )}
-              >
-                <HeaderFeedback email />
-              </div>
-            ) : null}
-
-            {LINKS.map(({ src, title, index }) => (
-              <Link href={`#${src}`} key={src}>
-                <a
-                  className={cn('fp', styleUtils.appear, styleUtils[`appear-${index}`])}
-                  title={title}
+          {!errorPage && (
+            <div className={styles['not-logo']}>
+              {!isAmp && feedback ? (
+                <div
+                  className={cn(
+                    styles['header-feedback'],
+                    styleUtils.appear,
+                    styleUtils['appear-second']
+                  )}
                 >
-                  {title}
-                </a>
-              </Link>
-            ))}
-            <Hamburger
-              className={cn('fp', styleUtils.appear, styleUtils['appear-seventh'])}
-              toggle={toggle}
-              open={open}
-            />
-          </div>
+                  <HeaderFeedback email />
+                </div>
+              ) : null}
+
+              {LINKS.map(({ src, title, index }) => (
+                <Link href={`#${src}`} key={src}>
+                  <a
+                    className={cn('fp', styleUtils.appear, styleUtils[`appear-${index}`])}
+                    title={title}
+                  >
+                    {title}
+                  </a>
+                </Link>
+              ))}
+              <Hamburger
+                className={cn('fp', styleUtils.appear, styleUtils['appear-seventh'])}
+                toggle={toggle}
+                open={open}
+              />
+            </div>
+          )}
         </div>
       </nav>
     </Container>

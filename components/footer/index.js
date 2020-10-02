@@ -49,9 +49,7 @@ function Footer() {
               <h4 className="fw5">Contact</h4>
               <p>{ADDRESS[0]}</p>
               <p>{ADDRESS[1]}</p>
-              <p>
-                <a>Contact Form</a>
-              </p>
+              <p>{ADDRESS[2]}</p>
             </div>
           </div>
           <div className={cn(styles.copyright, 'f6')}>

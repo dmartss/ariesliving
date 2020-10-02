@@ -1,4 +1,4 @@
-const EmailClosedIcon = ({ width, height, fill, label }) => {
+export default function EmailClosedIcon({ width, height, fill, label }) {
   return (
     <svg
       width={width || '15'}
@@ -20,5 +20,3 @@ const EmailClosedIcon = ({ width, height, fill, label }) => {
     </svg>
   )
 }
-
-export default EmailClosedIcon

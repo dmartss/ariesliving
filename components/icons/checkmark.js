@@ -13,6 +13,6 @@ const Checkmark = ({ inverse, dark }) => (
       />
     </g>
   </svg>
-);
+)
 
-export default Checkmark;
+export default Checkmark
