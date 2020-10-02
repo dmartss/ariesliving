@@ -39,7 +39,6 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
   const textAreaRef = useRef()
   const emailInputRef = useRef()
   const containerRef = useRef()
-  const feedback = useFeedback()
 
   const onErrorDismiss = useCallback(() => {
     setErrorMessage(null)

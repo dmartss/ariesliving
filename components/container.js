@@ -1,6 +1,5 @@
 export default function Container({
   center = false,
-  vCenter = false,
   dark = false,
   gray = false,
   wide = false,
@@ -8,7 +7,6 @@ export default function Container({
   small = false,
   padding = false,
   overflow = false,
-  minHeight = null,
   dotBackground = false,
   mobileStyle = null,
   divider = false,
@@ -41,8 +39,6 @@ export default function Container({
             border-bottom: 1px solid var(--accents-2);`
             : ''}
         ${wide && !overflow ? 'overflow: hidden;' : ''}
-        ${minHeight ? `min-height: ${minHeight}vh;` : ''}
-        ${vCenter ? 'display: flex; align-items: center;' : ''}
         ${dotBackground ? `
             background-image: radial-gradient(#D7D7D7 1px, transparent 1px), radial-gradient(#d7d7d7 1px, transparent 1px);
             background-position: 0 0, 25px 25px;

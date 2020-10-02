@@ -99,12 +99,13 @@ export default css.global`
     --accents-8: #eaeaea;
     --accents-9: #fafafa;
 
-    --header-bg: rgba(19, 20, 21, 0.45);
+    --header-bg: rgba(0, 0, 0, 0.45);
+    --header-border-bottom: none;
 
-    --gradient-1: linear-gradient(270deg, #333333, #111111, #111111, #333333);
+    /* --gradient-1: linear-gradient(270deg, #333333, #111111, #111111, #333333);
     --gradient-2: linear-gradient(135deg, #fff 50%, transparent 50%);
     --gradient-3: linear-gradient(135deg, transparent 50%, #fff 50%);
     --gradient-4: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-    --gradient-5: linear-gradient(135deg, #7f8183, #b4b6b8);
+    --gradient-5: linear-gradient(135deg, #7f8183, #b4b6b8); */
   }
 `
