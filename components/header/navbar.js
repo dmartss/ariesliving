@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from 'react'
+import { memo } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'next/link'
 import cn from 'classnames'
@@ -7,20 +7,10 @@ import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
-import Router from 'next/router'
+import { useMobileNav } from 'lib/mobile-nav'
 
 function Navbar({ errorPage }) {
-  const [mobileNavShown, setMobileNavShown] = useState(false)
-
-  const toggle = () => setMobileNavShown(!mobileNavShown)
-
-  useEffect(() => {
-    Router.events.on('hashChangeComplete', toggle)
-
-    return () => {
-      Router.events.off('hashChangeComplete', toggle)
-    }
-  }, [toggle])
+  const { mobileNavShown, toggle } = useMobileNav()
 
   return (
     <Container center>
@@ -87,7 +77,7 @@ function Navbar({ errorPage }) {
           )}
 
           <span className={styles.toggle} onClick={toggle}>
-            <Hamburger className="fp" open={mobileNavShown} />
+            <Hamburger className="fp" mobileNavShown={mobileNavShown} />
           </span>
         </div>
       </nav>

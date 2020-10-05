@@ -1,14 +1,14 @@
 import cn from 'classnames'
 import styles from './hamburger.module.css'
 
-export default function Hamburger({ open, className }) {
+export default function Hamburger({ mobileNavShown, className }) {
   return (
-    <div role="button" aria-expanded={open} aria-label="Main Menu" className={className}>
+    <div role="button" aria-expanded={mobileNavShown} aria-label="Main Menu" className={className}>
       <svg
         width="30"
         height="30"
         viewBox="0 0 100 100"
-        className={cn(styles.menu, { [styles.opened]: open })}
+        className={cn(styles.menu, { [styles.opened]: mobileNavShown })}
       >
         <path
           className={cn(styles.line, styles.line1)}
