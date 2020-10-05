@@ -49,6 +49,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             background-color: var(--aries-1);
             color: var(--aries-bg);
           }
+
           [role='grid']:focus {
             outline: none;
           }

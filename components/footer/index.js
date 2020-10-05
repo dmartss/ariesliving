@@ -1,4 +1,5 @@
-import { ADDRESS, HOTELS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constants'
+import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constants'
+import { HOTELS } from 'lib/sections'
 import { Facebook, Instagram, Twitter, Moon, Sun } from '../icons'
 import Container from 'components/container'
 import styles from './footer.module.css'
@@ -8,6 +9,7 @@ import cn from 'classnames'
 
 function Footer() {
   const { theme, toggleTheme } = useTheme()
+
   return (
     <Container wide dark>
       <Container>
