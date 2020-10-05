@@ -237,10 +237,10 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             color: var(--aries-vp);
           }
           p:hover a.treehouse {
-            color: var(--treehouse);
+            color: var(--aries-treehouse);
           }
           p:hover a.ithaca {
-            color: var(--ithaca);
+            color: var(--aries-ithaca);
           }
         `}
       </style>

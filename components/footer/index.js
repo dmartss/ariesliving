@@ -15,7 +15,7 @@ function Footer() {
           <div className={cn(styles.grid, 'f5')}>
             <div>
               <h4 className="fw5">Brands</h4>
-              {HOTELS.map(({ name, url, alt }) => (
+              {Object.values(HOTELS).map(({ name, url, alt }) => (
                 <p key={name}>
                   <a className={alt} href={url} rel="noopener noreferrer" target="_blank">
                     {name}

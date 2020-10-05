@@ -1,7 +1,7 @@
 import Container from '../container'
 import SectionHeader from '../section/section-header'
 import Image from '../image'
-import { TEAM } from 'lib/constants'
+import { TEAM } from 'lib/sections'
 import styles from './team.module.css'
 
 export default function Team() {

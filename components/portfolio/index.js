@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Container from 'components/container'
 import Button from 'components/button'
 import Image from 'components/image'
-import { HOTELS } from 'lib/constants'
+import { HOTELS } from 'lib/sections'
 import styles from './portfolio.module.css'
 import cn from 'classnames'
 
@@ -22,7 +22,7 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className={'fs fw3'}>{description}</p>
           </div>
           <div className={styles.images}>
-            {HOTELS.map(({ src, alt, name, url, rezUrl }) => (
+            {Object.values(HOTELS).map(({ src, alt, name, url, rezUrl }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
                 <p className={('f-reset fs f4 fw3', alt)}>{name}</p>
                 <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
