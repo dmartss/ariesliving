@@ -1,6 +1,6 @@
-import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constants'
+import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
 import { HOTELS } from 'lib/sections'
-import { Facebook, Instagram, Twitter, ThemeIcon } from 'components/icons'
+import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
 import Container from 'components/container'
 import styles from './footer.module.css'
 import { memo } from 'react'
@@ -55,14 +55,17 @@ function Footer() {
           </div>
           <div className={cn(styles.copyright, 'f6')}>
             <span>
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram />
+              </a>
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
+                <Linkedin />
+              </a>
               <a href={FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook />
               </a>
               <a href={TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter />
-              </a>
-              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram />
               </a>
               <ThemeIcon className="theme-icon" />
             </span>
