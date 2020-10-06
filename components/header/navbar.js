@@ -89,10 +89,19 @@ function Navbar({ errorPage }) {
 
           <ThemeIcon
             color="var(--aries-fg)"
-            className={cn(styleUtils.appear, styleUtils['appear-first'], 'theme-icon')}
+            className={cn(
+              'theme-icon',
+              styleUtils.appear,
+              styleUtils['appear-first'],
+              styles['mobile-absolute'],
+              styles.right
+            )}
           />
 
-          <span className={styles.toggle} onClick={toggle}>
+          <span
+            className={cn(styles.toggle, styles['mobile-absolute'], styles.left)}
+            onClick={toggle}
+          >
             <Hamburger className="fp" mobileNavShown={mobileNavShown} />
           </span>
         </div>

@@ -56,7 +56,14 @@
 
   .toggle {
     display: block;
+  }
+  .mobile-absolute {
     position: absolute;
+  }
+  .mobile-absolute.left {
+    left: 0;
+  }
+  .mobile-absolute.right {
     right: 0;
   }
 
