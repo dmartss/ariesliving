@@ -46,8 +46,8 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             color: var(--aries-fg);
           }
           ::selection {
-            background-color: var(--aries-1);
-            color: var(--aries-bg);
+            background-color: var(--aries-selection);
+            color: var(--aries-fg);
           }
 
           [role='grid']:focus {
@@ -55,6 +55,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           }
           svg {
             text-rendering: optimizeLegibility;
+            cursor: pointer;
           }
           h1,
           h2,
@@ -69,6 +70,13 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           a:hover {
             color: var(--aries-1);
           }
+          .theme-icon {
+            transition: fill 200ms ease-in-out;
+          }
+          .theme-icon:hover {
+            fill: var(--aries-1);
+          }
+
           iframe {
             width: 100%;
             height: 100%;

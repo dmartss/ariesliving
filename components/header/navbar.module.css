@@ -38,7 +38,7 @@
   padding: var(--gap);
 }
 
-span.toggle,
+.toggle,
 .mobileNav {
   display: none;
 }
@@ -54,7 +54,7 @@ span.toggle,
     display: none;
   }
 
-  span.toggle {
+  .toggle {
     display: block;
     position: absolute;
     right: 0;

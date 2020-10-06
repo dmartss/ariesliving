@@ -10,6 +10,7 @@ export default function Container({
   dotBackground = false,
   mobileStyle = null,
   divider = false,
+  footer = false,
   children,
   ...props
 }) {
@@ -22,6 +23,7 @@ export default function Container({
         width: 100%;
         margin: 0 auto;
         padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
+        ${footer ? 'border-top: 1px solid var(--accents-2)' : ''};
         ${wide && !small ? '' : 'max-width: 1024px;'}
         ${small ? 'max-width: 768px;' : ''}
         ${center ? 'text-align: center;' : ''}

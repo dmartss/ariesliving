@@ -1,17 +1,14 @@
 import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM } from 'lib/constants'
 import { HOTELS } from 'lib/sections'
-import { Facebook, Instagram, Twitter, Moon, Sun } from '../icons'
+import { Facebook, Instagram, Twitter, ThemeIcon } from 'components/icons'
 import Container from 'components/container'
 import styles from './footer.module.css'
-import useTheme from 'lib/theme'
 import { memo } from 'react'
 import cn from 'classnames'
 
 function Footer() {
-  const { theme, toggleTheme } = useTheme()
-
   return (
-    <Container wide dark>
+    <Container wide dark footer>
       <Container>
         <footer className={styles.footer}>
           <div className={cn(styles.grid, 'f5')}>
@@ -67,7 +64,7 @@ function Footer() {
               <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram />
               </a>
-              {theme === 'light' ? <Moon onClick={toggleTheme} /> : <Sun onClick={toggleTheme} />}
+              <ThemeIcon className="theme-icon" />
             </span>
             <div>
               Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.

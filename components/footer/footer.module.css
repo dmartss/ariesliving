@@ -32,9 +32,6 @@
 .copyright div {
   margin-top: var(--gap-half);
 }
-.copyright :global(svg) {
-  cursor: pointer;
-}
 .footer h4 {
   margin-bottom: var(--gap-three-quarter);
   color: var(--light-gray);

@@ -3,8 +3,8 @@ import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'next/link'
 import cn from 'classnames'
 import styles from './navbar.module.css'
-import styleUtils from '../utils.module.css'
-import Logo, { Hamburger } from 'components/icons'
+import styleUtils from 'components/utils.module.css'
+import Logo, { Hamburger, ThemeIcon } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
 import Router from 'next/router'
@@ -86,6 +86,11 @@ function Navbar({ errorPage }) {
               </Link>
             </div>
           )}
+
+          <ThemeIcon
+            color="var(--aries-fg)"
+            className={cn(styleUtils.appear, styleUtils['appear-first'], 'theme-icon')}
+          />
 
           <span className={styles.toggle} onClick={toggle}>
             <Hamburger className="fp" mobileNavShown={mobileNavShown} />
