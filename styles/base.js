@@ -67,7 +67,6 @@ export default css.global`
     --container-gray: var(--accents-1);
     --container-border: var(--accents-2);
 
-    --footer-text: #8c8c8c;
     --light-gray: #f1f1f1;
 
     --header-border-bottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);

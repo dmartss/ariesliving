@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: var(--gap-double);
+  --footer-text: #8c8c8c;
 }
 .footer {
   padding: var(--gap-double) 0 var(--gap);
@@ -36,7 +37,7 @@
 }
 .footer h4 {
   margin-bottom: var(--gap-three-quarter);
-  color: var(--aries-bg);
+  color: var(--light-gray);
 }
 .footer p {
   margin-top: 0;

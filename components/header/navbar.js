@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useState, useEffect } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'next/link'
 import cn from 'classnames'
@@ -7,10 +7,21 @@ import styleUtils from '../utils.module.css'
 import Logo, { Hamburger } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
-import { useMobileNav } from 'lib/mobile-nav'
+import Router from 'next/router'
 
 function Navbar({ errorPage }) {
-  const { mobileNavShown, toggle } = useMobileNav()
+  const [mobileNavShown, setMobileNavShown] = useState(false)
+
+  const toggle = () => setMobileNavShown(!mobileNavShown)
+  const done = () => setMobileNavShown(false)
+
+  useEffect(() => {
+    Router.events.on('hashChangeComplete', done)
+
+    return () => {
+      Router.events.off('hashChangeComplete', done)
+    }
+  }, [])
 
   return (
     <Container center>
