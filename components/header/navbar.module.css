@@ -31,13 +31,14 @@
 .not-logo {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
-.not-logo a {
-  margin: 1.5rem;
+.not-logo > * + * {
+  padding: var(--gap);
 }
 
-.toggle,
+span.toggle,
 .mobileNav {
   display: none;
 }
@@ -62,6 +63,7 @@
   .mobileNav {
     z-index: 2;
     background: var(--bg);
+    transition: all 0.12s ease-in-out;
   }
 
   .mobileNav.active {
