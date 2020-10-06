@@ -3,12 +3,10 @@ export default function Container({
   dark = false,
   gray = false,
   wide = false,
-  wideOnMobile = false,
   small = false,
   padding = false,
   overflow = false,
   dotBackground = false,
-  mobileStyle = null,
   divider = false,
   footer = false,
   children,
@@ -24,7 +22,7 @@ export default function Container({
         margin: 0 auto;
         padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
         ${footer ? 'border-top: 1px solid var(--accents-2)' : ''};
-        ${wide && !small ? '' : 'max-width: 1024px;'}
+        ${wide && !small ? '' : 'max-width: var(--max-width);'}
         ${small ? 'max-width: 768px;' : ''}
         ${center ? 'text-align: center;' : ''}
         ${dark ? `
@@ -42,7 +40,7 @@ export default function Container({
             background-position: 0 0, 25px 25px;
             background-size: 50px 50px;`
             : ''}
-        ${divider ? `border-top: 1px solid rgba(0,0,0,0.1);` : ''}
+        ${divider ? `border-top: 1px solid var(--line);` : ''}
       }
       :after {
         // BFC
@@ -54,15 +52,14 @@ export default function Container({
       // CSS only media query for tablet
       @media screen and (max-width: 960px) {
         div {
-          padding: ${padding ? 'var(--gap-four)' : '0'} ${wide || wideOnMobile ? '0' : 'var(--gap-double)'};
-          ${wideOnMobile && !overflow ? 'overflow: hidden;' : ''}
+          padding: ${padding ? 'var(--gap-four)' : '0'} ${wide ? '0' : 'var(--gap-double)'};
+          ${!overflow ? 'overflow: hidden;' : ''}
         }
       }
       // CSS only media query for mobile
       @media screen and (max-width: 640px) {
         div {
-          padding: ${padding ? 'var(--gap-triple)' : '0'} ${wide || wideOnMobile ? '0' : 'var(--gap'};
-          ${mobileStyle || ''}
+          padding: ${padding ? 'var(--gap-triple)' : '0'} ${wide ? '0' : 'var(--gap'};
         }
       }
     `}

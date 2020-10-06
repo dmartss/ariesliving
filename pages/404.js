@@ -1,5 +1,5 @@
 import Error from 'components/error'
 
-const NotFound = () => <Error status={404} />
-
-export default NotFound
+export default function NotFound() {
+  return <Error status={404} />
+}

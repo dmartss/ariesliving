@@ -5,11 +5,10 @@ import cn from 'classnames'
 import SectionHeader from './section-header'
 
 export default function Section({ description, height, width, title, alt, src, id }) {
-  const reverse = title === 'Investors'
   return (
     <Container id={id} wide>
       <Container padding center>
-        <div className={cn(styles.main, { [styles.reverse]: reverse })}>
+        <div className={cn(styles.main, { [styles.reverse]: title === 'Investors' })}>
           <Image className="no-drag" shadow alt={alt} src={src} width={width} height={height} />
           <SectionHeader title={title} description={description} />
         </div>

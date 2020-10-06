@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import styles from './section.module.css'
 
-export default function SectionHeader({ title, description, team }) {
+export default function SectionHeader({ title, description, team = false }) {
   return (
     <div className={cn(styles.content, { [styles.team]: team })}>
       <h2 className="fp fw4">{title}</h2>

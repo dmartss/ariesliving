@@ -18,6 +18,7 @@ export default css.global`
 
     --header-height: 5rem;
     --banner-height: 75px;
+    --max-width: 1024px;
 
     --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif,
@@ -38,20 +39,9 @@ export default css.global`
     --aries-ithaca: #efaa9c;
     --aries-treehouse: #e5da61;
 
-    --aries-error-lighter: #f7d4d6;
     --aries-error-light: #ff1a1a;
-    --aries-error: #ee0000;
-    --aries-error-dark: #c50000;
-
-    --aries-success-lighter: #d3e5ff;
-    --aries-success-light: #3291ff;
     --aries-success: #0070f3;
-    --aries-success-dark: #0761d1;
-
-    --aries-warning-lighter: #ffefcf;
-    --aries-warning-light: #f7b955;
     --aries-warning: #f5a623;
-    --aries-warning-dark: #ab570a;
 
     --aries-highlight-purple: #f81ce5;
     --aries-cyan-light: #79ffe1;
@@ -72,8 +62,10 @@ export default css.global`
     --container-gray: var(--accents-1);
     --container-border: var(--accents-2);
 
+    --line: rgba(0, 0, 0, 0.1);
+
     --header-bg: hsla(0, 0%, 100%, 0.8);
-    --header-border-bottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    --header-border-bottom: inset 0 -1px 0 0 var(--line);
 
     --footer-border: var(--container-dark);
 

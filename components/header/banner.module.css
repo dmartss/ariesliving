@@ -1,15 +1,17 @@
 .banner {
+  --aries-fg: #fff;
+  --aries-bg: #000;
   width: 100%;
-  background: #000000;
-  color: #ffffff;
-  height: 75px;
+  background: var(--aries-bg);
+  color: var(--aries-fg);
+  height: var(--banner-height);
   display: flex;
   align-items: center;
 }
 
 .inner {
   width: 100%;
-  max-width: 1024px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -17,7 +19,7 @@
 }
 
 .banner p {
-  color: #ffffff;
+  color: var(--aries-fg);
   margin: 0 1.5rem;
   transition: color 0.15s ease;
 }
