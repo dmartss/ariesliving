@@ -88,7 +88,7 @@ export default function EmailForm({ flex }) {
           }
 
           form.form input.flex {
-            color: var(--aries-bg);
+            color: #fff;
           }
 
           form.form input::placeholder {
