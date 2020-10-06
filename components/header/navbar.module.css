@@ -54,7 +54,7 @@ span.toggle,
     display: none;
   }
 
-  .toggle {
+  span.toggle {
     display: block;
     position: absolute;
     right: 0;
@@ -63,23 +63,33 @@ span.toggle,
   .mobileNav {
     z-index: 2;
     background: var(--bg);
-    transition: all 0.12s ease-in-out;
+    animation: appear 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    will-change: transform, opacity;
   }
 
   .mobileNav.active {
     display: flex;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
+    margin: var(--gap-half) auto;
     position: relative;
-    margin-bottom: var(--gap-triple);
+    align-items: center;
+    justify-content: center;
   }
 
   .mobileNav > a {
-    height: var(--gap-triple);
-    width: 100%;
-    border-bottom: 1px solid var(--accents-7);
-    display: flex;
-    align-items: center;
+    flex: auto;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

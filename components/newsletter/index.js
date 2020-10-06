@@ -5,7 +5,7 @@ import styles from './newsletter.module.css'
 export default function Newsletter() {
   return (
     <Container wide overflow center padding role="region" aria-labelledby="customers">
-      <div className={styles['content']}>
+      <div className={styles.content}>
         <aside>
           <h2>DON'T MISS OUT</h2>
           <h3>Stay up to date with Aries Living</h3>

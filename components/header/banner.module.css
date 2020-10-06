@@ -1,7 +1,7 @@
 .banner {
   width: 100%;
-  background-image: var(--gradient-1);
-  color: var(--aries-bg);
+  background: #000000;
+  color: #ffffff;
   height: 75px;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .banner p {
-  color: var(--aries-bg);
+  color: #ffffff;
   margin: 0 1.5rem;
   transition: color 0.15s ease;
 }

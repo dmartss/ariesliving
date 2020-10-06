@@ -144,6 +144,7 @@ export default function EmailForm({ flex }) {
 
           form.form button.flex {
             background-color: var(--aries-1);
+            border: 1px solid var(--aries-1);
             color: var(--aries-fg);
             width: 175px;
           }

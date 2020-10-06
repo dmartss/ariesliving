@@ -63,6 +63,10 @@ export default css.global`
     --accents-8: #111111;
     --accents-9: #696969;
 
+    --container-dark: var(--accents-8);
+    --container-gray: var(--accents-1);
+    --container-border: var(--accents-2);
+
     --footer-text: #8c8c8c;
     --light-gray: #f1f1f1;
 
@@ -98,6 +102,10 @@ export default css.global`
     --accents-7: #999999;
     --accents-8: #eaeaea;
     --accents-9: #fafafa;
+
+    --container-dark: var(--aries-bg);
+    --container-gray: var(--aries-bg);
+    --container-border: var(--aries-bg);
 
     --header-bg: rgba(0, 0, 0, 0.45);
     --header-border-bottom: none;

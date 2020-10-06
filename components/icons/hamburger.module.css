@@ -9,8 +9,8 @@
   fill: none;
   stroke-width: 4;
   stroke: var(--aries-fg);
-  transition: stroke-dasharray 600ms var(--cubic-transition),
-    stroke-dashoffset 600ms var(--cubic-transition), stroke 1200ms var(--cubic-transition);
+  transition: stroke-dasharray 300ms var(--cubic-transition),
+    stroke-dashoffset 300ms var(--cubic-transition), stroke 600ms var(--cubic-transition);
 }
 .line1,
 .line3 {

@@ -76,7 +76,6 @@
   border: 1px solid transparent;
   flex-shrink: 0;
   background: var(--aries-bg);
-  color: var(--accents-5);
   z-index: 1000;
   transition: opacity 0.1s ease-out, color 0.1s, top 0.1s step-start, left 0.1s step-start;
   transition-delay: 0.2s, 0s;
@@ -216,7 +215,6 @@
   align-items: center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background: var(--accents-1);
   border-top: 1px solid var(--accents-2);
   padding: var(--gap-three-quarter);
   opacity: 0;

@@ -11,38 +11,21 @@ export default css`
     padding: var(--gap-quarter) var(--gap-half);
     margin: calc(-1 * var(--gap-quarter)) calc(-1 * var(--gap-half));
     border-radius: var(--radius);
-    background-color: var(--aries-fg);
-    border: 1px solid var(--aries-fg);
-    color: var(--aries-bg);
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    color: var(--button-fg);
     font-size: inherit;
     line-height: inherit;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     outline: none;
-  }
-  .btn.email-form {
-    height: 45px;
-    margin: 10px 0;
-    width: 100%;
-    color: var(--aries-bg);
-  }
-  .btn.email-form:focus,
-  .btn.email-form:hover {
-    background-color: transparent;
-    outline: none;
-    border-color: var(--aries-fg);
-    color: var(--aries-fg);
-  }
+    -webkit-tap-highlight-color: transparent;
 
-  .btn.email-form.flex {
-    background-color: var(--aries-1);
-    color: var(--aries-fg);
-    width: 175px;
-  }
-  .btn.email-form.flex:focus,
-  .btn.email-form.flex:hover {
-    background-color: transparent;
-    border-color: var(--aries-1);
-    color: var(--aries-1);
+    --button-fg: var(--accents-5);
+    --button-bg: var(--aries-bg);
+    --button-border: var(--accents-2);
+    --button-fg-hover: var(--aries-fg);
+    --button-bg-hover: var(--aries-bg);
+    --button-border-hover: var(--aries-fg);
   }
 
   .btn.invert {
@@ -50,17 +33,20 @@ export default css`
     padding: 0 3.5rem;
     height: 2.81rem;
     line-height: 2.8rem;
-    border: none;
-    background: var(--aries-bg);
-    color: var(--accents-8);
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    color: var(--button-fg);
     box-shadow: var(--shadow-small);
   }
   .btn.invert:hover {
-    box-shadow: var(--shadow-medium);
-    color: var(--aries-1);
+    color: var(--button-fg-hover);
+    background-color: var(--button-bg-hover);
+    border-color: var(--button-border-hover);
   }
   .btn.invert:active {
-    background: var(--aries-bg);
+    color: var(--button-fg-hover);
+    background-color: var(--button-bg-hover);
+    border-color: var(--button-border-hover);
   }
 
   .btn.invert.outline {
@@ -97,4 +83,29 @@ export default css`
   .btn > .loading-dots {
     position: absolute;
   }
+  /* .btn.email-form {
+    height: 45px;
+    margin: 10px 0;
+    width: 100%;
+    color: var(--aries-bg);
+  }
+  .btn.email-form:focus,
+  .btn.email-form:hover {
+    background-color: transparent;
+    outline: none;
+    border-color: var(--aries-fg);
+    color: var(--aries-fg);
+  }
+
+  .btn.email-form.flex {
+    background-color: var(--aries-1);
+    color: var(--aries-fg);
+    width: 175px;
+  }
+  .btn.email-form.flex:focus,
+  .btn.email-form.flex:hover {
+    background-color: transparent;
+    border-color: var(--aries-1);
+    color: var(--aries-1);
+  } */
 `

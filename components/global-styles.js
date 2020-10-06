@@ -225,7 +225,7 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           .lines:after {
             content: '';
             border-top: 1px solid var(--aries-fg);
-            border-color: rgba(0, 0, 0, 0.25);
+            border-color: var(--accents-2);
             margin: 0 var(--gap) 0 0;
             flex: 1 0 20px;
           }
