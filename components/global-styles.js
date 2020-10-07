@@ -134,10 +134,10 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             font-weight: 900;
           }
           .fp {
-            color: var(--aries-fg);
+            color: var(--font-primary);
           }
           .fs {
-            color: var(--accents-9);
+            color: var(--font-secondary);
           }
           .tc {
             text-align: center;

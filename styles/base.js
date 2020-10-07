@@ -39,12 +39,36 @@ export default css.global`
     --aries-ithaca: #efaa9c;
     --aries-treehouse: #e5da61;
 
+    --aries-error-lighter: #f7d4d6;
     --aries-error-light: #ff1a1a;
+    --aries-error: #e00;
+    --aries-error-dark: #c50000;
+
+    --aries-success-lighter: #d3e5ff;
+    --aries-success-light: #3291ff;
     --aries-success: #0070f3;
+    --aries-success-dark: #0761d1;
+
+    --aries-warning-lighter: #ffefcf;
+    --aries-warning-light: #f7b955;
     --aries-warning: #f5a623;
+    --aries-warning-dark: #ab570a;
 
     --aries-highlight-purple: #f81ce5;
+    --aries-cyan-lighter: #aaffec;
     --aries-cyan-light: #79ffe1;
+    --aries-cyan: #50e3c2;
+    --aries-cyan-dark: #29bc9b;
+
+    --aries-highlight-purple: #f81ce5;
+    --aries-highlight-magenta: #eb367f;
+    --aries-highlight-pink: #ff0080;
+    --aries-highlight-yellow: #fff500;
+
+    --aries-violet-lighter: #e3d7fc;
+    --aries-violet-light: #8a63d2;
+    --aries-violet: #7928ca;
+    --aries-violet-dark: #4c2889;
 
     --accents-1: #fafafa;
     --accents-2: #eaeaea;
@@ -54,9 +78,13 @@ export default css.global`
     --accents-6: #444;
     --accents-7: #333;
     --accents-8: #111;
-    --accents-9: #696969;
 
     --light-gray: #f1f1f1;
+
+    --font-primary: var(--aries-fg);
+    --font-secondary: #696969;
+
+    --aries-selection: var(--aries-cyan-light);
 
     --container-dark: var(--accents-8);
     --container-gray: var(--accents-1);
@@ -68,8 +96,6 @@ export default css.global`
     --header-border-bottom: inset 0 -1px 0 0 var(--line);
 
     --footer-border: var(--container-dark);
-
-    --aries-selection: var(--aries-cyan-light);
 
     --shadow-smallest: 0px 4px 8px rgba(0, 0, 0, 0.12);
     --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -98,7 +124,6 @@ export default css.global`
     --accents-6: #999;
     --accents-7: #eaeaea;
     --accents-8: #fafafa;
-    --accents-9: #fafafa;
 
     --container-dark: var(--aries-bg);
     --container-gray: var(--aries-bg);
