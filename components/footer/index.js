@@ -56,19 +56,45 @@ function Footer() {
           </div>
           <div className={cn(styles.copyright, 'f6')}>
             <span>
-              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram />
+              <a
+                href={INSTAGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className={styleUtils['hvr-container']}
+              >
+                <Instagram className={styleUtils['hvr-icon']} />
               </a>
-              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
-                <Linkedin />
+              <a
+                href={LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linkedin"
+                className={styleUtils['hvr-container']}
+              >
+                <Linkedin className={styleUtils['hvr-icon']} />
               </a>
-              <a href={FACEBOOK} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook />
+              <a
+                href={FACEBOOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className={styleUtils['hvr-container']}
+              >
+                <Facebook className={styleUtils['hvr-icon']} />
               </a>
-              <a href={TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter />
+              <a
+                href={TWITTER}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className={styleUtils['hvr-container']}
+              >
+                <Twitter className={styleUtils['hvr-icon']} />
               </a>
-              <ThemeIcon className={styleUtils['theme-icon']} />
+              <a className={styleUtils['hvr-container']}>
+                <ThemeIcon className={cn(styleUtils['hvr-icon'], styleUtils['theme-icon'])} />
+              </a>
             </span>
             <div>
               Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.

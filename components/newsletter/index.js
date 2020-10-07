@@ -7,8 +7,8 @@ export default function Newsletter() {
     <Container wide overflow center padding role="region" aria-labelledby="customers">
       <div className={styles.content}>
         <aside>
-          <h2>DON'T MISS OUT</h2>
-          <h3>Stay up to date with Aries Living</h3>
+          <h2 className="fp">DON'T MISS OUT</h2>
+          <h3 className="fs">Stay up to date with Aries Living</h3>
         </aside>
         <aside>
           <div className={styles['email-form']}>

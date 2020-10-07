@@ -29,6 +29,8 @@ export default css.global`
 
   :root {
     /* Light Mode */
+    --animation-background-0: rgba(0, 0, 0, 0);
+    --animation-background-35: rgba(0, 0, 0, 0.35);
     --aries-bg: #fff;
     --aries-fg: #000;
 
@@ -54,7 +56,6 @@ export default css.global`
     --aries-warning: #f5a623;
     --aries-warning-dark: #ab570a;
 
-    --aries-highlight-purple: #f81ce5;
     --aries-cyan-lighter: #aaffec;
     --aries-cyan-light: #79ffe1;
     --aries-cyan: #50e3c2;
@@ -113,6 +114,8 @@ export default css.global`
   }
 
   [data-theme='dark'] {
+    --animation-background-0: rgba(255, 255, 255, 0);
+    --animation-background-35: rgba(255, 255, 255, 0.65);
     --aries-bg: #000;
     --aries-fg: #fff;
 
