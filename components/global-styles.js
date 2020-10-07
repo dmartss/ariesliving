@@ -70,13 +70,6 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           a:hover {
             color: var(--aries-1);
           }
-          .theme-icon {
-            transition: fill 200ms ease-in-out;
-          }
-          .theme-icon:hover {
-            fill: var(--aries-1);
-          }
-
           iframe {
             width: 100%;
             height: 100%;
@@ -220,36 +213,6 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
             width: auto;
             height: auto;
             clip: auto;
-          }
-
-          .lines {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .lines:before,
-          .lines:after {
-            content: '';
-            border-top: 1px solid var(--aries-fg);
-            border-color: var(--accents-2);
-            margin: 0 var(--gap) 0 0;
-            flex: 1 0 20px;
-          }
-
-          .lines:after {
-            margin: 0 0 0 var(--gap);
-          }
-
-          p:hover a.vp {
-            color: var(--aries-vp);
-          }
-          p:hover a.treehouse {
-            color: var(--aries-treehouse);
-          }
-          p:hover a.ithaca {
-            color: var(--aries-ithaca);
           }
         `}
       </style>

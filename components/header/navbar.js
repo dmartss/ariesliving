@@ -90,7 +90,7 @@ function Navbar({ errorPage }) {
           <ThemeIcon
             color="var(--aries-fg)"
             className={cn(
-              'theme-icon',
+              styleUtils['theme-icon'],
               styleUtils.appear,
               styleUtils['appear-first'],
               styles['mobile-absolute'],

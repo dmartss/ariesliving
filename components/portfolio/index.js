@@ -4,6 +4,7 @@ import Button from 'components/button'
 import Image from 'components/image'
 import { HOTELS } from 'lib/sections'
 import styles from './portfolio.module.css'
+import styleUtils from 'components/utils.module.css'
 import cn from 'classnames'
 
 export default function Portfolio({ description, id, title, width, height }) {
@@ -16,15 +17,15 @@ export default function Portfolio({ description, id, title, width, height }) {
   return (
     <Container center wide aria-labelledby="portfolio" id={id}>
       <div className={styles['main']}>
-        <h2 className="lines fp fw4">{title}</h2>
+        <h2 className={cn(styleUtils.lines, 'fp fw4')}>{title}</h2>
         <Container>
           <div className={styles['button-spacer']}>
-            <p className={'fs fw3'}>{description}</p>
+            <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
             {Object.values(HOTELS).map(({ src, alt, name, url, rezUrl }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
-                <p className={('f-reset fs f4 fw3', alt)}>{name}</p>
+                <p className={cn('f-reset fs f4 fw3', alt)}>{name}</p>
                 <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
                 <div className={styles.buttons}>
                   <div className={styles['button-spacer']}>

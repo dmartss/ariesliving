@@ -3,7 +3,7 @@ import Link from 'components/link'
 import styles from './error.module.css'
 import Container from 'components/container'
 
-const Error = ({ status }) => {
+export default function Error({ status }) {
   return (
     <Page title={status || 'Error'} hideFooter errorPage>
       <Container wide padding center>
@@ -34,5 +34,3 @@ const Error = ({ status }) => {
     </Page>
   )
 }
-
-export default Error

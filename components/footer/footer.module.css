@@ -14,6 +14,16 @@
 .copyright {
   color: var(--footer-text);
 }
+.footer p:hover a.vp {
+  color: var(--aries-vp);
+}
+.footer p:hover a.treehouse {
+  color: var(--aries-treehouse);
+}
+.footer p:hover a.ithaca {
+  color: var(--aries-ithaca);
+}
+
 .footer h4 a {
   color: inherit;
 }

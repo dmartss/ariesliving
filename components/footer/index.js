@@ -3,6 +3,7 @@ import { HOTELS } from 'lib/sections'
 import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
 import Container from 'components/container'
 import styles from './footer.module.css'
+import styleUtils from 'components/utils.module.css'
 import { memo } from 'react'
 import cn from 'classnames'
 
@@ -67,7 +68,7 @@ function Footer() {
               <a href={TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter />
               </a>
-              <ThemeIcon className="theme-icon" />
+              <ThemeIcon className={styleUtils['theme-icon']} />
             </span>
             <div>
               Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
