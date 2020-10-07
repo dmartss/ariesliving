@@ -25,7 +25,7 @@ export default function Portfolio({ description, id, title, width, height }) {
           <div className={styles.images}>
             {Object.values(HOTELS).map(({ src, alt, name, url, rezUrl }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
-                <p className={cn('f-reset fs f4 fw3', alt)}>{name}</p>
+                <p className={cn('f-reset fp f4 fw4', alt)}>{name}</p>
                 <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
                 <div className={styles.buttons}>
                   <div className={styles['button-spacer']}>
