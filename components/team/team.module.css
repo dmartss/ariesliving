@@ -6,9 +6,10 @@
 }
 
 .team-member {
-  margin-top: var(--gap);
+  padding-top: var(--gap);
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
 }
 
 .team-member p {
@@ -18,8 +19,5 @@
 @media screen and (max-width: 640px) {
   .wrapper p {
     font-size: 14px;
-  }
-  .team-member {
-    flex: 33%;
   }
 }
