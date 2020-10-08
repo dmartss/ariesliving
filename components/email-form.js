@@ -41,14 +41,14 @@ export default function EmailForm({ banner }) {
             background-color: transparent;
             display: flex;
             border-radius: var(--radius);
-            border: 1px solid var(--input-border);
+            border: 1px solid #999;
             align-items: center;
             margin: 0 auto;
           }
 
           form.form span.icon {
-            margin: 0 14px;
             display: inline-flex;
+            margin: 0 14px;
           }
 
           form.form div {
@@ -98,7 +98,8 @@ export default function EmailForm({ banner }) {
             color: var(--aries-fg);
           }
 
-          form.form label:focus-within {
+          form.form label:focus-within,
+          form.form label:hover {
             transition: border-color 200ms ease-in-out;
             border-color: var(--accents-7);
           }
