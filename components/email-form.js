@@ -171,7 +171,6 @@ export default function EmailForm({ banner }) {
               width: 100%;
             }
           }
-
           </style>
       </form>`
       }}
