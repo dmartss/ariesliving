@@ -1,6 +1,8 @@
 import baseStyles from 'styles/base'
 import GoogleFonts from 'next-google-fonts'
 import NProgress from 'components/nprogress'
+import { themeStorageKey } from 'lib/theme'
+import NextHead from 'next/head'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -10,6 +12,19 @@ export default function App({ Component, pageProps }) {
         rel="stylesheet"
       />
       <Component {...pageProps} />
+      <NextHead>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
+                try {
+                  var mode = localStorage.getItem('${themeStorageKey}');
+                  if (!mode) return;
+                  document.documentElement.setAttribute('data-theme', mode);
+                } catch (e) {}
+              })()`
+          }}
+        />
+      </NextHead>
       <NProgress />
       <style jsx global>
         {baseStyles}

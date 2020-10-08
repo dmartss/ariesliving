@@ -28,12 +28,36 @@ export default css.global`
   }
 
   :root {
-    /* Light Mode */
-    --aries-bg: #fff;
-    --aries-fg: #000;
+    /* Dark Mode */
+    --aries-bg: #000;
+    --aries-fg: #fff;
 
     --aries-1: #00b0ee;
     --aries-2: #0070f3;
+
+    --accents-1: #111;
+    --accents-2: #333;
+    --accents-3: #444;
+    --accents-4: #666;
+    --accents-5: #888;
+    --accents-6: #999;
+    --accents-7: #eaeaea;
+    --accents-8: #fafafa;
+
+    --font-primary: var(--aries-fg);
+    --font-secondary: #696969;
+    --footer-text: #8c8c8c;
+
+    --light-gray: #f1f1f1;
+    --gray: var(--accents-4);
+
+    --container-dark-bg: var(--aries-bg);
+    --container-gray-bg: var(--accents-1);
+    --container-border: var(--accents-2);
+    --input-border: var(--accents-2);
+
+    --header-bg: rgba(0, 0, 0, 0.5);
+    --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
 
     --aries-vp: #2daba5;
     --aries-ithaca: #efaa9c;
@@ -69,6 +93,23 @@ export default css.global`
     --aries-violet: #7928ca;
     --aries-violet-dark: #4c2889;
 
+    --aries-selection: var(--aries-highlight-purple);
+
+    --line: rgba(0, 0, 0, 0.1);
+
+    --shadow-smallest: 0 0 0 1px var(--accents-2);
+    --shadow-small: 0 0 0 1px var(--accents-2);
+    --shadow-medium: 0 0 0 1px var(--accents-2);
+    --shadow-large: 0 0 0 1px var(--accents-2);
+    --shadow-sticky: 0 0 0 1px var(--accents-2);
+    --shadow-hover: 0 0 0 1px var(--aries-fg);
+  }
+
+  [data-theme='light'] {
+    /* Light Mode */
+    --aries-bg: #fff;
+    --aries-fg: #000;
+
     --accents-1: #fafafa;
     --accents-2: #eaeaea;
     --accents-3: #999;
@@ -78,23 +119,15 @@ export default css.global`
     --accents-7: #333;
     --accents-8: #111;
 
-    --light-gray: #f1f1f1;
-
-    --font-primary: var(--aries-fg);
-    --font-secondary: #696969;
-
     --aries-selection: var(--aries-cyan-light);
 
-    --container-dark: var(--accents-8);
-    --container-gray: var(--accents-1);
+    --container-dark-bg: var(--accents-8);
+    --container-gray-bg: var(--accents-1);
     --container-border: var(--accents-2);
-
-    --line: rgba(0, 0, 0, 0.1);
+    --input-border: var(--accents-7);
 
     --header-bg: hsla(0, 0%, 100%, 0.8);
     --header-border-bottom: inset 0 -1px 0 0 var(--line);
-
-    --footer-border: var(--container-dark);
 
     --shadow-smallest: 0px 4px 8px rgba(0, 0, 0, 0.12);
     --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -109,43 +142,5 @@ export default css.global`
     --gradient-3: linear-gradient(135deg, transparent 50%, #000 50%);
     --gradient-4: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
     --gradient-5: linear-gradient(135deg, #b4b6b8, #7f8183);
-  }
-
-  [data-theme='dark'] {
-    --aries-bg: #000;
-    --aries-fg: #fff;
-
-    --accents-1: #111;
-    --accents-2: #333;
-    --accents-3: #444;
-    --accents-4: #666;
-    --accents-5: #888;
-    --accents-6: #999;
-    --accents-7: #eaeaea;
-    --accents-8: #fafafa;
-
-    --container-dark: var(--aries-bg);
-    --container-gray: var(--aries-bg);
-    --container-border: var(--aries-bg);
-
-    --header-bg: rgba(0, 0, 0, 0.5);
-    --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
-
-    --footer-border: var(--accents-2);
-
-    --aries-selection: var(--aries-highlight-purple);
-
-    --shadow-smallest: 0 0 0 1px var(--accents-2);
-    --shadow-small: 0 0 0 1px var(--accents-2);
-    --shadow-medium: 0 0 0 1px var(--accents-2);
-    --shadow-large: 0 0 0 1px var(--accents-2);
-    --shadow-sticky: 0 0 0 1px var(--accents-2);
-    --shadow-hover: 0 0 0 1px var(--aries-fg);
-
-    /* --gradient-1: linear-gradient(270deg, #333333, #111111, #111111, #333333);
-    --gradient-2: linear-gradient(135deg, #fff 50%, transparent 50%);
-    --gradient-3: linear-gradient(135deg, transparent 50%, #fff 50%);
-    --gradient-4: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-    --gradient-5: linear-gradient(135deg, #7f8183, #b4b6b8); */
   }
 `

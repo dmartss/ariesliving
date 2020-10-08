@@ -1,9 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from 'lib/analytics'
-import { themeStorageKey } from 'lib/theme'
-
-const backgrounds = { dark: '#000', light: '#fff' }
 
 class AriesLiving extends Document {
   render() {
@@ -21,19 +18,6 @@ class AriesLiving extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function() {
-                try {
-                  var mode = localStorage.getItem('${themeStorageKey}');
-                  if (!mode) return;
-                  document.documentElement.setAttribute('data-theme', mode);
-                  document.documentElement.style.background =
-                    mode === 'dark' ? '${backgrounds.dark}' : '${backgrounds.light}';
-                } catch (e) {}
-              })()`
-            }}
-          />
           <Main />
           <NextScript />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />

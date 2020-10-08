@@ -8,7 +8,6 @@ export default function Container({
   overflow = false,
   dotBackground = false,
   divider = false,
-  footer = false,
   children,
   ...props
 }) {
@@ -21,16 +20,15 @@ export default function Container({
         width: 100%;
         margin: 0 auto;
         padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
-        ${footer ? 'border-top: 1px solid var(--accents-2)' : ''};
         ${wide && !small ? '' : 'max-width: var(--max-width);'}
         ${small ? 'max-width: 768px;' : ''}
         ${center ? 'text-align: center;' : ''}
         ${dark ? `
-            background: var(--container-dark);
+            background: var(--container-dark-bg);
             color: var(--light-gray);`
             : ''}
         ${gray ? `
-            background-color: var(--container-gray);
+            background-color: var(--container-gray-bg);
             border-top: 1px solid var(--container-border);
             border-bottom: 1px solid var(--container-border);`
             : ''}

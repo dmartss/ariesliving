@@ -17,9 +17,7 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-container:hover .hvr-icon,
-.hvr-container:focus .hvr-icon,
-.hvr-container:active .hvr-icon {
+.hvr-container:hover .hvr-icon {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }

@@ -3,7 +3,7 @@ import EmailClosedIcon from './icons/email-closed'
 // import cn from 'classnames'
 // import Button from './button'
 
-export default function EmailForm({ flex }) {
+export default function EmailForm({ banner }) {
   const Icon = renderToString(<EmailClosedIcon height="15" width="15" fill="currentColor" />)
   // const _Button = renderToString(<Button className={cn('email-form', { flex })}>Subscribe</Button>)
   const token = process.env.NEXT_PUBLIC_TOKEN
@@ -14,19 +14,19 @@ export default function EmailForm({ flex }) {
           <script type="text/javascript" src="//contact-api.inguest.com/bundles/revinatecontactapi/js/revinate-form.js?v=1"></script>
           <form class="form" id="revinate_contact_api_form" token="${token}"
                 onsubmit="revFormOnSubmit(); event.preventDefault();">
-            <div class=${flex ? 'flex' : 'div'}>
+            <div class=${banner ? 'banner' : 'div'}>
               <div>
                 <label class="label">
                   <span class="icon">
                   ${Icon}
                   </span>
                 <input placeholder="you@domain.com" class=${
-                  flex ? 'flex' : ''
+                  banner ? 'banner' : ''
                 } type="email" name="email" required/>
               </div>
               </label>
               <div class="button">
-                <button class=${flex ? 'flex' : ''} type="submit">Subscribe</button>
+                <button class=${banner ? 'banner' : ''} type="submit">Subscribe</button>
               </div>
             </div>
 
@@ -40,8 +40,8 @@ export default function EmailForm({ flex }) {
           form.form label.label {
             background-color: transparent;
             display: flex;
-            border-radius: 8px;
-            border: 1px solid #999;
+            border-radius: var(--radius);
+            border: 1px solid var(--input-border);
             align-items: center;
             margin: 0 auto;
           }
@@ -56,10 +56,9 @@ export default function EmailForm({ flex }) {
             max-width: 100%;
             text-align: center;
             margin: auto;
-            transition: border-bottom-color 100ms ease-in, color 100ms ease-in;
           }
 
-          form.form div.flex {
+          form.form div.banner {
             display: flex;
             flex-direction: row;
             width: 490px;
@@ -84,33 +83,30 @@ export default function EmailForm({ flex }) {
             background-color: transparent;
             border: none;
             border-radius: 0;
-            box-sizing: border-box;
           }
 
-          form.form input.flex {
+          form.form input.banner {
             color: #fff;
           }
 
           form.form input::placeholder {
             color: #999;
-            transition: color 100ms ease-in;
+            transition: color 200ms ease-in-out;
           }
 
           form.form input:focus::placeholder {
-            color: #999;
+            color: var(--aries-fg);
           }
 
-          form.form input:focus {
-            outline: none;
-            background: none;
-            transition: border-color 100ms ease-in;
+          form.form label:focus-within {
+            transition: border-color 200ms ease-in-out;
             border-color: var(--accents-7);
           }
 
-          form.form input.flex:focus {
-            border-color: var(--aries-bg);;
+          form.form label:focus-within input {
+            outline: none;
+            background: none;
           }
-
           form.form input:disabled {
             color: #666;
           }
@@ -142,7 +138,7 @@ export default function EmailForm({ flex }) {
             color: var(--aries-bg);
           }
 
-          form.form button.flex {
+          form.form button.banner {
             background-color: var(--aries-1);
             border: 1px solid var(--aries-1);
             color: #fff;
@@ -157,21 +153,21 @@ export default function EmailForm({ flex }) {
             color: var(--aries-fg);
           }
 
-          form.form button.flex:focus,
-          form.form button.flex:hover {
+          form.form button.banner:focus,
+          form.form button.banner:hover {
             border-color: var(--aries-1);
             color: var(--aries-1);
           }
 
           @media (max-width: 640px) {
-            form.form div.flex {
+            form.form div.banner {
               display: flex;
               flex-direction: column;
               width: 80vw;
               align-items: center;
               justify-content: space-between;
             }
-            form.form button.flex {
+            form.form button.banner {
               width: 100%;
             }
           }

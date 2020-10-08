@@ -12,7 +12,7 @@ export default function Banner() {
 
           <div className={styles['email-form']}>
             <p className={cn(styles.mobile, 'f5')}>Stay up to date with Aries Living</p>
-            <EmailForm buttonLabel="SUBSCRIBE" flex />
+            <EmailForm buttonLabel="SUBSCRIBE" banner />
           </div>
         </div>
       </div>

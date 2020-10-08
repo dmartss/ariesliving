@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: var(--gap-double);
-  --footer-text: #8c8c8c;
 }
 .footer {
   padding: var(--gap-double) 0 var(--gap);
@@ -13,15 +12,6 @@
 .footer p,
 .copyright {
   color: var(--footer-text);
-}
-.footer p:hover a.vp {
-  color: var(--aries-vp);
-}
-.footer p:hover a.treehouse {
-  color: var(--aries-treehouse);
-}
-.footer p:hover a.ithaca {
-  color: var(--aries-ithaca);
 }
 
 .footer h4 a {

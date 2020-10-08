@@ -5,46 +5,50 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
     <>
       <style jsx global>
         {`
-          html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            height: 100%;
+          * {
             box-sizing: border-box;
-            touch-action: manipulation;
-            font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
-            text-rendering: optimizeLegibility;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
           }
-          *,
           *:before,
           *:after {
             box-sizing: inherit;
           }
 
-          body {
-            position: relative;
-            min-height: 100%;
-            margin: 0;
-            line-height: 1.65;
-            font-family: ${fontFamily};
-            font-size: 16px;
-            font-weight: 400;
-            min-width: 320px;
-            direction: ltr;
-            font-feature-settings: 'kern';
-            text-rendering: optimizeLegibility;
+          html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            touch-action: manipulation;
+            font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
+            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
           }
 
           html,
           body {
-            background-color: var(--aries-bg);
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            background: var(--aries-bg);
             color: var(--aries-fg);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
           }
+
+          body {
+            position: relative;
+            line-height: 1.65;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            min-width: 320px;
+            min-height: 100vh;
+            direction: ltr;
+            font-feature-settings: 'kern';
+            scroll-behavior: smooth;
+          }
+
           ::selection {
             background-color: var(--aries-selection);
             color: var(--aries-fg);
@@ -62,6 +66,33 @@ export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
           h3 {
             margin: 0;
           }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            line-height: 1.75;
+          }
+
+          p a,
+          a.reset {
+            outline: none;
+            color: var(--fg);
+            text-decoration: none;
+          }
+
+          p:hover a.vp {
+            color: var(--aries-vp);
+          }
+          p:hover a.treehouse {
+            color: var(--aries-treehouse);
+          }
+          p:hover a.ithaca {
+            color: var(--aries-ithaca);
+          }
+
           a {
             text-decoration: none;
             color: currentColor;

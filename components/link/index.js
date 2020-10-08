@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 import styles from './link.module.css'
 
-const canPrefetch = href => {
+function canPrefetch(href) {
   if (!href || !href.startsWith('/')) return false
   return true
 }
@@ -16,7 +16,6 @@ const Link = ({
   children,
   className,
 
-  // Styling
   underline,
   gray,
   ...props
