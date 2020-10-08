@@ -171,6 +171,9 @@ export default function EmailForm({ flex }) {
               align-items: center;
               justify-content: space-between;
             }
+            form.form button.flex {
+              width: 100%;
+            }
           }
 
           </style>

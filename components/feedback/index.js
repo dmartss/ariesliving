@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
 
 import styles from './feedback.module.css'
-import { useFeedback } from './feedback-context'
 import EmojiSelector from './emoji-selector'
 
 import ClickOutside from 'components/click-outside'
