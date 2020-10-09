@@ -1,0 +1,9 @@
+[
+  {
+    "name": "villa-paradiso",
+    "title": "Villa Paradiso",
+    "src": "/showcase-thumbnails/villa-paradiso.jpg"
+  },
+  { "name": "ithaca", "title": "Ithaca", "src": "/showcase-thumbnails/ithaca.jpg" },
+  { "name": "treehouse", "title": "Treehouse", "src": "/showcase-thumbnails/treehouse.jpg" }
+]

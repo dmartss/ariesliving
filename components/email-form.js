@@ -80,7 +80,6 @@ export default function EmailForm({ banner }) {
             width: 100%;
             box-shadow: none;
             color: var(--aries-fg);
-            background-color: transparent;
             border: none;
             border-radius: 0;
           }
