@@ -33,8 +33,8 @@
 }
 
 .gradient-bg.gradient-bg-2 {
-  --start-color: #7928ca;
-  --end-color: #ff0080;
+  --start-color: var(--aries-violet);
+  --end-color: var(--aries-highlight-pink);
 }
 
 .gradient-bg .gradient-fg {
