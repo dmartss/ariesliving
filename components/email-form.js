@@ -72,7 +72,7 @@ export default function EmailForm({ banner }) {
             display: block;
             text-align: left;
             font-size: 14px;
-            font-family: var(--font-sans);
+            font-family: var(--fontFamily);
             padding: 4px 10px;
             margin: 0 auto;
             height: 40px;

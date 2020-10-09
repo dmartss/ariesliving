@@ -40,7 +40,7 @@ export default function GlobalStyles() {
           body {
             position: relative;
             line-height: 1.65;
-            font-family: var(--font-sans);
+            font-family: var(--fontFamily);
             font-weight: 400;
             min-width: 320px;
             min-height: 100vh;

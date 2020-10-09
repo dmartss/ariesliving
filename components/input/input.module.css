@@ -38,7 +38,7 @@
   box-sizing: border-box;
   display: block;
   padding: 0;
-  font-family: var(--font-sans);
+  font-family: var(--fontFamily);
   font-size: 14px;
   line-height: 26px;
   outline: 0;

@@ -9,7 +9,7 @@
   height: var(--closed-height);
   width: var(--closed-width);
   display: inline-block;
-  font-family: var(--font-sans);
+  font-family: var(--fontFamily);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -26,7 +26,7 @@
   line-height: 1.5;
   font-size: 0.875rem;
   border-radius: 5px;
-  font-family: var(--font-sans);
+  font-family: var(--fontFamily);
   width: var(--closed-width);
   height: var(--closed-height);
   resize: none;

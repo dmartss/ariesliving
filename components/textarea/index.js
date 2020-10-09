@@ -169,7 +169,7 @@ export default class Textarea extends Component {
 //           box-shadow: none;
 //           box-sizing: border-box;
 //           display: block;
-//           font-family: var(--font-sans);
+//           font-family: var(--fontFamily);
 //           font-size: 14px;
 //           line-height: 1.7;
 //           height: 100%;

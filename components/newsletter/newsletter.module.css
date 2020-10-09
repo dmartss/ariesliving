@@ -20,45 +20,6 @@
   font-weight: 400;
 }
 
-.animated-gradient-text_background-1 {
-  --content: "DON'T MISS OUT.";
-  --padding: 0.05em;
-  --start-color: #007cf0;
-  --end-color: #00dfd8;
-}
-.animated-gradient-text_background:before {
-  content: var(--content);
-  position: absolute;
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: var(--aries-fg);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  padding-left: var(--padding);
-  padding-right: var(--padding);
-}
-.animated-gradient-text_background {
-  position: relative;
-  display: block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.animated-gradient-text_foreground {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-left: var(--padding);
-  padding-right: var(--padding);
-  background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
-  position: relative;
-  z-index: 1;
-}
-
 .email-form {
   text-align: right;
   position: relative;
