@@ -1,7 +1,7 @@
 import Page from 'components/page'
 import Link from 'components/link'
-import styles from './error.module.css'
 import Container from 'components/container'
+import styles from './error.module.css'
 
 export default function Error({ status }) {
   return (

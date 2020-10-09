@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
-
-import styles from './feedback.module.css'
-import EmojiSelector from './emoji-selector'
-
 import ClickOutside from 'components/click-outside'
 import { Checkmark } from 'components/icons'
 import Textarea from 'components/textarea'
 import Button from 'components/button'
 import Input from 'components/input'
+import EmojiSelector from './emoji-selector'
+import styles from './feedback.module.css'
 
 const EMOJIS = new Map([
   ['🤩', 'f929'],
@@ -187,14 +185,14 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
 
   const handleChange = useCallback(
     e => {
-      focused && setValue(e)
+      if (focused) setValue(e)
     },
     [focused]
   )
 
   const handleEmailChange = useCallback(
     e => {
-      focused && setEmailValue(e)
+      if (focused) setEmailValue(e)
     },
     [focused]
   )

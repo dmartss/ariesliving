@@ -1,8 +1,8 @@
-import Container from '../container'
-import Image from '../image'
-import styles from './section.module.css'
 import cn from 'classnames'
+import Container from 'components/container'
+import Image from 'components/image'
 import SectionHeader from './section-header'
+import styles from './section.module.css'
 
 export default function Section({ description, height, width, title, alt, src, id }) {
   return (

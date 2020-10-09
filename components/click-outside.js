@@ -1,10 +1,14 @@
 import { Component } from 'react'
-
-const isInDOM = obj => Boolean(obj.closest('body'))
-
-const hasParent = (element, root) => root.contains(element) && isInDOM(element)
+import PropTypes from 'prop-types'
+import { isInDOM, hasParent } from 'lib/utils'
 
 export default class ClickOutside extends Component {
+  static propTypes = {
+    active: PropTypes.bool,
+    onClick: PropTypes.func,
+    render: PropTypes.func
+  }
+
   static defaultProps = { active: true }
 
   constructor(props) {

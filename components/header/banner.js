@@ -1,7 +1,7 @@
-import EmailForm from '../email-form'
 import cn from 'classnames'
-import styles from './banner.module.css'
 import Container from 'components/container'
+import EmailForm from '../email-form'
+import styles from './banner.module.css'
 
 export default function Banner() {
   return (

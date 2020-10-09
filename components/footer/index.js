@@ -3,10 +3,10 @@ import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/ic
 import Link from 'components/link'
 import { HOTELS } from 'lib/sections'
 import Container from 'components/container'
-import styles from './footer.module.css'
 import styleUtils from 'components/utils.module.css'
 import { memo } from 'react'
 import cn from 'classnames'
+import styles from './footer.module.css'
 
 function Footer() {
   return (

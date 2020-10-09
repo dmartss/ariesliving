@@ -1,6 +1,6 @@
-import styles from './textarea.module.css'
 import { Component } from 'react'
 import cn from 'classnames'
+import styles from './textarea.module.css'
 
 export default class Textarea extends Component {
   state = { focused: this.props.autoFocus }

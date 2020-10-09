@@ -1,6 +1,6 @@
 import { FONT_FAMILY_SANS } from 'lib/constants'
 
-export default function GlobalStyles({ fontFamily = FONT_FAMILY_SANS }) {
+export default function GlobalStyles() {
   return (
     <>
       <style jsx global>

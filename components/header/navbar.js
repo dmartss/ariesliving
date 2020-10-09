@@ -2,12 +2,12 @@ import { memo, useState, useEffect } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'next/link'
 import cn from 'classnames'
-import styles from './navbar.module.css'
 import styleUtils from 'components/utils.module.css'
 import Logo, { Hamburger, ThemeIcon } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
 import Router from 'next/router'
+import styles from './navbar.module.css'
 
 function Navbar({ errorPage }) {
   const [mobileNavShown, setMobileNavShown] = useState(false)

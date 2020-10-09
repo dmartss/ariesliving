@@ -16,7 +16,7 @@ export default function EmojiSelector({ onEmojiSelect, loading, EMOJIS }) {
   const [current, setCurrent] = useState(null)
 
   useEffect(() => {
-    onEmojiSelect && onEmojiSelect(current)
+    if (onEmojiSelect) onEmojiSelect(current)
   }, [current, onEmojiSelect])
 
   const onSelect = emoji => emoji !== current && setCurrent(emoji)

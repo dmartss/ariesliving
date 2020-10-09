@@ -39,8 +39,7 @@ class AriesLiving extends Document {
 
 export default AriesLiving
 
-{
-  /* <AmpWrap
+/* <AmpWrap
 ampOnly={
   <script
     async
@@ -99,4 +98,3 @@ nonAmp={
    </amp-analytics>
  }
 /> */
-}

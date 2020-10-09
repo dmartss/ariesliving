@@ -10,14 +10,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . && prettier --write '**/*.js' --loglevel warn"
   },
   "dependencies": {
     "@reach/skip-nav": "^0.11.2",
     "@sendgrid/mail": "7.2.6",
     "classnames": "^2.2.6",
     "intersection-observer": "^0.11.0",
-    "next": "9.5.4-canary.20",
+    "next": "9.5.4",
     "next-google-fonts": "^1.2.1",
     "nprogress": "^0.2.0",
     "react": "16.13.1",
@@ -25,6 +26,13 @@
     "swr": "0.3.5"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "next-unused": "^0.0.3",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-hover-media-feature": "^0.3.1",
     "postcss-preset-env": "^6.7.0",
@@ -32,5 +40,16 @@
   },
   "resolutions": {
     "webpack": "^5.0.0-beta.30"
+  },
+  "next-unused": {
+    "alias": {
+      "components": "components/",
+      "lib": "lib/",
+      "styles": "styles/"
+    },
+    "include": [
+      "components",
+      "lib"
+    ]
   }
 }

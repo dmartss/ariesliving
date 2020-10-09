@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import styles from './input.module.css'
 import cn from 'classnames'
+import styles from './input.module.css'
 
 export default class Input extends Component {
   state = { focused: this.props.autoFocus }
