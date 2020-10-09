@@ -20,4 +20,8 @@
   .wrapper p {
     font-size: 14px;
   }
+
+  .team-member {
+    flex: 1 1 50%;
+  }
 }
