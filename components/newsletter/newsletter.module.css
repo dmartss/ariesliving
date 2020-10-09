@@ -13,11 +13,37 @@
   text-align: left;
   margin-bottom: 0.8rem;
 }
+
 .content h3 {
   font-size: var(--gap);
   line-height: 1.8;
   text-align: left;
   font-weight: 400;
+}
+
+.gradient-bg {
+  position: relative;
+  display: block;
+  user-select: none;
+}
+
+.gradient-bg.gradient-bg-1 {
+  --start-color: #007cf0;
+  --end-color: #00dfd8;
+}
+
+.gradient-bg.gradient-bg-2 {
+  --start-color: #7928ca;
+  --end-color: #ff0080;
+}
+
+.gradient-bg .gradient-fg {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
+  position: relative;
+  z-index: 1;
 }
 
 .email-form {
