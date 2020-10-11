@@ -20,5 +20,5 @@ const Header = ({ sticky = true, errorPage }) => {
     </>
   )
 }
-
+Header.displayName = 'Header'
 export default memo(Header)

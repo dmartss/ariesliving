@@ -1,13 +1,12 @@
-import useTheme from 'lib/theme'
-import Moon from './moon'
-import Sun from './sun'
+import { useTheme } from 'next-themes'
+import { Moon, Sun } from './'
 
 export default function ThemeIcon(props) {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
-  return theme === 'dark' ? (
-    <Sun onClick={toggleTheme} {...props} />
+  return theme === 'light' ? (
+    <Moon onClick={() => setTheme('dark')} {...props} />
   ) : (
-    <Moon onClick={toggleTheme} {...props} />
+    <Sun onClick={() => setTheme('light')} {...props} />
   )
 }

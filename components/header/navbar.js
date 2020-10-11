@@ -133,4 +133,5 @@ function Navbar({ errorPage }) {
   )
 }
 
+Navbar.displayName = 'NavBar'
 export default memo(Navbar)
