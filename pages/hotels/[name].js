@@ -12,20 +12,18 @@ export default function Home({ data }) {
         shadow
         margin={0}
         noBorder
-        layout="responsive"
         oversize={false}
-        alt="Hero Image"
+        layout="responsive"
         width={3000 / 2.75}
         height={2000 / 2.75}
+        alt={`${data.title} Image`}
       />
     </Page>
   )
 }
 
 export async function getStaticProps({ params }) {
-  const data = { ...hotels.find(e => e.name === params.name) }
-
-  return { props: { data } }
+  return { props: { ...hotels.find(e => e.name === params.name) } }
 }
 
 export const getStaticPaths = () => ({
