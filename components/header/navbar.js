@@ -9,7 +9,7 @@ import HeaderFeedback from 'components/feedback'
 import Router from 'next/router'
 import styles from './navbar.module.css'
 
-function Navbar({ errorPage }) {
+function Navbar({ home }) {
   const [mobileNavShown, setMobileNavShown] = useState(false)
 
   const toggle = () => setMobileNavShown(!mobileNavShown)
@@ -35,7 +35,7 @@ function Navbar({ errorPage }) {
           <Link href="/">
             <a
               className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'], {
-                [styles.error]: errorPage
+                [styles['not-home']]: !home
               })}
               title="Go to the homepage"
             >
@@ -43,7 +43,7 @@ function Navbar({ errorPage }) {
             </a>
           </Link>
 
-          {!errorPage && (
+          {home && (
             <div className={styles['not-logo']}>
               <div
                 className={cn(

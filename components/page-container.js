@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Router from 'next/router'
 import { trackPageview } from 'lib/analytics'
-import { NAME } from 'lib/constants'
 import GlobalStyles from './global-styles'
 import SocialMeta from './social-meta'
 
@@ -20,7 +19,7 @@ export default function PageContainer({
   return (
     <div>
       <Head>
-        <title>{`${NAME}${title ? ` - ${title}` : ''}`}</title>
+        <title>{title || `${title} by Aries Living`}</title>
         {description !== false && (
           <meta
             name="description"

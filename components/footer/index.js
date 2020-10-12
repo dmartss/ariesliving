@@ -1,7 +1,7 @@
 import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
 import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
 import Link from 'components/link'
-import { HOTELS } from 'lib/sections'
+import { hotels } from 'lib/hotels'
 import Container from 'components/container'
 import styleUtils from 'components/utils.module.css'
 import { memo } from 'react'
@@ -16,7 +16,7 @@ function Footer() {
           <div className={cn(styles.grid, 'f5')}>
             <div>
               <h4 className="fw5">Brands</h4>
-              {Object.values(HOTELS).map(({ name, url, alt }) => (
+              {Object.values(hotels).map(({ name, url, alt }) => (
                 <p key={name}>
                   <Link external className={alt} href={url}>
                     {name}

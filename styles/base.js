@@ -59,7 +59,9 @@ export default css.global`
     --header-bg: rgba(0, 0, 0, 0.5);
     --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
 
-    --aries-vp: #2daba5;
+    --aries-vp-1: #2daba5;
+    --aries-vp-2: #009a94;
+    --aries-vp-3: #365b6d;
     --aries-ithaca: #efaa9c;
     --aries-treehouse: #e5da61;
 

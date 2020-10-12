@@ -4,18 +4,23 @@ import Header from './header'
 import Footer from './footer'
 
 export default function Page({
-  title,
-  description = NAME,
-  url = SITE_URL,
   image = defaultOgImage,
   sticky = undefined,
-  children,
+  description = NAME,
+  url,
   hideFooter,
-  errorPage
+  children,
+  title,
+  home
 }) {
   return (
-    <PageContainer title={title} description={description} url={url} image={image}>
-      <Header errorPage={errorPage} sticky={sticky} />
+    <PageContainer
+      title={title}
+      description={description}
+      url={`${SITE_URL}${url ? `${url}` : ''}`}
+      image={image}
+    >
+      <Header home={home} sticky={sticky} />
       {children}
       {!hideFooter && <Footer />}
     </PageContainer>

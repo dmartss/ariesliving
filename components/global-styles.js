@@ -84,7 +84,7 @@ export default function GlobalStyles() {
           }
 
           p:hover a.vp {
-            color: var(--aries-vp);
+            color: var(--aries-vp-1);
           }
           p:hover a.treehouse {
             color: var(--aries-treehouse);

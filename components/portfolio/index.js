@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
+import cn from 'classnames'
 import Container from 'components/container'
 import Button from 'components/button'
 import Image from 'components/image'
-import { HOTELS } from 'lib/sections'
+import { hotels } from 'lib/hotels'
 import styles from './portfolio.module.css'
 import styleUtils from 'components/utils.module.css'
-import cn from 'classnames'
 
 export default function Portfolio({ description, id, title, width, height }) {
   const [cardClickable, setCardClickable] = useState(false)
@@ -23,10 +23,17 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
-            {Object.values(HOTELS).map(({ src, alt, name, url, rezUrl }) => (
+            {Object.values(hotels).map(({ showcaseSrc, alt, name, url, rezUrl }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
                 <p className={cn('f-reset fp f4 fw4', alt)}>{name}</p>
-                <Image shadow margin={5} alt={alt} src={src} width={width} height={height} />
+                <Image
+                  shadow
+                  margin={5}
+                  alt={alt}
+                  width={width}
+                  height={height}
+                  src={showcaseSrc}
+                />
                 <div className={styles.buttons}>
                   <div className={styles['button-spacer']}>
                     <Button href={url} invert target="_blank" rel="noopener noreferrer">
