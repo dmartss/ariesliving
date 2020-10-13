@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import cn from 'classnames'
 import Container from 'components/container'
 import Button from 'components/button'
@@ -23,30 +24,38 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
-            {hotels.map(({ showcaseSrc, alt, name, url, rezUrl }) => (
-              <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
-                <p className={cn('f-reset fp f4 fw4', alt)}>{name}</p>
-                <Image
-                  shadow
-                  margin={5}
-                  alt={alt}
-                  width={width}
-                  height={height}
-                  src={showcaseSrc}
-                />
-                <div className={styles.buttons}>
-                  <div className={styles['button-spacer']}>
-                    <Button href={url} invert target="_blank" rel="noopener noreferrer">
-                      Learn More
-                    </Button>
-                  </div>
-                  <div className={styles['button-spacer']}>
-                    <Button href={rezUrl} invert outline target="_blank" rel="noopener noreferrer">
-                      Book Now
-                    </Button>
+            {hotels.map(({ showcaseSrc, alt, name, url, rezUrl, hotel }) => (
+              <Link key={name} as={`hotels/${hotel}`} href="/hotels/[hotel]">
+                <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
+                  <p className={cn('f-reset fp f4 fw4', alt)}>{name}</p>
+                  <Image
+                    shadow
+                    margin={5}
+                    alt={alt}
+                    width={width}
+                    height={height}
+                    src={showcaseSrc}
+                  />
+                  <div className={styles.buttons}>
+                    <div className={styles['button-spacer']}>
+                      <Button href={url} invert target="_blank" rel="noopener noreferrer">
+                        Learn More
+                      </Button>
+                    </div>
+                    <div className={styles['button-spacer']}>
+                      <Button
+                        href={rezUrl}
+                        invert
+                        outline
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Book Now
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </Container>
@@ -54,8 +63,3 @@ export default function Portfolio({ description, id, title, width, height }) {
     </Container>
   )
 }
-
-// return cardClickable
-// ?  <a key={name} href={url} target="_blank" rel="noopener noreferrer">
-//   card
-// </a>  : card
