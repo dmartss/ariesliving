@@ -16,9 +16,9 @@ function Footer() {
           <div className={cn(styles.grid, 'f5')}>
             <div>
               <h4 className="fw5">Brands</h4>
-              {hotels.map(({ name, url, alt }) => (
+              {hotels.map(({ name, url, hotel }) => (
                 <p key={name}>
-                  <Link external className={alt} href={url}>
+                  <Link external className={hotel} href={url}>
                     {name}
                   </Link>
                 </p>

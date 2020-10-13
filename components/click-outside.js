@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { isInDOM, hasParent } from 'lib/utils'
+import { hasParent } from 'lib/utils'
 
 export default class ClickOutside extends Component {
   static propTypes = {
