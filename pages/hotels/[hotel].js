@@ -6,7 +6,7 @@ import hotels from 'hotels'
 
 export const getStaticPaths = () => ({
   paths: hotels.map(({ hotel }) => ({ params: { hotel } })),
-  fallback: true
+  fallback: false
 })
 export const getStaticProps = ({ params }) => {
   return { props: { hotel: { ...hotels.find(e => e.hotel === params.hotel) } } }
