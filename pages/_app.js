@@ -1,6 +1,27 @@
-import baseStyles from 'styles/base'
 import GoogleFonts from 'next-google-fonts'
-import NProgress from 'components/nprogress'
+import nprogress from 'nprogress'
+import Router from 'next/router'
+import { trackPageview } from 'lib/analytics'
+
+let timeout
+
+const start = () => {
+  timeout = setTimeout(nprogress.start, 100)
+}
+
+const done = url => {
+  clearTimeout(timeout)
+  nprogress.done()
+  if (url) trackPageview(url)
+}
+
+Router.events.on('routeChangeStart', start)
+Router.events.on('routeChangeComplete', url => {
+  done(url)
+})
+Router.events.on('routeChangeError', done)
+
+import 'styles/global.css'
 import { ThemeProvider } from 'next-themes'
 
 export default function App({ Component, pageProps }) {
@@ -13,10 +34,6 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
         <Component {...pageProps} />
       </ThemeProvider>
-      <NProgress />
-      <style jsx global>
-        {baseStyles}
-      </style>
     </>
   )
 }

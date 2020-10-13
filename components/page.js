@@ -1,4 +1,4 @@
-import PageContainer from './page-container'
+import Head from './head'
 import { NAME, SITE_URL, defaultOgImage } from 'lib/constants'
 import Header from './header'
 import Footer from './footer'
@@ -15,7 +15,7 @@ export default function Page({
 }) {
   return (
     <>
-      <PageContainer
+      <Head
         title={title}
         description={description}
         url={`${SITE_URL}${url ? `${url}` : ''}`}
