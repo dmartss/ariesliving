@@ -3,7 +3,7 @@ import cn from 'classnames'
 import Container from 'components/container'
 import Button from 'components/button'
 import Image from 'components/image'
-import { hotels } from 'lib/hotels'
+import hotels from 'lib/hotels'
 import styles from './portfolio.module.css'
 import styleUtils from 'components/utils.module.css'
 
@@ -23,7 +23,7 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
-            {Object.values(hotels).map(({ showcaseSrc, alt, name, url, rezUrl }) => (
+            {hotels.map(({ showcaseSrc, alt, name, url, rezUrl }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
                 <p className={cn('f-reset fp f4 fw4', alt)}>{name}</p>
                 <Image

@@ -1,21 +1,18 @@
 import { SkipNavContent } from '@reach/skip-nav'
 import { useRouter } from 'next/router'
-import { hotels } from 'lib/hotels'
 import Image from 'components/image'
 import Page from 'components/page'
+import hotels from 'hotels'
 
-export async function getStaticPaths() {
-  return {
-    paths: Object.keys(hotels).map(key => ({ params: { hotel: key } })),
-    fallback: true
-  }
+export const getStaticPaths = () => ({
+  paths: hotels.map(({ hotel }) => ({ params: { hotel } })),
+  fallback: true
+})
+export const getStaticProps = ({ params }) => {
+  return { props: { hotel: { ...hotels.find(e => e.hotel === params.hotel) } } }
 }
 
-export async function getStaticProps({ params }) {
-  return { props: { hotel: hotels[params.hotel || 'ithaca'] } }
-}
-
-export default function Home({ hotel }) {
+export default function Hotel({ hotel }) {
   const router = useRouter()
   const { asPath } = router
 

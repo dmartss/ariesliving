@@ -7,22 +7,23 @@ export default function Page({
   image = defaultOgImage,
   sticky = undefined,
   description = NAME,
-  url,
   hideFooter,
-  children,
   title,
-  home
+  url,
+  home,
+  children
 }) {
   return (
-    <PageContainer
-      title={title}
-      description={description}
-      url={`${SITE_URL}${url ? `${url}` : ''}`}
-      image={image}
-    >
+    <>
+      <PageContainer
+        title={title}
+        description={description}
+        url={`${SITE_URL}${url ? `${url}` : ''}`}
+        image={image}
+      />
       <Header home={home} sticky={sticky} />
       {children}
       {!hideFooter && <Footer />}
-    </PageContainer>
+    </>
   )
 }
