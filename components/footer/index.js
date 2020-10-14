@@ -1,7 +1,7 @@
 import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
 import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
 import Link from 'components/link'
-import hotels from 'lib/hotels'
+import hotels from 'hotels'
 import Container from 'components/container'
 import styleUtils from 'components/utils.module.css'
 import { memo } from 'react'

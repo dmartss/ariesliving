@@ -4,7 +4,7 @@ import cn from 'classnames'
 import Container from 'components/container'
 import Button from 'components/button'
 import Image from 'components/image'
-import hotels from 'lib/hotels'
+import hotels from 'hotels'
 import styles from './portfolio.module.css'
 import styleUtils from 'components/utils.module.css'
 
