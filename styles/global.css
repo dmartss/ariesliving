@@ -221,13 +221,16 @@ a.reset {
   text-decoration: none;
 }
 
-p:hover a.villa-paradiso {
+p:hover a.villa-paradiso,
+a.villa-paradiso:hover {
   color: var(--aries-vp-1);
 }
-p:hover a.treehouse {
+p:hover a.treehouse,
+a.treehouse:hover {
   color: var(--aries-treehouse);
 }
-p:hover a.ithaca {
+p:hover a.ithaca,
+a.ithaca:hover {
   color: var(--aries-ithaca);
 }
 

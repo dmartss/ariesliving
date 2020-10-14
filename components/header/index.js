@@ -9,12 +9,7 @@ const Header = ({ sticky = true, home }) => {
     <>
       <Banner />
 
-      <header
-        className={cn(styles.header, {
-          [styles.sticky]: sticky,
-          [styles.hideBorder]: !home
-        })}
-      >
+      <header className={cn(styles.header, { [styles.sticky]: sticky })}>
         <Nav home={home} />
       </header>
     </>

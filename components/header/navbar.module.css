@@ -18,9 +18,6 @@
   display: flex;
   margin-right: auto;
 }
-.logo.not-home {
-  margin: auto;
-}
 
 .header-feedback {
   display: inline-flex;
@@ -85,7 +82,7 @@
   }
 
   .mobileNav > a {
-    flex: auto;
+    flex: 1;
   }
 }
 

@@ -7,6 +7,7 @@ import Button from 'components/button'
 import Input from 'components/input'
 import EmojiSelector from './emoji-selector'
 import styles from './feedback.module.css'
+import { useFeedback } from './feedback-context'
 
 const EMOJIS = new Map([
   ['🤩', 'f929'],
@@ -32,6 +33,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
   const [emailValue, setEmailValue] = useState(null)
   const [inputFocused, setInputFocused] = useState(null)
   const [value, setValue] = useState(null)
+  const feedback = useFeedback()
 
   const textAreaRef = useRef()
   const emailInputRef = useRef()
@@ -76,7 +78,8 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
         body: JSON.stringify({
           note: textAreaRef.current.value,
           email: emailValue || '',
-          emotion: getEmoji(emoji)
+          emotion: getEmoji(emoji),
+          label: feedback.label
         })
       })
       const text = await res.text()

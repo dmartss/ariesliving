@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
-import Link from 'next/link'
+import Link from 'components/link'
 import cn from 'classnames'
 import styleUtils from 'components/utils.module.css'
 import Logo, { Hamburger, ThemeIcon } from 'components/icons'
@@ -17,9 +17,11 @@ function Navbar({ home }) {
 
   useEffect(() => {
     Router.events.on('hashChangeComplete', done)
+    Router.events.on('routeChangeComplete', done)
 
     return () => {
       Router.events.off('hashChangeComplete', done)
+      Router.events.off('routeChangeComplete', done)
     }
   }, [])
 
@@ -32,60 +34,97 @@ function Navbar({ home }) {
 
       <nav className={cn(styles.desktopNav, 'f-reset')}>
         <div className={styles.links}>
-          <Link href="/">
-            <a
-              className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'], {
-                [styles['not-home']]: !home
-              })}
-              title="Go to the homepage"
-            >
-              <Logo />
-            </a>
+          <Link
+            href="/"
+            className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'], {
+              [styles['not-home']]: !home
+            })}
+            title="Go to the homepage"
+          >
+            <Logo />
           </Link>
 
-          {home && (
-            <div className={styles['not-logo']}>
-              <div
-                className={cn(
-                  styles['header-feedback'],
-                  styleUtils.appear,
-                  styleUtils['appear-second']
-                )}
-              >
-                <HeaderFeedback email />
-              </div>
+          <div className={styles['not-logo']}>
+            {home ? (
+              <>
+                <div
+                  className={cn(
+                    styles['header-feedback'],
+                    styleUtils.appear,
+                    styleUtils['appear-second']
+                  )}
+                >
+                  <HeaderFeedback email />
+                </div>
 
-              <Link href="#about">
-                <a
+                <Link
+                  href="#about"
                   className={cn('fp', styleUtils.appear, styleUtils['appear-third'])}
                   title="About"
                 >
                   About
-                </a>
-              </Link>
-              <Link href="#portfolio">
-                <a
+                </Link>
+                <Link
+                  href="#portfolio"
                   className={cn('fp', styleUtils.appear, styleUtils['appear-fourth'])}
                   title="Portfolio"
                 >
                   Portfolio
-                </a>
-              </Link>
-              <Link href="#investors">
-                <a
+                </Link>
+                <Link
+                  href="#investors"
                   className={cn('fp', styleUtils.appear, styleUtils['appear-fifth'])}
                   title="Investors"
                 >
                   Investors
-                </a>
-              </Link>
-              <Link href="#team">
-                <a className={cn('fp', styleUtils.appear, styleUtils['appear-sixth'])} title="Team">
+                </Link>
+                <Link
+                  href="#team"
+                  className={cn('fp', styleUtils.appear, styleUtils['appear-sixth'])}
+                  title="Team"
+                >
                   Team
-                </a>
-              </Link>
-            </div>
-          )}
+                </Link>
+              </>
+            ) : (
+              <>
+                <div
+                  className={cn(
+                    styles['header-feedback'],
+                    styleUtils.appear,
+                    styleUtils['appear-second']
+                  )}
+                >
+                  <HeaderFeedback email />
+                </div>
+
+                <Link
+                  href="/hotels/villa-paradiso"
+                  hotel="villa-paradiso"
+                  className={cn('fp', styleUtils.appear, styleUtils['appear-third'])}
+                  title="Villa Paradiso"
+                >
+                  Villa Paradiso
+                </Link>
+                <Link
+                  href="/hotels/ithaca"
+                  hotel="ithaca"
+                  className={cn('fp', styleUtils.appear, styleUtils['appear-fourth'])}
+                  title="Ithaca"
+                >
+                  Ithaca
+                </Link>
+                <Link
+                  href="/hotels/treehouse"
+                  hotel="treehouse"
+                  className={cn('fp', styleUtils.appear, styleUtils['appear-fifth'])}
+                  title="Treehouse"
+                >
+                  Treehouse
+                </Link>
+              </>
+            )}
+          </div>
 
           <ThemeIcon
             color="var(--aries-fg)"
@@ -108,26 +147,40 @@ function Navbar({ home }) {
       </nav>
 
       <nav className={cn(styles.mobileNav, { [styles.active]: mobileNavShown })}>
-        <Link href="#about">
-          <a className="fp" title="About">
-            About
-          </a>
-        </Link>
-        <Link href="#portfolio">
-          <a className="fp" title="Portfolio">
-            Portfolio
-          </a>
-        </Link>
-        <Link href="#investors">
-          <a className="fp" title="Investors">
-            Investors
-          </a>
-        </Link>
-        <Link href="#team">
-          <a className="fp" title="Team">
-            Team
-          </a>
-        </Link>
+        {home ? (
+          <>
+            <Link href="#about" className="fp" title="About">
+              About
+            </Link>
+            <Link href="#portfolio" className="fp" title="Portfolio">
+              Portfolio
+            </Link>
+            <Link href="#investors" className="fp" title="Investors">
+              Investors
+            </Link>
+            <Link href="#team" className="fp" title="Team">
+              Team
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link href="/hotels/ithaca" hotel="ithaca" className="fp" title="Ithaca">
+              Ithaca
+            </Link>
+
+            <Link href="/hotels/treehouse" hotel="treehouse" className="fp" title="Treehouse">
+              Treehouse
+            </Link>
+            <Link
+              href="/hotels/villa-paradiso"
+              hotel="villa-paradiso"
+              className="fp"
+              title="Villa Paradiso"
+            >
+              Villa Paradiso
+            </Link>
+          </>
+        )}
       </nav>
     </Container>
   )
