@@ -2,6 +2,13 @@ import css from 'styled-jsx/css'
 
 export default css`
   .btn {
+    --button-fg: var(--accents-5);
+    --button-bg: var(--aries-bg);
+    --button-border: var(--accents-2);
+    --button-fg-hover: var(--aries-fg);
+    --button-bg-hover: var(--aries-bg);
+    --button-border-hover: var(--aries-fg);
+
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -11,27 +18,23 @@ export default css`
     padding: var(--gap-quarter) var(--gap-half);
     margin: calc(-1 * var(--gap-quarter)) calc(-1 * var(--gap-half));
     border-radius: var(--radius);
-    background-color: var(--button-bg);
-    border: 1px solid var(--button-border);
+    background-color: transparent;
+    border: none;
     color: var(--button-fg);
     font-size: inherit;
     line-height: inherit;
+    height: 2.81rem;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
+  }
 
-    --button-fg: var(--accents-5);
-    --button-bg: var(--aries-bg);
-    --button-border: var(--accents-2);
-    --button-fg-hover: var(--aries-fg);
-    --button-bg-hover: var(--aries-bg);
-    --button-border-hover: var(--aries-fg);
+  :global(html[data-theme='dark']) .btn {
+    --shadow-small: 0;
   }
 
   .btn.invert {
     margin: 0;
     padding: 0 3.5rem;
-    height: 2.81rem;
     line-height: 2.8rem;
     background-color: var(--button-bg);
     border: 1px solid var(--button-border);
