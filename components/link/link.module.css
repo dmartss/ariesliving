@@ -3,7 +3,6 @@
   color: var(--fg);
   text-decoration: none;
 }
-
 .gray {
   color: var(--gray);
 }
@@ -13,19 +12,10 @@
   color: var(--fg);
 }
 
-.selected:global(.villa-paradiso) {
-  color: var(--aries-vp-1);
-  text-shadow: 0px 0px 1px var(--aries-vp-1);
+.selected {
+  text-shadow: 0px 0px 1px var(--aries-1);
+  color: var(--aries-1);
 }
-.selected:global(.treehouse) {
-  color: var(--aries-treehouse);
-  text-shadow: 0px 0px 1px var(--aries-treehouse);
-}
-.selected:global(.ithaca) {
-  color: var(--aries-ithaca);
-  text-shadow: 0px 0px 1px var(--aries-ithaca);
-}
-
 .underline {
   outline: none;
   color: var(--fg);

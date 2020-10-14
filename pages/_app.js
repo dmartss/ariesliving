@@ -1,30 +1,41 @@
+import { useState, useEffect } from 'react'
 import GoogleFonts from 'next-google-fonts'
 import nprogress from 'nprogress'
 import Router from 'next/router'
 import { trackPageview } from 'lib/analytics'
-
-let timeout
-
-const start = () => {
-  timeout = setTimeout(nprogress.start, 100)
-}
-
-const done = url => {
-  clearTimeout(timeout)
-  nprogress.done()
-  if (url) trackPageview(url)
-}
-
-Router.events.on('routeChangeStart', start)
-Router.events.on('routeChangeComplete', url => {
-  done(url)
-})
-Router.events.on('routeChangeError', done)
-
+import { Provider } from 'lib/nav-context'
 import 'styles/global.css'
 import { ThemeProvider } from 'next-themes'
 
+let timeout
+
 export default function App({ Component, pageProps }) {
+  const [mobileNavShown, setMobileNavShown] = useState(false)
+
+  const start = url => {
+    timeout = setTimeout(nprogress.start, 200)
+    if (url) trackPageview(url)
+  }
+
+  const done = () => {
+    clearTimeout(timeout)
+    setMobileNavShown(false)
+    nprogress.done()
+  }
+  useEffect(() => {
+    Router.events.on('routeChangeStart', start)
+    Router.events.on('routeChangeComplete', done)
+    Router.events.on('routeChangeError', done)
+    Router.events.on('hashChangeComplete', done)
+
+    return () => {
+      Router.events.off('routeChangeStart', start)
+      Router.events.off('routeChangeComplete', done)
+      Router.events.off('routeChangeError', done)
+      Router.events.off('hashChangeComplete', done)
+    }
+  }, [])
+
   return (
     <>
       <GoogleFonts
@@ -32,7 +43,9 @@ export default function App({ Component, pageProps }) {
         rel="stylesheet"
       />
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
-        <Component {...pageProps} />
+        <Provider value={{ mobileNavShown, setMobileNavShown }}>
+          <Component {...pageProps} />
+        </Provider>
       </ThemeProvider>
     </>
   )

@@ -1,14 +1,10 @@
 import { memo } from 'react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import canPrefetch from 'lib/can-prefetch'
 import cn from 'classnames'
 
 import styles from './link.module.css'
-
-function canPrefetch(href) {
-  if (!href || !href.startsWith('/')) return false
-  return true
-}
 
 const Link = ({
   external,
@@ -27,8 +23,8 @@ const Link = ({
 
   const c = cn(
     className,
-    styles.reset,
     {
+      [styles.reset]: !hotel,
       [styles.selected]: asPath.includes(hotel),
       [styles.gray]: gray,
       [styles.underline]: underline

@@ -1,4 +1,5 @@
 @import './nprogress.css';
+@import './hotels.css';
 
 :root {
   /* Spacing */
@@ -93,6 +94,9 @@
   --aries-violet-dark: #4c2889;
 
   --aries-selection: var(--aries-highlight-purple);
+  --aries-alert: var(--aries-highlight-pink);
+
+  --aries-link-color: var(--aries-fg);
 
   --line: rgba(0, 0, 0, 0.1);
 
@@ -221,17 +225,10 @@ a.reset {
   text-decoration: none;
 }
 
-p:hover a.villa-paradiso,
-a.villa-paradiso:hover {
-  color: var(--aries-vp-1);
-}
-p:hover a.treehouse,
-a.treehouse:hover {
-  color: var(--aries-treehouse);
-}
-p:hover a.ithaca,
-a.ithaca:hover {
-  color: var(--aries-ithaca);
+p:hover a,
+a:hover,
+a.selected {
+  color: var(--aries-1);
 }
 
 a {
@@ -239,9 +236,7 @@ a {
   color: currentColor;
   transition: color 200ms ease-in-out;
 }
-a:hover {
-  color: var(--aries-1);
-}
+
 iframe {
   width: 100%;
   height: 100%;

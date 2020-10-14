@@ -1,0 +1,13 @@
+:root,
+.treehouse {
+  --aries-1: var(--aries-treehouse);
+}
+:root,
+.ithaca {
+  --aries-1: var(--aries-ithaca);
+}
+
+:root,
+.villa-paradiso {
+  --aries-1: var(--aries-vp-1);
+}

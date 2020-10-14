@@ -1,22 +1,7 @@
 import { renderToString } from 'react-dom/server'
-import { useCallback } from 'react'
 import EmailClosedIcon from './icons/email-closed'
-import { useRouter } from 'next/router'
 
 export default function EmailForm({ banner }) {
-  const { asPath } = useRouter()
-
-  const selectColor = useCallback(
-    asPath => {
-      let color = 'var(--aries-1)'
-      if (asPath.endsWith('treehouse')) color = 'var(--aries-treehouse)'
-      if (asPath.endsWith('villa-paradiso')) color = 'var(--aries-vp-1)'
-      if (asPath.endsWith('ithaca')) color = 'var(--aries-ithaca)'
-      return color
-    },
-    [asPath]
-  )
-
   const Icon = renderToString(<EmailClosedIcon height="15" width="15" fill="currentColor" />)
   // const _Button = renderToString(<Button className={cn('email-form', { flex })}>Subscribe</Button>)
   const token = process.env.NEXT_PUBLIC_TOKEN
@@ -152,9 +137,9 @@ export default function EmailForm({ banner }) {
           }
 
           form.form button.banner {
-            background-color: ${selectColor(asPath)};
+            background-color: var(--aries-1);
             color: #fff;
-            border: 1px solid ${selectColor(asPath)};
+            border: 1px solid var(--aries-1);
             width: 175px;
           }
 
@@ -168,8 +153,8 @@ export default function EmailForm({ banner }) {
 
           form.form button.banner:focus,
           form.form button.banner:hover {
-            border-color: ${selectColor(asPath)};
-            color: ${selectColor(asPath)};
+            border-color: var(--aries-1);
+            color: var(--aries-1);
           }
 
           @media (max-width: 640px) {
