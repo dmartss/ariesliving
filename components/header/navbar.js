@@ -13,9 +13,7 @@ import { useNav } from 'lib/nav-context'
 
 function Navbar({ home }) {
   const mounted = useMounted()
-  const { mobileNavShown, setMobileNavShown } = useNav()
-
-  const toggle = () => setMobileNavShown(!mobileNavShown)
+  const { mobileNavShown, toggle } = useNav()
 
   return (
     <Container center>

@@ -11,6 +11,7 @@ let timeout
 
 export default function App({ Component, pageProps }) {
   const [mobileNavShown, setMobileNavShown] = useState(false)
+  const toggle = () => setMobileNavShown(!mobileNavShown)
 
   const start = url => {
     timeout = setTimeout(nprogress.start, 200)
@@ -43,7 +44,7 @@ export default function App({ Component, pageProps }) {
         rel="stylesheet"
       />
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
-        <Provider value={{ mobileNavShown, setMobileNavShown }}>
+        <Provider value={{ mobileNavShown, toggle }}>
           <Component {...pageProps} />
         </Provider>
       </ThemeProvider>
