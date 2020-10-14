@@ -29,7 +29,7 @@ const External = props => {
         {`
           a {
             cursor: pointer;
-            color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -45,7 +45,7 @@ const External = props => {
           }
 
           a :global(> code) {
-            color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
           }
         `}
       </style>
@@ -68,7 +68,7 @@ const Internal = props => {
       <style jsx>
         {`
           a {
-            color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
             text-decoration: none;
             cursor: pointer;
           }
@@ -76,7 +76,7 @@ const Internal = props => {
             text-decoration: ${underline ? 'underline' : 'none'};
           }
           a :global(> code) {
-            color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
           }
         `}
       </style>
@@ -117,7 +117,7 @@ const Anchor = props => {
             a {
               display: inline-flex;
               align-items: center;
-              color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+              color: ${color ? 'var(--aries-link-color)' : 'inherit'};
               text-decoration: none;
               cursor: pointer;
             }
@@ -138,7 +138,7 @@ const Anchor = props => {
             }
 
             a :global(> code) {
-              color: ${color ? 'var(--geist-link-color)' : 'inherit'};
+              color: ${color ? 'var(--aries-link-color)' : 'inherit'};
             }
           `}
         </style>

@@ -1,10 +1,9 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import cn from 'classnames'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 
 import * as PopOver from './'
 import PopOverLink from './popover-link'
-import Badge from './badge'
 import Link from './link'
 
 export default function MenuPopOver({
@@ -20,6 +19,7 @@ export default function MenuPopOver({
 }) {
   const { pathname } = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+
   let timer
 
   const open = () => {
@@ -30,6 +30,12 @@ export default function MenuPopOver({
     clearTimeout(timer)
     setIsOpen(false)
   }
+
+  const onPopOverOpen = useCallback(() => {
+    Router.prefetch('/hotels/villa-paradiso')
+    Router.prefetch('/hotels/ithaca')
+    Router.prefetch('/hotels/treehouse')
+  }, [])
 
   return (
     <span
@@ -45,6 +51,7 @@ export default function MenuPopOver({
         isOpen={clickable ? undefined : isOpen}
         offsetLeft={offsetLeft}
         offsetTop={0}
+        onOpen={onPopOverOpen}
         to={
           <PopOver.Menu tipOffset={60} noPadding width={180}>
             <div className="wrapper">
@@ -56,29 +63,19 @@ export default function MenuPopOver({
                     </div>
                   )}
                   <div className="content">
-                    {primaryList.map((item, index) => {
-                      return (
-                        <PopOver.Item
-                          key={index}
-                          noPadding
-                          separated={item.separated}
-                          fullWidth
-                          active={pathname === item.url}
-                        >
-                          <Link href={item.href || item.url} as={item.url}>
-                            {item.title}
-                            {item.isHot && (
-                              <>
-                                {'    '}
-                                <Badge type="lite" uppercase>
-                                  Hot
-                                </Badge>
-                              </>
-                            )}
-                          </Link>
-                        </PopOver.Item>
-                      )
-                    })}
+                    {primaryList.map((item, index) => (
+                      <PopOver.Item
+                        key={index}
+                        noPadding
+                        separated={item.separated}
+                        fullWidth
+                        active={pathname === item.url}
+                      >
+                        <Link href={item.href || item.url} as={item.url}>
+                          {item.title}
+                        </Link>
+                      </PopOver.Item>
+                    ))}
                   </div>
                 </aside>
               )}

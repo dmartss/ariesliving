@@ -41,7 +41,7 @@ function Navbar({ home }) {
                   className={cn(
                     styles['header-feedback'],
                     styleUtils.appear,
-                    styleUtils['appear-first']
+                    styleUtils['appear-second']
                   )}
                 >
                   <HeaderFeedback email />
