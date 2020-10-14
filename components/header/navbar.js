@@ -5,7 +5,7 @@ import cn from 'classnames'
 import Logo, { Hamburger, ThemeIcon } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
-// import MenuPopOver from 'components/popover/menu-popover'
+import MenuPopOver from 'components/popover/menu-popover'
 import styleUtils from 'components/utils.module.css'
 import styles from './navbar.module.css'
 import useMounted from 'lib/use-mounted'
@@ -41,11 +41,31 @@ function Navbar({ home }) {
                   className={cn(
                     styles['header-feedback'],
                     styleUtils.appear,
-                    styleUtils['appear-second']
+                    styleUtils['appear-first']
                   )}
                 >
                   <HeaderFeedback email />
                 </div>
+
+                <MenuPopOver
+                  className={cn(styleUtils.appear, styleUtils['appear-second'])}
+                  title="Hotels"
+                  offsetLeft={-62}
+                  primaryList={[
+                    {
+                      title: 'Villa Paradiso',
+                      url: '/hotels/villa-paradiso'
+                    },
+                    {
+                      title: 'Ithaca',
+                      url: '/hotels/ithaca'
+                    },
+                    {
+                      title: 'Treehouse',
+                      url: '/hotels/treehouse'
+                    }
+                  ]}
+                />
 
                 <Link
                   href="#about"
@@ -159,7 +179,6 @@ function Navbar({ home }) {
             <Link href="/hotels/ithaca" hotel="ithaca" title="Ithaca">
               Ithaca
             </Link>
-
             <Link href="/hotels/treehouse" hotel="treehouse" title="Treehouse">
               Treehouse
             </Link>
