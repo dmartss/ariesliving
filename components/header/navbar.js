@@ -66,6 +66,13 @@ function Navbar({ home }) {
                       url: '/hotels/treehouse'
                     }
                   ]}
+                  // secondaryTitle="Massachusetts"
+                  // secondaryList={[
+                  //   {
+                  //     title: 'Apple Tree Inn',
+                  //     url: '/hotels/apple-tree'
+                  //   }
+                  // ]}
                 />
 
                 <Link

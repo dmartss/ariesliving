@@ -77,30 +77,31 @@ export default function MenuPopOver({
                       </PopOver.Item>
                     ))}
                   </div>
-                </aside>
-              )}
-
-              {secondaryList && (
-                <aside className="right">
-                  {secondaryTitle && (
-                    <div className="header">
-                      <h5>{secondaryTitle}</h5>
-                    </div>
+                  {secondaryList && (
+                    <>
+                      <PopOver.Divider />
+                      {secondaryTitle && (
+                        <div className="header">
+                          <h5>{secondaryTitle}</h5>
+                        </div>
+                      )}
+                      <div className="content">
+                        {secondaryList.map((item, index) => (
+                          <PopOver.Item
+                            key={index}
+                            noPadding
+                            separated={item.separated}
+                            fullWidth
+                            active={pathname === item.url}
+                          >
+                            <Link href={item.href || item.url} as={item.url}>
+                              {item.title}
+                            </Link>
+                          </PopOver.Item>
+                        ))}
+                      </div>
+                    </>
                   )}
-                  <div className="content">
-                    {secondaryList.map((item, index) => {
-                      return (
-                        <PopOver.Item
-                          key={index}
-                          noPadding
-                          fullWidth
-                          active={pathname === item.url}
-                        >
-                          <Link href={item.url}>{item.title}</Link>
-                        </PopOver.Item>
-                      )
-                    })}
-                  </div>
                 </aside>
               )}
             </div>
@@ -128,7 +129,7 @@ export default function MenuPopOver({
 
         .wrapper {
           display: grid;
-          grid-template-columns: ${primaryList && secondaryList ? '1fr 1fr' : '1fr'};
+          grid-template-columns: 1fr;
           grid-template-areas: 'left right' 'footer footer';
           border-radius: 5px;
           overflow: hidden;
