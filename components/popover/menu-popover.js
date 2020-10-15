@@ -4,10 +4,9 @@ import Router, { useRouter } from 'next/router'
 
 import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
-import Link from './link'
+import Link from 'components/link'
 
 export default function MenuPopOver({
-  dashboard,
   clickable,
   title,
   primaryTitle,
@@ -46,7 +45,7 @@ export default function MenuPopOver({
     >
       {title}
       <PopOverLink
-        withArrow={!dashboard}
+        withArrow
         hideOnClick={clickable}
         isOpen={clickable ? undefined : isOpen}
         offsetLeft={offsetLeft}

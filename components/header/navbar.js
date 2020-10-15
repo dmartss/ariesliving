@@ -51,7 +51,7 @@ function Navbar({ home }) {
                   className={cn(styleUtils.appear, styleUtils['appear-third'])}
                   title="Hotels"
                   offsetLeft={-62}
-                  primaryTitle="Florida"
+                  // primaryTitle="Florida"
                   primaryList={[
                     {
                       title: 'Villa Paradiso',
