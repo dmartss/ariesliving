@@ -145,7 +145,6 @@ export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, 
         }
 
         .item > :global(a) {
-          color: currentColor;
           display: flex;
           align-items: center;
           text-decoration: none;

@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react'
-import cn from 'classnames'
 import Router, { useRouter } from 'next/router'
-
+import cn from 'classnames'
 import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
 import Link from 'components/link'
+import styles from './menu-popover.module.css'
 
 export default function MenuPopOver({
   clickable,
@@ -38,7 +38,7 @@ export default function MenuPopOver({
 
   return (
     <span
-      className={cn(className, 'f-reset', { 'is-active': isOpen })}
+      className={cn(className, styles.menu, { [styles['is-active']]: isOpen })}
       onMouseEnter={clickable ? undefined : open}
       onMouseLeave={clickable ? undefined : close}
       onClick={clickable && open}
@@ -53,186 +53,52 @@ export default function MenuPopOver({
         onOpen={onPopOverOpen}
         to={
           <PopOver.Menu tipOffset={60} noPadding width={180}>
-            <div className="wrapper">
+            <div className={styles.wrapper}>
               {primaryList && (
-                <aside className="left">
+                <div>
                   {primaryTitle && (
-                    <div className="header">
-                      <h5>{primaryTitle}</h5>
+                    <div className={styles.header}>
+                      <h5 className="fp fw4">{primaryTitle}</h5>
                     </div>
                   )}
-                  <div className="content">
-                    {primaryList.map((item, index) => (
-                      <PopOver.Item
-                        key={index}
-                        noPadding
-                        separated={item.separated}
-                        fullWidth
-                        active={pathname === item.url}
-                      >
-                        <Link href={item.href || item.url} as={item.url}>
-                          {item.title}
-                        </Link>
-                      </PopOver.Item>
+                  <div className={styles.content}>
+                    {primaryList.map(({ url, title, logo, hotel }, index) => (
+                      <>
+                        <PopOver.Item key={index} noPadding fullWidth active={pathname === url}>
+                          <Link href={url} as={url} hotel={hotel}>
+                            {title}
+                            {logo && logo}
+                          </Link>
+                        </PopOver.Item>
+                        {index !== primaryList.length - 1 && <PopOver.Divider />}
+                      </>
                     ))}
                   </div>
                   {secondaryList && (
                     <>
-                      <PopOver.Divider />
                       {secondaryTitle && (
-                        <div className="header">
-                          <h5>{secondaryTitle}</h5>
+                        <div className={styles.header}>
+                          <h5 className="fp fw4">{secondaryTitle}</h5>
                         </div>
                       )}
-                      <div className="content">
-                        {secondaryList.map((item, index) => (
-                          <PopOver.Item
-                            key={index}
-                            noPadding
-                            separated={item.separated}
-                            fullWidth
-                            active={pathname === item.url}
-                          >
-                            <Link href={item.href || item.url} as={item.url}>
-                              {item.title}
+                      <div className={styles.content}>
+                        {secondaryList.map(({ url, title, logo }, index) => (
+                          <PopOver.Item key={index} noPadding fullWidth active={pathname === url}>
+                            <Link href={url} as={url}>
+                              {title}
+                              {logo && logo}
                             </Link>
                           </PopOver.Item>
                         ))}
                       </div>
                     </>
                   )}
-                </aside>
+                </div>
               )}
             </div>
           </PopOver.Menu>
         }
       />
-      <style jsx>{`
-        span {
-          display: none;
-          visibility: hidden;
-          user-select: none;
-          border: 0;
-          color: var(--aries-fg);
-          padding: 0 10px;
-          transition: all 200ms ease;
-          cursor: pointer;
-        }
-
-        span:hover,
-        span.is-active :global(.wrap .link .arrow),
-        span.is-active {
-          color: var(--aries-fg);
-          fill: var(--aries-fg);
-        }
-
-        .wrapper {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-areas: 'left right' 'footer footer';
-          border-radius: 5px;
-          overflow: hidden;
-        }
-
-        .header h5 {
-          margin: 0;
-          color: var(--aries-fg);
-          font-weight: 500;
-        }
-
-        .footer:hover .arrow {
-          animation: arrowAnimation 1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-        }
-
-        @keyframes arrowAnimation {
-          50% {
-            transform: translateX(70%);
-          }
-          80%,
-          100% {
-            opacity: 0;
-          }
-        }
-
-        .footer,
-        .header + .content {
-          border-top: 1px solid var(--accents-2);
-        }
-
-        .header,
-        .content,
-        .footer {
-          padding: 19px;
-        }
-
-        .content :global(.item:first-child a) {
-          padding-top: 0;
-        }
-
-        .content :global(.item:last-child a) {
-          padding-bottom: 0;
-        }
-
-        .content :global(.badge) {
-          margin-left: 8px;
-          padding: 0 5px;
-        }
-
-        :global(.item.dark .badge) {
-          background: #333;
-          color: #999;
-        }
-
-        .wrapper .left {
-          grid-area: left;
-        }
-
-        .wrapper .right {
-          grid-area: right;
-          background-color: var(--accents-1);
-        }
-
-        .footer {
-          grid-area: footer;
-          display: flex;
-          align-items: center;
-        }
-
-        .footer span {
-          color: var(--accents-5);
-          padding: 0;
-          vertical-align: middle;
-          line-height: 20px;
-          transition: color 200ms ease;
-        }
-
-        .footer:hover span {
-          color: var(--aries-fg);
-        }
-
-        .footer .label,
-        .footer .icon,
-        .footer .arrow {
-          display: flex;
-        }
-
-        .footer .icon {
-          margin-right: 10px;
-        }
-
-        .footer .label,
-        .footer .arrow {
-          margin-left: 10px;
-        }
-
-        @media (min-width: 951px) {
-          span {
-            display: flex;
-            visibility: visible;
-            align-items: center;
-          }
-        }
-      `}</style>
     </span>
   )
 }

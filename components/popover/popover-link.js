@@ -178,13 +178,10 @@ export default class PopOverLink extends React.Component {
   }
 
   render() {
-    const classes = ['wrap']
-    const { inline, children, isOpen, noIcon } = this.props
-
-    if (inline !== false) classes.push('inline')
+    const { children, isOpen, noIcon } = this.props
 
     return (
-      <span className={classes.join(' ')}>
+      <span className="wrap">
         <span className="link" ref="link" onClick={isOpen === null ? this.onClick : null}>
           {children}
           {!noIcon && this.renderIcon()}
@@ -193,12 +190,6 @@ export default class PopOverLink extends React.Component {
         <style jsx>{`
           .link {
             cursor: pointer;
-          }
-          .wrap.inline {
-            vertical-align: middle;
-          }
-          .wrap.inline .link {
-            display: inline-block;
           }
 
           .link :global(.dots) {

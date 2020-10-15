@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import Link from 'components/link'
 import cn from 'classnames'
-import Logo, { Hamburger, ThemeIcon } from 'components/icons'
+import Logo, { Hamburger, ThemeIcon, TreehouseLogo, VPLogo, IthacaLogo } from 'components/icons'
 import Container from 'components/container'
 import HeaderFeedback from 'components/feedback'
 import MenuPopOver from 'components/popover/menu-popover'
@@ -55,15 +55,21 @@ function Navbar({ home }) {
                   primaryList={[
                     {
                       title: 'Villa Paradiso',
-                      url: '/hotels/villa-paradiso'
+                      hotel: 'villa-paradiso',
+                      url: '/hotels/villa-paradiso',
+                      logo: <VPLogo small />
                     },
                     {
                       title: 'Ithaca',
-                      url: '/hotels/ithaca'
+                      hotel: 'ithaca',
+                      url: '/hotels/ithaca',
+                      logo: <IthacaLogo small />
                     },
                     {
                       title: 'Treehouse',
-                      url: '/hotels/treehouse'
+                      hotel: 'treehouse',
+                      url: '/hotels/treehouse',
+                      logo: <TreehouseLogo small />
                     }
                   ]}
                   // secondaryTitle="Massachusetts"
