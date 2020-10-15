@@ -1,4 +1,4 @@
-.hvr-container {
+.hvrContainer {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -7,7 +7,7 @@
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.hvr-container .hvr-icon {
+.hvrContainer .hvrIcon {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-transition-duration: 0.3s;
@@ -17,7 +17,7 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-container:hover .hvr-icon {
+.hvrContainer:hover .hvrIcon {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
@@ -55,30 +55,34 @@
 }
 
 .appear-first {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
 .appear-second {
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
 .appear-third {
-  animation-delay: 1.2s;
+  animation-delay: 0.9s;
 }
 
 .appear-fourth {
-  animation-delay: 1.6s;
+  animation-delay: 1.2s;
 }
 
 .appear-fifth {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 .appear-sixth {
-  animation-delay: 2.4s;
+  animation-delay: 1.8s;
 }
 .appear-seventh {
-  animation-delay: 2.8s;
+  animation-delay: 2.1s;
+}
+
+.appear-eighth {
+  animation-delay: 2.4s;
 }
 
 @keyframes appear {

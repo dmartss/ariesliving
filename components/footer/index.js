@@ -61,36 +61,36 @@ function Footer() {
                 external
                 href={INSTAGRAM}
                 aria-label="Instagram"
-                className={styleUtils['hvr-container']}
+                className={styleUtils.hvrContainer}
               >
-                <Instagram className={styleUtils['hvr-icon']} />
+                <Instagram className={styleUtils.hvrIcon} />
               </Link>
               <Link
                 external
                 href={LINKEDIN}
                 aria-label="Linkedin"
-                className={styleUtils['hvr-container']}
+                className={styleUtils.hvrContainer}
               >
-                <Linkedin className={styleUtils['hvr-icon']} />
+                <Linkedin className={styleUtils.hvrIcon} />
               </Link>
               <Link
                 external
                 href={FACEBOOK}
                 aria-label="Facebook"
-                className={styleUtils['hvr-container']}
+                className={styleUtils.hvrContainer}
               >
-                <Facebook className={styleUtils['hvr-icon']} />
+                <Facebook className={styleUtils.hvrIcon} />
               </Link>
               <Link
                 external
                 href={TWITTER}
                 aria-label="Twitter"
-                className={styleUtils['hvr-container']}
+                className={styleUtils.hvrContainer}
               >
-                <Twitter className={styleUtils['hvr-icon']} />
+                <Twitter className={styleUtils.hvrIcon} />
               </Link>
-              <a className={styleUtils['hvr-container']}>
-                <ThemeIcon className={cn(styleUtils['hvr-icon'], styleUtils['theme-icon'])} />
+              <a className={styleUtils.hvrContainer}>
+                <ThemeIcon className={cn(styleUtils.hvrIcon, styleUtils['theme-icon'])} />
               </a>
             </span>
             <div>

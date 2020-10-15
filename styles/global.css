@@ -100,6 +100,9 @@
 
   --line: rgba(0, 0, 0, 0.1);
 
+  --dropdown-box-shadow: 0 0 0 1px var(--accents-2);
+  --dropdown-triangle-stroke: #333;
+
   --shadow-smallest: 0 0 0 1px var(--accents-2);
   --shadow-small: 0 0 0 1px var(--accents-2);
   --shadow-medium: 0 0 0 1px var(--accents-2);
@@ -138,6 +141,11 @@
   --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
   --shadow-hover: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3),
     0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+
+  --aries-link-color: var(--aries-success);
+
+  --dropdown-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
+  --dropdown-triangle-stroke: #fff;
 
   /* gradients */
   --gradient-1: linear-gradient(270deg, #111111, #333333, #333333, #111111);

@@ -48,9 +48,10 @@ function Navbar({ home }) {
                 </div>
 
                 <MenuPopOver
-                  className={cn(styleUtils.appear, styleUtils['appear-second'])}
+                  className={cn(styleUtils.appear, styleUtils['appear-third'])}
                   title="Hotels"
                   offsetLeft={-62}
+                  primaryTitle="Florida"
                   primaryList={[
                     {
                       title: 'Villa Paradiso',
@@ -69,28 +70,28 @@ function Navbar({ home }) {
 
                 <Link
                   href="#about"
-                  className={cn(styleUtils.appear, styleUtils['appear-third'])}
+                  className={cn(styleUtils.appear, styleUtils['appear-fourth'])}
                   title="About"
                 >
                   About
                 </Link>
                 <Link
                   href="#portfolio"
-                  className={cn(styleUtils.appear, styleUtils['appear-fourth'])}
+                  className={cn(styleUtils.appear, styleUtils['appear-fifth'])}
                   title="Portfolio"
                 >
                   Portfolio
                 </Link>
                 <Link
                   href="#investors"
-                  className={cn(styleUtils.appear, styleUtils['appear-fifth'])}
+                  className={cn(styleUtils.appear, styleUtils['appear-sixth'])}
                   title="Investors"
                 >
                   Investors
                 </Link>
                 <Link
                   href="#team"
-                  className={cn(styleUtils.appear, styleUtils['appear-sixth'])}
+                  className={cn(styleUtils.appear, styleUtils['appear-seventh'])}
                   title="Team"
                 >
                   Team
@@ -140,7 +141,7 @@ function Navbar({ home }) {
             color="var(--aries-fg)"
             className={cn(
               styleUtils['theme-icon'],
-              { [styleUtils.appear]: !mounted, [styleUtils['appear-first']]: !mounted },
+              { [styleUtils.appear]: !mounted, [styleUtils['appear-eighth']]: !mounted },
               styles['mobile-absolute'],
               styles.right
             )}

@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import cn from 'classnames'
 import Router, { useRouter } from 'next/router'
 
-import * as PopOver from './'
+import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
 import Link from './link'
 

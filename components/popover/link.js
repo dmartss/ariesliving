@@ -1,9 +1,10 @@
 import React from 'react'
 import NextLink from 'next/link'
-import PropTypes from 'prop-types'
 import canPrefetch from 'lib/can-prefetch'
+import cn from 'classnames'
+import styles from './link.module.css'
 
-import { IconAnchor, IconExternal, CircledQuestion } from 'components/icons'
+import { IconAnchor, IconExternal } from 'components/icons'
 
 const External = props => {
   const { href, icon, color, underline, tab = true, children, ...restProps } = props
@@ -15,6 +16,7 @@ const External = props => {
       href={href}
       target={tab ? '_blank' : undefined}
       rel={tab ? 'noopener noreferrer' : undefined}
+      className={cn(styles.external, { [styles.color]: color, [styles.underline]: underline })}
       {...restProps}
     >
       {children}
@@ -24,62 +26,22 @@ const External = props => {
           <IconExternal size="1em" />
         </i>
       )}
-
-      <style jsx>
-        {`
-          a {
-            cursor: pointer;
-            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-          }
-
-          a:hover {
-            text-decoration: ${underline ? 'underline;' : 'none'};
-          }
-
-          i {
-            margin: 0 5px;
-            display: inline-flex;
-          }
-
-          a :global(> code) {
-            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-          }
-        `}
-      </style>
     </a>
   )
 }
 
 const Internal = props => {
   const { as, href, passHref, shallow, color, underline, children, ...restProps } = props
-
   let { prefetch = true } = props
 
-  if (href && !href.startsWith('/')) {
-    prefetch = false
-  }
+  if (href && !href.startsWith('/')) prefetch = false
 
   const a = (
-    <a {...restProps}>
+    <a
+      {...restProps}
+      className={cn(styles.internal, { [styles.color]: color, [styles.underline]: underline })}
+    >
       {children}
-      <style jsx>
-        {`
-          a {
-            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-            text-decoration: none;
-            cursor: pointer;
-          }
-          a:hover {
-            text-decoration: ${underline ? 'underline' : 'none'};
-          }
-          a :global(> code) {
-            color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-          }
-        `}
-      </style>
     </a>
   )
 
@@ -103,7 +65,10 @@ const Anchor = props => {
 
   return (
     <NextLink href={href} passHref={passHref} as={as} shallow={shallow}>
-      <a {...restProps}>
+      <a
+        className={cn(styles.anchor, { [styles.color]: color, [styles.underline]: underline })}
+        {...restProps}
+      >
         {icon && (
           <i>
             <IconAnchor size="1em" />
@@ -111,37 +76,6 @@ const Anchor = props => {
         )}
 
         {children}
-
-        <style jsx>
-          {`
-            a {
-              display: inline-flex;
-              align-items: center;
-              color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-              text-decoration: none;
-              cursor: pointer;
-            }
-
-            a:hover {
-              text-decoration: ${underline ? 'underline;' : 'none'};
-            }
-
-            a:hover i {
-              visibility: visible;
-            }
-
-            i {
-              visibility: hidden;
-              position: absolute;
-              transform: translateX(-200%);
-              display: inline-flex;
-            }
-
-            a :global(> code) {
-              color: ${color ? 'var(--aries-link-color)' : 'inherit'};
-            }
-          `}
-        </style>
       </a>
     </NextLink>
   )
@@ -171,54 +105,5 @@ const Link = props => {
 
   return <Internal color {...restProps} />
 }
-
-Link.propTypes = {
-  href: PropTypes.string,
-  external: PropTypes.bool,
-  anchor: PropTypes.bool,
-  passHref: PropTypes.bool,
-  shallow: PropTypes.bool,
-  as: PropTypes.string,
-  icon: PropTypes.bool,
-  color: PropTypes.bool,
-  underline: PropTypes.bool,
-  children: PropTypes.any,
-  onClick: PropTypes.func
-}
-
-export const HelpLink = ({ children, href, hasIcon, ...props }) => (
-  <a href={href} {...props} className={hasIcon ? 'icon' : ''}>
-    <span>{children}</span>
-    {hasIcon && <CircledQuestion />}
-    <style jsx>{`
-      a {
-        text-decoration: none;
-        color: #666;
-        font-size: inherit;
-        display: flex;
-        cursor: pointer;
-      }
-      a.icon {
-        align-items: center;
-        color: inherit;
-        display: flex;
-      }
-      a:hover,
-      a.icon:hover {
-        color: #000;
-        text-decoration: underline dashed;
-      }
-      a.icon span {
-        margin-right: 5px;
-      }
-      a.icon:hover :global(svg circle) {
-        stroke: #000;
-      }
-      a.icon:hover :global(svg text) {
-        fill: #000;
-      }
-    `}</style>
-  </a>
-)
 
 export default Link

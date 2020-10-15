@@ -1,14 +1,10 @@
-// Packages
 import React from 'react'
 
-// Components
 import Portal from 'components/portal'
 import ClickOutside from 'components/click-outside'
 
 export default class PopOverLink extends React.Component {
-  static defaultProps = {
-    isOpen: null
-  }
+  static defaultProps = { isOpen: null }
 
   constructor(props) {
     super(props)
@@ -72,8 +68,6 @@ export default class PopOverLink extends React.Component {
       const targetRect = this.refs.link.getBoundingClientRect()
 
       if (!targetRect.width && !targetRect.height) {
-        // we special case the scenario where a media query
-        // for example hides the target
         this.onClose()
         return
       }
@@ -187,9 +181,7 @@ export default class PopOverLink extends React.Component {
     const classes = ['wrap']
     const { inline, children, isOpen, noIcon } = this.props
 
-    if (inline !== false) {
-      classes.push('inline')
-    }
+    if (inline !== false) classes.push('inline')
 
     return (
       <span className={classes.join(' ')}>

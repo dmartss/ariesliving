@@ -81,15 +81,8 @@ export const Menu = memo(
     </div>
   )
 )
-
 export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, noPadding }) => (
-  <div
-    className={cn('item', {
-      active,
-      disabled,
-      hover
-    })}
-  >
+  <div className={cn('item', { active, disabled, hover })}>
     {children}
     {icon ? <div className="icon">{icon}</div> : null}
 
@@ -179,7 +172,7 @@ const Triangle = memo(({ direction }) => (
     <path
       fill="var(--aries-bg)"
       strokeWidth="1px"
-      stroke="#333"
+      stroke="var(--dropdown-triangle-stroke)"
       fillRule="evenodd"
       d={direction === 'down' ? 'M20 0l-8 8-12-12' : 'M20 12l-8-8-12 12'}
     />
@@ -187,3 +180,61 @@ const Triangle = memo(({ direction }) => (
 ))
 
 export default Menu
+
+// import { memo } from 'react'
+// import cn from 'classnames'
+// import styles from './popover-menu.module.css'
+
+// export const Menu = memo(({ children, tipDirection = 'up', tip = true, scrollable, innerRef }) => (
+//   <div
+//     className={cn(styles.popover, { [styles.scrollable]: scrollable }, tipDirection)}
+//     ref={innerRef}
+//   >
+//     {tip && (
+//       <div className={styles.triangle}>
+//         <Triangle direction={tipDirection} />
+//       </div>
+//     )}
+//     <div className={styles.menu}>{children}</div>
+//   </div>
+// ))
+
+// export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, noPadding }) => (
+//   <div
+//     className={cn(styles.item, {
+//       [styles.active]: active,
+//       [styles.disabled]: disabled,
+//       [styles.hover]: hover
+//     })}
+//   >
+//     {children}
+//     {icon ? <div className={styles.icon}>{icon}</div> : null}
+//   </div>
+// ))
+
+// export const Divider = memo(() => (
+//   <div className="line">
+//     <style jsx>
+//       {`
+//         .line {
+//           border-top: 1px solid var(--accents-2);
+//           margin: 8px 0;
+//         }
+//       `}
+//     </style>
+//   </div>
+// ))
+
+// const Triangle = memo(({ direction }) => (
+//   <svg width="24" height="12" viewBox="0 0 24 12">
+//     <path
+//       fill="var(--aries-bg)"
+//       strokeWidth="1px"
+//       stroke="var(--dropdown-triangle-stroke)"
+//       fillRule="evenodd"
+//       d={direction === 'down' ? 'M20 0l-8 8-12-12' : 'M20 12l-8-8-12 12'}
+//     />
+//   </svg>
+// ))
+
+// export default Menu

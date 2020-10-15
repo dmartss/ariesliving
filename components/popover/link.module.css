@@ -1,0 +1,59 @@
+.external,
+.internal,
+.anchor {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.external,
+.anchor {
+  display: inline-flex;
+  align-items: center;
+}
+
+.external.color,
+.internal.color,
+.anchor.color {
+  color: var(--aries-link-color);
+}
+
+.external:hover,
+.internal:hover,
+.anchor:hover {
+  text-decoration: none;
+}
+
+.anchor:hover i {
+  visibility: visible;
+}
+
+.external.underline:hover,
+.internal.underline:hover,
+.anchor.underline:hover {
+  text-decoration: underline;
+}
+
+.external > :global(code),
+.internal > :global(code),
+.anchor > :global(code) {
+  color: inherit;
+}
+
+.external.color > :global(code),
+.internal.color > :global(code),
+.anchor.color > :global(code) {
+  color: var(--aries-link-color);
+}
+
+.external i {
+  margin: 0 5px;
+  display: inline-flex;
+}
+
+.anchor i {
+  visibility: hidden;
+  position: absolute;
+  transform: translateX(-200%);
+  display: inline-flex;
+}

@@ -1,0 +1,94 @@
+.popover {
+  display: inline-block;
+  position: relative;
+}
+
+.triangle {
+  left: 60px;
+  text-align: left;
+  display: block;
+  line-height: 11px; /* height of triangle (minus 1 :S) */
+  z-index: 1;
+  text-align: center;
+  position: absolute;
+  top: -1px;
+}
+
+.menu {
+  margin-top: 11px;
+  width: 180px;
+  min-width: auto;
+  padding: 0;
+  color: var(--aries-fg);
+  display: inline-block;
+  text-align: left;
+  background: var(--aries-bg);
+  max-width: 100vw;
+  box-shadow: var(--shadow-medium);
+  border-radius: 5px;
+}
+
+.scrollable .menu {
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.up .triangle {
+  top: -1px;
+}
+
+.down .triangle {
+  bottom: -12px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  position: relative;
+  font-size: 14px;
+  color: var(--accents-5);
+  line-height: 20px;
+  transition: color 0.1s ease, background-color 0.1s ease;
+  max-width: 100%;
+  padding: 0;
+}
+
+.item.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: var(--accents-1);
+  user-select: none;
+}
+
+.item:not(.disabled):hover,
+.item.active {
+  color: var(--aries-fg);
+}
+
+.item.hover.active,
+.item.hover:not(.disabled):hover {
+  background: var(--accents-1);
+}
+
+.item.disabled {
+  cursor: not-allowed;
+  background: var(--accents-1);
+  user-select: none;
+}
+
+.item > :global(a) {
+  margin: 0;
+  padding: 8px 0;
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
