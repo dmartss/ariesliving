@@ -12,9 +12,7 @@
   align-items: center;
 }
 
-.external.color,
-.internal.color,
-.anchor.color {
+.color {
   color: var(--aries-link-color);
 }
 
@@ -28,9 +26,7 @@
   visibility: visible;
 }
 
-.external.underline:hover,
-.internal.underline:hover,
-.anchor.underline:hover {
+.underline:hover {
   text-decoration: underline;
 }
 
@@ -40,9 +36,7 @@
   color: inherit;
 }
 
-.external.color > :global(code),
-.internal.color > :global(code),
-.anchor.color > :global(code) {
+.color > :global(code) {
   color: var(--aries-link-color);
 }
 

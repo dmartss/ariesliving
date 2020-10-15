@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import cn from 'classnames'
+import styles from './popover-menu.module.css'
 
 export const Menu = memo(
   ({
@@ -154,18 +155,7 @@ export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, 
   </div>
 ))
 
-export const Divider = memo(() => (
-  <div className="line">
-    <style jsx>
-      {`
-        .line {
-          border-top: 1px solid var(--accents-2);
-          margin: 8px 0;
-        }
-      `}
-    </style>
-  </div>
-))
+export const Divider = memo(() => <div className={styles.line}></div>)
 
 const Triangle = memo(({ direction }) => (
   <svg width="24" height="12" viewBox="0 0 24 12">
