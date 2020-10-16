@@ -10,15 +10,7 @@
   font-size: var(--gap-double);
   letter-spacing: -1px;
   line-height: 1.2;
-  text-align: left;
   margin-bottom: 0.8rem;
-}
-
-.content h3 {
-  font-size: var(--gap);
-  line-height: 1.8;
-  text-align: left;
-  font-weight: 400;
 }
 
 .gradient-bg {
@@ -28,26 +20,27 @@
 }
 
 .gradient-bg.gradient-bg-1 {
-  --start-color: #007cf0;
-  --end-color: #00dfd8;
+  --start-color: #89f7fe;
+  --end-color: #66a6ff;
+  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
 }
 
 .gradient-bg.gradient-bg-2 {
-  --start-color: var(--aries-violet);
-  --end-color: var(--aries-highlight-pink);
+  --start-color: #b993d6;
+  --end-color: #8ca6db;
+  --gradient: linear-gradient(100deg, var(--start-color) 0%, var(--end-color) 100%);
 }
 
 .gradient-bg .gradient-fg {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
+  background-image: var(--gradient);
   position: relative;
   z-index: 1;
 }
 
 .email-form {
-  text-align: right;
   position: relative;
 }
 
