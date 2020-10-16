@@ -31,8 +31,8 @@
   margin-left: auto;
 }
 
-.not-logo > * + * {
-  padding: var(--gap);
+.not-logo > a {
+  margin: 0 1rem 0 0;
 }
 
 .toggle,
