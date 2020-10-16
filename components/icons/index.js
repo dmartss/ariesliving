@@ -11,10 +11,4 @@ export { default as Facebook } from './facebook'
 export { default as Twitter } from './twitter'
 export { default as Linkedin } from './linkedin'
 
-export { default as IthacaLogo } from './ithaca-logo'
-export { default as TreehouseLogo } from './treehouse-logo'
-export { default as VPLogo } from './vp-logo'
-
-export { default as CircledQuestion } from './circled-question'
-export { default as IconAnchor } from './link'
-export { default as IconExternal } from './external-link'
+export { default as HotelLogo } from './hotel-logo'
