@@ -63,15 +63,13 @@ export default function MenuPopOver({
                   )}
                   <div className={styles.content}>
                     {primaryList.map(({ url, title, logo, hotel }, index) => (
-                      <>
-                        <PopOver.Item key={index} noPadding fullWidth active={pathname === url}>
-                          <Link href={url} as={url} hotel={hotel}>
-                            {title}
-                            {logo && logo}
-                          </Link>
-                        </PopOver.Item>
+                      <PopOver.Item key={index} noPadding fullWidth active={pathname === url}>
+                        <Link href={url} as={url} hotel={hotel}>
+                          {title}
+                          {logo && logo}
+                        </Link>
                         {index !== primaryList.length - 1 && <PopOver.Divider />}
-                      </>
+                      </PopOver.Item>
                     ))}
                   </div>
                   {secondaryList && (
