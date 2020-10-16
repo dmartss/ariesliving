@@ -24,7 +24,7 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
-            {hotels.map(({ showcaseSrc, name, url, rezUrl, hotel }) => (
+            {hotels.map(({ name, hotelSite, hotel, rezTripUrl, showcaseSrc }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
                 <Link as={`hotels/${hotel}`} href="/hotels/[hotel]">
                   <div>
@@ -41,12 +41,12 @@ export default function Portfolio({ description, id, title, width, height }) {
                 </Link>
                 <div className={styles.buttons}>
                   <div className={styles['button-spacer']}>
-                    <Button href={url} invert>
+                    <Button href={hotelSite} invert>
                       Learn More
                     </Button>
                   </div>
                   <div className={styles['button-spacer']}>
-                    <Button href={rezUrl} invert outline>
+                    <Button href={rezTripUrl} invert outline>
                       Book Now
                     </Button>
                   </div>
