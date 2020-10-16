@@ -13,11 +13,8 @@
 
 .left h3 {
   margin-left: 1rem;
-}
-.header a {
   color: var(--aries-1);
 }
-
 .header a:not(:last-child) {
   margin: 0 1rem 0 0;
 }
@@ -25,7 +22,6 @@
 .header a:hover {
   color: var(--aries-fg);
 }
-
 .links {
   display: flex;
   align-items: center;

@@ -1,9 +1,43 @@
+.hvrUnderline {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px var(--aries-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvrUnderline:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--aries-1);
+  height: 2.5px;
+  -webkit-transform: translateY(2.5px);
+  transform: translateY(2.5px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvrUnderline:hover:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
 .hvrContainer {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px var(--aries-bg);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
