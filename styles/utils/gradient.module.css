@@ -1,0 +1,26 @@
+.bg {
+  position: relative;
+  display: block;
+  user-select: none;
+}
+
+.fg {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--gradient);
+  position: relative;
+  z-index: 1;
+}
+
+.fg-1 {
+  --start-color: #89f7fe;
+  --end-color: #66a6ff;
+  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
+}
+
+.fg-2 {
+  --start-color: #b993d6;
+  --end-color: #8ca6db;
+  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
+}

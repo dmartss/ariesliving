@@ -12,8 +12,6 @@
 }
 
 .card {
-  padding: 0 var(--gap-half) var(--gap-half);
-  flex: 1;
   display: flex;
   flex-direction: column;
 }

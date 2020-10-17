@@ -3,7 +3,8 @@ import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/ic
 import Link from 'components/link'
 import hotels from 'hotels'
 import Container from 'components/container'
-import styleUtils from 'components/utils.module.css'
+import styleUtils from 'styles/utils/utils.module.css'
+import styleHover from 'styles/utils/hover.module.css'
 import { memo } from 'react'
 import cn from 'classnames'
 import styles from './footer.module.css'
@@ -61,36 +62,21 @@ function Footer() {
                 external
                 href={INSTAGRAM}
                 aria-label="Instagram"
-                className={styleUtils.hvrContainer}
+                className={styleHover.container}
               >
-                <Instagram className={styleUtils.hvrIcon} />
+                <Instagram className={styleHover.icon} />
               </Link>
-              <Link
-                external
-                href={LINKEDIN}
-                aria-label="Linkedin"
-                className={styleUtils.hvrContainer}
-              >
-                <Linkedin className={styleUtils.hvrIcon} />
+              <Link external href={LINKEDIN} aria-label="Linkedin" className={styleHover.container}>
+                <Linkedin className={styleHover.icon} />
               </Link>
-              <Link
-                external
-                href={FACEBOOK}
-                aria-label="Facebook"
-                className={styleUtils.hvrContainer}
-              >
-                <Facebook className={styleUtils.hvrIcon} />
+              <Link external href={FACEBOOK} aria-label="Facebook" className={styleHover.container}>
+                <Facebook className={styleHover.icon} />
               </Link>
-              <Link
-                external
-                href={TWITTER}
-                aria-label="Twitter"
-                className={styleUtils.hvrContainer}
-              >
-                <Twitter className={styleUtils.hvrIcon} />
+              <Link external href={TWITTER} aria-label="Twitter" className={styleHover.container}>
+                <Twitter className={styleHover.icon} />
               </Link>
-              <a className={styleUtils.hvrContainer}>
-                <ThemeIcon className={cn(styleUtils.hvrIcon, styleUtils['theme-icon'])} />
+              <a className={styleHover.container}>
+                <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
               </a>
             </span>
             <div>

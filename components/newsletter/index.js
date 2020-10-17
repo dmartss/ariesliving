@@ -2,6 +2,7 @@ import cn from 'classnames'
 import Container from 'components/container'
 import EmailForm from 'components/email-form'
 import styles from './newsletter.module.css'
+import styleGradient from 'styles/utils/gradient.module.css'
 
 export default function Newsletter() {
   return (
@@ -9,13 +10,15 @@ export default function Newsletter() {
       <div className={styles.content}>
         <aside className="tl">
           <h2 aria-label="DON'T MISS OUT">
-            <span className={cn(styles['gradient-bg'], styles['gradient-bg-1'])}>
-              <span className={styles['gradient-fg']}>DON'T MISS OUT</span>
+            <span className={styleGradient.bg}>
+              <span className={cn(styleGradient.fg, styleGradient['fg-1'])}>DON'T MISS OUT</span>
             </span>
           </h2>
           <h3 aria-label="Stay up to date with Aries Living" className="f4 fw5">
-            <span className={cn(styles['gradient-bg'], styles['gradient-bg-2'])}>
-              <span className={styles['gradient-fg']}>Stay up to date with Aries Living</span>
+            <span className={styleGradient.bg}>
+              <span className={cn(styleGradient.fg, styleGradient['fg-2'])}>
+                Stay up to date with Aries Living
+              </span>
             </span>
           </h3>
         </aside>

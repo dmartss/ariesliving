@@ -6,7 +6,7 @@ import Button from 'components/button'
 import Image from 'components/image'
 import hotels from 'hotels'
 import styles from './portfolio.module.css'
-import styleUtils from 'components/utils.module.css'
+import styleUtils from 'styles/utils/utils.module.css'
 
 export default function Portfolio({ description, id, title, width, height }) {
   const [cardClickable, setCardClickable] = useState(false)

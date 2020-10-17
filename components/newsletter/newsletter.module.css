@@ -13,33 +13,6 @@
   margin-bottom: 0.8rem;
 }
 
-.gradient-bg {
-  position: relative;
-  display: block;
-  user-select: none;
-}
-
-.gradient-bg.gradient-bg-1 {
-  --start-color: #89f7fe;
-  --end-color: #66a6ff;
-  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
-}
-
-.gradient-bg.gradient-bg-2 {
-  --start-color: #b993d6;
-  --end-color: #8ca6db;
-  --gradient: linear-gradient(100deg, var(--start-color) 0%, var(--end-color) 100%);
-}
-
-.gradient-bg .gradient-fg {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: var(--gradient);
-  position: relative;
-  z-index: 1;
-}
-
 .email-form {
   position: relative;
 }
