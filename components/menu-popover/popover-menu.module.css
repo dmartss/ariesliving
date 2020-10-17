@@ -30,7 +30,7 @@
   background: var(--aries-bg);
   max-width: 100vw;
   box-shadow: var(--shadow-medium);
-  border-radius: 5px;
+  border-radius: var(--text-radius);
 }
 
 .scrollable .menu {

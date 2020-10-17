@@ -19,7 +19,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: var(--text-radius);
   overflow: hidden;
 }
 

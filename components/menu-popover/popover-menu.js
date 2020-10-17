@@ -70,7 +70,7 @@ export const Menu = memo(
             background: var(--aries-bg);
             max-width: 100vw;
             box-shadow: var(--shadow-medium);
-            border-radius: 5px;
+            border-radius: var(--text-radius);
           }
 
           .scrollable .menu {
@@ -83,7 +83,7 @@ export const Menu = memo(
   )
 )
 export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, noPadding }) => (
-  <div className={cn('item', { active, disabled, hover })}>
+  <div className={cn('item', 'f5', { active, disabled, hover })}>
     {children}
     {icon ? <div className="icon">{icon}</div> : null}
 
@@ -115,7 +115,6 @@ export const Item = memo(({ icon, hover, disabled, active, children, fullWidth, 
 
         .item {
           position: relative;
-          font-size: 14px;
           color: var(--accents-5);
           line-height: 20px;
           transition: color 0.1s ease, background-color 0.1s ease;

@@ -41,7 +41,7 @@
 .wrapper textarea:disabled {
   background: var(--accents-1);
   color: var(--accents-4);
-  border-radius: 5px;
+  border-radius: var(--text-radius);
   cursor: not-allowed;
 }
 

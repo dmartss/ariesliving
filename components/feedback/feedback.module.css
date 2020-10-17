@@ -25,7 +25,7 @@
   display: flex;
   line-height: 1.5;
   font-size: 0.875rem;
-  border-radius: 5px;
+  border-radius: var(--text-radius);
   font-family: var(--fontFamily);
   width: var(--closed-width);
   height: var(--closed-height);
@@ -213,8 +213,8 @@
   background-color: var(--aries-bg);
   display: flex;
   align-items: center;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: var(--text-radius);
+  border-bottom-right-radius: var(--text-radius);
   border-top: 1px solid var(--accents-2);
   padding: var(--gap-three-quarter);
   opacity: 0;
