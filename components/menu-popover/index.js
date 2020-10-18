@@ -19,7 +19,7 @@ function MenuItems({ list, title }) {
           )}
           <div className={styles.content}>
             {list.map(({ url, title, logo, hotel }, index) => (
-              <PopOver.Item key={index} noPadding fullWidth active={pathname === url}>
+              <PopOver.Item key={index} active={pathname === url}>
                 <Link href={url} as={url} hotel={hotel}>
                   {title}
                   {logo && logo}
@@ -71,14 +71,13 @@ export default function MenuPopOver({
     >
       {title}
       <PopOverLink
-        withArrow
         hideOnClick={clickable}
         isOpen={clickable ? undefined : isOpen}
         offsetLeft={offsetLeft}
         offsetTop={0}
         onOpen={onPopOverOpen}
         to={
-          <PopOver.Menu tipOffset={60} noPadding width={180}>
+          <PopOver.Menu>
             <div className={styles.wrapper}>
               {primaryList && <MenuItems list={primaryList} title={primaryTitle} />}
               {secondaryList && <MenuItems list={secondaryList} title={secondaryTitle} />}

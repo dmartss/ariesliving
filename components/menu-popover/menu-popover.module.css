@@ -36,15 +36,7 @@
   padding: var(--gap);
 }
 
-.content :global(.item:first-child a) {
-  padding-top: 0;
-}
-
-.content :global(.item:last-child a) {
-  padding-bottom: 0;
-}
-
-.content :global(.badge) {
+.content :global(.hotel-logo) {
   margin-left: auto;
 }
 

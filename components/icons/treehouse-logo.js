@@ -1,7 +1,7 @@
 export default function TreehouseLogo({ small, size = 60 }) {
   return (
     <svg
-      className="badge"
+      className="hotel-logo"
       height={small ? 30 : size}
       width={small ? 30 : size}
       viewBox="0 0 400 400"

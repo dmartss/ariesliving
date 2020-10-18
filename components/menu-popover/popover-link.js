@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Arrow } from 'components/icons'
 import Portal from 'components/portal'
 import ClickOutside from 'components/click-outside'
 
@@ -158,33 +158,14 @@ export default class PopOverLink extends React.Component {
     )
   }
 
-  renderIcon() {
-    const { withArrow } = this.props
-
-    return withArrow ? (
-      <svg className="arrow" width="9" height="6" viewBox="0 0 9 6">
-        <path
-          d="M8.903 1.082l-3.8 4.263c-.01.018-.007.041-.022.058a.33.33 0 0 1-.25.097.321.321 0 0 1-.245-.098c-.017-.016-.012-.039-.024-.056l-3.8-4.263a.351.351 0 0 1 0-.483.325.325 0 0 1 .47 0l3.601 4.041L8.435.6A.322.322 0 0 1 8.9.6c.131.133.131.348.002.482z"
-          fill="inherit"
-        />
-      </svg>
-    ) : (
-      <svg className="dots" width="13" height="3" viewBox="0 0 13 3" fill="none">
-        <rect width="3" height="3" rx="1.5" fill="#999999" />
-        <rect x="5" width="3" height="3" rx="1.5" fill="#999999" />
-        <rect x="10" width="3" height="3" rx="1.5" fill="#999999" />
-      </svg>
-    )
-  }
-
   render() {
-    const { children, isOpen, noIcon } = this.props
+    const { children, isOpen } = this.props
 
     return (
       <span className="wrap">
         <span className="link" ref="link" onClick={isOpen === null ? this.onClick : null}>
           {children}
-          {!noIcon && this.renderIcon()}
+          <Arrow />
         </span>
         <ClickOutside onClick={isOpen === null ? this.onClose : null} render={this.renderPortal} />
         <style jsx>{`
