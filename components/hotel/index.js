@@ -2,7 +2,7 @@ import Container from 'components/container'
 import Header from './header'
 import Image from 'components/image'
 
-export default function Hotel({ hotel: { src, name, hotel } }) {
+export default function Hotel({ id: { src, name, hotel, address, email } }) {
   return (
     <Container>
       <Header name={name} hotel={hotel} />

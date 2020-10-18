@@ -1,7 +1,6 @@
 import { HotelLogo } from 'components/icons'
 import styles from './hotel.module.css'
 import styleHover from 'styles/utils/hover.module.css'
-import cn from 'classnames'
 import styleGradient from 'styles/utils/gradient.module.css'
 
 export default function Header({ hotel, name }) {
