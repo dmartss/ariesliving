@@ -14,29 +14,30 @@ export const getStaticPaths = () => ({
   fallback: false
 })
 export const getStaticProps = ({ params }) => {
-  return { props: { hotel: { ...hotels.find(e => e.hotel === params.hotel) } } }
+  return { props: { id: { ...hotels.find(e => e.hotel === params.hotel) } } }
 }
 
-export default function HotelPage({ hotel }) {
+export default function HotelPage({ id }) {
   const router = useRouter()
   const { asPath, isFallback } = router
 
-  if (!hotel && !isFallback) {
+  if (!id && !isFallback) {
     return <Error statusCode={404} />
   }
 
   return (
-    <FeedbackContext.Provider value={{ label: hotel.hotel }}>
-      <div className={hotel.hotel}>
+    <FeedbackContext.Provider value={{ label: id.hotel }}>
+      <div className={id.hotel}>
         <Page
-          title={`${hotel.titleShort} by Aries Living`}
-          description={hotel.description}
-          image={hotel.defaultOgImage}
+          title={id.titleShort}
+          description={id.descriptionShort}
+          image={id.defaultOgImage}
+          keywords={id.name}
           url={asPath}
         >
           <SkipNavContent />
-          {hotel ? (
-            <Hotel hotel={hotel} />
+          {id ? (
+            <Hotel id={id} />
           ) : (
             <Container>
               <div className={styles.container}>
