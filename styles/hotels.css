@@ -16,7 +16,7 @@
 .villa-paradiso {
   --aries-1: var(--aries-vp-1);
   --aries-selection: var(--aries-1);
-  --start-color: var(--aries-vp-1);
-  --end-color: var(--aries-fg);
-  --gradient: linear-gradient(90deg, var(--start-color) 0%, var(--end-color) 100%);
+  --start-color: var(--aries-vp-3);
+  --end-color: var(--aries-vp-1);
+  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
 }
