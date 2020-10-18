@@ -1,6 +1,7 @@
 import React from 'react'
 import { Arrow } from 'components/icons'
 import Portal from 'components/portal'
+import styles from './popover-link.module.css'
 import ClickOutside from 'components/click-outside'
 
 export default class PopOverLink extends React.Component {
@@ -136,9 +137,6 @@ export default class PopOverLink extends React.Component {
           .portal.bottom {
             transform: translate3d(0px, 12px, 0px);
           }
-          .portal.top {
-            transform: translate3d(0px, -12px, 0px);
-          }
           .portal.show {
             opacity: 1;
             pointer-events: unset;
@@ -150,9 +148,6 @@ export default class PopOverLink extends React.Component {
           .portal.show.bottom {
             transform: translate3d(0px, 15px, 0px);
           }
-          .portal.show.top {
-            transform: translate3d(0px, -15px, 0px);
-          }
         `}</style>
       </Portal>
     )
@@ -162,29 +157,12 @@ export default class PopOverLink extends React.Component {
     const { children, isOpen } = this.props
 
     return (
-      <span className="wrap">
-        <span className="link" ref="link" onClick={isOpen === null ? this.onClick : null}>
+      <span>
+        <span className={styles.link} ref="link" onClick={isOpen === null ? this.onClick : null}>
           {children}
           <Arrow />
         </span>
         <ClickOutside onClick={isOpen === null ? this.onClose : null} render={this.renderPortal} />
-        <style jsx>{`
-          .link {
-            cursor: pointer;
-          }
-
-          .link :global(.dots) {
-            margin-left: 5px;
-            margin-bottom: 3px;
-          }
-
-          .link :global(.arrow) {
-            margin-left: 5px;
-            margin-bottom: 2px;
-            fill: #666;
-            transition: all 200ms ease;
-          }
-        `}</style>
       </span>
     )
   }

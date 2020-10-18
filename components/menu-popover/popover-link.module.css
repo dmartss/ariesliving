@@ -1,0 +1,10 @@
+.link {
+  cursor: pointer;
+}
+
+.link > :global(.arrow) {
+  margin-left: 5px;
+  margin-bottom: 2px;
+  fill: #666;
+  transition: all 200ms ease;
+}
