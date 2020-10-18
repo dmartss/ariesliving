@@ -67,22 +67,25 @@
   .mobileNav {
     z-index: 2;
     background: var(--bg);
-    animation: appear 0.2s ease;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    will-change: transform, opacity;
   }
 
   .mobileNav.active {
     display: flex;
     width: 100%;
-    margin: var(--gap-half) auto;
-    position: relative;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-bottom: var(--gap);
   }
 
   .mobileNav > a {
-    flex: 1;
+    height: var(--gap-double);
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  .mobileNav > a:not(:last-child) {
+    border-bottom: 1px solid var(--accents-2);
   }
 }
 

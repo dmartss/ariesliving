@@ -170,7 +170,7 @@ function Navbar({ home }) {
       </nav>
 
       <nav className={cn(styles.mobileNav, { [styles.active]: mobileNavShown })}>
-        {home ? (
+        {home && (
           <>
             <Link href="#about" title="About">
               About
@@ -185,19 +185,18 @@ function Navbar({ home }) {
               Team
             </Link>
           </>
-        ) : (
-          <>
-            <Link href="/hotels/villa-paradiso" hotel="villa-paradiso" title="Villa Paradiso">
-              Villa Paradiso
-            </Link>
-            <Link href="/hotels/ithaca" hotel="ithaca" title="Ithaca">
-              Ithaca
-            </Link>
-            <Link href="/hotels/treehouse" hotel="treehouse" title="Treehouse">
-              Treehouse
-            </Link>
-          </>
         )}
+        <>
+          <Link href="/hotels/villa-paradiso" hotel="villa-paradiso" title="Villa Paradiso">
+            Villa Paradiso
+          </Link>
+          <Link href="/hotels/ithaca" hotel="ithaca" title="Ithaca">
+            Ithaca
+          </Link>
+          <Link href="/hotels/treehouse" hotel="treehouse" title="Treehouse">
+            Treehouse
+          </Link>
+        </>
       </nav>
     </Container>
   )
