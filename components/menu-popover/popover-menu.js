@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Triangle } from 'components/icons'
 import cn from 'classnames'
+import { Triangle } from 'components/icons'
 import styles from './popover-menu.module.css'
 
 export const Menu = memo(({ children, innerRef }) => (

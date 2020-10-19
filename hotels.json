@@ -12,7 +12,8 @@
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595509416/2_vmy4ul.png",
     "rooms": 18,
     "address": "1415 Collins Ave, Miami Beach, FL 33139",
-    "email": "villaparadiso@ariesliving.com"
+    "email": "villaparadiso@ariesliving.com",
+    "phone": "+1 (813) 575-4532"
   },
   {
     "name": "Ithaca of South Beach Hotel",
@@ -27,7 +28,8 @@
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595527351/og_ejou0x.png",
     "rooms": 11,
     "address": "601 Collins Ave, Miami Beach, FL 33139",
-    "email": "ithaca@ariesliving.com"
+    "email": "ithaca@ariesliving.com",
+    "phone": "+1 (813) 575-4532"
   },
   {
     "name": "Treehouse Studio Hotel",
@@ -42,6 +44,7 @@
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595951166/og_jdv79w.png",
     "rooms": 22,
     "address": "7126 Biscayne Blvd, Miami, FL 33138",
-    "email": "treehouse@ariesliving.com"
+    "email": "treehouse@ariesliving.com",
+    "phone": "+1 (813) 575-4532"
   }
 ]
