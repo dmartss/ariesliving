@@ -1,11 +1,12 @@
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
+import Button from 'components/button'
 // import Details from './details'
 import Header from './header'
 import Image from 'components/image'
 import styles from './hotel.module.css'
 
-export default function Hotel({ id: { src, name, hotel, address, email, phone } }) {
+export default function Hotel({ id: { src, name, hotel, details, rezTripUrl } }) {
   return src ? (
     <Container role="main" aria-labelledby={hotel}>
       <Header name={name} hotel={hotel} />
@@ -20,12 +21,13 @@ export default function Hotel({ id: { src, name, hotel, address, email, phone } 
         alt={`${name} Image`}
       />
       <Container padding id="about">
-        <h2 className="fp fw5">About {name}</h2>
-        <h3 className="fw4">{address}</h3>
-        <a href={`mailto:${email}?subject=Hello`}>{email}</a>
-        <h3 className="fw4">{phone}</h3>
-
-        {/* <Details email={email} address={address}/> */}
+        <div className={styles.main}>
+          <h2 className="fp fw5">{name}</h2>
+          <h3 className="fw4">{details.address}</h3>
+          <a href={`mailto:${details.email}?subject=Hello`}>{details.email}</a>
+          <h3 className="fw4">{details.phone}</h3>
+          <Button href={rezTripUrl}>Book Now</Button>
+        </div>
       </Container>
     </Container>
   ) : (

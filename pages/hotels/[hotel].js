@@ -26,7 +26,7 @@ export default function HotelPage({ id }) {
     <FeedbackContext.Provider value={{ label: id.hotel }}>
       <div className={id.hotel}>
         <Page
-          title={id.titleShort}
+          title={id.title}
           description={id.descriptionShort}
           image={id.defaultOgImage}
           keywords={id.name}

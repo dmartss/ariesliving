@@ -5,9 +5,6 @@ export default css`
     --button-fg: var(--accents-5);
     --button-bg: var(--aries-bg);
     --button-border: var(--accents-2);
-    --button-fg-hover: var(--aries-fg);
-    --button-bg-hover: var(--aries-bg);
-    --button-border-hover: var(--aries-fg);
 
     position: relative;
     display: inline-flex;
@@ -15,12 +12,13 @@ export default css`
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
-    padding: var(--gap-quarter) var(--gap-half);
-    margin: calc(-1 * var(--gap-quarter)) calc(-1 * var(--gap-half));
     border-radius: var(--radius);
-    background-color: transparent;
-    border: none;
-    color: var(--button-fg);
+    background-color: var(--aries-1);
+    color: var(--aries-fg);
+    border: 1px solid var(--aries-1);
+    padding: var(--gap-quarter) var(--gap);
+    margin: 0;
+    font-weight: 500;
     font-size: inherit;
     line-height: inherit;
     height: 2.81rem;
@@ -32,6 +30,11 @@ export default css`
     --shadow-small: 0;
   }
 
+  .btn:hover {
+    background-color: transparent;
+    color: var(--aries-1);
+  }
+
   .btn.invert {
     margin: 0;
     padding: 0 3.5rem;
@@ -41,15 +44,11 @@ export default css`
     color: var(--button-fg);
     box-shadow: var(--shadow-small);
   }
-  .btn.invert:hover {
-    color: var(--button-fg-hover);
-    background-color: var(--button-bg-hover);
-    border-color: var(--button-border-hover);
-  }
+  .btn.invert:hover,
   .btn.invert:active {
-    color: var(--button-fg-hover);
-    background-color: var(--button-bg-hover);
-    border-color: var(--button-border-hover);
+    color: var(--aries-fg);
+    background-color: var(--aries-bg);
+    border-color: var(--aries-fg);
   }
 
   .btn.invert.outline {
@@ -58,7 +57,8 @@ export default css`
     border: 1px solid var(--accents-8);
     color: var(--aries-bg);
   }
-  .btn.invert.outline:hover {
+  .btn.invert.outline:hover,
+  .btn.invert.outline:active {
     background-color: transparent;
     outline: none;
     border-color: var(--aries-1);
