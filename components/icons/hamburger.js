@@ -3,7 +3,7 @@ import styles from './hamburger.module.css'
 
 export default function Hamburger({ mobileNavShown, className }) {
   return (
-    <div role="button" aria-expanded={mobileNavShown} aria-label="Main Menu" className={className}>
+    <div role="button" aria-label="Main Menu" className={className}>
       <svg
         width="30"
         height="30"

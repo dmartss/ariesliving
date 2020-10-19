@@ -20,7 +20,7 @@ export default function Hotel({ id: { src, name, hotel, details, rezTripUrl } })
         height={2000 / 2.75}
         alt={`${name} Image`}
       />
-      <Container padding id="about">
+      <Container wide padding id="about">
         <div className={styles.main}>
           <h2 className="fp fw5">{name}</h2>
           <h3 className="fw4">{details.address}</h3>
