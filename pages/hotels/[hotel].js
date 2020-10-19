@@ -2,12 +2,9 @@ import { SkipNavContent } from '@reach/skip-nav'
 import Error from 'next/error'
 import { useRouter } from 'next/router'
 import FeedbackContext from 'components/feedback/feedback-context'
-import Skeleton from 'components/skeleton'
-import Container from 'components/container'
 import Hotel from 'components/hotel'
 import Page from 'components/page'
 import hotels from 'hotels'
-import styles from 'styles/pages/hotel.module.css'
 
 export const getStaticPaths = () => ({
   paths: hotels.map(({ hotel }) => ({ params: { hotel } })),
@@ -36,15 +33,7 @@ export default function HotelPage({ id }) {
           url={asPath}
         >
           <SkipNavContent />
-          {id ? (
-            <Hotel id={id} />
-          ) : (
-            <Container>
-              <div className={styles.container}>
-                <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
-              </div>
-            </Container>
-          )}
+          <Hotel id={id} />
         </Page>
       </div>
     </FeedbackContext.Provider>

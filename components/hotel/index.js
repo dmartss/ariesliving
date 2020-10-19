@@ -1,9 +1,11 @@
 import Container from 'components/container'
+import Skeleton from 'components/skeleton'
 import Header from './header'
 import Image from 'components/image'
+import styles from './hotel.module.css'
 
 export default function Hotel({ id: { src, name, hotel, address, email } }) {
-  return (
+  return src ? (
     <Container>
       <Header name={name} hotel={hotel} />
       <Image
@@ -18,5 +20,9 @@ export default function Hotel({ id: { src, name, hotel, address, email } }) {
         alt={`${name} Image`}
       />
     </Container>
+  ) : (
+    <div className={styles.container}>
+      <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
+    </div>
   )
 }
