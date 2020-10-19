@@ -6,12 +6,12 @@ import Header from './header'
 import Image from 'components/image'
 import styles from './hotel.module.css'
 
-export default function Hotel({ id: { src, name, hotel, details, rezTripUrl, description } }) {
-  return src ? (
+export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
+  return hotel ? (
     <Container role="main" aria-labelledby={hotel}>
       <Header name={name} hotel={hotel} />
       <Image
-        src={src}
+        src={`/showcase/${hotel}.jpg`}
         shadow
         margin={0}
         oversize={false}
@@ -30,13 +30,17 @@ export default function Hotel({ id: { src, name, hotel, details, rezTripUrl, des
           <h3 className="f4 fw3">{details.phone}</h3>
           <h3 className="f4 fw3">Rooms: {details.rooms}</h3>
           <Button href={rezTripUrl}>Book Now</Button>
-          <p>{description}</p>
+          {details.description.map((d, i) => (
+            <p key={i}>{d}</p>
+          ))}
         </div>
       </Container>
     </Container>
   ) : (
-    <div className={styles.container}>
-      <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
-    </div>
+    <Container>
+      <div className={styles.container}>
+        <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
+      </div>
+    </Container>
   )
 }
