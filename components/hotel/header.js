@@ -19,9 +19,9 @@ export default function Header({ hotel, name }) {
         <a className={styleHover.underline} href="#about">
           About
         </a>
-        <a className={styleHover.underline} href="#rooms">
+        {/* <a className={styleHover.underline} href="#rooms">
           Rooms
-        </a>
+        </a> */}
       </nav>
     </header>
   )
