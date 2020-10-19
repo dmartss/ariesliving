@@ -22,8 +22,8 @@ export default function Hotel({ id: { src, name, hotel, address, email, phone } 
       <Container padding id="about">
         <h2 className="fp fw5">About {name}</h2>
         <h3 className="fw4">{address}</h3>
-        <h3 className="fw4">{phone}</h3>
         <a href={`mailto:${email}?subject=Hello`}>{email}</a>
+        <h3 className="fw4">{phone}</h3>
 
         {/* <Details email={email} address={address}/> */}
       </Container>
