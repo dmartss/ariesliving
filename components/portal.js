@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const isClient = typeof window !== 'undefined'
 
-class Portal extends Component {
+export default class Portal extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -14,15 +14,11 @@ class Portal extends Component {
   constructor(props) {
     super(props)
 
-    if (isClient) {
-      this.rootElement = document.createElement('div')
-    }
+    if (isClient) this.rootElement = document.createElement('div')
   }
 
   UNSAFE_componentWillMount() {
-    if (isClient) {
-      this.renderContainer(this.props)
-    }
+    if (isClient) this.renderContainer(this.props)
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -37,17 +33,13 @@ class Portal extends Component {
   }
 
   componentWillUnmount() {
-    if (isClient) {
-      this.unrenderContainer(this.props)
-    }
+    if (isClient) this.unrenderContainer(this.props)
   }
 
   renderContainer(props) {
     getContainer(props.container).appendChild(this.rootElement)
 
-    if (props.className) {
-      this.rootElement.className = props.className
-    }
+    if (props.className) this.rootElement.className = props.className
   }
 
   unrenderContainer(props) {
@@ -55,16 +47,10 @@ class Portal extends Component {
   }
 
   render() {
-    if (!isClient) {
-      return null
-    }
+    if (!isClient) return null
 
     return createPortal(this.props.children, this.rootElement)
   }
 }
 
-function getContainer(container) {
-  return container || document.body
-}
-
-export default Portal
+const getContainer = container => container || document.body
