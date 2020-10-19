@@ -19,6 +19,6 @@ export const Item = memo(({ icon, hover, active, children }) => (
   </div>
 ))
 
-export const Divider = memo(() => <div className={styles.line}></div>)
+export const Divider = () => <div className={styles.line} />
 
 export default Menu

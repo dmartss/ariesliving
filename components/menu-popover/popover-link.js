@@ -89,66 +89,51 @@ export default class PopOverLink extends React.Component {
   }
 
   renderPortal = ({ innerRef }) => {
-    const {
-      to,
-      offsetLeft = 0,
-      offsetTop = 0,
-      offsetBottom = 0,
-      fixed,
-      left,
-      top,
-      bottom,
-      placement = 'bottom'
-    } = this.props
+    const { to, offsetLeft = -62, offsetTop = 0, left, top } = this.props
     const { isOpen } = this.state
 
     return (
       <Portal>
         <span
           ref={innerRef}
-          className={`portal ${placement} ${isOpen ? 'show' : ''}`}
+          className={`portal bottom ${isOpen ? 'show' : ''}`}
           style={{
-            position: fixed ? 'fixed' : 'absolute',
             left: left != null ? left : this.state.left + offsetLeft,
-            top: placement === 'bottom' ? (top != null ? top : this.state.top + offsetTop) : null,
-            bottom:
-              placement === 'top'
-                ? bottom != null
-                  ? bottom
-                  : this.state.bottom + offsetBottom
-                : null
+            top: top != null ? top : this.state.top + offsetTop
           }}
         >
           {to}
+
+          <style jsx>{`
+            .portal {
+              contain: layout;
+              position: absolute;
+              transition: opacity 0.2s ease, transform 0.2s ease;
+              z-index: 9999;
+              opacity: 0;
+              pointer-events: none;
+              height: 0;
+            }
+            .portal :global(.menu) {
+              box-shadow: var(--dropdown-box-shadow);
+              transition: box-shadow 0.5s ease;
+            }
+            .portal.bottom {
+              transform: translate3d(0px, 12px, 0px);
+            }
+            .portal.show {
+              opacity: 1;
+              pointer-events: unset;
+              height: unset;
+            }
+            .portal.show :global(.menu) {
+              box-shadow: var(--shadow-medium);
+            }
+            .portal.show.bottom {
+              transform: translate3d(0px, 15px, 0px);
+            }
+          `}</style>
         </span>
-        <style jsx>{`
-          .portal {
-            contain: layout;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            height: 0;
-          }
-          .portal :global(.menu) {
-            box-shadow: var(--dropdown-box-shadow);
-            transition: box-shadow 0.5s ease;
-          }
-          .portal.bottom {
-            transform: translate3d(0px, 12px, 0px);
-          }
-          .portal.show {
-            opacity: 1;
-            pointer-events: unset;
-            height: unset;
-          }
-          .portal.show :global(.menu) {
-            box-shadow: var(--shadow-medium);
-          }
-          .portal.show.bottom {
-            transform: translate3d(0px, 15px, 0px);
-          }
-        `}</style>
       </Portal>
     )
   }

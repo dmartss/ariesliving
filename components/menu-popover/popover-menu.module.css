@@ -45,11 +45,11 @@
   padding: 0;
 }
 
-.item:first-child a {
+.item:global:first-child a {
   padding-top: 0;
 }
 
-.item:last-child a {
+.item:global:last-child a {
   padding-bottom: 0;
 }
 

@@ -34,13 +34,11 @@ function MenuItems({ list, title }) {
   )
 }
 export default function MenuPopOver({
-  clickable,
   title,
   primaryTitle,
   secondaryTitle,
   primaryList,
   secondaryList,
-  offsetLeft,
   className
 }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -65,16 +63,12 @@ export default function MenuPopOver({
   return (
     <span
       className={cn(className, styles.menu, { [styles['is-active']]: isOpen })}
-      onMouseEnter={clickable ? undefined : open}
-      onMouseLeave={clickable ? undefined : close}
-      onClick={clickable && open}
+      onMouseEnter={open}
+      onMouseLeave={close}
     >
       {title}
       <PopOverLink
-        hideOnClick={clickable}
-        isOpen={clickable ? undefined : isOpen}
-        offsetLeft={offsetLeft}
-        offsetTop={0}
+        isOpen={isOpen}
         onOpen={onPopOverOpen}
         to={
           <PopOver.Menu>

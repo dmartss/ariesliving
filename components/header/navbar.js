@@ -50,7 +50,6 @@ function Navbar({ home }) {
                 <MenuPopOver
                   className={cn(styleUtils.appear, styleUtils['appear-third'])}
                   title="Hotels"
-                  offsetLeft={-62}
                   // primaryTitle="Florida"
                   primaryList={[
                     {
