@@ -5,8 +5,8 @@
   justify-content: center;
 }
 
-.main :global(a:last-child) {
-  margin: var(--gap-quarter) 0;
+.main :global(a:last-of-type) {
+  margin-top: var(--gap-half);
 }
 
 .container {
