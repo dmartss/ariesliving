@@ -1,7 +1,6 @@
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
-// import Details from './details'
 import Header from './header'
 import Image from 'components/image'
 import styles from './hotel.module.css'

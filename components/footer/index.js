@@ -31,10 +31,10 @@ function Footer() {
                 <a>Contact</a>
               </p>
               <p>
-                <a>Privacy Policy</a>
+                <Link href="/terms-and-conditions">Terms & Conditions</Link>
               </p>
               <p>
-                <a>Sitemap</a>
+                <a>Privacy Policy</a>
               </p>
             </div>
             <div>

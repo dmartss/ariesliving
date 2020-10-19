@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import { KEYWORDS } from 'lib/constants'
+import { NAME, KEYWORDS, defaultOgImage, SITE_URL } from 'lib/constants'
 
 export default function PageContainer({
-  url,
-  image,
   title,
-  description,
+  suffix,
   children,
+  description = NAME,
   shouldIndex = true,
-  keywords = undefined
+  keywords = undefined,
+  image = defaultOgImage
 }) {
   return (
     <>
@@ -29,16 +29,16 @@ export default function PageContainer({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
         {title && <meta property="og:title" content={title} />}
-        {url && <meta property="og:url" content={url} />}
+        <meta property="og:url" content={`${SITE_URL}${suffix ? `${suffix}` : ''}`} />
         {description && <meta name="description" content={description} />}
         {description && <meta property="og:description" content={description} />}
         {image && (
           <meta
             property="og:image"
-            content={image.startsWith('https://') ? image : `${url}${image}`}
+            content={image.startsWith('https://') ? image : `${SITE_URL}${image}`}
           />
         )}
-        <meta name="keywords" content={`${keywords && `${keywords}`}, ${KEYWORDS}`} />
+        <meta name="keywords" content={`${KEYWORDS} ${keywords ? `${keywords}` : ''}`} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
