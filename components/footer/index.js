@@ -31,7 +31,9 @@ function Footer() {
                 <a>Contact</a>
               </p>
               <p>
-                <Link href="/terms-and-conditions">Terms & Conditions</Link>
+                <Link href="/terms-and-conditions?utm_source=aries-living&utm_medium=homepage-footer&utm_campaign=aries-living">
+                  Terms & Conditions
+                </Link>
               </p>
               <p>
                 <a>Privacy Policy</a>
