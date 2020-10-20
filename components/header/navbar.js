@@ -26,7 +26,7 @@ function Navbar({ home }) {
         <div className={styles.links}>
           <Link
             href="/"
-            className={cn(styles.logo, styleUtils.appear, styleUtils['appear-first'], {
+            className={cn(styles.logo, styleUtils.appear, styleUtils.first, {
               [styles['not-home']]: !home
             })}
             title="Go to the homepage"
@@ -38,17 +38,13 @@ function Navbar({ home }) {
             {home ? (
               <>
                 <div
-                  className={cn(
-                    styles['header-feedback'],
-                    styleUtils.appear,
-                    styleUtils['appear-second']
-                  )}
+                  className={cn(styles['header-feedback'], styleUtils.appear, styleUtils.second)}
                 >
                   <HeaderFeedback email />
                 </div>
 
                 <MenuPopOver
-                  className={cn(styleUtils.appear, styleUtils['appear-third'])}
+                  className={cn(styleUtils.appear, styleUtils.third)}
                   title="Hotels"
                   // primaryTitle="Florida"
                   primaryList={[
@@ -82,28 +78,28 @@ function Navbar({ home }) {
 
                 <Link
                   href="#about"
-                  className={cn(styleUtils.appear, styleUtils['appear-fourth'])}
+                  className={cn(styleUtils.appear, styleUtils.fourth)}
                   title="About"
                 >
                   About
                 </Link>
                 <Link
                   href="#portfolio"
-                  className={cn(styleUtils.appear, styleUtils['appear-fifth'])}
+                  className={cn(styleUtils.appear, styleUtils.fifth)}
                   title="Portfolio"
                 >
                   Portfolio
                 </Link>
                 <Link
                   href="#investors"
-                  className={cn(styleUtils.appear, styleUtils['appear-sixth'])}
+                  className={cn(styleUtils.appear, styleUtils.sixth)}
                   title="Investors"
                 >
                   Investors
                 </Link>
                 <Link
                   href="#team"
-                  className={cn(styleUtils.appear, styleUtils['appear-seventh'])}
+                  className={cn(styleUtils.appear, styleUtils.seventh)}
                   title="Team"
                 >
                   Team
@@ -112,11 +108,7 @@ function Navbar({ home }) {
             ) : (
               <>
                 <div
-                  className={cn(
-                    styles['header-feedback'],
-                    styleUtils.appear,
-                    styleUtils['appear-second']
-                  )}
+                  className={cn(styles['header-feedback'], styleUtils.appear, styleUtils.second)}
                 >
                   <HeaderFeedback email />
                 </div>
@@ -124,7 +116,7 @@ function Navbar({ home }) {
                 <Link
                   href="/hotels/villa-paradiso"
                   hotel="villa-paradiso"
-                  className={cn(styleUtils.appear, styleUtils['appear-third'])}
+                  className={cn(styleUtils.appear, styleUtils.third)}
                   title="Villa Paradiso"
                 >
                   Villa Paradiso
@@ -132,7 +124,7 @@ function Navbar({ home }) {
                 <Link
                   href="/hotels/ithaca"
                   hotel="ithaca"
-                  className={cn(styleUtils.appear, styleUtils['appear-fourth'])}
+                  className={cn(styleUtils.appear, styleUtils.fourth)}
                   title="Ithaca"
                 >
                   Ithaca
@@ -140,7 +132,7 @@ function Navbar({ home }) {
                 <Link
                   href="/hotels/treehouse"
                   hotel="treehouse"
-                  className={cn(styleUtils.appear, styleUtils['appear-fifth'])}
+                  className={cn(styleUtils.appear, styleUtils.fifth)}
                   title="Treehouse"
                 >
                   Treehouse
@@ -153,7 +145,7 @@ function Navbar({ home }) {
             color="var(--aries-fg)"
             className={cn(
               styleUtils['theme-icon'],
-              { [styleUtils.appear]: !mounted, [styleUtils['appear-eighth']]: !mounted },
+              { [styleUtils.appear]: !mounted, [styleUtils.eighth]: !mounted },
               styles['mobile-absolute'],
               styles.right
             )}
