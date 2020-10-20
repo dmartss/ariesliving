@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import HeaderFeedback from 'components/feedback'
 import MenuPopOver from 'components/menu-popover'
 import { HotelLogo } from 'components/icons'
@@ -7,7 +8,14 @@ import styleUtils from 'styles/utils/utils.module.css'
 import styles from './navbar.module.css'
 
 export default function HomeLinks({ desktop }) {
-  const classes = number => (desktop ? cn(styleUtils.appear, styleUtils[number]) : null)
+  const classes = useCallback(
+    number => {
+      if (desktop) return cn(styleUtils.appear, styleUtils[number])
+      return null
+    },
+    [desktop]
+  )
+
   return (
     <>
       {desktop && (

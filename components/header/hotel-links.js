@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import HeaderFeedback from 'components/feedback'
 import cn from 'classnames'
 import Link from 'components/link'
@@ -5,7 +6,13 @@ import styleUtils from 'styles/utils/utils.module.css'
 import styles from './navbar.module.css'
 
 export default function HotelLinks({ desktop }) {
-  const classes = number => (desktop ? cn(styleUtils.appear, styleUtils[number]) : null)
+  const classes = useCallback(
+    number => {
+      if (desktop) return cn(styleUtils.appear, styleUtils[number])
+      return null
+    },
+    [desktop]
+  )
   return (
     <>
       {desktop && (
