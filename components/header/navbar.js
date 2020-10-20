@@ -140,7 +140,7 @@ function Navbar({ home }) {
             className={cn(
               styleUtils['theme-icon'],
               styleUtils.appear,
-              styleUtils.eighth,
+              { [styleUtils.eighth]: home, [styleUtils.sixth]: !home },
               styles['mobile-absolute'],
               styles.right
             )}
