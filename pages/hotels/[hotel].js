@@ -31,6 +31,7 @@ export default function HotelPage({ id }) {
           image={id.defaultOgImage}
           keywords={id.name}
           suffix={asPath}
+          hotel={id.hotel}
         >
           <SkipNavContent />
           <Hotel id={id} />

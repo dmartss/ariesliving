@@ -9,7 +9,7 @@ import { memo } from 'react'
 import cn from 'classnames'
 import styles from './footer.module.css'
 
-function Footer() {
+function Footer({ hotel }) {
   return (
     <Container wide dark>
       <Container>
@@ -31,7 +31,9 @@ function Footer() {
                 <a>Contact</a>
               </p>
               <p>
-                <Link href="/terms-and-conditions">Terms & Conditions</Link>
+                <Link href={`/terms-and-conditions/${hotel ? `${hotel}` : ''}`}>
+                  Terms & Conditions
+                </Link>
               </p>
               <p>
                 <a>Privacy Policy</a>

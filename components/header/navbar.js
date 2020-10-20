@@ -56,9 +56,9 @@ function Navbar({ home }) {
                     },
                     {
                       title: 'Ithaca',
-                      hotel: 'ithaca',
-                      url: '/hotels/ithaca',
-                      logo: <HotelLogo hotel="ithaca" small />
+                      hotel: 'ithaca-south-beach',
+                      url: '/hotels/ithaca-south-beach',
+                      logo: <HotelLogo hotel="ithaca-south-beach" small />
                     },
                     {
                       title: 'Treehouse',
@@ -122,10 +122,10 @@ function Navbar({ home }) {
                   Villa Paradiso
                 </Link>
                 <Link
-                  href="/hotels/ithaca"
-                  hotel="ithaca"
+                  href="/hotels/ithaca-south-beach"
+                  hotel="ithaca-south-beach"
                   className={cn(styleUtils.appear, styleUtils.fourth)}
-                  title="Ithaca"
+                  title="Ithaca of South Beach"
                 >
                   Ithaca
                 </Link>
@@ -181,7 +181,11 @@ function Navbar({ home }) {
           <Link href="/hotels/villa-paradiso" hotel="villa-paradiso" title="Villa Paradiso">
             Villa Paradiso
           </Link>
-          <Link href="/hotels/ithaca" hotel="ithaca" title="Ithaca">
+          <Link
+            href="/hotels/ithaca-south-beach"
+            hotel="ithaca-south-beach"
+            title="Ithaca of South Beach"
+          >
             Ithaca
           </Link>
           <Link href="/hotels/treehouse" hotel="treehouse" title="Treehouse">

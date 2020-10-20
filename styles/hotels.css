@@ -7,7 +7,7 @@
   --font-primary: var(--start-color);
   --font-secondary: var(--end-color);
 }
-.ithaca {
+.ithaca-south-beach {
   --aries-1: var(--aries-ithaca-1);
   --aries-selection: var(--aries-ithaca-1);
   --start-color: var(--aries-ithaca-1);
