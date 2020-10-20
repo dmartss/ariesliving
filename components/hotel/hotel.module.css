@@ -9,6 +9,12 @@
   margin-top: var(--gap-half);
 }
 
+.main h3:not(:first-child),
+.main a {
+  font-weight: 300;
+  font-size: 1.125em;
+}
+
 .container {
   background: var(--aries-bg);
   border-radius: 5px;

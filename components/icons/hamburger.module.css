@@ -7,10 +7,10 @@
 }
 .line {
   fill: none;
-  stroke-width: 4;
+  stroke-width: 3;
   stroke: var(--aries-fg);
-  transition: stroke-dasharray 300ms var(--cubic-transition),
-    stroke-dashoffset 300ms var(--cubic-transition), stroke 600ms var(--cubic-transition);
+  transition: stroke-dasharray 400ms var(--cubic-transition),
+    stroke-dashoffset 400ms var(--cubic-transition), stroke 600ms var(--cubic-transition);
 }
 .line1,
 .line3 {

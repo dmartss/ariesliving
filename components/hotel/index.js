@@ -22,12 +22,10 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
       <Container wide padding id="about">
         <div className={styles.main}>
           <h3 className="fp fw6">{name}</h3>
-          <h3 className="f4 fw3">{details.address}</h3>
-          <a className="f4 fw3" href={`mailto:${details.email}?subject=Hello`}>
-            {details.email}
-          </a>
-          <h3 className="f4 fw3">{details.phone}</h3>
-          <h3 className="f4 fw3">Rooms: {details.rooms}</h3>
+          <h3>{details.address}</h3>
+          <a href={`mailto:${details.email}?subject=Hello`}>{details.email}</a>
+          <h3>{details.phone}</h3>
+          <h3>Rooms: {details.rooms}</h3>
           <Button href={rezTripUrl}>Book Now</Button>
           {details.description.map((d, i) => (
             <p key={i}>{d}</p>
