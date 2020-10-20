@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { NAME, KEYWORDS, defaultOgImage, SITE_URL } from 'lib/constants'
+import { KEYWORDS, defaultOgImage, SITE_URL } from 'lib/constants'
 
 export default function PageContainer({
   title,
   suffix,
   children,
-  description = NAME,
+  description,
   shouldIndex = true,
   keywords = undefined,
   image = defaultOgImage
