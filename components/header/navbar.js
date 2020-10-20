@@ -8,11 +8,9 @@ import HeaderFeedback from 'components/feedback'
 import MenuPopOver from 'components/menu-popover'
 import styleUtils from 'styles/utils/utils.module.css'
 import styles from './navbar.module.css'
-import useMounted from 'lib/use-mounted'
 import { useNav } from 'lib/nav-context'
 
 function Navbar({ home }) {
-  const mounted = useMounted()
   const { mobileNavShown, toggle } = useNav()
 
   return (
@@ -37,9 +35,7 @@ function Navbar({ home }) {
           <div className={styles['not-logo']}>
             {home ? (
               <>
-                <div
-                  className={cn(styles['header-feedback'], styleUtils.appear, styleUtils.second)}
-                >
+                <div className={cn(styles.feedback, styleUtils.appear, styleUtils.second)}>
                   <HeaderFeedback email />
                 </div>
 
@@ -107,9 +103,7 @@ function Navbar({ home }) {
               </>
             ) : (
               <>
-                <div
-                  className={cn(styles['header-feedback'], styleUtils.appear, styleUtils.second)}
-                >
+                <div className={cn(styles.feedback, styleUtils.appear, styleUtils.second)}>
                   <HeaderFeedback email />
                 </div>
 
@@ -145,7 +139,8 @@ function Navbar({ home }) {
             color="var(--aries-fg)"
             className={cn(
               styleUtils['theme-icon'],
-              { [styleUtils.appear]: !mounted, [styleUtils.eighth]: !mounted },
+              styleUtils.appear,
+              styleUtils.eighth,
               styles['mobile-absolute'],
               styles.right
             )}

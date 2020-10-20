@@ -19,7 +19,7 @@
   margin-right: auto;
 }
 
-.header-feedback {
+.feedback {
   display: inline-flex;
   margin: var(--gap);
   z-index: 1001;
