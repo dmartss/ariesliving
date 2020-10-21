@@ -11,7 +11,7 @@ import Team from 'components/team'
 export default function Home() {
   return (
     <FeedbackContext.Provider value={{ label: 'home' }}>
-      <Page title="Aries Living - Home" home>
+      <Page title="Aries Living - Home">
         <SkipNavContent />
         <Image
           src="/showcase/hero.jpg"

@@ -13,7 +13,7 @@ export default function PageContainer({
   return (
     <>
       <Head>
-        <title>{title || `${title} by Aries Living`}</title>
+        <title>{title || 'Aries Living'}</title>
         {description !== false && (
           <meta
             name="description"
@@ -38,7 +38,7 @@ export default function PageContainer({
             content={image.startsWith('https://') ? image : `${SITE_URL}${image}`}
           />
         )}
-        <meta name="keywords" content={`${KEYWORDS} ${keywords ? `${keywords}` : ''}`} />
+        <meta name="keywords" content={`${keywords ? `${keywords},` : ''} ${KEYWORDS}`} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
