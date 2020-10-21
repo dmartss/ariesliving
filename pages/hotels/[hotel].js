@@ -24,19 +24,17 @@ export default function HotelPage({ id }) {
 
   return (
     <FeedbackContext.Provider value={{ label: id.hotel }}>
-      <div className={id.hotel}>
-        <Page
-          title={id.title}
-          description={id.descriptionShort}
-          image={id.defaultOgImage}
-          keywords={id.name}
-          hotel={id.hotel}
-          suffix={asPath}
-        >
-          <SkipNavContent />
-          <Hotel id={id} />
-        </Page>
-      </div>
+      <Page
+        title={id.title}
+        description={id.descriptionShort}
+        image={id.defaultOgImage}
+        keywords={id.name}
+        hotel={id.hotel}
+        suffix={asPath}
+      >
+        <SkipNavContent />
+        <Hotel id={id} />
+      </Page>
     </FeedbackContext.Provider>
   )
 }

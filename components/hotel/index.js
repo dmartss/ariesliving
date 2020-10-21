@@ -7,7 +7,7 @@ import styles from './hotel.module.css'
 
 export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
   return hotel ? (
-    <Container role="main" aria-labelledby={hotel}>
+    <Container role="main" aria-labelledby={hotel} className={hotel}>
       <Header name={name} hotel={hotel} />
       <Image
         src={`/showcase/${hotel}.jpg`}
