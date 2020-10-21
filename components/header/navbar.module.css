@@ -54,13 +54,13 @@
   .toggle {
     display: block;
   }
-  .mobile-absolute {
+  .absolute {
     position: absolute;
   }
-  .mobile-absolute.left {
+  .absolute.left {
     left: 0;
   }
-  .mobile-absolute.right {
+  .absolute.right {
     right: 0;
   }
 
@@ -86,17 +86,5 @@
   }
   .mobileNav > a:not(:last-child) {
     border-bottom: 1px solid var(--accents-2);
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }

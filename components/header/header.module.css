@@ -7,7 +7,7 @@
   z-index: 1000;
   box-shadow: var(--header-border-bottom);
   background: var(--header-bg);
-  transition: box-shadow 0.2s ease 0s, background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
 }
 
 .header.shown {

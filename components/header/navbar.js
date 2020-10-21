@@ -42,21 +42,19 @@ function Navbar() {
             <NavLinks desktop home={home} />
           </div>
 
-          <ThemeIcon
-            color="var(--aries-fg)"
+          <span
             className={cn(
               styleUtils['theme-icon'],
               styleUtils.appear,
               { [styleUtils.eighth]: home, [styleUtils.sixth]: !home },
-              styles['mobile-absolute'],
+              styles.absolute,
               styles.right
             )}
-          />
-
-          <span
-            className={cn(styles.toggle, styles['mobile-absolute'], styles.left)}
-            onClick={toggle}
           >
+            <ThemeIcon />
+          </span>
+
+          <span className={cn(styles.toggle, styles.absolute, styles.left)} onClick={toggle}>
             <Hamburger mobileNavShown={mobileNavShown} />
           </span>
         </div>

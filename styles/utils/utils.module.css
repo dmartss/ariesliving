@@ -1,7 +1,8 @@
-.theme-icon {
+.theme-icon > :global(svg) {
+  display: flex;
   transition: fill 200ms ease-in-out;
 }
-.theme-icon:hover {
+.theme-icon:hover > :global(svg) {
   fill: var(--aries-1);
 }
 
