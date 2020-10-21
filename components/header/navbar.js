@@ -7,8 +7,8 @@ import Container from 'components/container'
 import styleUtils from 'styles/utils/utils.module.css'
 import styles from './navbar.module.css'
 import { useNav } from 'lib/nav-context'
-import HotelLinks from './hotel-links'
-import HomeLinks from './home-links'
+import NavLinks from './nav-links'
+import HeaderFeedback from 'components/feedback'
 
 function Navbar({ home }) {
   const { mobileNavShown, toggle } = useNav()
@@ -33,7 +33,10 @@ function Navbar({ home }) {
           </Link>
 
           <div className={styles['not-logo']}>
-            {home ? <HomeLinks desktop /> : <HotelLinks desktop />}
+            <div className={cn(styles.feedback, styleUtils.appear, styleUtils.second)}>
+              <HeaderFeedback email />
+            </div>
+            <NavLinks desktop home={home} />
           </div>
 
           <ThemeIcon
@@ -57,8 +60,7 @@ function Navbar({ home }) {
       </nav>
 
       <nav className={cn(styles.mobileNav, { [styles.active]: mobileNavShown })}>
-        {home && <HomeLinks />}
-        <HotelLinks />
+        <NavLinks mobile home={home} />
       </nav>
     </Container>
   )
