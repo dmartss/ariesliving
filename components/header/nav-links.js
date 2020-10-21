@@ -66,6 +66,7 @@ export default function HomeLinks({ desktop, mobile, home }) {
           </Link>
         </>
       )}
+
       {displayHotelLinks() && (
         <>
           <Link
