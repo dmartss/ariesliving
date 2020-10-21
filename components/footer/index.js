@@ -31,7 +31,7 @@ function Footer({ hotel }) {
                 <a>Contact</a>
               </p>
               <p>
-                <Link href={`/terms-and-conditions/${hotel ? `${hotel}` : ''}`}>
+                <Link href={`/terms-and-conditions${hotel ? `/${hotel}` : ''}`}>
                   Terms & Conditions
                 </Link>
               </p>
