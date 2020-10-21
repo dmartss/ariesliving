@@ -4,7 +4,6 @@ import Footer from './footer'
 
 export default function Page({
   sticky = undefined,
-  home = false,
   keywords = undefined,
   hotel = undefined,
   description,
@@ -21,7 +20,7 @@ export default function Page({
       image={image}
       keywords={keywords}
     >
-      <Header home={home} sticky={sticky} />
+      <Header sticky={sticky} />
       {children}
       <Footer hotel={hotel} />
     </PageContainer>

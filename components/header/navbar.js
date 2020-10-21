@@ -1,17 +1,20 @@
 import { memo } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
-import Link from 'components/link'
 import cn from 'classnames'
-import Logo, { Hamburger, ThemeIcon } from 'components/icons'
 import Container from 'components/container'
-import styleUtils from 'styles/utils/utils.module.css'
+import HeaderFeedback from 'components/feedback'
+import Logo, { Hamburger, ThemeIcon } from 'components/icons'
+import Link from 'components/link'
+import NavLinks from './nav-links'
 import styles from './navbar.module.css'
 import { useNav } from 'lib/nav-context'
-import NavLinks from './nav-links'
-import HeaderFeedback from 'components/feedback'
+import styleUtils from 'styles/utils/utils.module.css'
+import { useRouter } from 'next/router'
 
-function Navbar({ home }) {
+function Navbar() {
   const { mobileNavShown, toggle } = useNav()
+  const { pathname } = useRouter()
+  const home = pathname === '/'
 
   return (
     <Container center>

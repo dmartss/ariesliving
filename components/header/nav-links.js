@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
+import cn from 'classnames'
 import MenuPopOver from 'components/menu-popover'
 import { HotelLogo } from 'components/icons'
-import cn from 'classnames'
 import Link from 'components/link'
 import styleUtils from 'styles/utils/utils.module.css'
 

@@ -26,3 +26,7 @@
   --font-primary: var(--end-color);
   --font-secondary: var(--start-color);
 }
+
+.aries-living {
+  --font-primary: var(--aries-1);
+}

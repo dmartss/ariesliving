@@ -2,10 +2,10 @@ import { memo } from 'react'
 import cn from 'classnames'
 import Banner from './banner'
 import Nav from './navbar'
-import styles from './header.module.css'
 import { useNav } from 'lib/nav-context'
+import styles from './header.module.css'
 
-const Header = ({ sticky = true, home }) => {
+const Header = ({ sticky = true }) => {
   const { mobileNavShown } = useNav()
   return (
     <>
@@ -14,10 +14,11 @@ const Header = ({ sticky = true, home }) => {
       <header
         className={cn(styles.header, { [styles.shown]: mobileNavShown, [styles.sticky]: sticky })}
       >
-        <Nav home={home} />
+        <Nav />
       </header>
     </>
   )
 }
 Header.displayName = 'Header'
+
 export default memo(Header)
