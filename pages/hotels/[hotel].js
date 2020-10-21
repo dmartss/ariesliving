@@ -15,8 +15,7 @@ export const getStaticProps = ({ params }) => {
 }
 
 export default function HotelPage({ id }) {
-  const router = useRouter()
-  const { asPath, isFallback } = router
+  const { asPath, isFallback } = useRouter()
 
   if (!id && !isFallback) return <Error statusCode={404} />
 

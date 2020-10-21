@@ -41,20 +41,20 @@ export default function Container({
         ${divider ? `border-top: 1px solid var(--line);` : ''}
       }
       :after {
-        // BFC
+        /* BFC */
         content: '';
         display: table;
         clear: both;
       }
 
-      // CSS only media query for tablet
+      /* CSS only media query for tablet */
       @media screen and (max-width: 960px) {
         div {
           padding: ${padding ? 'var(--gap-four)' : '0'} ${wide ? '0' : 'var(--gap-double)'};
           ${!overflow ? 'overflow: hidden;' : ''}
         }
       }
-      // CSS only media query for mobile
+      /* CSS only media query for mobile */
       @media screen and (max-width: 640px) {
         div {
           padding: ${padding ? 'var(--gap-triple)' : '0'} ${wide ? '0' : 'var(--gap'};

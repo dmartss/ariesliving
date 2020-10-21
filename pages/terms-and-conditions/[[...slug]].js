@@ -1,6 +1,6 @@
 import Container from 'components/container'
 import Error from 'next/error'
-import PageContainer from 'components/page-container'
+import Page from 'components/page'
 import termsAndConditions from 'lib/terms-and-conditions'
 import { useRouter } from 'next/router'
 import hotels from 'hotels'
@@ -25,7 +25,13 @@ export const getStaticProps = ({ params }) => {
 
   const content = termsAndConditions(name, email)
 
-  return { props: { name, hotel, content } }
+  return {
+    props: {
+      name,
+      hotel,
+      content
+    }
+  }
 }
 
 export default function TermsAndConditions({ hotel, name, content }) {
@@ -37,7 +43,7 @@ export default function TermsAndConditions({ hotel, name, content }) {
   const title = hotel && `${header} | Terms & Conditions`
 
   return (
-    <PageContainer title={title} description={title} keywords="Terms & Conditions" suffix={asPath}>
+    <Page tAndC title={title} description={title} keywords="Terms & Conditions" suffix={asPath}>
       <Container padding small className={hotel}>
         <h1>Terms & Conditions</h1>
         <h1 className="fp f1">{header}</h1>
@@ -45,6 +51,6 @@ export default function TermsAndConditions({ hotel, name, content }) {
           <p key={i}>{terms}</p>
         ))}
       </Container>
-    </PageContainer>
+    </Page>
   )
 }

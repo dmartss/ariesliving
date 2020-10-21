@@ -1,16 +1,18 @@
 import PageContainer from './page-container'
+import { defaultOgImage } from 'lib/constants'
 import Header from './header'
 import Footer from './footer'
 
 export default function Page({
-  sticky = undefined,
+  title = 'Aries Living',
+  image = defaultOgImage,
   keywords = undefined,
+  sticky = undefined,
   hotel = undefined,
   description,
-  image,
-  title,
+  children,
   suffix,
-  children
+  tAndC
 }) {
   return (
     <PageContainer
@@ -20,9 +22,9 @@ export default function Page({
       image={image}
       keywords={keywords}
     >
-      <Header sticky={sticky} />
+      {!tAndC && <Header sticky={sticky} />}
       {children}
-      <Footer hotel={hotel} />
+      {!tAndC && <Footer hotel={hotel} />}
     </PageContainer>
   )
 }
