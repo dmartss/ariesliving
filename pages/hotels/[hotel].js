@@ -18,9 +18,7 @@ export default function HotelPage({ id }) {
   const router = useRouter()
   const { asPath, isFallback } = router
 
-  if (!id && !isFallback) {
-    return <Error statusCode={404} />
-  }
+  if (!id && !isFallback) return <Error statusCode={404} />
 
   return (
     <FeedbackContext.Provider value={{ label: id.hotel }}>

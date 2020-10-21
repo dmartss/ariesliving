@@ -31,9 +31,8 @@ export const getStaticProps = ({ params }) => {
 export default function TermsAndConditions({ hotel, name, content }) {
   const { asPath, isFallback } = useRouter()
 
-  if (!hotel && !isFallback) {
-    return <Error statusCode={404} />
-  }
+  if (!hotel && !isFallback) return <Error statusCode={404} />
+
   const header = name || 'Aries Living'
   const title = hotel && `${header} | Terms & Conditions`
 
