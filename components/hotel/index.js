@@ -35,7 +35,7 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
     </Container>
   ) : (
     <Container>
-      <div className={styles.container}>
+      <div className="skeleton-container">
         <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
       </div>
     </Container>

@@ -14,9 +14,3 @@
   font-weight: 300;
   font-size: 1.125em;
 }
-
-.container {
-  background: var(--aries-bg);
-  border-radius: 5px;
-  height: calc(((100vh - 2rem)) - 50px);
-}
