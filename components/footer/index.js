@@ -31,7 +31,10 @@ function Footer({ hotel }) {
                 <a>Contact</a>
               </p>
               <p>
-                <Link href={`/terms-and-conditions${hotel ? `/${hotel}` : ''}`}>
+                <Link
+                  href="/terms-and-conditions/[[...slug]]"
+                  as={`/terms-and-conditions/${hotel || ''}`}
+                >
                   Terms & Conditions
                 </Link>
               </p>
