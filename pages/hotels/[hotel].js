@@ -10,8 +10,8 @@ export const getStaticPaths = () => ({
   paths: hotels.map(({ hotel }) => ({ params: { hotel } })),
   fallback: false
 })
-export const getStaticProps = ({ params }) => {
-  return { props: { id: { ...hotels.find(e => e.hotel === params.hotel) } } }
+export const getStaticProps = ({ params: { hotel } }) => {
+  return { props: { id: { ...hotels.find(e => e.hotel === hotel) } } }
 }
 
 export default function HotelPage({ id }) {
