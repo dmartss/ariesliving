@@ -70,7 +70,7 @@ export default function HomeLinks({ desktop, mobile, home }) {
       {displayHotelLinks() && (
         <>
           <Link
-            href="/hotels/[hotel]"
+            href="/hotels/[[...slug]]"
             as="/hotels/villa-paradiso"
             hotel="villa-paradiso"
             className={classes('third')}
@@ -79,7 +79,7 @@ export default function HomeLinks({ desktop, mobile, home }) {
             Villa Paradiso
           </Link>
           <Link
-            href="/hotels/[hotel]"
+            href="/hotels/[[...slug]]"
             as="/hotels/ithaca-south-beach"
             hotel="ithaca-south-beach"
             className={classes('fourth')}
@@ -88,7 +88,7 @@ export default function HomeLinks({ desktop, mobile, home }) {
             Ithaca
           </Link>
           <Link
-            href="/hotels/[hotel]"
+            href="/hotels/[[...slug]]"
             as="/hotels/treehouse"
             hotel="treehouse"
             className={classes('fifth')}
