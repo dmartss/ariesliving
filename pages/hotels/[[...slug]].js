@@ -1,4 +1,6 @@
 import { SkipNavContent } from '@reach/skip-nav'
+import Container from 'components/container'
+import Skeleton from 'components/skeleton'
 import Error from 'next/error'
 import { useRouter } from 'next/router'
 import { getSlug } from 'lib/utils'
@@ -13,7 +15,10 @@ export const getStaticPaths = () => ({
 })
 
 export const getStaticProps = ({ params: { slug } }) => {
-  const id = { ...(hotels.find(e => e.hotel === getSlug(slug)) || hotels[0]) }
+  const randomHotel = hotels[Math.floor(Math.random() * hotels.length)]
+  const id = {
+    ...(hotels.find(e => e.hotel === getSlug(slug)) || randomHotel)
+  }
 
   return {
     props: {
@@ -25,10 +30,9 @@ export const getStaticProps = ({ params: { slug } }) => {
 export default function HotelPage({ id }) {
   const { asPath, isFallback } = useRouter()
 
-  if (!id) id = hotels[0]
   if (!id && !isFallback) return <Error statusCode={404} />
 
-  return (
+  return id ? (
     <FeedbackContext.Provider value={{ label: id.hotel }}>
       <div className={id.hotel}>
         <Page
@@ -44,5 +48,11 @@ export default function HotelPage({ id }) {
         </Page>
       </div>
     </FeedbackContext.Provider>
+  ) : (
+    <Container padding>
+      <div className="skeleton-container">
+        <Skeleton style={{ height: 'calc(100%)' }} />
+      </div>
+    </Container>
   )
 }
