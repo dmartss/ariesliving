@@ -2,25 +2,23 @@ import Container from 'components/container'
 import Error from 'next/error'
 import Page from 'components/page'
 import termsAndConditions from 'lib/terms-and-conditions'
+import { getSlug } from 'lib/utils'
 import { useRouter } from 'next/router'
 import hotels from 'hotels'
+import aries from 'aries'
 
 export const getStaticPaths = () => ({
   paths: hotels.map(({ hotel }) => ({ params: { slug: [hotel] } })),
   fallback: true
 })
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = ({ params: { slug } }) => {
   const {
     name,
     hotel,
     details: { email }
   } = {
-    ...(hotels.find(e => e.hotel === params.slug?.toString()) || {
-      name: 'Aries Living',
-      hotel: 'aries-living',
-      details: { email: 'info@ariesliving.com' }
-    })
+    ...(hotels.find(e => e.hotel === getSlug(slug)) || aries)
   }
 
   const content = termsAndConditions(name, email)
@@ -47,7 +45,7 @@ export default function TermsAndConditions({ hotel, name, content }) {
       <Container padding small className={hotel}>
         <h1>Terms & Conditions</h1>
         <h1 className="fp f1">{header}</h1>
-        {content?.map((terms, i) => (
+        {content.map((terms, i) => (
           <p key={i}>{terms}</p>
         ))}
       </Container>
