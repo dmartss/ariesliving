@@ -45,7 +45,7 @@ export default function TermsAndConditions({ hotel, name, content }) {
       <Container padding small className={hotel}>
         <h1>Terms & Conditions</h1>
         <h1 className="fp f1">{header}</h1>
-        {content.map((terms, i) => (
+        {content?.map((terms, i) => (
           <p key={i}>{terms}</p>
         ))}
       </Container>
