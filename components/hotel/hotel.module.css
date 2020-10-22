@@ -1,6 +1,6 @@
 .sticky {
   top: var(--header-height);
-  z-index: 1000;
+  z-index: 100;
   position: sticky;
   box-shadow: var(--header-border-bottom);
   background: var(--aries-bg);
@@ -10,7 +10,7 @@
   padding: var(--gap-quarter) 0;
 }
 .main {
-  padding-top: var(--gap);
+  padding: var(--gap-half);
 }
 
 .sticky h3:not(:first-child),
