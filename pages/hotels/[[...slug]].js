@@ -42,6 +42,7 @@ export default function HotelPage({ id }) {
           keywords={id.name}
           hotel={id.hotel}
           suffix={asPath}
+          hideBorder
         >
           <SkipNavContent />
           <Hotel id={id} />

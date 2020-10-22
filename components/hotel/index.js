@@ -19,15 +19,24 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
         height={2000 / 2.75}
         alt={`${name} Image`}
       />
-      <Container wide padding id="about">
+      <Container wide overflow padding id="about">
+        <div className={styles.sticky}>
+          <div>
+            <h3 className="fp fw6">{name}</h3>
+            <h3>{details.address}</h3>
+            <a href={`mailto:${details.email}?subject=Hello`}>{details.email}</a>
+            <h3>{details.phone}</h3>
+          </div>
+          <div>
+            <Button href={rezTripUrl}>Book Now</Button>
+          </div>
+        </div>
         <div className={styles.main}>
-          <h3 className="fp fw6">{name}</h3>
-          <h3>{details.address}</h3>
-          <a href={`mailto:${details.email}?subject=Hello`}>{details.email}</a>
-          <h3>{details.phone}</h3>
           <h3>Rooms: {details.rooms}</h3>
-          <Button href={rezTripUrl}>Book Now</Button>
-          {details.description.map((d, i) => (
+          {details?.description?.map((d, i) => (
+            <p key={i}>{d}</p>
+          ))}
+          {details?.description?.map((d, i) => (
             <p key={i}>{d}</p>
           ))}
         </div>

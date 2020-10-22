@@ -1,16 +1,29 @@
-.main {
+.sticky {
+  top: var(--header-height);
+  z-index: 1000;
+  position: sticky;
+  box-shadow: var(--header-border-bottom);
+  background: var(--aries-bg);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-quarter) 0;
+}
+.main {
+  padding-top: var(--gap);
 }
 
-.main :global(a:last-of-type) {
-  margin-top: var(--gap-half);
-}
-
-.main h3:not(:first-child),
-.main a {
+.sticky h3:not(:first-child),
+.main h3,
+.sticky a {
   font-weight: 300;
   font-size: 1.125em;
+}
+
+@media (max-width: 640px) {
+  .sticky {
+    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

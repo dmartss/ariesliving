@@ -10,6 +10,7 @@ export default function Page({
   sticky = undefined,
   hotel = undefined,
   description,
+  hideBorder,
   children,
   suffix,
   tAndC
@@ -22,7 +23,7 @@ export default function Page({
       image={image}
       keywords={keywords}
     >
-      {!tAndC && <Header sticky={sticky} />}
+      {!tAndC && <Header hideBorder={hideBorder} sticky={sticky} />}
       {children}
       {!tAndC && <Footer hotel={hotel} />}
     </PageContainer>

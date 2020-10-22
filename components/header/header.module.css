@@ -14,6 +14,11 @@
   background: var(--aries-bg);
 }
 
+.header.hideBorder {
+  box-shadow: none;
+  background: var(--aries-bg);
+}
+
 .header.sticky {
   position: sticky;
   top: 0;
