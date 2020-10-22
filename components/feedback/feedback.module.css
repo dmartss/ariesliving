@@ -121,7 +121,7 @@
 .feedback-input:hover .feedback-wrapper,
 .feedback-input:focus .feedback-wrapper,
 .feedback-input:active .feedback-wrapper {
-  border-color: var(--aries-fg);
+  border-color: var(--font-primary);
 }
 
 .feedback-input:hover .input > *::placeholder,
