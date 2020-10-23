@@ -26,6 +26,15 @@
   flex-direction: column;
 }
 
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+.details > * {
+  flex: 1;
+}
+
 @media (max-width: 640px) {
   .sticky {
     top: 0;

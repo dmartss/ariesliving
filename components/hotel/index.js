@@ -34,17 +34,22 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
         </div>
         <div className={styles.main}>
           <div id="about" className="anchor double" />
+
           {details?.description?.map((d, i) => (
             <p key={i}>{d}</p>
           ))}
+
           <div id="rooms" className="anchor double" />
           <h3>Rooms: {details?.rooms}</h3>
+
           <div className={styles['room-types']}>
             {details?.roomTypes?.map(({ roomName, roomOccupancy, roomCount }, i) => (
-              <div className={styles.room} id="rooms">
-                <p key={i}>{roomName}</p>
-                <p>Accomodates: {roomOccupancy}</p>
-                <p>Room Count: {roomCount}</p>
+              <div className={styles.room} key={i}>
+                <h4 className="fp fw5">{roomName}</h4>
+                <div className={styles.details}>
+                  <p>Accomodates: {roomOccupancy}</p>
+                  <p>Room Count: {roomCount}</p>
+                </div>
               </div>
             ))}
           </div>
