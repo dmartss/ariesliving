@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { SkipNavContent } from '@reach/skip-nav'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
@@ -16,21 +17,29 @@ export const getStaticPaths = () => ({
 
 export const getStaticProps = ({ params: { slug } }) => {
   const randomHotel = hotels[Math.floor(Math.random() * hotels.length)]
-  const id = {
-    ...(hotels.find(e => e.hotel === getSlug(slug)) || randomHotel)
-  }
+  const id = { ...(hotels.find(e => e.hotel === getSlug(slug)) || randomHotel) }
 
   return {
     props: {
-      id
+      id,
+      randomHotel
     }
   }
 }
 
-export default function HotelPage({ id }) {
-  const { asPath, isFallback } = useRouter()
+export default function Hotels({ id }) {
+  const router = useRouter()
+  const { asPath, isFallback } = router
 
   if (!id && !isFallback) return <Error statusCode={404} />
+
+  useEffect(() => {
+    if (asPath.endsWith('/hotels')) {
+      if (id) {
+        router.push(`/hotels/${id.hotel}`)
+      }
+    }
+  }, [id, asPath])
 
   return id ? (
     <FeedbackContext.Provider value={{ label: id.hotel }}>
