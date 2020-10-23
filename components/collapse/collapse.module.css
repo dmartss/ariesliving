@@ -61,9 +61,10 @@
 }
 
 .icon {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.5s ease-in-out;
 }
 
 .icon.open {
   transform: rotate(-180deg);
+  color: var(--aries-1);
 }

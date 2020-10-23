@@ -91,7 +91,7 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
         onKeyPress={ev => onKeyPress(ev, _toggle)}
       >
         <div className={styles.top}>
-          <h3>{title}</h3>
+          <h3 className="fw5">{title}</h3>
           <span className={cn(styles.icon, { [styles.open]: open })}>
             <ChevronDown />
           </span>
