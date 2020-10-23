@@ -1,5 +1,6 @@
 .sticky {
   top: var(--header-height);
+  height: var(--secondary-header-height);
   z-index: 100;
   position: sticky;
   box-shadow: var(--header-border-bottom);
@@ -10,7 +11,7 @@
   padding: var(--gap-quarter) 0;
 }
 .main {
-  padding: var(--gap-half);
+  padding: 1px;
 }
 
 .sticky h3:not(:first-child),
@@ -18,6 +19,11 @@
 .sticky a {
   font-weight: 300;
   font-size: 1.125em;
+}
+
+.room-types {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 640px) {

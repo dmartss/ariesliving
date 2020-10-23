@@ -6,7 +6,7 @@ import styles from './team.module.css'
 
 export default function Team() {
   return (
-    <Container id="team" wide gray>
+    <Container wide gray withAnchor aria-labelledby="team" id="team">
       <Container center padding>
         <SectionHeader
           team

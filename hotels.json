@@ -36,13 +36,6 @@
           "roomCount": 14
         },
         {
-          "roomCode": "1Q",
-          "roomName": "Queen Studio",
-          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
-          "roomOccupancy": 2,
-          "roomCount": 1
-        },
-        {
           "roomCode": "2QS",
           "roomName": "Two Bedroom Suite Garden View",
           "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
@@ -54,6 +47,13 @@
           "roomName": "Superior Triple Apartment",
           "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
           "roomOccupancy": 8,
+          "roomCount": 1
+        },
+        {
+          "roomCode": "1Q",
+          "roomName": "Queen Studio",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 2,
           "roomCount": 1
         }
       ]

@@ -8,13 +8,16 @@ export default function Container({
   overflow = false,
   dotBackground = false,
   divider = false,
+  withAnchor,
   children,
   ...props
 }) {
   return (
-    <div {...props}>
-      {/* prettier-ignore */}
-      <style jsx>
+    <>
+      {withAnchor && <div className="anchor" id={props.id} />}
+      <div {...props}>
+        {/* prettier-ignore */}
+        <style jsx>
         {`
       {
         width: 100%;
@@ -62,7 +65,8 @@ export default function Container({
       }
     `}
       </style>
-      {children}
-    </div>
+        {children}
+      </div>
+    </>
   )
 }

@@ -16,7 +16,7 @@ export default function Portfolio({ description, id, title, width, height }) {
   }, [])
 
   return (
-    <Container center wide aria-labelledby="portfolio" id={id}>
+    <Container center wide aria-labelledby={id} withAnchor id={id}>
       <div className={styles.main}>
         <h2 className={cn(styleUtils.lines, 'fp fw4')}>{title}</h2>
         <Container>
