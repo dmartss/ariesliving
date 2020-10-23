@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
@@ -6,7 +7,7 @@ import Image from 'components/image'
 import styles from './hotel.module.css'
 import Collapse, { CollapseGroup } from 'components/collapse'
 
-export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
+export default function Hotel({ id: { name, hotel, details, rezTripUrl }, sticky = true }) {
   const { address, email, phone, description, rooms, roomTypes } = details
   return hotel ? (
     <Container role="main" aria-labelledby={hotel}>
@@ -22,16 +23,14 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
         alt={`${name} Image`}
       />
       <Container wide overflow padding>
-        <div className={styles.sticky}>
+        <div className={cn(styles.top, { [styles.sticky]: sticky })}>
           <div>
             <h3 className="fp fw6">{name}</h3>
             <h3>{address}</h3>
             <a href={`mailto:${email}?subject=Hello`}>{email}</a>
             <h3>{phone}</h3>
           </div>
-          <div>
-            <Button href={rezTripUrl}>Book Now</Button>
-          </div>
+          <Button href={rezTripUrl}>Book Now</Button>
         </div>
 
         <div className={styles.main}>
