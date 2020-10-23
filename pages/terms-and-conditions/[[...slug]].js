@@ -13,15 +13,9 @@ export const getStaticPaths = () => ({
 })
 
 export const getStaticProps = ({ params: { slug } }) => {
-  const {
-    name,
-    hotel,
-    details: { email }
-  } = {
-    ...(hotels.find(e => e.hotel === getSlug(slug)) || aries)
-  }
+  const { name, hotel, emailPrefix } = { ...(hotels.find(e => e.hotel === getSlug(slug)) || aries) }
 
-  const content = termsAndConditions(name, email)
+  const content = termsAndConditions(name, emailPrefix)
 
   return {
     props: {

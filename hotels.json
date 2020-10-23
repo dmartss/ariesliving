@@ -2,11 +2,14 @@
   {
     "name": "Villa Paradiso Hotel",
     "hotel": "villa-paradiso",
-    "hotelSite": "https://villaparadisohotels.com",
     "title": "Villa Paradiso by Aries Living",
-    "rezTripUrl": "https://villaparadiso.reztrip.com/",
     "descriptionShort": "Located in the heart of the iconic South Beach District of Miami, the Villa Paradiso Apartment Hotel Miami is the perfect place for a seaside getaway. With fresh, spacious rooms, a fully digital experience, and all your beach amenities included, you can book with confidence knowing Villa Paradiso has you covered.",
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595509416/2_vmy4ul.png",
+    "emailPrefix": "villaparadiso",
+    "urls": {
+      "hotelSite": "https://villaparadisohotels.com",
+      "rezTripUrl": "https://villaparadiso.reztrip.com/"
+    },
     "details": {
       "address": "1415 Collins Ave. Miami Beach, FL 33139",
       "email": "villaparadiso@ariesliving.com",
@@ -16,6 +19,43 @@
         "Located in the heart of the iconic South Beach District of Miami, the Villa Paradiso Apartment Hotel Miami is the perfect place for a seaside getaway. With fresh, spacious rooms, a fully digital experience, and all your beach amenities included, you can book with confidence knowing Villa Paradiso has you covered.",
         "The Villa Paradiso Apartment Hotel Miami is proudly an apartment style boutique hotel offering a fully contactless stay, with self check-in and 24/7 virtual guest support. Our team is available through talk, text, or email for whatever you may need, whenever you may need it. Any service requests will be taken care of at a safe distance and with ease.",
         "Known for its white, sandy, beaches South Beach is famous also for its nightlife and celebrity-chef eateries. Steps away from the Villa Paradiso Apartment Hotel Miami is Ocean Drive, where you can find well-preserved art deco architecture, outdoor cafes and a courtside view of the Miami scene."
+      ],
+      "roomTypes": [
+        {
+          "roomCode": "1Q 1DB",
+          "roomName": "Queen Studio with Day Bed",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 4,
+          "roomCount": 1
+        },
+        {
+          "roomCode": "2Q 1DB",
+          "roomName": "Two Queen Studio with Day Bed",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 6,
+          "roomCount": 14
+        },
+        {
+          "roomCode": "1Q",
+          "roomName": "Queen Studio",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 2,
+          "roomCount": 1
+        },
+        {
+          "roomCode": "2QS",
+          "roomName": "Two Bedroom Suite Garden View",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 4,
+          "roomCount": 1
+        },
+        {
+          "roomCode": "3Q 1DB",
+          "roomName": "Superior Triple Apartment",
+          "roomDescription": "This spacious room features a kitchenette, refrigerator, and dining area. The room also has a flat-screen TV with premium cable, and a safety deposit box. The private bathroom is fitted with free toiletries and beach amenities.",
+          "roomOccupancy": 8,
+          "roomCount": 1
+        }
       ]
     }
   },
@@ -23,10 +63,13 @@
     "name": "Ithaca of South Beach Hotel",
     "hotel": "ithaca-south-beach",
     "title": "Ithaca by Aries Living",
-    "hotelSite": "https://ithacasouthbeach.com",
-    "rezTripUrl": "https://ithacahotel.reztrip.com/",
     "descriptionShort": "Located in the heart of the iconic South Beach District of Miami, the Ithaca Hotel of South Beach is the perfect place for a seaside getaway. With fresh, spacious rooms, a fully digital experience, and all your beach amenities included, you can book with confidence knowing Ithaca Hotel of South Beach has you covered.",
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595527351/og_ejou0x.png",
+    "emailPrefix": "ithaca",
+    "urls": {
+      "hotelSite": "https://ithacasouthbeach.com",
+      "rezTripUrl": "https://ithacahotel.reztrip.com/"
+    },
     "details": {
       "address": "601 Collins Ave. Miami Beach, FL 33139",
       "email": "ithaca@ariesliving.com",
@@ -36,6 +79,36 @@
         "Located in the heart of the iconic South Beach District of Miami, the Ithaca Hotel of South Beach is the perfect place for a seaside getaway. With fresh, spacious rooms, a fully digital experience, and all your beach amenities included, you can book with confidence knowing Ithaca Hotel of South Beach has you covered.",
         "The Ithaca of South Beach Hotel is proudly an apartment style boutique hotel offering a fully contactless stay, with self check-in and 24/7 virtual guest support. Our team is available through talk, text, or email for whatever you may need, whenever you may need it. Any service requests will be taken care of at a safe distance and with ease.",
         "Known for its white, sandy, beaches South Beach is famous also for its nightlife and celebrity-chef eateries. Steps away from the Ithaca Hotel of South Beach is Ocean Drive, where you can find well-preserved art deco architecture, outdoor cafes and a courtside view of the Miami scene."
+      ],
+      "roomTypes": [
+        {
+          "roomCode": "CKS",
+          "roomName": "Classic King Suite",
+          "roomDescription": "This suite features a seating area, desk, and small refrigerator. The room will have 1 King Bed and 1 Sofa Bed plus a flat-screen TV with cable. 1 King Bed (2 guests) 1 Sofa Bed (2 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 4,
+          "roomCount": 3
+        },
+        {
+          "roomCode": "DQS",
+          "roomName": "Double Queen Suite",
+          "roomDescription": "This guestroom features views of the city and landmarks. A seating area and small refrigerator are also included. Guests can surf the web using the complimentary wireless Internet access. Business-friendly amenities include desks and phones; free local calls are provided (restrictions may apply). Housekeeping is offered daily (for extra charge). Amenities available on request include irons/ironing boards. The room will have 2 Queen Beds plus a flat-screen TV with cable. 2 Queen Beds (4 guests) There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 4,
+          "roomCount": 2
+        },
+        {
+          "roomCode": "SK",
+          "roomName": "Superior King",
+          "roomDescription": "This room features a seating area, desk, and small refrigerator. Guests can surf the web using the complimentary wireless Internet access. Business-friendly amenities include desks and phones; free local calls are provided (restrictions may apply). Housekeeping is offered daily (for extra charge). Amenities available on request include irons/ironing boards. Ithaca of South Beach Hotel is a hotel situated along Collins Ave. All rooms are private and not shared. All rooms are located on the 2nd floor with stair access. NO ELEVATOR ACCESS. The room will have 1 King Bed plus a flat-screen TV with cable. 1 King Bed (2 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 2,
+          "roomCount": 5
+        },
+        {
+          "roomCode": "SQ",
+          "roomName": "Superior Queen",
+          "roomDescription": "This room features views of the city and landmarks. A small refrigerator and seating area are also included. Guests can surf the web using the complimentary wireless Internet access. Business-friendly amenities include desks and phones; free local calls are provided (restrictions may apply). Housekeeping is offered daily (for extra charge). Amenities available on request include irons/ironing boards. The room will have 1 Queen Bed plus a flat-screen TV with cable. 1 Queen Bed (2 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 2,
+          "roomCount": 1
+        }
       ]
     }
   },
@@ -43,10 +116,13 @@
     "name": "Treehouse Studio Hotel",
     "hotel": "treehouse",
     "title": "Treehouse by Aries Living",
-    "hotelSite": "https://treehousebyaries.com",
-    "rezTripUrl": "https://treehousestudio.reztrip.com/",
     "descriptionShort": "Located in the heart of the hip and historic MiMo District of Miami, the Treehouse Studio Hotel Miami is the perfect place for a unique Miami getaway. With fresh, spacious rooms, and a fully digital experience, you can book with confidence knowing Treehouse Studio Hotel Miami has you covered.",
     "defaultOgImage": "https://res.cloudinary.com/dqtpoczux/image/upload/v1595951166/og_jdv79w.png",
+    "emailPrefix": "treehouse",
+    "urls": {
+      "hotelSite": "https://treehousebyaries.com",
+      "rezTripUrl": "https://treehousestudio.reztrip.com/"
+    },
     "details": {
       "address": "7126 Biscayne Blvd. Miami, FL 33138",
       "email": "treehouse@ariesliving.com",
@@ -56,6 +132,29 @@
         "Located in the heart of the hip and historic MiMo District of Miami, the Treehouse Studio Hotel Miami is the perfect place for a unique Miami getaway. With fresh, spacious rooms, and a fully digital experience, you can book with confidence knowing Treehouse Studio Hotel Miami has you covered.",
         "The Treehouse Studio Hotel Miami Hotel Miami is proudly an apartment style boutique hotel offering a fully contactless stay with self check-in and 24/7 virtual guest support. Our team is available through talk, text, or email for whatever you may need, whenever you may need it. Any service requests will be taken care of at a safe distance and with ease.",
         "Dotted with mid-century Miami-Modern architectural gems, Miami’s MiMo district is the place to get your fix of history, culture, and authentic new-age dining. Blocks away from Miami’s popular Wynwood and Design District your really can have it all at the Treehouse Studio Hotel Miami."
+      ],
+      "roomTypes": [
+        {
+          "roomCode": "QD",
+          "roomName": "Queen Deluxe",
+          "roomDescription": "The room will have 1 Queen Bed plus a flat-screen TV with cable. 1 Queen Bed (2 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 2,
+          "roomCount": 8
+        },
+        {
+          "roomCode": "QL",
+          "roomName": "Queen Loft",
+          "roomDescription": "The room will have 1 Queen Bed and 2 Single Beds (Loft Bed) plus a flat-screen TV with cable. 1 Queen Bed (2 guests). 2 Single Beds - Loft Bed (2 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 4,
+          "roomCount": 6
+        },
+        {
+          "roomCode": "FR",
+          "roomName": "Private Quad Room",
+          "roomDescription": "The room will have 4 Single Beds (Bunk Beds) plus a flat-screen TV with cable. 4 Single Beds - Bunk Beds (4 guests). There is a private bathroom with toilet and walk-in shower. Bath towels and bath essentials are also provided.",
+          "roomOccupancy": 4,
+          "roomCount": 8
+        }
       ]
     }
   }
