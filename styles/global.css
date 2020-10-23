@@ -150,8 +150,7 @@
   --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
-  --shadow-hover: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3),
-    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
 
   --dropdown-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
   --dropdown-triangle-stroke: #fff;

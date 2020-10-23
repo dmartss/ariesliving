@@ -1,12 +1,13 @@
-import cn from 'classnames'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
 import Header from './header'
 import Image from 'components/image'
 import styles from './hotel.module.css'
+import Collapse, { CollapseGroup } from 'components/collapse'
 
 export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
+  const { address, email, phone, description, rooms, roomTypes } = details
   return hotel ? (
     <Container role="main" aria-labelledby={hotel}>
       <Header name={name} hotel={hotel} />
@@ -24,33 +25,33 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
         <div className={styles.sticky}>
           <div>
             <h3 className="fp fw6">{name}</h3>
-            <h3>{details?.address}</h3>
-            <a href={`mailto:${details?.email}?subject=Hello`}>{details?.email}</a>
-            <h3>{details?.phone}</h3>
+            <h3>{address}</h3>
+            <a href={`mailto:${email}?subject=Hello`}>{email}</a>
+            <h3>{phone}</h3>
           </div>
           <div>
             <Button href={rezTripUrl}>Book Now</Button>
           </div>
         </div>
+
         <div className={styles.main}>
           <div id="about" className="anchor double" />
-
-          {details?.description?.map((d, i) => (
+          {description?.map((d, i) => (
             <p key={i}>{d}</p>
           ))}
 
           <div id="rooms" className="anchor double" />
-          <h3>Rooms: {details?.rooms}</h3>
+          <h3 className="fw5 fp">Rooms: {rooms}</h3>
 
           <div className={styles['room-types']}>
-            {details?.roomTypes?.map(({ roomName, roomOccupancy, roomCount }, i) => (
-              <div className={styles.room} key={i}>
-                <h4 className="fp fw5">{roomName}</h4>
-                <div className={styles.details}>
-                  <p>Accomodates: {roomOccupancy}</p>
-                  <p>Room Count: {roomCount}</p>
-                </div>
-              </div>
+            {roomTypes?.map(({ roomName, roomOccupancy, roomCount, roomDescription }, i) => (
+              <CollapseGroup key={i}>
+                <Collapse size="small" title={roomName}>
+                  <p className="fp">Room Count: {roomCount}</p>
+                  <p className="fp">Accomodates: {roomOccupancy}</p>
+                  <p>{roomDescription}</p>
+                </Collapse>
+              </CollapseGroup>
             ))}
           </div>
 

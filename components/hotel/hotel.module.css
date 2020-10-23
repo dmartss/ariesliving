@@ -10,20 +10,19 @@
   justify-content: space-between;
   padding: var(--gap-quarter) 0;
 }
-.main {
-  padding: 1px;
-}
 
 .sticky h3:not(:first-child),
-.main h3,
 .sticky a {
   font-weight: 300;
   font-size: 1.125em;
 }
 
+.main {
+  padding: 1px;
+}
+
 .room-types {
-  display: flex;
-  flex-direction: column;
+  padding-top: 1rem;
 }
 
 .details {
