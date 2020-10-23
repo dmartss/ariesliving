@@ -33,12 +33,11 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl } }) {
         </div>
         <div className={styles.main}>
           <h3>Rooms: {details.rooms}</h3>
+          {/* <h3>Room Types: </h3> */}
           {details?.description?.map((d, i) => (
             <p key={i}>{d}</p>
           ))}
-          {details?.description?.map((d, i) => (
-            <p key={i}>{d}</p>
-          ))}
+          {/* For Room Images, use file system to read folder and get pictures from there */}
         </div>
       </Container>
     </Container>

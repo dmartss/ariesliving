@@ -24,7 +24,7 @@ export default function Portfolio({ description, id, title, width, height }) {
             <p className="fs fw3">{description}</p>
           </div>
           <div className={styles.images}>
-            {hotels.map(({ name, hotelSite, hotel, rezTripUrl }) => (
+            {hotels.map(({ name, hotel, urls: { hotelSite, rezTripUrl } }) => (
               <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
                 <Link as={`hotels/${hotel}`} href="/hotels/[[...slug]]">
                   <div>
