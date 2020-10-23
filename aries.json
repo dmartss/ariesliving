@@ -1,1 +1,1 @@
-{ "name": "Aries Living", "hotel": "aries-living", "details": { "email": "info@ariesliving.com" } }
+{ "name": "Aries Living", "hotel": "aries-living", "emailPrefix": "info" }
