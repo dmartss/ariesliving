@@ -1,13 +1,13 @@
 import cn from 'classnames'
+import Collapse, { CollapseGroup } from 'components/collapse'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
 import Header from './header'
 import Image from 'components/image'
 import styles from './hotel.module.css'
-import Collapse, { CollapseGroup } from 'components/collapse'
 
-export default function Hotel({ id: { name, hotel, details, rezTripUrl }, sticky = true }) {
+export default function Hotel({ id: { name, hotel, details, urls }, sticky = true }) {
   const { address, email, phone, description, rooms, roomTypes } = details
   return hotel ? (
     <Container role="main" aria-labelledby={hotel}>
@@ -30,7 +30,7 @@ export default function Hotel({ id: { name, hotel, details, rezTripUrl }, sticky
             <a href={`mailto:${email}?subject=Hello`}>{email}</a>
             <h3>{phone}</h3>
           </div>
-          <Button href={rezTripUrl}>Book Now</Button>
+          <Button href={urls.rezTripUrl}>Book Now</Button>
         </div>
 
         <div className={styles.main}>

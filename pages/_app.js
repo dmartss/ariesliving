@@ -4,8 +4,8 @@ import nprogress from 'nprogress'
 import Router from 'next/router'
 import { trackPageview } from 'lib/analytics'
 import { Provider } from 'lib/nav-context'
-import 'styles/global.css'
 import { ThemeProvider } from 'next-themes'
+import 'styles/global.css'
 
 let timeout
 

@@ -5,7 +5,7 @@ import Skeleton from 'components/skeleton'
 import Error from 'next/error'
 import { useRouter } from 'next/router'
 import { getSlug } from 'lib/utils'
-import FeedbackContext from 'components/feedback/feedback-context'
+import { Provider } from 'lib/feedback-context'
 import Hotel from 'components/hotel'
 import Page from 'components/page'
 import hotels from 'hotels'
@@ -42,7 +42,7 @@ export default function Hotels({ id }) {
   }, [id, asPath])
 
   return id ? (
-    <FeedbackContext.Provider value={{ label: id.hotel }}>
+    <Provider value={{ label: id.hotel }}>
       <div className={id.hotel}>
         <Page
           title={id.title}
@@ -57,7 +57,7 @@ export default function Hotels({ id }) {
           <Hotel id={id} />
         </Page>
       </div>
-    </FeedbackContext.Provider>
+    </Provider>
   ) : (
     <Container padding>
       <div className="skeleton-container">
