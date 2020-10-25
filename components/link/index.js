@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import NextLink from 'next/link'
+import cn from 'classnames'
 import { useRouter } from 'next/router'
 import canPrefetch from 'lib/can-prefetch'
-import cn from 'classnames'
 
 import styles from './link.module.css'
 
@@ -32,15 +32,11 @@ const Link = ({
     hotel
   )
 
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={c} {...props}>
-        {children}
-      </a>
-    )
-  }
-
-  return (
+  return external ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={c} {...props}>
+      {children}
+    </a>
+  ) : (
     <>
       <NextLink
         href={href}

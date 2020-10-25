@@ -27,11 +27,8 @@ export default class PopOverLink extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen) {
-      this.setOpen()
-    } else if (nextProps.isOpen === false) {
-      this.setClose()
-    }
+    if (nextProps.isOpen) this.setOpen()
+    else if (nextProps.isOpen === false) this.setClose()
   }
 
   setOpen() {
