@@ -2,37 +2,25 @@ import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import LoadingDots from '../loading-dots'
-import cachedStyles from './button-styles'
+import styles from './button.module.css'
 
-export default memo(function Button({
-  children,
-  invert,
-  outline,
-  small,
-  href,
-  className,
-  amp,
-  loading,
-  ...props
-}) {
-  const cachedClassNames = cn(className, 'btn', 'fw4 no-drag', { outline, invert, small, loading })
+function Button({ children, invert, outline, small, href, className, loading, ...props }) {
+  const c = cn(className, styles.btn, 'fw4 no-drag', {
+    [styles.outline]: outline,
+    [styles.invert]: invert,
+    [styles.small]: small,
+    [styles.loading]: loading
+  })
 
   if (href) {
     const isExternal = href && href.startsWith('http')
     const a = (
-      <a
-        className={cachedClassNames}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      >
+      <a className={c} href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
-        <style jsx>{cachedStyles}</style>
       </a>
     )
 
-    return amp || isExternal ? (
+    return isExternal ? (
       a
     ) : (
       <Link href={href} passHref>
@@ -42,14 +30,16 @@ export default memo(function Button({
   }
 
   return (
-    <button type="button" className={cachedClassNames} {...props}>
-      <span className="text">{children}</span>
+    <button type="button" className={c} {...props}>
+      <span className={styles.text}>{children}</span>
       {loading && (
-        <span className="loading-dots">
+        <span className={styles['loading-dots']}>
           <LoadingDots size={4} />
         </span>
       )}
-      <style jsx>{cachedStyles}</style>
     </button>
   )
-})
+}
+
+// Button.displayName = 'Button'
+export default memo(Button)
