@@ -7,7 +7,7 @@ import Button from 'components/button'
 import Input from 'components/input'
 import EmojiSelector from './emoji-selector'
 import styles from './feedback.module.css'
-import { useFeedback } from './feedback-context'
+import { useFeedback } from 'lib/feedback-context'
 
 const EMOJIS = new Map([
   ['🤩', 'f929'],
