@@ -17,6 +17,7 @@ const EMOJIS = new Map([
 ])
 
 let EMOJI_CODES = null
+
 function getEmoji(code) {
   if (code === null) return code
   if (EMOJI_CODES === null) EMOJI_CODES = new Map([...EMOJIS].map(([k, v]) => [v, k]))

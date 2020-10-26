@@ -8,6 +8,11 @@ import Image from 'components/image'
 import Page from 'components/page'
 import Team from 'components/team'
 
+// export const getStaticProps = () => {
+//   const sects = Object.keys(SECTIONS)
+//   console.log(sects)
+//   return { props: {} }
+// }
 export default function Home() {
   return (
     <Provider value={{ label: 'home' }}>
