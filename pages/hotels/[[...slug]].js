@@ -36,7 +36,7 @@ export default function Hotels({ id }) {
   useEffect(() => {
     if (asPath.endsWith('/hotels')) {
       if (id) {
-        router.push(`/hotels/${id.hotel}`)
+        router.replace('hotels/[[...slug]]', `/hotels/${id.hotel}`)
       }
     }
   }, [id, asPath])
