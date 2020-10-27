@@ -85,6 +85,6 @@
     align-items: center;
   }
   .mobileNav > a:not(:last-child) {
-    border-bottom: 1px solid var(--accents-2);
+    border-bottom: var(--border-2);
   }
 }

@@ -21,7 +21,7 @@
 .feedback-input .feedback-wrapper {
   appearance: none;
   background: var(--aries-bg);
-  border: 1px solid var(--accents-2);
+  border: var(--border-2);
   display: flex;
   line-height: 1.5;
   font-size: 0.875rem;
@@ -215,7 +215,7 @@
   align-items: center;
   border-bottom-left-radius: var(--text-radius);
   border-bottom-right-radius: var(--text-radius);
-  border-top: 1px solid var(--accents-2);
+  border-top: var(--border-2);
   padding: var(--gap-three-quarter);
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -279,7 +279,7 @@
   margin: 0;
   transition: all 0.12s ease-in-out;
   border-radius: 50%;
-  border: 1px solid var(--accents-2);
+  border: var(--border-2);
 }
 
 .emoji-selector > .option.active {

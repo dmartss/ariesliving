@@ -1,7 +1,7 @@
 .wrapper {
   align-items: center;
   border-radius: var(--text-radius);
-  border: 1px solid var(--accents-2);
+  border: var(--border-2);
   display: inline-flex;
   position: relative;
   transition: border 0.2s ease, color 0.2s ease;

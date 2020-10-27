@@ -1,15 +1,15 @@
 .collapse-group {
-  border-top: 1px solid var(--accents-2);
+  border-top: var(--border-2);
 }
 
 .collapse {
   border-top: none;
-  border-bottom: 1px solid var(--accents-2);
+  border-bottom: var(--border-2);
   padding: 24px 0;
 }
 
 .collapse.border {
-  border-top: 1px solid var(--accents-2);
+  border-top: var(--border-2);
 }
 
 .collapse.small {

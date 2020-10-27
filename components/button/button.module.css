@@ -1,8 +1,4 @@
 .btn {
-  --button-fg: var(--accents-5);
-  --button-bg: var(--aries-bg);
-  --button-border: var(--accents-2);
-
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -33,15 +29,14 @@
 }
 
 .btn.invert {
-  background-color: var(--button-bg);
-  border: 1px solid var(--button-border);
-  color: var(--button-fg);
+  background-color: var(--aries-bg);
+  border: var(--border-2);
+  color: var(--accents-5);
   box-shadow: var(--shadow-small);
 }
 .btn.invert:hover,
 .btn.invert:active {
   color: var(--aries-fg);
-  background-color: var(--aries-bg);
   border-color: var(--aries-fg);
 }
 

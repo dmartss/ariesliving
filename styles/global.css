@@ -52,6 +52,7 @@
 
   --container-dark-bg: var(--accents-1);
   --input-border: var(--accents-2);
+  --border-2: 1px solid var(--accents-2);
 
   --header-bg: rgba(0, 0, 0, 0.5);
   --header-border-bottom: inset 0 -1px var(--accents-2);

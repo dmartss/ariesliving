@@ -28,7 +28,7 @@
 }
 
 .header + .content {
-  border-top: 1px solid var(--accents-2);
+  border-top: var(--border-2);
 }
 
 .header,

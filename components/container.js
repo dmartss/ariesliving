@@ -33,12 +33,12 @@ export default function Container({
             : ''}
         ${fade ? `
             background: var(--background-gradient);
-            border-top: 1px solid var(--accents-2);`
+            border-top: var(--border-2);`
             : ''}
 
         ${gray ? `
             background: var(--accents-1);
-            border-top: 1px solid var(--accents-2);`
+            border-top: var(--border-2);`
             : ''}
 
         ${wide && !overflow ? 'overflow: hidden;' : ''}
