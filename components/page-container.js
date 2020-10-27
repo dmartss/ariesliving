@@ -14,10 +14,7 @@ export default function PageContainer({
     <>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content={description || 'Aries Living, Find Amazing Rentals in Exceptional States'}
-        />
+        <meta name="description" content={description} />
         {!shouldIndex && <meta name="robots" content="noindex" />}
         <meta name="twitter:site" content="@aries_living" />
         <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />

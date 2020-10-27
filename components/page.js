@@ -5,11 +5,11 @@ import Footer from './footer'
 
 export default function Page({
   title = 'Aries Living',
+  description = 'Aries Living, Find Amazing Rentals in Exceptional States',
   image = defaultOgImage,
   keywords = undefined,
   sticky = undefined,
   hotel = undefined,
-  description,
   fillBg,
   children,
   suffix,
