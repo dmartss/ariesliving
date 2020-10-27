@@ -6,8 +6,9 @@ export default function Container({
   small = false,
   padding = false,
   overflow = false,
-  dotBackground = false,
   divider = false,
+  footer = false,
+  gradient = false,
   withAnchor,
   children,
   ...props
@@ -24,24 +25,22 @@ export default function Container({
         margin: 0 auto;
         padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
         ${wide && !small ? '' : 'max-width: var(--max-width);'}
-        ${small ? 'max-width: 768px;' : ''}
-        ${center ? 'text-align: center;' : ''}
+        ${small ? 'max-width: 768px;' : ''};
+        ${center ? 'text-align: center;' : ''};
         ${dark ? `
-            background: var(--container-dark-bg);
-            color: var(--light-gray);`
+            background: var(--container-dark-bg);`
             : ''}
+        ${gradient ? `
+            background: var(--background-gradient);
+            border-top: 1px solid var(--accents-2);`
+            : ''}
+
         ${gray ? `
-            background-color: var(--container-gray-bg);
-            border-top: 1px solid var(--container-border);
-            border-bottom: 1px solid var(--container-border);`
+            background: var(--accents-1);
+            border-top: 1px solid var(--accents-2);`
             : ''}
+
         ${wide && !overflow ? 'overflow: hidden;' : ''}
-        ${dotBackground ? `
-            background-image: radial-gradient(#D7D7D7 1px, transparent 1px), radial-gradient(#d7d7d7 1px, transparent 1px);
-            background-position: 0 0, 25px 25px;
-            background-size: 50px 50px;`
-            : ''}
-        ${divider ? `border-top: 1px solid var(--line);` : ''}
       }
       :after {
         /* BFC */

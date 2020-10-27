@@ -50,13 +50,11 @@
   --light-gray: #f1f1f1;
   --gray: var(--accents-4);
 
-  --container-dark-bg: var(--aries-bg);
-  --container-gray-bg: var(--accents-1);
-  --container-border: var(--accents-2);
+  --container-dark-bg: var(--accents-1);
   --input-border: var(--accents-2);
 
   --header-bg: rgba(0, 0, 0, 0.5);
-  --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
+  --header-border-bottom: inset 0 -1px var(--accents-2);
 
   --aries-vp-1: #2daba5;
   --aries-vp-2: #009a94;
@@ -115,6 +113,7 @@
   --shadow-hover: 0 0 0 1px var(--aries-fg);
 
   /* gradients */
+  --background-gradient: linear-gradient(to bottom, var(--aries-bg), var(--accents-1));
   --gradient-1: linear-gradient(270deg, #111111, #333333, #333333, #111111);
   --gradient-2: linear-gradient(135deg, #000 50%, transparent 50%);
   --gradient-3: linear-gradient(135deg, transparent 50%, #000 50%);
@@ -139,8 +138,6 @@
   --aries-selection: var(--aries-cyan-light);
 
   --container-dark-bg: var(--accents-8);
-  --container-gray-bg: var(--accents-1);
-  --container-border: var(--accents-2);
   --input-border: var(--accents-7);
 
   --header-bg: hsla(0, 0%, 100%, 0.8);

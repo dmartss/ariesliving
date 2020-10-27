@@ -11,7 +11,7 @@ import styles from './footer.module.css'
 
 function Footer({ hotel }) {
   return (
-    <Container wide dark>
+    <Container wide dark footer>
       <Container>
         <footer className={styles.footer}>
           <div className={cn(styles.grid, 'f5')}>
