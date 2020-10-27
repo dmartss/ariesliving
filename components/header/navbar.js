@@ -13,11 +13,12 @@ import { useRouter } from 'next/router'
 
 function Navbar() {
   const { mobileNavShown, toggle } = useNav()
+
   const { pathname } = useRouter()
   const home = pathname === '/'
 
   return (
-    <Container center>
+    <Container>
       <SkipNavLink tabIndex="0" />
       <h1 className="visually-hidden" aria-hidden="true">
         Aries Living

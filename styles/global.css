@@ -55,6 +55,7 @@
 
   --header-bg: rgba(0, 0, 0, 0.5);
   --header-border-bottom: inset 0 -1px var(--accents-2);
+  --header-scrolled-shadow: 0 0 0 1px var(--accents-2);
 
   --aries-vp-1: #2daba5;
   --aries-vp-2: #009a94;
@@ -141,7 +142,8 @@
   --input-border: var(--accents-7);
 
   --header-bg: hsla(0, 0%, 100%, 0.8);
-  --header-border-bottom: inset 0 -1px 0 0 var(--line);
+  --header-border-bottom: inset 0 -1px 0 0 var(--accents-2);
+  --header-scrolled-shadow: 0 0 0 1px var(--accents-2);
 
   --shadow-smallest: 0px 4px 8px rgba(0, 0, 0, 0.12);
   --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);

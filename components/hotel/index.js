@@ -3,18 +3,19 @@ import Collapse, { CollapseGroup } from 'components/collapse'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
-import Header from './header'
 import Image from 'components/image'
+import Header from './header'
+import useOnScroll from 'lib/use-on-scroll'
 import styles from './hotel.module.css'
 
 export default function Hotel({ id: { name, hotel, details, urls }, sticky = true }) {
+  const { secondHeaderLock } = useOnScroll()
   const { address, email, phone, description, rooms, roomTypes } = details
   return hotel ? (
     <Container role="main" aria-labelledby={hotel}>
       <Header name={name} hotel={hotel} />
       <Image
         src={`/showcase/${hotel}.jpg`}
-        shadow
         margin={0}
         oversize={false}
         layout="responsive"
@@ -23,7 +24,9 @@ export default function Hotel({ id: { name, hotel, details, urls }, sticky = tru
         alt={`${name} Image`}
       />
       <Container wide overflow padding>
-        <div className={cn(styles.top, { [styles.sticky]: sticky })}>
+        <div
+          className={cn(styles.top, { [styles.border]: secondHeaderLock, [styles.sticky]: sticky })}
+        >
           <div>
             <h3 className="fp fw6">{name}</h3>
             <h3>{address}</h3>

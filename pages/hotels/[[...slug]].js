@@ -51,7 +51,7 @@ export default function Hotels({ id }) {
           keywords={id.name}
           hotel={id.hotel}
           suffix={asPath}
-          hideBorder
+          fillBg
         >
           <SkipNavContent />
           <Hotel id={id} />

@@ -5,21 +5,33 @@
   align-items: center;
   width: 100%;
   z-index: 1000;
-  box-shadow: var(--header-border-bottom);
+  box-shadow: none;
   background: var(--header-bg);
-  transition: background 300ms ease-in-out;
+  transition: all 0.3s ease;
 }
 
-.header.shown {
+.header.fillBg {
   background: var(--aries-bg);
 }
+.header.showBorder {
+  box-shadow: var(--header-scrolled-shadow);
+  background: var(--header-bg);
+}
 
-.header.hideBorder {
-  box-shadow: none;
+.header.mobileNavShown {
   background: var(--aries-bg);
 }
 
 .header.sticky {
   position: sticky;
   top: 0;
+}
+
+@media (max-width: 640px) {
+  .header,
+  .header.fillBg,
+  .header.showBorder {
+    background: var(--aries-bg);
+    box-shadow: none;
+  }
 }

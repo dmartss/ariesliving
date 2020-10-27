@@ -4,10 +4,13 @@
   align-items: center;
   width: 100%;
   z-index: 999;
-  height: var(--secondary-header-height);
+  min-height: var(--secondary-header-height);
   background: var(--aries-bg);
-  box-shadow: var(--header-border-bottom);
   padding: var(--gap-half) 0;
+}
+
+.top.border {
+  border-bottom: 1px solid var(--header-border-bottom);
 }
 
 .top.sticky {

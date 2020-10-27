@@ -3,19 +3,23 @@ import cn from 'classnames'
 import Banner from './banner'
 import Nav from './navbar'
 import { useNav } from 'lib/nav-context'
+import useOnScroll from 'lib/use-on-scroll'
 import styles from './header.module.css'
 
-const Header = ({ sticky = true, hideBorder }) => {
+const Header = ({ sticky = true, fillBg }) => {
   const { mobileNavShown } = useNav()
+  const { headerLock, secondHeaderLock } = useOnScroll()
+
   return (
     <>
       <Banner />
 
       <header
         className={cn(styles.header, {
-          [styles.shown]: mobileNavShown,
+          [styles.mobileNavShown]: mobileNavShown,
           [styles.sticky]: sticky,
-          [styles.hideBorder]: hideBorder
+          [styles.fillBg]: fillBg,
+          [styles.showBorder]: fillBg ? headerLock && secondHeaderLock : headerLock
         })}
       >
         <Nav />
