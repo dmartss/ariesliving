@@ -3,7 +3,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import Container from 'components/container'
 import Button from 'components/button'
-import Image from 'components/image'
+import Image from 'next/image'
 import hotels from 'hotels'
 import styles from './portfolio.module.css'
 import styleUtils from 'styles/utils/utils.module.css'
@@ -30,8 +30,7 @@ export default function Portfolio({ description, id, title, width, height }) {
                   <div>
                     <p className="f-reset fp f4 fw4">{name}</p>
                     <Image
-                      shadow
-                      margin={5}
+                      className="image shadow radius"
                       alt={hotel}
                       width={width}
                       height={height}

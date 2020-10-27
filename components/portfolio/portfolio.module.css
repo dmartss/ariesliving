@@ -6,7 +6,7 @@
 
 .images {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 0 auto;
 }
@@ -15,12 +15,13 @@
   display: flex;
   flex-direction: column;
 }
-.card.clickable p {
-  transition: color 0.2s ease-in;
-}
 
 .card.clickable {
   cursor: pointer;
+}
+
+.card.clickable p {
+  transition: color 0.2s ease-in;
 }
 
 .card.clickable:hover :global(p) {
@@ -28,16 +29,13 @@
 }
 
 .buttons {
-  display: inline-flex;
-  justify-content: center;
-  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .button-spacer {
   padding: var(--gap) var(--gap-three-quarter);
-}
-.button-spacer :global(a) {
-  width: 153.66666666666665px;
 }
 
 @media screen and (max-width: 960px) {

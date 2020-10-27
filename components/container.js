@@ -9,6 +9,7 @@ export default function Container({
   divider = false,
   footer = false,
   fade = false,
+  wideOnMobile,
   withAnchor,
   children,
   ...props
@@ -53,7 +54,7 @@ export default function Container({
       @media screen and (max-width: 960px) {
         div {
           padding: ${padding ? 'var(--gap-four)' : '0'} ${wide ? '0' : 'var(--gap-double)'};
-          ${!overflow ? 'overflow: hidden;' : ''}
+          ${wideOnMobile && !overflow ? 'overflow: hidden;' : ''}
         }
       }
       /* CSS only media query for mobile */

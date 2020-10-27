@@ -6,14 +6,21 @@
 }
 
 .team-member {
-  padding-top: var(--gap);
+  padding: var(--gap);
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  align-items: center;
 }
 
+.team-member p:first-of-type {
+  padding-top: var(--gap);
+}
 .team-member p {
   margin: 0 auto;
+}
+
+.team-member img {
+  margin: 5px 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -22,6 +29,7 @@
   }
 
   .team-member {
-    flex: 1 1 50%;
+    flex: 50%;
+    margin: auto;
   }
 }

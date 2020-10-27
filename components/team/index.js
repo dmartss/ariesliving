@@ -1,7 +1,7 @@
 import { TEAM } from 'lib/sections'
 import Container from 'components/container'
 import SectionHeader from 'components/section/section-header'
-import Image from 'components/image'
+import Image from 'next/image'
 import styles from './team.module.css'
 
 export default function Team() {
@@ -17,11 +17,9 @@ export default function Team() {
           {TEAM.map(({ name, position, img }, i) => (
             <div key={i} className={styles['team-member']}>
               <Image
-                avatar
-                shadow
+                className="image shadow avatar"
                 width={100}
                 height={100}
-                margin={5}
                 src={`/team/${img}.jpg`}
                 alt={name}
               />

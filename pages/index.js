@@ -4,46 +4,40 @@ import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
 import { SECTIONS } from 'lib/sections'
 import Section from 'components/section'
-import Image from 'components/image'
+import Image from 'next/image'
 import Page from 'components/page'
 import Team from 'components/team'
+import Container from 'components/container'
 
-// export const getStaticProps = () => {
-//   const sects = Object.keys(SECTIONS)
-//   console.log(sects)
-//   return { props: {} }
-// }
 export default function Home() {
   return (
     <Provider value={{ label: 'home' }}>
       <Page title="Aries Living - Home">
         <SkipNavContent />
-        <Image
-          src="/showcase/hero.jpg"
-          shadow
-          margin={0}
-          noBorder
-          layout="responsive"
-          oversize={false}
-          alt="Hero Image"
-          width={3000 / 2.75}
-          height={2000 / 2.75}
-        />
+        <Container>
+          <Image
+            className="image shadow"
+            src="/showcase/hero.jpg"
+            alt="Hero Image"
+            width={3000 / 2.75}
+            height={2000 / 2.75}
+          />
+        </Container>
         <Section
           id={SECTIONS.about.id}
           title={SECTIONS.about.title}
           description={SECTIONS.about.description}
           src={SECTIONS.about.src}
           alt="Aries Hotel"
-          width={3000 / 5.5}
-          height={2000 / 5.5}
+          width={3000 / 1.25}
+          height={2000 / 1.25}
         />
         <Portfolio
           id={SECTIONS.portfolio.id}
           title={SECTIONS.portfolio.title}
           description={SECTIONS.portfolio.description}
-          width={3000 / 9}
-          height={2000 / 9}
+          width={300}
+          height={200}
         />
         <Section
           id={SECTIONS.investors.id}
@@ -51,8 +45,8 @@ export default function Home() {
           description={SECTIONS.investors.description}
           src={SECTIONS.investors.src}
           alt="Aries Hotel"
-          width={3000 / 6}
-          height={2000 / 6}
+          width={3000 / 1.5}
+          height={2000 / 1.5}
           reverse
         />
         <Team />

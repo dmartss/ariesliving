@@ -251,6 +251,18 @@ iframe {
   border: none;
 }
 
+.image.radius {
+  border-radius: var(--radius);
+}
+
+.image.avatar {
+  border-radius: 50%;
+}
+
+.image.shadow {
+  box-shadow: var(--shadow-large);
+}
+
 .skeleton-container {
   background: var(--aries-bg);
   border-radius: var(--text-radius);

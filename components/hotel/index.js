@@ -3,7 +3,7 @@ import Collapse, { CollapseGroup } from 'components/collapse'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Button from 'components/button'
-import Image from 'components/image'
+import Image from 'next/image'
 import Header from './header'
 import useOnScroll from 'lib/use-on-scroll'
 import styles from './hotel.module.css'
@@ -15,13 +15,11 @@ export default function Hotel({ id: { name, hotel, details, urls }, sticky = tru
     <Container role="main" aria-labelledby={hotel}>
       <Header name={name} hotel={hotel} />
       <Image
+        className="image radius"
         src={`/showcase/${hotel}.jpg`}
-        margin={0}
-        oversize={false}
-        layout="responsive"
+        alt={`${name} Image`}
         width={3000 / 2.75}
         height={2000 / 2.75}
-        alt={`${name} Image`}
       />
       <Container wide overflow padding>
         <div
