@@ -8,7 +8,7 @@ export default function Container({
   overflow = false,
   divider = false,
   footer = false,
-  gradient = false,
+  fade = false,
   withAnchor,
   children,
   ...props
@@ -30,7 +30,7 @@ export default function Container({
         ${dark ? `
             background: var(--container-dark-bg);`
             : ''}
-        ${gradient ? `
+        ${fade ? `
             background: var(--background-gradient);
             border-top: 1px solid var(--accents-2);`
             : ''}

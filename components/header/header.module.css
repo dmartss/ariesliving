@@ -13,6 +13,7 @@
 .header.fillBg {
   background: var(--aries-bg);
 }
+
 .header.showBorder {
   box-shadow: var(--header-scrolled-shadow);
   background: var(--header-bg);
@@ -29,7 +30,6 @@
 
 @media (max-width: 640px) {
   .header,
-  .header.fillBg,
   .header.showBorder {
     background: var(--aries-bg);
     box-shadow: none;

@@ -6,7 +6,7 @@ import styleGradient from 'styles/utils/gradient.module.css'
 
 export default function Newsletter() {
   return (
-    <Container gradient wide>
+    <Container fade wide>
       <Container padding role="region" aria-labelledby="customers">
         <div className={styles.content}>
           <aside className="tl">
