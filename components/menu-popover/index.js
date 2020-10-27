@@ -20,7 +20,7 @@ function MenuItems({ list, title }) {
           <div className={styles.content}>
             {list.map(({ url, title, logo, hotel }, index) => (
               <PopOver.Item key={index} active={pathname === url}>
-                <Link href={url} as={url} hotel={hotel}>
+                <Link href={url} hotel={hotel}>
                   {title}
                   {logo && logo}
                 </Link>

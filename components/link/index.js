@@ -9,7 +9,6 @@ import styles from './link.module.css'
 const Link = ({
   external,
   href,
-  as,
   passHref,
   children,
   className,
@@ -38,12 +37,7 @@ const Link = ({
     </a>
   ) : (
     <>
-      <NextLink
-        href={href}
-        as={as}
-        prefetch={canPrefetch(href) ? undefined : false}
-        passHref={passHref}
-      >
+      <NextLink href={href} prefetch={canPrefetch(href) ? undefined : false} passHref={passHref}>
         {passHref ? (
           children
         ) : (
