@@ -15,7 +15,7 @@ const Link = ({
   hotel,
 
   underline,
-  gray,
+  // gray,
   ...props
 }) => {
   const { asPath } = useRouter()
@@ -25,7 +25,7 @@ const Link = ({
     {
       [styles.reset]: !hotel,
       [styles.selected]: asPath.includes(hotel),
-      [styles.gray]: gray,
+      // [styles.gray]: gray,
       [styles.underline]: underline
     },
     hotel

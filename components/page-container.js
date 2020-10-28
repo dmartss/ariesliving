@@ -23,9 +23,9 @@ export default function PageContainer({
         <meta name="author" content="Aries Living" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
+
         <meta property="og:title" content={title} />
         <meta property="og:url" content={`${SITE_URL}${suffix ? `${suffix}` : ''}`} />
-        <meta name="description" content={description} />
         <meta property="og:description" content={description} />
         <meta
           property="og:image"

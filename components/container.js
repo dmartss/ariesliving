@@ -26,8 +26,8 @@ export default function Container({
         margin: 0 auto;
         padding: ${padding ? 'var(--gap-double)' : '0'} ${wide ? '0' : 'var(--gap)'};
         ${wide && !small ? '' : 'max-width: var(--max-width);'}
-        ${small ? 'max-width: 768px;' : ''};
-        ${center ? 'text-align: center;' : ''};
+        ${small ? 'max-width: 768px;' : ''}
+        ${center ? 'text-align: center;' : ''}
         ${dark ? `
             background: var(--container-dark-bg);`
             : ''}
