@@ -1,0 +1,16 @@
+{
+  "title": "Aries Living, Find Amazing Rentals in Exceptional States",
+  "description": "Aries Living, Find Amazing Rentals in Exceptional States",
+  "canonical": "https://ariesliving.com",
+  "openGraph": {
+    "type": "website",
+    "locale": "en_IE",
+    "url": "https://ariesliving.com",
+    "site_name": "Aries Living"
+  },
+  "twitter": {
+    "handle": "@aries_living",
+    "site": "@aries_living",
+    "cardType": "summary_large_image"
+  }
+}
