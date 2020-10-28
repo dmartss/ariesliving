@@ -29,7 +29,7 @@
 }
 
 .room-types {
-  padding-top: 1rem;
+  padding-top: var(--gap);
 }
 
 @media (max-width: 640px) {
