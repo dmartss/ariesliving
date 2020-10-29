@@ -6,7 +6,7 @@ import styles from './team.module.css'
 
 export default function Team() {
   return (
-    <Container wide fade withAnchor aria-labelledby="team" id="team">
+    <Container wide fade withAnchor id="team">
       <Container center padding>
         <SectionHeader
           team
