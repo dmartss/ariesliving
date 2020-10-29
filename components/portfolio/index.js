@@ -8,7 +8,7 @@ import hotels from 'hotels'
 import styles from './portfolio.module.css'
 import styleUtils from 'styles/utils/utils.module.css'
 
-export default function Portfolio({ description, id, title, width, height }) {
+export default function Portfolio({ description, id, title }) {
   const [cardClickable, setCardClickable] = useState(false)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Portfolio({ description, id, title, width, height }) {
   }, [])
 
   return (
-    <Container center wide aria-labelledby={id} withAnchor id={id}>
+    <Container center wide withAnchor id={id}>
       <div className={styles.main}>
         <h2 className={cn(styleUtils.lines, 'fp fw4')}>{title}</h2>
         <Container>
@@ -32,8 +32,8 @@ export default function Portfolio({ description, id, title, width, height }) {
                     <Image
                       className="image shadow radius"
                       alt={hotel}
-                      width={width}
-                      height={height}
+                      width={300}
+                      height={200}
                       src={`/showcase-thumbnails/${hotel}.jpg`}
                     />
                   </div>
