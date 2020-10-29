@@ -16,7 +16,14 @@ export default function PageContainer({ title, image, suffix, keywords, children
         }}
       />
       <NextHead>
-        {/* <title>{title}</title> */}
+        <link
+          rel="preload"
+          href="https://assets.vercel.com/raw/upload/v1587415301/fonts/2/inter-var-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
         <meta name="apple-mobile-web-app-title" content="Aries Living" />
         <meta name="author" content="Aries Living" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,8 +41,8 @@ export default function PageContainer({ title, image, suffix, keywords, children
         <meta name="msapplication-TileColor" content="#000" />
         <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#000" />
+        {children}
       </NextHead>
-      {children}
     </>
   )
 }

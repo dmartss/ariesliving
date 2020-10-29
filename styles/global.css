@@ -1,3 +1,4 @@
+@import './inter.css';
 @import './nprogress.css';
 @import './hotels.css';
 
@@ -19,9 +20,8 @@
   --banner-height: 75px;
   --max-width: 1024px;
 
-  --fontFamily: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --fontFamily: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   --cubic-transition: cubic-bezier(0.4, 0, 0.2, 1);
 }

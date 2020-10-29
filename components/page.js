@@ -16,16 +16,17 @@ export default function Page({
   tAndC
 }) {
   return (
-    <PageContainer
-      title={title}
-      description={description}
-      suffix={suffix}
-      image={image}
-      keywords={keywords}
-    >
+    <>
+      <PageContainer
+        title={title}
+        description={description}
+        suffix={suffix}
+        image={image}
+        keywords={keywords}
+      />
       {!tAndC && <Header fillBg={fillBg} sticky={sticky} />}
       {children}
       {!tAndC && <Footer hotel={hotel} />}
-    </PageContainer>
+    </>
   )
 }
