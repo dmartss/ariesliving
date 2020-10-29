@@ -18,8 +18,9 @@ export default function Hotel({ id: { name, hotel, details, urls }, sticky = tru
         className="image radius"
         src={`/showcase/${hotel}.jpg`}
         alt={`${name} Image`}
-        width={3000 / 2.75}
-        height={2000 / 2.75}
+        width={1090}
+        height={727}
+        priority
       />
       <Container wide overflow padding>
         <div
