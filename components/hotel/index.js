@@ -12,7 +12,7 @@ export default function Hotel({ id: { name, hotel, details, urls }, sticky = tru
   const { secondHeaderLock } = useOnScroll()
   const { address, email, phone, description, rooms, roomTypes } = details
   return hotel ? (
-    <Container role="main" aria-labelledby={hotel}>
+    <Container role="main">
       <Header name={name} hotel={hotel} />
       <Image
         className="image radius"

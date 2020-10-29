@@ -67,11 +67,10 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
     const hash = location.hash.slice(1)
     if (id === hash) {
       immediateAnimation.current = true
-      if (collapseContext) {
-        collapseContext.onChange(title)
-      } else {
-        setActive(true)
-      }
+
+      if (collapseContext) collapseContext.onChange(title)
+      else setActive(true)
+
       timeout = setTimeout(() => {
         immediateAnimation.current = false
       }, 1000)
