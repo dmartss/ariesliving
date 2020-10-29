@@ -65,7 +65,9 @@ function Footer({ hotel }) {
               <Link external href={TWITTER} aria-label="Twitter" className={styleHover.container}>
                 <Twitter className={styleHover.icon} />
               </Link>
-              <ThemeIcon className={cn(styleUtils['theme-icon'])} />
+              <span className={styleHover.container}>
+                <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
+              </span>
             </span>
             <div>
               Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
