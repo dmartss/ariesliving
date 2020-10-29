@@ -27,27 +27,17 @@ function Footer({ hotel }) {
             </div>
             <div>
               <h4 className="fw5">About</h4>
-              <p>
-                <a>Contact</a>
-              </p>
+              <p>Contact</p>
               <p>
                 <Link href={`/terms-and-conditions/${hotel || ''}`}>Terms & Conditions</Link>
               </p>
-              <p>
-                <a>Privacy Policy</a>
-              </p>
+              <p>Privacy Policy</p>
             </div>
             <div>
               <h4 className="fw5">Corporate Resources</h4>
-              <p>
-                <a>Media</a>
-              </p>
-              <p>
-                <a>Careers</a>
-              </p>
-              <p>
-                <a>Travel Professionals</a>
-              </p>
+              <p>Media</p>
+              <p>Careers</p>
+              <p>Travel Professionals</p>
             </div>
             <div>
               <h4 className="fw5">Contact</h4>
@@ -75,9 +65,7 @@ function Footer({ hotel }) {
               <Link external href={TWITTER} aria-label="Twitter" className={styleHover.container}>
                 <Twitter className={styleHover.icon} />
               </Link>
-              <a className={styleHover.container}>
-                <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
-              </a>
+              <ThemeIcon className={cn(styleUtils['theme-icon'])} />
             </span>
             <div>
               Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.

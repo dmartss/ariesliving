@@ -17,7 +17,8 @@
 .footer h4 a {
   color: inherit;
 }
-.footer a:hover {
+.footer a:hover,
+.footer svg:last-child:hover {
   color: var(--aries-1);
 }
 .copyright {
