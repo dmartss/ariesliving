@@ -12,13 +12,8 @@ export const Menu = memo(({ children, innerRef }) => (
   </div>
 ))
 
-export const Item = memo(({ icon, hover, active, children }) => (
-  <div className={cn(styles.item, 'f5', { [styles.active]: active, [styles.hover]: hover })}>
-    {children}
-    {icon ? <div className={styles.icon}>{icon}</div> : null}
-  </div>
+export const Item = memo(({ active, children }) => (
+  <div className={cn(styles.item, 'f5', { [styles.active]: active })}>{children}</div>
 ))
 
 export const Divider = () => <div className={styles.line} />
-
-export default Menu
