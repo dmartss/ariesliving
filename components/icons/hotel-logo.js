@@ -4,8 +4,13 @@ import TreehouseLogo from './treehouse-logo'
 import VPLogo from './vp-logo'
 
 export default function HotelLogo({ hotel, ...props }) {
-  if (hotel === 'treehouse') return <TreehouseLogo {...props} />
-  if (hotel === 'ithaca-south-beach') return <IthacaLogo {...props} />
-  if (hotel === 'villa-paradiso') return <VPLogo {...props} />
-  return <Logo />
+  return hotel === 'treehouse' ? (
+    <TreehouseLogo {...props} />
+  ) : hotel === 'ithaca-south-beach' ? (
+    <IthacaLogo {...props} />
+  ) : hotel === 'villa-paradiso' ? (
+    <VPLogo {...props} />
+  ) : (
+    <Logo />
+  )
 }
