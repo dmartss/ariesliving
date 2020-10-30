@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import cn from 'classnames'
 import { Arrow } from 'components/icons'
 import Portal from 'components/portal'
 import styles from './popover-link.module.css'
@@ -96,7 +97,7 @@ export default class PopOverLink extends Component {
       <Portal>
         <span
           ref={innerRef}
-          className={`portal bottom ${isOpen ? 'show' : ''}`}
+          className={cn(styles.portal, styles.bottom, { [styles.show]: isOpen })}
           style={{
             position: 'absolute',
             left: left != null ? left : this.state.left + offsetLeft,
@@ -105,35 +106,6 @@ export default class PopOverLink extends Component {
           }}
         >
           {to}
-
-          <style jsx>{`
-            .portal {
-              contain: layout;
-              transition: opacity 0.2s ease, transform 0.2s ease;
-              z-index: 9999;
-              opacity: 0;
-              pointer-events: none;
-              height: 0;
-            }
-            .portal :global(.menu) {
-              box-shadow: var(--dropdown-box-shadow);
-              transition: box-shadow 0.5s ease;
-            }
-            .portal.bottom {
-              transform: translate3d(0px, 12px, 0px);
-            }
-            .portal.show {
-              opacity: 1;
-              pointer-events: unset;
-              height: unset;
-            }
-            .portal.show :global(.menu) {
-              box-shadow: var(--shadow-medium);
-            }
-            .portal.show.bottom {
-              transform: translate3d(0px, 15px, 0px);
-            }
-          `}</style>
         </span>
       </Portal>
     )

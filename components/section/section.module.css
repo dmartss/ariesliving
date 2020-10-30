@@ -28,7 +28,7 @@
 }
 
 .content > h2 {
-  margin: var(--gap);
+  margin-top: var(--gap);
 }
 
 @media screen and (max-width: 960px) {
