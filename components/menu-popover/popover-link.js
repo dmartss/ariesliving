@@ -1,10 +1,10 @@
-import React from 'react'
+import { Component } from 'react'
 import { Arrow } from 'components/icons'
 import Portal from 'components/portal'
 import styles from './popover-link.module.css'
 import ClickOutside from 'components/click-outside'
 
-export default class PopOverLink extends React.Component {
+export default class PopOverLink extends Component {
   static defaultProps = { isOpen: null }
 
   constructor(props) {
@@ -27,8 +27,11 @@ export default class PopOverLink extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen) this.setOpen()
-    else if (nextProps.isOpen === false) this.setClose()
+    if (nextProps.isOpen) {
+      this.setOpen()
+    } else if (nextProps.isOpen === false) {
+      this.setClose()
+    }
   }
 
   setOpen() {
@@ -95,8 +98,10 @@ export default class PopOverLink extends React.Component {
           ref={innerRef}
           className={`portal bottom ${isOpen ? 'show' : ''}`}
           style={{
+            position: 'absolute',
             left: left != null ? left : this.state.left + offsetLeft,
-            top: top != null ? top : this.state.top + offsetTop
+            top: top != null ? top : this.state.top + offsetTop,
+            bottom: null
           }}
         >
           {to}
@@ -104,7 +109,6 @@ export default class PopOverLink extends React.Component {
           <style jsx>{`
             .portal {
               contain: layout;
-              position: absolute;
               transition: opacity 0.2s ease, transform 0.2s ease;
               z-index: 9999;
               opacity: 0;
