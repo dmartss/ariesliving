@@ -9,70 +9,120 @@ import { memo } from 'react'
 import cn from 'classnames'
 import styles from './footer.module.css'
 
+const FooterGroup = ({ title, children }) => (
+  <div>
+    <h4 className="fw5">{title}</h4>
+    {children}
+  </div>
+)
+
+const FooterLink = ({ href, className, external, children }) => (
+  <p>
+    {href ? (
+      <Link href={href} external={external} className={className}>
+        {children}
+      </Link>
+    ) : (
+      children
+    )}
+  </p>
+)
+
+const SubFooter = ({ list, copyright }) => (
+  <div className={cn(styles.copyright, 'f6')}>
+    <span>
+      {list.map(({ href, label, icon }, index) =>
+        href ? (
+          <Link
+            key={index}
+            external
+            href={href}
+            aria-label={label}
+            className={styleHover.container}
+          >
+            {icon}
+          </Link>
+        ) : (
+          <span key={index} className={styleHover.container}>
+            {icon}
+          </span>
+        )
+      )}
+    </span>
+    {copyright && copyright}
+  </div>
+)
+
+// const Footer = ({ children, subFooter }) => (
+//   <footer className={styles.footer}>
+//     <div className={cn(styles.grid, 'f5')}>{children}</div>
+//   </footer>
+// )
+
 function Footer({ hotel }) {
   return (
-    <Container wide dark footer>
+    <Container wide dark>
       <Container>
         <footer className={styles.footer}>
           <div className={cn(styles.grid, 'f5')}>
-            <div>
-              <h4 className="fw5">Brands</h4>
+            <FooterGroup title="Brands">
               {hotels.map(({ name, hotel, urls: { hotelSite } }) => (
-                <p key={name}>
-                  <Link external className={hotel} href={hotelSite}>
-                    {name}
-                  </Link>
-                </p>
+                <FooterLink key={name} external className={hotel} href={hotelSite}>
+                  {name}
+                </FooterLink>
               ))}
-            </div>
-            <div>
-              <h4 className="fw5">About</h4>
-              <p>Contact</p>
-              <p>
-                <Link href={`/terms-and-conditions/${hotel || ''}`}>Terms & Conditions</Link>
-              </p>
-              <p>Privacy Policy</p>
-            </div>
-            <div>
-              <h4 className="fw5">Corporate Resources</h4>
-              <p>Media</p>
-              <p>Careers</p>
-              <p>Travel Professionals</p>
-            </div>
-            <div>
-              <h4 className="fw5">Contact</h4>
-              <p>{ADDRESS[0]}</p>
-              <p>{ADDRESS[1]}</p>
-              <p>{ADDRESS[2]}</p>
-            </div>
+            </FooterGroup>
+            <FooterGroup title="About">
+              <FooterLink>Contact</FooterLink>
+              <FooterLink href={`/terms-and-conditions/${hotel || ''}`}>
+                Terms & Conditions
+              </FooterLink>
+              <FooterLink>Privacy Policy</FooterLink>
+            </FooterGroup>
+            <FooterGroup title="Corporate Resources">
+              <FooterLink>Media</FooterLink>
+              <FooterLink>Careers</FooterLink>
+              <FooterLink>Travel Professionals</FooterLink>
+            </FooterGroup>
+            <FooterGroup title="Contact">
+              <FooterLink>{ADDRESS[0]}</FooterLink>
+              <FooterLink>{ADDRESS[1]}</FooterLink>
+              <FooterLink>{ADDRESS[2]}</FooterLink>
+            </FooterGroup>
           </div>
-          <div className={cn(styles.copyright, 'f6')}>
-            <span>
-              <Link
-                external
-                href={INSTAGRAM}
-                aria-label="Instagram"
-                className={styleHover.container}
-              >
-                <Instagram className={styleHover.icon} />
-              </Link>
-              <Link external href={LINKEDIN} aria-label="Linkedin" className={styleHover.container}>
-                <Linkedin className={styleHover.icon} />
-              </Link>
-              <Link external href={FACEBOOK} aria-label="Facebook" className={styleHover.container}>
-                <Facebook className={styleHover.icon} />
-              </Link>
-              <Link external href={TWITTER} aria-label="Twitter" className={styleHover.container}>
-                <Twitter className={styleHover.icon} />
-              </Link>
-              <span className={styleHover.container}>
-                <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
-              </span>
-            </span>
-            <div>
-              Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
-            </div>
-          </div>
+          <SubFooter
+            list={[
+              {
+                href: INSTAGRAM,
+                label: 'Instagram',
+                icon: <Instagram className={styleHover.icon} />
+              },
+              {
+                href: LINKEDIN,
+                label: 'Linkedin',
+                icon: <Linkedin className={styleHover.icon} />
+              },
+
+              {
+                href: FACEBOOK,
+                label: 'Facebook',
+                icon: <Facebook className={styleHover.icon} />
+              },
+              {
+                href: TWITTER,
+                label: 'Twitter',
+                icon: <Twitter className={styleHover.icon} />
+              },
+              {
+                icon: <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
+              }
+            ]}
+            copyright={
+              <div>
+                Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
+              </div>
+            }
+          />
         </footer>
       </Container>
     </Container>
