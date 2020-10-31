@@ -3,7 +3,7 @@ import styles from './header.module.css'
 import styleHover from 'styles/utils/hover.module.css'
 import styleGradient from 'styles/utils/gradient.module.css'
 
-export default function Header({ hotel, name }) {
+export default function HotelHeader({ hotel, name }) {
   return (
     <header className={styles.header}>
       <aside className={styles.left}>

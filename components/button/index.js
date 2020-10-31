@@ -41,5 +41,5 @@ function Button({ children, invert, outline, small, href, className, loading, ..
   )
 }
 
-// Button.displayName = 'Button'
+Button.displayName = 'Button'
 export default memo(Button)

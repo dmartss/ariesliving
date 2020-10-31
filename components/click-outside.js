@@ -3,12 +3,6 @@ import PropTypes from 'prop-types'
 import { hasParent } from 'lib/utils'
 
 export default class ClickOutside extends Component {
-  static propTypes = {
-    active: PropTypes.bool,
-    onClick: PropTypes.func,
-    render: PropTypes.func
-  }
-
   static defaultProps = { active: true }
 
   constructor(props) {

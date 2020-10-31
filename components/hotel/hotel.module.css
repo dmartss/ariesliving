@@ -32,6 +32,14 @@
   padding-top: var(--gap);
 }
 
+.flex {
+  display: inline-flex;
+}
+
+.flex p:last-child {
+  padding-left: 1rem;
+}
+
 @media (max-width: 640px) {
   .top {
     padding-top: 0;
