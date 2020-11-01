@@ -8,7 +8,7 @@
     "emailPrefix": "villaparadiso",
     "urls": {
       "hotelSite": "https://villaparadisohotels.com",
-      "rezTripUrl": "https://villaparadiso.reztrip.com/"
+      "rezTripUrl": "https://villaparadiso.reztrip.com"
     },
     "details": {
       "address": "1415 Collins Ave. Miami Beach, FL 33139",
@@ -68,7 +68,7 @@
     "emailPrefix": "ithaca",
     "urls": {
       "hotelSite": "https://ithacasouthbeach.com",
-      "rezTripUrl": "https://ithacahotel.reztrip.com/"
+      "rezTripUrl": "https://ithacahotel.reztrip.com"
     },
     "details": {
       "address": "601 Collins Ave. Miami Beach, FL 33139",
@@ -121,7 +121,7 @@
     "emailPrefix": "treehouse",
     "urls": {
       "hotelSite": "https://treehousebyaries.com",
-      "rezTripUrl": "https://treehousestudio.reztrip.com/"
+      "rezTripUrl": "https://treehousestudio.reztrip.com"
     },
     "details": {
       "address": "7126 Biscayne Blvd. Miami, FL 33138",
