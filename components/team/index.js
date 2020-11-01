@@ -22,7 +22,6 @@ export default function Team() {
                 height={100}
                 src={`/team/${img}.jpg`}
                 alt={name}
-                unoptimized
               />
               <p className="fp">{name}</p>
               <p className="fs">{position}</p>
