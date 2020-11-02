@@ -15,20 +15,18 @@ const Link = ({
   hotel,
 
   underline,
-  // gray,
   ...props
 }) => {
   const { asPath } = useRouter()
 
   const c = cn(
-    className,
+    hotel,
     {
       [styles.reset]: !hotel,
       [styles.selected]: asPath.includes(hotel),
-      // [styles.gray]: gray,
       [styles.underline]: underline
     },
-    hotel
+    className
   )
 
   return external ? (

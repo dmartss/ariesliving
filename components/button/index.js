@@ -5,12 +5,17 @@ import LoadingDots from '../loading-dots'
 import styles from './button.module.css'
 
 function Button({ children, invert, outline, small, href, className, loading, ...props }) {
-  const c = cn(className, styles.btn, 'fw4 no-drag', {
-    [styles.outline]: outline,
-    [styles.invert]: invert,
-    [styles.small]: small,
-    [styles.loading]: loading
-  })
+  const c = cn(
+    styles.btn,
+    'fw4 no-drag',
+    {
+      [styles.outline]: outline,
+      [styles.invert]: invert,
+      [styles.small]: small,
+      [styles.loading]: loading
+    },
+    className
+  )
 
   if (href) {
     const isExternal = href && href.startsWith('http')

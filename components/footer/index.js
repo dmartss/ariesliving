@@ -49,7 +49,11 @@ const SubFooter = ({ list, copyright }) => (
         )
       )}
     </span>
-    {copyright && copyright}
+    {copyright && (
+      <div>
+        Copyright © {`${new Date().getFullYear()}`} {copyright}, All rights reserved.
+      </div>
+    )}
   </div>
 )
 
@@ -117,11 +121,7 @@ function Footer({ hotel }) {
                 icon: <ThemeIcon className={cn(styleHover.icon, styleUtils['theme-icon'])} />
               }
             ]}
-            copyright={
-              <div>
-                Copyright © {`${new Date().getFullYear()}`} {LLC}, All rights reserved.
-              </div>
-            }
+            copyright={LLC}
           />
         </footer>
       </Container>

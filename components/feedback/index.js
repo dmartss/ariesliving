@@ -264,7 +264,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
           {...props}
         >
           <form
-            className={cn(styles['feedback-wrapper'], focused ?? styles.blur)}
+            className={cn(styles['feedback-wrapper'], { [styles.blur]: !focused })}
             onSubmit={onSubmit}
           >
             <div className={styles.placeholder}>Contact</div>
