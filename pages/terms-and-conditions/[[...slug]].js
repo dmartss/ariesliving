@@ -1,9 +1,9 @@
 import Container from 'components/container'
+import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Page from 'components/page'
 import termsAndConditions from 'lib/terms-and-conditions'
 import { getSlug } from 'lib/utils'
-import { useRouter } from 'next/router'
 import hotels from 'hotels'
 
 export const getStaticPaths = () => ({
