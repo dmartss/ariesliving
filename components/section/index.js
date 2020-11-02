@@ -12,7 +12,7 @@ export default function Section({ description, title, id }) {
       <Container padding center>
         <div className={rootClassName}>
           <Image
-            src={`/showcase/${title}.jpg`}
+            src={`/showcase/${id}.jpg`}
             className="image shadow radius"
             alt="Aries Hotel"
             width={2400}
