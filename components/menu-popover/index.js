@@ -18,9 +18,9 @@ function MenuItems({ list, title }) {
             </div>
           )}
           <div className={styles.content}>
-            {list.map(({ url, title, logo, hotel }, index) => (
-              <PopOver.Item key={index} active={pathname === url}>
-                <Link href={url} hotel={hotel}>
+            {list.map(({ title, logo, hotel }, index) => (
+              <PopOver.Item key={index} active={pathname === `/hotels/${hotel}`}>
+                <Link href={`/hotels/${hotel}`} hotel={hotel}>
                   {title}
                   {logo && logo}
                 </Link>
@@ -33,12 +33,13 @@ function MenuItems({ list, title }) {
     </>
   )
 }
+
 export default function MenuPopOver({
   title,
-  primaryTitle,
-  secondaryTitle,
   primaryList,
-  secondaryList,
+  primaryTitle,
+  // secondaryTitle,
+  // secondaryList,
   className
 }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -74,7 +75,7 @@ export default function MenuPopOver({
           <PopOver.Menu>
             <div className={styles.wrapper}>
               {primaryList && <MenuItems list={primaryList} title={primaryTitle} />}
-              {secondaryList && <MenuItems list={secondaryList} title={secondaryTitle} />}
+              {/* {secondaryList && <MenuItems list={secondaryList} title={secondaryTitle} />} */}
             </div>
           </PopOver.Menu>
         }

@@ -33,19 +33,16 @@ export default function HomeLinks({ desktop, mobile, home }) {
                 {
                   title: 'Villa Paradiso',
                   hotel: 'villa-paradiso',
-                  url: '/hotels/villa-paradiso',
                   logo: <HotelLogo hotel="villa-paradiso" small />
                 },
                 {
                   title: 'Ithaca',
                   hotel: 'ithaca-south-beach',
-                  url: '/hotels/ithaca-south-beach',
                   logo: <HotelLogo hotel="ithaca-south-beach" small />
                 },
                 {
                   title: 'Treehouse',
                   hotel: 'treehouse',
-                  url: '/hotels/treehouse',
                   logo: <HotelLogo hotel="treehouse" small />
                 }
               ]}
