@@ -24,7 +24,7 @@ function Navbar() {
         Aries Living
       </h1>
 
-      <nav className={cn(styles.desktopNav, 'f-reset')}>
+      <nav className={cn(styles.desktopNav)}>
         <div className={styles.links}>
           <Link
             href="/"

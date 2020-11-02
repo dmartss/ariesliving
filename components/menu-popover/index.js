@@ -62,12 +62,10 @@ export default function MenuPopOver({
     Router.prefetch('/hotels/treehouse')
   }, [])
 
+  const rootClassName = cn(styles.menu, { [styles['is-active']]: isOpen }, className)
+
   return (
-    <span
-      className={cn(className, styles.menu, { [styles['is-active']]: isOpen })}
-      onMouseEnter={open}
-      onMouseLeave={close}
-    >
+    <span className={rootClassName} onMouseEnter={open} onMouseLeave={close}>
       {title}
       <PopOverLink
         isOpen={isOpen}

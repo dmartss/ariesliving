@@ -30,8 +30,13 @@ export default class Input extends Component {
 
     delete props.innerRef
 
+    const rootClassName = cn(styles.root, {
+      [styles.focused]: focused,
+      [styles.disabled]: disabled
+    })
+
     return (
-      <div className={cn(styles.wrapper, { focused, disabled })} {...props}>
+      <div className={rootClassName} {...props}>
         <div className={styles['input-wrapper']}>
           <input
             autoCapitalize="off"

@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import PropTypes from 'prop-types'
 import { hasParent } from 'lib/utils'
 
 export default class ClickOutside extends Component {

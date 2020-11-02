@@ -1,4 +1,4 @@
-.btn {
+.root {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -19,48 +19,48 @@
   outline: none;
 }
 
-:global(html[data-theme='dark']) .btn {
+:global(html[data-theme='dark']) .root {
   --shadow-small: 0;
 }
 
-.btn:hover {
+.root:hover {
   background-color: transparent;
   color: var(--aries-1);
 }
 
-.btn.invert {
+.root.invert {
   background-color: var(--aries-bg);
   border: var(--border-2);
   color: var(--accents-5);
   box-shadow: var(--shadow-small);
 }
-.btn.invert:hover,
-.btn.invert:active {
+.root.invert:hover,
+.root.invert:active {
   color: var(--aries-fg);
   border-color: var(--aries-fg);
 }
 
-.btn.invert.outline {
+.root.invert.outline {
   background-color: var(--accents-8);
   box-shadow: var(--shadow-small);
   border: 1px solid var(--accents-8);
   color: var(--aries-bg);
 }
-.btn.invert.outline:hover,
-.btn.invert.outline:active {
+.root.invert.outline:hover,
+.root.invert.outline:active {
   background-color: transparent;
   outline: none;
   border-color: var(--aries-1);
   color: var(--aries-1);
 }
-.btn.small {
+.root.small {
   font-size: 0.875rem;
   height: 1.5rem;
   padding: 0 var(--gap-three-quarter);
   line-height: inherit;
   border-radius: var(--text-radius);
 }
-.btn.loading {
+.root.loading {
   background: var(--accents-1);
   color: var(--accents-4);
   border: 1px solid var(--aries-fg);
@@ -69,9 +69,9 @@
   cursor: default;
   pointer-events: none;
 }
-.btn.loading > .text {
+.root.loading > .text {
   visibility: hidden;
 }
-.btn > .loading-dots {
+.root > .loading-dots {
   position: absolute;
 }

@@ -30,8 +30,13 @@ export default class Textarea extends Component {
 
     delete props.innerRef
 
+    const rootClassName = cn(styles.root, {
+      [styles.focused]: focused,
+      [styles.disabled]: disabled
+    })
+
     return (
-      <div className={cn(styles.wrapper, { focused, disabled })}>
+      <div className={rootClassName}>
         <textarea
           {...props}
           autoCapitalize="off"

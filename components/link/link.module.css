@@ -3,14 +3,6 @@
   color: var(--fg);
   text-decoration: none;
 }
-/* .gray {
-  color: var(--gray);
-}
-
-.gray:hover,
-.gray:focus {
-  color: var(--fg);
-} */
 
 .selected {
   text-shadow: 0px 0px 1px var(--aries-1);

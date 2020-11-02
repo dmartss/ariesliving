@@ -1,4 +1,4 @@
-.wrapper {
+.root {
   align-items: center;
   border-radius: var(--text-radius);
   border: var(--border-2);
@@ -10,15 +10,15 @@
   width: 100%;
 }
 
-.wrapper.focused {
+.root.focused {
   border: 1px solid var(--accents-5);
 }
 
-.wrapper.disabled {
+.root.disabled {
   border-color: var(--accents-2) !important;
 }
 
-.wrapper textarea {
+.root textarea {
   background-color: transparent;
   border-radius: 0;
   border: 0;
@@ -38,23 +38,23 @@
   color: var(--aries-fg);
 }
 
-.wrapper textarea:disabled {
+.root textarea:disabled {
   background: var(--accents-1);
   color: var(--accents-4);
   border-radius: var(--text-radius);
   cursor: not-allowed;
 }
 
-.wrapper textarea::placeholder {
+.root textarea::placeholder {
   color: var(--accents-3);
 }
 
-.wrapper textarea:disabled::placeholder {
+.root textarea:disabled::placeholder {
   color: var(--accents-3);
 }
 
 @media only screen and (max-device-width: 780px) and (-webkit-min-device-pixel-ratio: 0) {
-  .wrapper textarea {
+  .root textarea {
     font-size: 16px;
   }
 }

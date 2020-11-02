@@ -6,7 +6,6 @@ export default function Container({
   small = false,
   padding = false,
   overflow = false,
-  // divider = false,
   fade = false,
   withAnchor,
   children,

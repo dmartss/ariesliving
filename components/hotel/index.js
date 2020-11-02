@@ -10,8 +10,10 @@ import styles from './hotel.module.css'
 
 const StickyHeader = ({ name, address, email, phone, url }) => {
   const { secondHeaderLock } = useOnScroll()
+  const rootClassName = cn(styles.top, styles.sticky, { [styles.border]: secondHeaderLock })
+
   return (
-    <div className={cn(styles.top, styles.sticky, { [styles.border]: secondHeaderLock })}>
+    <div className={rootClassName}>
       <div>
         <h3 className="fp fw6">{name}</h3>
         <h3>{address}</h3>

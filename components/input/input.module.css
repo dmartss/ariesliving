@@ -1,4 +1,4 @@
-.wrapper {
+.root {
   align-items: center;
   border-radius: var(--text-radius);
   border: var(--border-2);
@@ -10,11 +10,11 @@
   width: 100%;
 }
 
-.wrapper.focused {
+.root.focused {
   border: 1px solid var(--accents-5);
 }
 
-.wrapper.disabled {
+.root.disabled {
   background: var(--accents-1);
   border-color: var(--accents-2);
   cursor: not-allowed;
@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-.wrapper input {
+.root input {
   border-radius: 0;
   border: none;
   box-shadow: none;
@@ -51,27 +51,27 @@
   appearance: none;
 }
 
-.wrapper input:disabled {
+.root input:disabled {
   color: var(--accents-3);
   cursor: not-allowed;
 }
 
-.wrapper input::placeholder,
-.wrapper input::-webkit-input-placeholder {
+.root input::placeholder,
+.root input::-webkit-input-placeholder {
   color: var(--accents-3);
 }
 
-.wrapper input:disabled::placeholder {
+.root input:disabled::placeholder {
   color: var(--accents-3);
 }
 
 @media only screen and (max-device-width: 780px) and (-webkit-min-device-pixel-ratio: 0) {
-  .wrapper input {
+  .root input {
     font-size: 16px;
     line-height: 1;
   }
 
-  .wrapper {
+  .root {
     height: var(--gap-triple);
   }
 }

@@ -5,10 +5,12 @@ import SectionHeader from './section-header'
 import styles from './section.module.css'
 
 export default function Section({ description, title, id }) {
+  const rootClassName = cn(styles.root, { [styles.reverse]: title === 'Investors' })
+
   return (
     <Container id={id} wide overflow>
       <Container padding center>
-        <div className={cn(styles.main, { [styles.reverse]: title === 'Investors' })}>
+        <div className={rootClassName}>
           <Image
             src={`/showcase/${title}.jpg`}
             className="image shadow radius"

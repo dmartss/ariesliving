@@ -19,7 +19,7 @@ const Link = ({
 }) => {
   const { asPath } = useRouter()
 
-  const c = cn(
+  const rootClassName = cn(
     hotel,
     {
       [styles.reset]: !hotel,
@@ -30,7 +30,7 @@ const Link = ({
   )
 
   return external ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={c} {...props}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={rootClassName} {...props}>
       {children}
     </a>
   ) : (
@@ -39,7 +39,7 @@ const Link = ({
         {passHref ? (
           children
         ) : (
-          <a className={c} {...props}>
+          <a className={rootClassName} {...props}>
             {children}
           </a>
         )}

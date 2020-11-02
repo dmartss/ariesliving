@@ -10,18 +10,18 @@ const Header = ({ sticky = true, fillBg }) => {
   const { mobileNavShown } = useNav()
   const { headerLock, secondHeaderLock } = useOnScroll()
 
+  const rootClassName = cn(styles.root, {
+    [styles.mobileNavShown]: mobileNavShown,
+    [styles.sticky]: sticky,
+    [styles.fillBg]: fillBg,
+    [styles.showBorder]: fillBg ? headerLock && secondHeaderLock : headerLock
+  })
+
   return (
     <>
       <Banner />
 
-      <header
-        className={cn(styles.header, {
-          [styles.mobileNavShown]: mobileNavShown,
-          [styles.sticky]: sticky,
-          [styles.fillBg]: fillBg,
-          [styles.showBorder]: fillBg ? headerLock && secondHeaderLock : headerLock
-        })}
-      >
+      <header className={rootClassName}>
         <Nav />
       </header>
     </>

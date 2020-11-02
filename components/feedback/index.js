@@ -237,6 +237,18 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
     }
   }, [])
 
+  const rootClassName = cn(
+    styles['feedback-input'],
+    {
+      [styles.focused]: focused || open,
+      [styles.error]: errorMessage,
+      [styles.loading]: loading,
+      [styles.success]: success,
+      [styles.email]: email
+    },
+    className
+  )
+
   return (
     <ClickOutside
       active={focused}
@@ -250,17 +262,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
           title="Share any feedback about our products and services"
           onClick={onFocus}
           tabIndex={0}
-          className={cn(
-            styles['feedback-input'],
-            {
-              [styles.focused]: focused || open,
-              [styles.error]: errorMessage,
-              [styles.loading]: loading,
-              [styles.success]: success,
-              [styles.email]: email
-            },
-            className
-          )}
+          className={rootClassName}
           {...props}
         >
           <form
