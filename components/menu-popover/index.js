@@ -1,9 +1,10 @@
 import { useState, useCallback } from 'react'
 import Router, { useRouter } from 'next/router'
 import cn from 'classnames'
+import Link from 'components/link'
+import { HotelLogo } from 'components/icons'
 import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
-import Link from 'components/link'
 import styles from './menu-popover.module.css'
 
 function MenuItems({ list, title }) {
@@ -18,11 +19,11 @@ function MenuItems({ list, title }) {
             </div>
           )}
           <div className={styles.content}>
-            {list.map(({ title, logo, hotel }, index) => (
+            {list.map(({ title, hotel }, index) => (
               <PopOver.Item key={index} active={pathname === `/hotels/${hotel}`}>
                 <Link href={`/hotels/${hotel}`} hotel={hotel}>
                   {title}
-                  {logo && logo}
+                  <HotelLogo hotel={hotel} small />
                 </Link>
                 {index !== list.length - 1 && <PopOver.Divider />}
               </PopOver.Item>

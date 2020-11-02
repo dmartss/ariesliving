@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import cn from 'classnames'
 import MenuPopOver from 'components/menu-popover'
-import { HotelLogo } from 'components/icons'
+
 import Link from 'components/link'
 import styleUtils from 'styles/utils/utils.module.css'
 
@@ -32,18 +32,15 @@ export default function HomeLinks({ desktop, mobile, home }) {
               primaryList={[
                 {
                   title: 'Villa Paradiso',
-                  hotel: 'villa-paradiso',
-                  logo: <HotelLogo hotel="villa-paradiso" small />
+                  hotel: 'villa-paradiso'
                 },
                 {
                   title: 'Ithaca',
-                  hotel: 'ithaca-south-beach',
-                  logo: <HotelLogo hotel="ithaca-south-beach" small />
+                  hotel: 'ithaca-south-beach'
                 },
                 {
                   title: 'Treehouse',
-                  hotel: 'treehouse',
-                  logo: <HotelLogo hotel="treehouse" small />
+                  hotel: 'treehouse'
                 }
               ]}
             />
