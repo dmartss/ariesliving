@@ -5,15 +5,16 @@ import termsAndConditions from 'lib/terms-and-conditions'
 import { getSlug } from 'lib/utils'
 import { useRouter } from 'next/router'
 import hotels from 'hotels'
-import aries from 'aries'
 
 export const getStaticPaths = () => ({
-  paths: hotels.map(({ hotel }) => ({ params: { slug: [hotel] } })),
+  paths: hotels.slice(0, 3).map(({ hotel }) => ({ params: { slug: [hotel] } })),
   fallback: true
 })
 
 export const getStaticProps = ({ params: { slug } }) => {
-  const { name, hotel, emailPrefix } = { ...(hotels.find(e => e.hotel === getSlug(slug)) || aries) }
+  const { name, hotel, emailPrefix } = {
+    ...(hotels.find(e => e.hotel === getSlug(slug)) || hotels[3])
+  }
 
   const content = termsAndConditions(name, emailPrefix)
 
