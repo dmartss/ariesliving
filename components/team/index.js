@@ -1,14 +1,14 @@
-import Container from 'components/container'
-import SectionHeader from 'components/section/section-header'
 import Image from 'next/image'
+import SectionHeader from 'components/section/section-header'
+import Container from 'components/container'
 import styles from './team.module.css'
 
-const TEAM = {
+const TEAM = Object.entries({
   'Max Khaghan': 'CEO',
   'James Khaghan': 'CFO',
   'Dan Martin': ' ',
   'Jordan Goldman': ' '
-}
+})
 
 export default function Team() {
   return (
@@ -20,7 +20,7 @@ export default function Team() {
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
         <div className={styles.wrapper}>
-          {Object.entries(TEAM).map(([key, value]) => (
+          {TEAM.map(([key, value]) => (
             <div key={key} className={styles['team-member']}>
               <Image
                 className="image shadow avatar"
