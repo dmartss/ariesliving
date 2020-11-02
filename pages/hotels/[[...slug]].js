@@ -11,12 +11,12 @@ import Page from 'components/page'
 import hotels from 'hotels'
 
 export const getStaticPaths = () => ({
-  paths: hotels.slice(0, 3).map(({ hotel }) => ({ params: { slug: [hotel] } })),
+  paths: hotels.map(({ hotel }) => ({ params: { slug: [hotel] } })),
   fallback: true
 })
 
 export const getStaticProps = ({ params: { slug } }) => {
-  const randomHotel = hotels.slice(0, 3)[Math.floor(Math.random() * (hotels.length - 1))]
+  const randomHotel = hotels[Math.floor(Math.random() * hotels.length)]
   const id = { ...(hotels.find(e => e.hotel === getSlug(slug)) || randomHotel) }
 
   return {

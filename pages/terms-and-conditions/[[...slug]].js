@@ -5,15 +5,16 @@ import Page from 'components/page'
 import termsAndConditions from 'lib/terms-and-conditions'
 import { getSlug } from 'lib/utils'
 import hotels from 'hotels'
+import aries from 'aries'
 
 export const getStaticPaths = () => ({
-  paths: hotels.slice(0, 3).map(({ hotel }) => ({ params: { slug: [hotel] } })),
+  paths: hotels.map(({ hotel }) => ({ params: { slug: [hotel] } })),
   fallback: true
 })
 
 export const getStaticProps = ({ params: { slug } }) => {
   const { name, hotel, emailPrefix } = {
-    ...(hotels.find(e => e.hotel === getSlug(slug)) || hotels[3])
+    ...(hotels.find(e => e.hotel === getSlug(slug)) || aries)
   }
 
   const content = termsAndConditions(name, emailPrefix)

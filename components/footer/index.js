@@ -70,7 +70,7 @@ function Footer({ hotel }) {
         <footer className={styles.footer}>
           <div className={cn(styles.grid, 'f5')}>
             <FooterGroup title="Brands">
-              {hotels.slice(0, 3).map(({ name, hotel, urls: { hotelSite } }) => (
+              {hotels.map(({ name, hotel, urls: { hotelSite } }) => (
                 <FooterLink key={name} external className={hotel} href={hotelSite}>
                   {name}
                 </FooterLink>
