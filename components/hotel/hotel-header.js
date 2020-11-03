@@ -1,5 +1,5 @@
 import { HotelLogo } from 'components/icons'
-import styles from './header.module.css'
+import styles from './hotel-header.module.css'
 import styleHover from 'styles/utils/hover.module.css'
 import styleGradient from 'styles/utils/gradient.module.css'
 

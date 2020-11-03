@@ -42,7 +42,7 @@
 
 @media (max-width: 640px) {
   .top {
-    padding-top: 0;
+    padding: var(--gap) 0;
     font-size: 14px;
     flex-direction: column;
     align-items: flex-start;

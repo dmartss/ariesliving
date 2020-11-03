@@ -56,6 +56,12 @@ export default function MenuPopOver({
     setIsOpen(false)
   }
 
+  const onPopOverOpen = useCallback(() => {
+    Router.prefetch('/hotels/villa-paradiso')
+    Router.prefetch('/hotels/ithaca-south-beach')
+    Router.prefetch('/hotels/treehouse')
+  }, [])
+
   const rootClassName = cn(styles.menu, { [styles['is-active']]: isOpen }, className)
 
   return (
@@ -63,6 +69,7 @@ export default function MenuPopOver({
       {title}
       <PopOverLink
         isOpen={isOpen}
+        onOpen={onPopOverOpen}
         to={
           <PopOver.Menu>
             <div className={styles.wrapper}>

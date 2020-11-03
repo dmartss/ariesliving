@@ -58,19 +58,19 @@ export default function Hotel({ id: { name, hotel, details, urls } }) {
   const { address, email, phone, description, rooms, roomTypes } = details
 
   return (
-    <Container role="main">
-      {hotel ? (
-        <>
-          <HotelHeader name={name} hotel={hotel} />
-          <Image
-            className="image radius"
-            src={`/showcase/${hotel}.jpg`}
-            alt={`${name} Image`}
-            width={1090}
-            height={727}
-            priority
-          />
-          <Container wide overflow padding>
+    <Container wide overflow role="main">
+      <Container padding>
+        {hotel ? (
+          <>
+            <HotelHeader name={name} hotel={hotel} />
+            <Image
+              className="image radius"
+              src={`/showcase/${hotel}.jpg`}
+              alt={`${name} Image`}
+              width={1090}
+              height={727}
+              priority
+            />
             <StickyHeader
               name={name}
               address={address}
@@ -80,13 +80,13 @@ export default function Hotel({ id: { name, hotel, details, urls } }) {
             />
 
             <HotelInfo description={description} rooms={rooms} roomTypes={roomTypes} />
-          </Container>
-        </>
-      ) : (
-        <div className="skeleton-container">
-          <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
-        </div>
-      )}
+          </>
+        ) : (
+          <div className="skeleton-container">
+            <Skeleton style={{ height: 'calc(100% - 5.5rem)' }} />
+          </div>
+        )}
+      </Container>
     </Container>
   )
 }
