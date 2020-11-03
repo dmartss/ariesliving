@@ -92,7 +92,8 @@ class EmailForm extends Component {
 
   render() {
     const classes = []
-    const { ios, safari } = this.state
+    const { ios, safari, error, focus, shaking } = this.state
+    const { errorMessage, loading, flex, disabled } = this.props
 
     if (ios) classes.push('ios')
     if (safari) classes.push('safari-browser')
@@ -110,11 +111,11 @@ class EmailForm extends Component {
         <div
           className={cn(
             'email',
-            this.state.error || this.props.errorMessage ? 'error' : '',
-            this.state.focus ? 'focus' : '',
-            this.props.loading ? 'loading' : '',
-            this.state.shaking ? 'shaking' : '',
-            this.props.flex ? 'flex' : ''
+            error || errorMessage ? 'error' : '',
+            focus ? 'focus' : '',
+            loading ? 'loading' : '',
+            shaking ? 'shaking' : '',
+            flex ? 'flex' : ''
           )}
         >
           <label htmlFor="email-input-field">
@@ -130,28 +131,23 @@ class EmailForm extends Component {
               <input
                 type="email"
                 id="email-input-field"
-                disabled={Boolean(this.props.loading || this.props.disabled)}
+                disabled={Boolean(loading || disabled)}
                 placeholder="you@domain.com"
                 aria-label="Your email address"
               />
             </AutoComplete>
           </label>
 
-          <Button
-            subscribe
-            invert={this.props.flex}
-            type="submit"
-            disabled={Boolean(this.props.loading || this.props.disabled)}
-          >
+          <Button subscribe invert={flex} type="submit" disabled={Boolean(loading || disabled)}>
             Subscribe
           </Button>
         </div>
 
-        {this.props.errorMessage && (
+        {errorMessage && (
           <p className="error-message">
             <span>
-              {typeof this.props.errorMessage === 'string'
-                ? this.props.errorMessage
+              {typeof errorMessage === 'string'
+                ? errorMessage
                 : 'A network error has occurred. Please retry.'}
             </span>
           </p>
