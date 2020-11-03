@@ -1,11 +1,10 @@
-export default function VPLogo({ small, size = 60, className }) {
+export default function VPLogo({ small, size = 60 }) {
   return (
     <svg
       className="hotel-logo"
       height={small ? 30 : size}
       width={small ? 30 : size}
       viewBox="0 0 1500 1500"
-      className={className}
     >
       <g
         transform="translate(0.000000,1500.000000) scale(0.100000,-0.100000)"

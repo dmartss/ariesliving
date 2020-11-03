@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import SectionHeader from 'components/section/section-header'
 import Container from 'components/container'
+import Text from 'components/text'
 import s from './team.module.css'
 
 const TEAM = Object.entries({
@@ -29,8 +30,8 @@ export default function Team() {
                 src="/team/dan.jpg"
                 alt={key}
               />
-              <p className="fp">{key}</p>
-              <p className="fs">{value}</p>
+              <Text fp>{key}</Text>
+              <Text fs>{value}</Text>
             </div>
           ))}
         </div>

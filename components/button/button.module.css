@@ -75,3 +75,36 @@
 .root > .loading-dots {
   position: absolute;
 }
+
+.root.subscribe {
+  border-radius: var(--radius);
+  color: var(--aries-1);
+  background-color: var(--aries-fg);
+  border: 1px solid var(--aries-fg);
+  outline: none;
+  margin: 10px 0;
+  width: 100%;
+  color: var(--aries-bg);
+}
+
+.root.subscribe:focus,
+.root.subscribe:hover {
+  background-color: transparent;
+  outline: none;
+  border-color: var(--aries-fg);
+  color: var(--aries-fg);
+}
+
+.root.subscribe.invert {
+  background-color: var(--aries-1);
+  color: #fff;
+  border: 1px solid var(--aries-1);
+  width: 175px;
+}
+.root.subscribe.invert:focus,
+.root.subscribe.invert:hover {
+  outline: none;
+  background-color: transparent;
+  border-color: var(--aries-1);
+  color: var(--aries-1);
+}

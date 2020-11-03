@@ -45,30 +45,16 @@
   padding: 0;
 }
 
+.item:global(svg) {
+  margin-left: auto;
+}
+
 .item:global:first-child a {
   padding-top: 0;
 }
 
 .item:global:last-child a {
   padding-bottom: 0;
-}
-
-.item.disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-  background: var(--accents-1);
-  user-select: none;
-}
-
-.item:not(.disabled):hover,
-.item.active {
-  color: var(--aries-fg);
-}
-
-.item.disabled {
-  cursor: not-allowed;
-  background: var(--accents-1);
-  user-select: none;
 }
 
 .item > :global(a) {

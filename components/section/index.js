@@ -8,7 +8,7 @@ export default function Section({ description, title, id }) {
   const rootClassName = cn(s.root, { [s.reverse]: title === 'Investors' })
 
   return (
-    <Container id={id} wide overflow>
+    <Container wide overflow id={id}>
       <Container padding center>
         <div className={rootClassName}>
           <Image

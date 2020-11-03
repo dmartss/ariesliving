@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import Router, { useRouter } from 'next/router'
+import Router from 'next/router'
 import cn from 'classnames'
 import Link from 'components/link'
 import { HotelLogo } from 'components/icons'
@@ -8,7 +8,6 @@ import PopOverLink from './popover-link'
 import s from './menu-popover.module.css'
 
 function MenuItems({ list, title }) {
-  const { pathname } = useRouter()
   return (
     <>
       {list && (
@@ -20,7 +19,7 @@ function MenuItems({ list, title }) {
           )}
           <div className={s.content}>
             {list.map(({ title, hotel }, i) => (
-              <PopOver.Item key={i} active={pathname === `/hotels/${hotel}`}>
+              <PopOver.Item key={i}>
                 <Link href={`/hotels/${hotel}`} hotel={hotel}>
                   {title}
                   <HotelLogo hotel={hotel} small />

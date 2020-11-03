@@ -4,7 +4,17 @@ import cn from 'classnames'
 import LoadingDots from '../loading-dots'
 import styles from './button.module.css'
 
-function Button({ children, invert, outline, small, href, className, loading, ...props }) {
+function Button({
+  children,
+  invert,
+  outline,
+  subscribe,
+  small,
+  href,
+  className,
+  loading,
+  ...props
+}) {
   const rootClassName = cn(
     styles.root,
     'fw4 no-drag',
@@ -12,7 +22,8 @@ function Button({ children, invert, outline, small, href, className, loading, ..
       [styles.outline]: outline,
       [styles.invert]: invert,
       [styles.small]: small,
-      [styles.loading]: loading
+      [styles.loading]: loading,
+      [styles.subscribe]: subscribe
     },
     className
   )

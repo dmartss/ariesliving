@@ -3,10 +3,13 @@ import Container from 'components/container'
 import EmailForm from 'components/email-form'
 import s from './newsletter.module.css'
 import sGradient from 'styles/utils/gradient.module.css'
+import useSubscribe from 'lib/use-subscribe'
 
 export default function Newsletter() {
+  const { onEmail, loading, success, errorMessage } = useSubscribe()
+
   return (
-    <Container fade wide>
+    <Container wide fade>
       <Container padding role="region">
         <div className={s.content}>
           <aside className="tl">
@@ -24,9 +27,13 @@ export default function Newsletter() {
             </h3>
           </aside>
           <aside>
-            <div className={cn(s['email-form'], 'tr')}>
-              <EmailForm />
-            </div>
+            {success ? (
+              <p className="fp tc">Thanks for subscribing!</p>
+            ) : (
+              <div className={cn(s['email-form'], 'tr')}>
+                <EmailForm errorMessage={errorMessage} loading={loading} onEmail={onEmail} />
+              </div>
+            )}
           </aside>
         </div>
       </Container>

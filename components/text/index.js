@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import s from './text.module.css'
 
-const Text = ({ style, className = '', variant = 'body', children }) => {
+const Text = ({ style, className = '', variant = 'body', children, ...props }) => {
   const componentsMap = {
     body: 'p',
     heading: 'h1',
@@ -16,10 +16,12 @@ const Text = ({ style, className = '', variant = 'body', children }) => {
       className={cn(
         s.root,
         {
-          [s.body]: variant === 'body',
-          [s.heading]: variant === 'heading',
           [s.pageHeading]: variant === 'pageHeading',
-          [s.sectionHeading]: variant === 'sectionHeading'
+          [s.sectionHeading]: variant === 'sectionHeading',
+          [s.fs]: props.fs,
+          [s.fp]: props.fp,
+          [s.fw4]: props.fw4,
+          [s.f5]: props.f5
         },
         className
       )}
