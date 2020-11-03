@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { useRouter } from 'next/router'
 import canPrefetch from 'lib/can-prefetch'
 
-import styles from './link.module.css'
+import s from './link.module.css'
 
 const Link = ({
   external,
@@ -22,9 +22,9 @@ const Link = ({
   const rootClassName = cn(
     hotel,
     {
-      [styles.reset]: !hotel,
-      [styles.selected]: asPath.includes(hotel),
-      [styles.underline]: underline
+      [s.reset]: !hotel,
+      [s.selected]: asPath.includes(hotel),
+      [s.underline]: underline
     },
     className
   )

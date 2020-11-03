@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SectionHeader from 'components/section/section-header'
 import Container from 'components/container'
-import styles from './team.module.css'
+import s from './team.module.css'
 
 const TEAM = Object.entries({
   'Max Khaghan': 'CEO',
@@ -19,9 +19,9 @@ export default function Team() {
           title="Team"
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
-        <div className={styles.wrapper}>
+        <div className={s.wrapper}>
           {TEAM.map(([key, value]) => (
-            <div key={key} className={styles['team-member']}>
+            <div key={key} className={s['team-member']}>
               <Image
                 className="image shadow avatar"
                 width={100}

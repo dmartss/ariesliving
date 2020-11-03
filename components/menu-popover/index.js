@@ -5,7 +5,7 @@ import Link from 'components/link'
 import { HotelLogo } from 'components/icons'
 import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
-import styles from './menu-popover.module.css'
+import s from './menu-popover.module.css'
 
 function MenuItems({ list, title }) {
   const { pathname } = useRouter()
@@ -14,18 +14,18 @@ function MenuItems({ list, title }) {
       {list && (
         <>
           {title && (
-            <div className={styles.header}>
+            <div className={s.header}>
               <h5 className="fp fw4">{title}</h5>
             </div>
           )}
-          <div className={styles.content}>
-            {list.map(({ title, hotel }, index) => (
-              <PopOver.Item key={index} active={pathname === `/hotels/${hotel}`}>
+          <div className={s.content}>
+            {list.map(({ title, hotel }, i) => (
+              <PopOver.Item key={i} active={pathname === `/hotels/${hotel}`}>
                 <Link href={`/hotels/${hotel}`} hotel={hotel}>
                   {title}
                   <HotelLogo hotel={hotel} small />
                 </Link>
-                {index !== list.length - 1 && <PopOver.Divider />}
+                {i !== list.length - 1 && <PopOver.Divider />}
               </PopOver.Item>
             ))}
           </div>
@@ -62,7 +62,7 @@ export default function MenuPopOver({
     Router.prefetch('/hotels/treehouse')
   }, [])
 
-  const rootClassName = cn(styles.menu, { [styles['is-active']]: isOpen }, className)
+  const rootClassName = cn(s.menu, { [s['is-active']]: isOpen }, className)
 
   return (
     <span className={rootClassName} onMouseEnter={open} onMouseLeave={close}>
@@ -72,7 +72,7 @@ export default function MenuPopOver({
         onOpen={onPopOverOpen}
         to={
           <PopOver.Menu>
-            <div className={styles.wrapper}>
+            <div className={s.wrapper}>
               {primaryList && <MenuItems list={primaryList} title={primaryTitle} />}
               {/* {secondaryList && <MenuItems list={secondaryList} title={secondaryTitle} />} */}
             </div>

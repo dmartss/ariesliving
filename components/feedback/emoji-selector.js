@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from 'react'
 import cn from 'classnames'
-import styles from './feedback.module.css'
+import s from './feedback.module.css'
 
 const Emoji = memo(({ code, size = 20 }) => (
   <img
@@ -22,15 +22,15 @@ export default function EmojiSelector({ onEmojiSelect, loading, EMOJIS }) {
   const onSelect = emoji => emoji !== current && setCurrent(emoji)
 
   return (
-    <div className={cn(styles['emoji-selector'], { [styles.loading]: loading })}>
+    <div className={cn(s['emoji-selector'], { [s.loading]: loading })}>
       {Array.from(EMOJIS.values()).map(emoji => (
         <button
           type="button"
-          className={cn(styles.option, { [styles.active]: emoji === current })}
+          className={cn(s.option, { [s.active]: emoji === current })}
           key={emoji}
           onClick={() => onSelect(emoji)}
         >
-          <span className={cn(styles.inner)}>
+          <span className={cn(s.inner)}>
             <Emoji code={emoji} />
           </span>
         </button>

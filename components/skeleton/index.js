@@ -1,8 +1,8 @@
-import styles from './skeleton.module.css'
+import s from './skeleton.module.css'
 
 export default function Skeleton({ children, style }) {
   return (
-    <span className={styles.skeleton} style={style}>
+    <span className={s.skeleton} style={style}>
       {children}
     </span>
   )

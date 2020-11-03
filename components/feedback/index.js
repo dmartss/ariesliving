@@ -6,7 +6,7 @@ import Textarea from 'components/textarea'
 import Button from 'components/button'
 import Input from 'components/input'
 import EmojiSelector from './emoji-selector'
-import styles from './feedback.module.css'
+import s from './feedback.module.css'
 import { useFeedback } from 'lib/feedback-context'
 
 const EMOJIS = new Map([
@@ -238,13 +238,13 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
   }, [])
 
   const rootClassName = cn(
-    styles['feedback-input'],
+    s['feedback-input'],
     {
-      [styles.focused]: focused || open,
-      [styles.error]: errorMessage,
-      [styles.loading]: loading,
-      [styles.success]: success,
-      [styles.email]: email
+      [s.focused]: focused || open,
+      [s.error]: errorMessage,
+      [s.loading]: loading,
+      [s.success]: success,
+      [s.email]: email
     },
     className
   )
@@ -265,15 +265,12 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
           className={rootClassName}
           {...props}
         >
-          <form
-            className={cn(styles['feedback-wrapper'], { [styles.blur]: !focused })}
-            onSubmit={onSubmit}
-          >
-            <div className={styles.placeholder}>Contact</div>
+          <form className={cn(s['feedback-wrapper'], { [s.blur]: !focused })} onSubmit={onSubmit}>
+            <div className={s.placeholder}>Contact</div>
             {!errorMessage && !success && (
-              <div className={styles['input-wrapper']}>
+              <div className={s['input-wrapper']}>
                 {email && (
-                  <div className={styles.input}>
+                  <div className={s.input}>
                     <h5>Email</h5>
                     <Input
                       type="email"
@@ -287,7 +284,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
                   </div>
                 )}
 
-                <div className={styles.input}>
+                <div className={s.input}>
                   <h5>Feedback</h5>
                   <Textarea
                     placeholder="Your feedback..."
@@ -303,7 +300,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
             )}
 
             {errorMessage != null && (
-              <div className={styles['error-message']}>
+              <div className={s['error-message']}>
                 <span>{errorMessage}</span>
                 <Button
                   invert
@@ -321,12 +318,12 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
             )}
 
             {success && (
-              <div className={styles['success-message']}>
+              <div className={s['success-message']}>
                 <Checkmark
                   fill
-                  color="var(--aries-success)"
+                  color="var(--aries-1)"
                   size="var(--gap-double)"
-                  className={styles.checkmark}
+                  className={s.checkmark}
                 />
                 <p>Your feedback has been received!</p>
                 <p>Thank you for your help.</p>
@@ -334,8 +331,8 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
             )}
 
             {!success && !errorMessage && (
-              <div className={styles.controls}>
-                <span className={styles.emojis}>
+              <div className={s.controls}>
+                <span className={s.emojis}>
                   <EmojiSelector
                     EMOJIS={EMOJIS}
                     onShow={onEmojiShown}
@@ -344,7 +341,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
                     loading={loading}
                   />
                 </span>
-                <span className={cn(styles.buttons, { [styles.hidden]: emojiShown })}>
+                <span className={cn(s.buttons, { [s.hidden]: emojiShown })}>
                   <Button type="submit" invert outline small loading={loading} width={60}>
                     Send
                   </Button>

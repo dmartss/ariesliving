@@ -69,35 +69,35 @@
   --aries-treehouse-2: #41c1ba;
   --aries-treehouse-3: #365b6d;
 
-  --aries-error-lighter: #f7d4d6;
-  --aries-error-light: #ff1a1a;
+  /* --aries-error-lighter: #f7d4d6; */
+  /* --aries-error-light: #ff1a1a; */
   --aries-error: #e00;
-  --aries-error-dark: #c50000;
+  /* --aries-error-dark: #c50000; */
 
-  --aries-success-lighter: #d3e5ff;
+  /* --aries-success-lighter: #d3e5ff;
   --aries-success-light: #3291ff;
   --aries-success: #0070f3;
-  --aries-success-dark: #0761d1;
+  --aries-success-dark: #0761d1; */
 
   --aries-warning-lighter: #ffefcf;
   --aries-warning-light: #f7b955;
   --aries-warning: #f5a623;
   --aries-warning-dark: #ab570a;
 
-  --aries-cyan-lighter: #aaffec;
+  /* --aries-cyan-lighter: #aaffec; */
   --aries-cyan-light: #79ffe1;
-  --aries-cyan: #50e3c2;
-  --aries-cyan-dark: #29bc9b;
+  /* --aries-cyan: #50e3c2; */
+  /* --aries-cyan-dark: #29bc9b; */
 
   --aries-highlight-purple: #f81ce5;
-  --aries-highlight-magenta: #eb367f;
+  /* --aries-highlight-magenta: #eb367f; */
   --aries-highlight-pink: #ff0080;
-  --aries-highlight-yellow: #fff500;
+  /* --aries-highlight-yellow: #fff500; */
 
-  --aries-violet-lighter: #e3d7fc;
+  /* --aries-violet-lighter: #e3d7fc;
   --aries-violet-light: #8a63d2;
   --aries-violet: #7928ca;
-  --aries-violet-dark: #4c2889;
+  --aries-violet-dark: #4c2889; */
 
   --aries-selection: var(--aries-highlight-purple);
   --aries-alert: var(--aries-highlight-pink);

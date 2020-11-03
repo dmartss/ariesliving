@@ -1,8 +1,8 @@
-import styles from './loading-dots.module.css'
+import s from './loading-dots.module.css'
 
 export default function LoadingDots({ children = undefined }) {
   return (
-    <span className={styles.loading}>
+    <span className={s.loading}>
       {children}
       <span>.</span>
       <span>.</span>

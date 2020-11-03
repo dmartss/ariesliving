@@ -6,7 +6,7 @@ import cn from 'classnames'
 import { Provider, useCollapse } from 'lib/collapse-context'
 import { useIsMobile, useIsTablet } from 'lib/media-query'
 import { ChevronDown } from 'components/icons'
-import styles from './collapse.module.css'
+import s from './collapse.module.css'
 
 export function CollapseGroup({ children }) {
   const [selected, setSelected] = useState('')
@@ -15,7 +15,7 @@ export function CollapseGroup({ children }) {
   }
 
   return (
-    <div className={styles['collapse-group']}>
+    <div className={s['collapse-group']}>
       <Provider value={{ selected, onChange }}>{children}</Provider>
     </div>
   )
@@ -83,32 +83,32 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
 
   return (
     <div
-      className={cn('tl', styles.collapse, {
-        [styles.card]: card,
-        [styles.small]: size === 'small',
-        [styles.border]: !collapseContext
+      className={cn('tl', s.collapse, {
+        [s.card]: card,
+        [s.small]: size === 'small',
+        [s.border]: !collapseContext
       })}
       id={id}
     >
       <div
         role="button"
         tabIndex="0"
-        className={styles['collapse-title']}
+        className={s['collapse-title']}
         aria-expanded={open}
         onClick={_toggle}
         onKeyPress={ev => onKeyPress(ev, _toggle)}
       >
-        <div className={styles.top}>
+        <div className={s.top}>
           <h3 className="fw5">{title}</h3>
-          <span className={cn(styles.icon, { [styles.open]: open })}>
+          <span className={cn(s.icon, { [s.open]: open })}>
             <ChevronDown />
           </span>
         </div>
 
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        {subtitle && <p className={s.subtitle}>{subtitle}</p>}
       </div>
       <animated.div style={{ overflow: 'hidden', ...props }}>
-        <div ref={ref} className={cn(styles['collapse-content'], { [styles.open]: open })}>
+        <div ref={ref} className={cn(s['collapse-content'], { [s.open]: open })}>
           {children}
         </div>
       </animated.div>

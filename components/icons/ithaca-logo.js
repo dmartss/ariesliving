@@ -1,10 +1,11 @@
-export default function IthacaLogo({ small, size = 60 }) {
+export default function IthacaLogo({ small, size = 60, className }) {
   return (
     <svg
       className="hotel-logo"
       height={small ? 30 : size}
       width={small ? 30 : size}
       viewBox="0 0 400 400"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g fillRule="evenodd">

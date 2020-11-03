@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
 import { SkipNavLink } from '@reach/skip-nav'
 import cn from 'classnames'
 import Container from 'components/container'
@@ -6,16 +6,24 @@ import HeaderFeedback from 'components/feedback'
 import Logo, { Hamburger, ThemeIcon } from 'components/icons'
 import Link from 'components/link'
 import NavLinks from './nav-links'
-import styles from './navbar.module.css'
 import { useNav } from 'lib/nav-context'
-import styleUtils from 'styles/utils/utils.module.css'
 import { useRouter } from 'next/router'
+import s from './navbar.module.css'
+import sUtils from 'styles/utils/utils.module.css'
 
 function Navbar() {
   const { mobileNavShown, toggle } = useNav()
 
   const { pathname } = useRouter()
   const home = pathname === '/'
+
+  const classes = useCallback(
+    number => {
+      if (!home) return cn(sUtils.appear, sUtils[number])
+      return null
+    },
+    [home]
+  )
 
   return (
     <Container>
@@ -24,44 +32,34 @@ function Navbar() {
         Aries Living
       </h1>
 
-      <nav className={cn(styles.desktopNav)}>
-        <div className={styles.links}>
+      <nav className={cn(s.desktopNav)}>
+        <div className={s.links}>
           <Link
             href="/"
-            className={cn(styles.logo, styleUtils.appear, styleUtils.first, {
-              [styles['not-home']]: !home
-            })}
+            className={cn(s.logo, classes('first'), { [s['not-home']]: !home })}
             title="Go to the homepage"
           >
             <Logo />
           </Link>
 
-          <div className={styles['not-logo']}>
-            <div className={cn(styles.feedback, styleUtils.appear, styleUtils.second)}>
+          <div className={s['not-logo']}>
+            <div className={cn(s.feedback, classes('second'))}>
               <HeaderFeedback email />
             </div>
             <NavLinks desktop home={home} />
           </div>
 
-          <span
-            className={cn(
-              styleUtils['theme-icon'],
-              styleUtils.appear,
-              { [styleUtils.eighth]: home, [styleUtils.sixth]: !home },
-              styles.absolute,
-              styles.right
-            )}
-          >
+          <span className={cn(sUtils['theme-icon'], classes('sixth'), s.absolute, s.right)}>
             <ThemeIcon />
           </span>
 
-          <span className={cn(styles.toggle, styles.absolute, styles.left)} onClick={toggle}>
+          <span className={cn(s.toggle, s.absolute, s.left)} onClick={toggle}>
             <Hamburger mobileNavShown={mobileNavShown} />
           </span>
         </div>
       </nav>
 
-      <nav className={cn(styles.mobileNav, { [styles.active]: mobileNavShown })}>
+      <nav className={cn(s.mobileNav, { [s.active]: mobileNavShown })}>
         <NavLinks mobile home={home} />
       </nav>
     </Container>

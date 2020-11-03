@@ -5,8 +5,8 @@ import Container from 'components/container'
 import Button from 'components/button'
 import Image from 'next/image'
 import hotels from 'hotels'
-import styles from './portfolio.module.css'
-import styleUtils from 'styles/utils/utils.module.css'
+import s from './portfolio.module.css'
+import sUtils from 'styles/utils/utils.module.css'
 
 export default function Portfolio({ description, id, title }) {
   const [cardClickable, setCardClickable] = useState(false)
@@ -17,15 +17,15 @@ export default function Portfolio({ description, id, title }) {
 
   return (
     <Container center wide withAnchor id={id}>
-      <div className={styles.main}>
-        <h2 className={cn(styleUtils.lines, 'fp fw4')}>{title}</h2>
+      <div className={s.main}>
+        <h2 className={cn(sUtils.lines, 'fp fw4')}>{title}</h2>
         <Container>
-          <div className={styles['button-spacer']}>
+          <div className={s['button-spacer']}>
             <p className="fs fw3">{description}</p>
           </div>
-          <div className={styles.images}>
+          <div className={s.images}>
             {hotels.map(({ name, hotel, urls: { hotelSite, rezTripUrl } }) => (
-              <div className={cn(styles.card, { [styles.clickable]: cardClickable })} key={name}>
+              <div className={cn(s.card, { [s.clickable]: cardClickable })} key={name}>
                 <Link href={`hotels/${hotel}`}>
                   <div>
                     <p className="f-reset fp f4 fw4">{name}</p>
@@ -38,13 +38,13 @@ export default function Portfolio({ description, id, title }) {
                     />
                   </div>
                 </Link>
-                <div className={styles.buttons}>
-                  <div className={styles['button-spacer']}>
+                <div className={s.buttons}>
+                  <div className={s['button-spacer']}>
                     <Button href={hotelSite} invert>
                       Learn More
                     </Button>
                   </div>
-                  <div className={styles['button-spacer']}>
+                  <div className={s['button-spacer']}>
                     <Button href={rezTripUrl} invert outline>
                       Book Now
                     </Button>

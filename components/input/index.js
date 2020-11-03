@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import cn from 'classnames'
-import styles from './input.module.css'
+import s from './input.module.css'
 
 export default class Input extends Component {
   state = { focused: this.props.autoFocus }
@@ -30,14 +30,14 @@ export default class Input extends Component {
 
     delete props.innerRef
 
-    const rootClassName = cn(styles.root, {
-      [styles.focused]: focused,
-      [styles.disabled]: disabled
+    const rootClassName = cn(s.root, {
+      [s.focused]: focused,
+      [s.disabled]: disabled
     })
 
     return (
       <div className={rootClassName} {...props}>
-        <div className={styles['input-wrapper']}>
+        <div className={s['input-wrapper']}>
           <input
             autoCapitalize="off"
             autoComplete="off"
@@ -61,7 +61,7 @@ export default class Input extends Component {
 }
 
 // import { useRef, useEffect, forwardRef, useState } from 'react'
-// import styles from './input.module.css'
+// import s from './input.module.css'
 // import cn from 'classnames'
 
 // // export default forwardRef((props, ref) => <Input innerRef={ref} {...props} />)
@@ -93,8 +93,8 @@ export default class Input extends Component {
 //   const ref = useForwardedRef(innerRef)
 
 //   return (
-//     <div className={cn(styles.wrapper, { focused, disabled })} {...props}>
-//       <div className={styles['input-wrapper']}>
+//     <div className={cn(s.wrapper, { focused, disabled })} {...props}>
+//       <div className={s['input-wrapper']}>
 //         <input
 //           autoCapitalize="off"
 //           autoComplete="off"

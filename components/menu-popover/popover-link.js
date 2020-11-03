@@ -2,7 +2,7 @@ import { Component } from 'react'
 import cn from 'classnames'
 import { Arrow } from 'components/icons'
 import Portal from 'components/portal'
-import styles from './popover-link.module.css'
+import s from './popover-link.module.css'
 import ClickOutside from 'components/click-outside'
 
 export default class PopOverLink extends Component {
@@ -97,7 +97,7 @@ export default class PopOverLink extends Component {
       <Portal>
         <span
           ref={innerRef}
-          className={cn(styles.portal, styles.bottom, { [styles.show]: isOpen })}
+          className={cn(s.portal, s.bottom, { [s.show]: isOpen })}
           style={{
             position: 'absolute',
             left: left != null ? left : this.state.left + offsetLeft,
@@ -116,7 +116,7 @@ export default class PopOverLink extends Component {
 
     return (
       <span>
-        <span className={styles.link} ref="link" onClick={isOpen === null ? this.onClick : null}>
+        <span className={s.link} ref="link" onClick={isOpen === null ? this.onClick : null}>
           {children}
           <Arrow />
         </span>

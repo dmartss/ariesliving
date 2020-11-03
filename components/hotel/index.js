@@ -6,11 +6,12 @@ import Button from 'components/button'
 import Image from 'next/image'
 import HotelHeader from './hotel-header'
 import useOnScroll from 'lib/use-on-scroll'
-import styles from './hotel.module.css'
+import s from './hotel.module.css'
 
 const StickyHeader = ({ name, address, email, phone, url }) => {
   const { secondHeaderLock } = useOnScroll()
-  const rootClassName = cn(styles.top, styles.sticky, { [styles.border]: secondHeaderLock })
+
+  const rootClassName = cn(s.top, s.sticky, { [s.border]: secondHeaderLock })
 
   return (
     <div className={rootClassName}>
@@ -26,7 +27,7 @@ const StickyHeader = ({ name, address, email, phone, url }) => {
 }
 
 const HotelInfo = ({ description, rooms, roomTypes }) => (
-  <div className={styles.main}>
+  <div className={s.main}>
     <div id="about" className="anchor double" />
 
     {description?.map((d, i) => (
@@ -36,11 +37,11 @@ const HotelInfo = ({ description, rooms, roomTypes }) => (
     <div id="rooms" className="anchor double" />
     <h3 className="fw5 fp">Rooms: {rooms}</h3>
 
-    <div className={styles['room-types']}>
+    <div className={s['room-types']}>
       {roomTypes?.map(({ roomName, roomOccupancy, roomCount, roomDescription }, i) => (
         <CollapseGroup key={i}>
           <Collapse card title={roomName}>
-            <div className={styles.flex}>
+            <div className={s.flex}>
               <p className="fp">Room Count: {roomCount}</p>
               <p className="fp">Accomodates: {roomOccupancy}</p>
             </div>

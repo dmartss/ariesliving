@@ -1,17 +1,16 @@
 import { useCallback } from 'react'
 import cn from 'classnames'
 import MenuPopOver from 'components/menu-popover'
-
 import Link from 'components/link'
-import styleUtils from 'styles/utils/utils.module.css'
+import sUtils from 'styles/utils/utils.module.css'
 
 export default function HomeLinks({ desktop, mobile, home }) {
   const classes = useCallback(
     number => {
-      if (desktop) return cn(styleUtils.appear, styleUtils[number])
+      if (desktop && !home) return cn(sUtils.appear, sUtils[number])
       return null
     },
-    [desktop]
+    [desktop, home]
   )
 
   const displayHotelLinks = useCallback(() => {
@@ -27,7 +26,7 @@ export default function HomeLinks({ desktop, mobile, home }) {
         <>
           {desktop && (
             <MenuPopOver
-              className={cn(styleUtils.appear, styleUtils.third)}
+              className={classes('third')}
               title="Hotels"
               primaryList={[
                 {

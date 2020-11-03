@@ -1,19 +1,19 @@
 import { memo } from 'react'
 import cn from 'classnames'
 import { Triangle } from 'components/icons'
-import styles from './popover-menu.module.css'
+import s from './popover-menu.module.css'
 
 export const Menu = memo(({ children, innerRef }) => (
-  <div className={styles.popover} ref={innerRef}>
-    <div className={styles.triangle}>
+  <div className={s.popover} ref={innerRef}>
+    <div className={s.triangle}>
       <Triangle />
     </div>
-    <div className={styles.menu}>{children}</div>
+    <div className={s.menu}>{children}</div>
   </div>
 ))
 
 export const Item = memo(({ active, children }) => (
-  <div className={cn(styles.item, 'f5', { [styles.active]: active })}>{children}</div>
+  <div className={cn(s.item, 'f5', { [s.active]: active })}>{children}</div>
 ))
 
-export const Divider = () => <div className={styles.line} />
+export const Divider = () => <div className={s.line} />

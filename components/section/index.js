@@ -2,10 +2,10 @@ import cn from 'classnames'
 import Container from 'components/container'
 import Image from 'next/image'
 import SectionHeader from './section-header'
-import styles from './section.module.css'
+import s from './section.module.css'
 
 export default function Section({ description, title, id }) {
-  const rootClassName = cn(styles.root, { [styles.reverse]: title === 'Investors' })
+  const rootClassName = cn(s.root, { [s.reverse]: title === 'Investors' })
 
   return (
     <Container id={id} wide overflow>
