@@ -3,7 +3,7 @@ import cn from 'classnames'
 import Banner from './banner'
 import Nav from './navbar'
 import { useNav } from 'lib/nav-context'
-import useOnScroll from 'lib/use-on-scroll'
+import { useOnScroll } from 'lib/scroll-context'
 import styles from './header.module.css'
 
 const Header = ({ sticky = true, fillBg }) => {

@@ -5,7 +5,7 @@ import Skeleton from 'components/skeleton'
 import Button from 'components/button'
 import Image from 'next/image'
 import HotelHeader from './hotel-header'
-import useOnScroll from 'lib/use-on-scroll'
+import { useOnScroll } from 'lib/scroll-context'
 import styles from './hotel.module.css'
 
 const StickyHeader = ({ name, address, email, phone, url }) => {
