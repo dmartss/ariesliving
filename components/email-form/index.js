@@ -220,16 +220,16 @@ class EmailForm extends Component {
             border: none;
             border-radius: 0;
             box-sizing: border-box;
+            color: var(--aries-fg);
             display: block;
             text-align: left;
             font-size: 14px;
             padding: 4px 0;
             margin: 0 auto;
             line-height: 27px;
+            height: var(--input-height);
             width: 100%;
             box-shadow: none;
-            height: 40px;
-            color: var(--aries-fg);
           }
 
           .ios input {

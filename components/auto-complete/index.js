@@ -1,4 +1,6 @@
 import React from 'react'
+import cn from 'classnames'
+import s from './auto-complete.module.css'
 
 export default class AutoComplete extends React.Component {
   constructor(props) {
@@ -118,6 +120,8 @@ export default class AutoComplete extends React.Component {
     }
 
     const { children } = this.props
+    const { hasSuggestion, ios, ff } = this.state
+
     const el =
       children &&
       React.cloneElement(children, {
@@ -127,71 +131,25 @@ export default class AutoComplete extends React.Component {
         onInput,
         onKeyDown
       })
+
+    const rootClassName = cn(s.input, {
+      [s.ios]: ios,
+      [s.ff]: ff
+    })
+
     return (
-      <div className={`input ${this.state.ios ? 'ios' : ''}${this.state.ff ? 'ff' : ''}`}>
+      <div className={rootClassName}>
         {el}
-        {this.state.hasSuggestion ? (
-          <div className="suggestion-wrap">
-            <div className="suggestion">
-              <span className="prefix">{val}</span>
-              <span onMouseDown={complete} onTouchStart={complete} className="completion">
+        {hasSuggestion && (
+          <div className={s['suggestion-wrap']}>
+            <div className={s.suggestion}>
+              <span className={s.prefix}>{val}</span>
+              <span onMouseDown={complete} onTouchStart={complete} className={s.completion}>
                 {suggestion}
               </span>
             </div>
           </div>
-        ) : null}
-        <style jsx>{`
-          .input {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            height: 37px;
-            line-height: 37px;
-          }
-
-          .suggestion-wrap {
-            margin-top: -37px;
-            position: absolute;
-            width: 100%;
-            text-align: left;
-            overflow: hidden;
-          }
-
-          .suggestion {
-            font-size: 14px;
-            height: 37px;
-            line-height: 37px;
-            display: inline-block;
-            position: relative;
-            color: transparent;
-          }
-
-          .ios .suggestion {
-            font-size: 16px;
-            top: 2px;
-          }
-
-          .suggestion .completion {
-            color: #999;
-            position: absolute;
-            height: 37px;
-            line-height: 37px;
-            display: inline-block;
-          }
-
-          .suggestion .prefix {
-            height: 37px;
-            line-height: 37px;
-            display: inline-block;
-            z-index: -1;
-          }
-
-          .ff .suggestion .completion,
-          .ff .suggestion .prefix {
-            height: 36px;
-            line-height: 36px;
-          }
-        `}</style>
+        )}
       </div>
     )
   }

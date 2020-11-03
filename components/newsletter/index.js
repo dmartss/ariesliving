@@ -1,9 +1,9 @@
 import cn from 'classnames'
 import Container from 'components/container'
 import EmailForm from 'components/email-form'
+import useSubscribe from 'lib/use-subscribe'
 import s from './newsletter.module.css'
 import sGradient from 'styles/utils/gradient.module.css'
-import useSubscribe from 'lib/use-subscribe'
 
 export default function Newsletter() {
   const { onEmail, loading, success, errorMessage } = useSubscribe()

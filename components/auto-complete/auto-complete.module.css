@@ -1,0 +1,50 @@
+.input {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: var(--input-height);
+  line-height: var(--input-height);
+}
+
+.suggestion-wrap {
+  margin-top: calc(-1 * var(--input-height));
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+}
+
+.suggestion {
+  font-size: 14px;
+  height: var(--input-height);
+  line-height: var(--input-height);
+  display: inline-block;
+  position: relative;
+  color: transparent;
+}
+
+.ios .suggestion {
+  font-size: 16px;
+  top: 2px;
+}
+
+.suggestion .completion {
+  color: #999;
+  position: absolute;
+  height: var(--input-height);
+  line-height: var(--input-height);
+  display: inline-block;
+}
+
+.suggestion .prefix {
+  height: var(--input-height);
+  line-height: var(--input-height);
+  display: inline-block;
+  z-index: -1;
+}
+
+.ff .suggestion .completion,
+.ff .suggestion .prefix {
+  height: 36px;
+  line-height: 36px;
+}

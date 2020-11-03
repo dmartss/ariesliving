@@ -19,6 +19,7 @@
   --secondary-header-height: 8rem;
   --banner-height: 75px;
   --max-width: 1024px;
+  --input-height: 37px;
 
   --fontFamily: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
