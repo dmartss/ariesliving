@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Container from 'components/container'
 import useSubscribe from 'lib/use-subscribe'
-import EmailForm from '../email-form'
+import EmailForm from 'components/email-form'
 import s from './banner.module.css'
 
 export default function Banner() {
