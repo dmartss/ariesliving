@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
-import LoadingDots from '../loading-dots'
+import LoadingDots from 'components/loading-dots'
 import styles from './button.module.css'
 
 function Button({

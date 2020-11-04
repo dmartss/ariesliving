@@ -137,11 +137,7 @@ class EmailForm extends Component {
 
         {errorMessage && (
           <p className={s['error-message']}>
-            <span>
-              {typeof errorMessage === 'string'
-                ? errorMessage
-                : 'A network error has occurred. Please retry.'}
-            </span>
+            <span>A network error has occurred. Please retry</span>
           </p>
         )}
       </form>

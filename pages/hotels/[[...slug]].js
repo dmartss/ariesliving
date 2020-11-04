@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { getSlug } from 'lib/utils'
 import { Provider } from 'lib/feedback-context'
 import Hotel from 'components/hotel'
-import Page from 'components/page'
+import Page from 'components/utils/page'
 import hotels from 'hotels'
 
 export const getStaticPaths = () => ({

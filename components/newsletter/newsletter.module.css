@@ -1,9 +1,7 @@
 .content {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  display: flex;
   align-items: center;
-  margin: var(--gap-double) auto;
-  padding: 0 1.5rem;
+  justify-content: space-between;
   max-width: var(--max-width);
 }
 .content h2 {
@@ -13,22 +11,17 @@
   margin-bottom: 0.8rem;
 }
 
-.email-form {
-  position: relative;
-}
-
 @media screen and (max-width: 640px) {
   .content {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .content h2,
   .content h3 {
     text-align: center;
   }
-  .email-form {
-    margin: auto;
-    margin-top: var(--gap-double);
-    text-align: center;
+
+  .content > aside:first-child {
+    padding-bottom: 1rem;
   }
 }

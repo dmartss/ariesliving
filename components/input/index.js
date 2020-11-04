@@ -37,7 +37,7 @@ export default class Input extends Component {
 
     return (
       <div className={rootClassName} {...props}>
-        <div className={s['input-wrapper']}>
+        <div className={s.wrapper}>
           <input
             autoCapitalize="off"
             autoComplete="off"

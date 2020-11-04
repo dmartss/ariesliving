@@ -2,8 +2,8 @@ import NextHead from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import config from 'seo.json'
 import { defaultOgImage, KEYWORDS, SITE_URL } from 'lib/constants'
-import Header from './header'
-import Footer from './footer'
+import Header from 'components/header'
+import Footer from 'components/footer'
 
 export default function Page({
   title = 'Aries Living',

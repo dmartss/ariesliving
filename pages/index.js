@@ -4,7 +4,7 @@ import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
 import Section from 'components/section'
 import Image from 'next/image'
-import Page from 'components/page'
+import Page from 'components/utils/page'
 import Team from 'components/team'
 import Container from 'components/container'
 

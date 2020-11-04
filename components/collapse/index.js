@@ -1,8 +1,8 @@
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import { useSpring, animated } from 'react-spring'
+import cn from 'classnames'
 import useMeasure from 'react-use-measure'
 import { ResizeObserver } from '@juggle/resize-observer'
-import cn from 'classnames'
 import { Provider, useCollapse } from 'lib/collapse-context'
 import { useIsMobile, useIsTablet } from 'lib/media-query'
 import { ChevronDown } from 'components/icons'
@@ -81,19 +81,22 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
     }
   }, [])
 
+  const rootClassName = cn(
+    s.collapse,
+    {
+      [s.card]: card,
+      [s.small]: size === 'small',
+      [s.border]: !collapseContext
+    },
+    'tl'
+  )
+
   return (
-    <div
-      className={cn('tl', s.collapse, {
-        [s.card]: card,
-        [s.small]: size === 'small',
-        [s.border]: !collapseContext
-      })}
-      id={id}
-    >
+    <div className={rootClassName} id={id}>
       <div
         role="button"
         tabIndex="0"
-        className={s['collapse-title']}
+        className={s.title}
         aria-expanded={open}
         onClick={_toggle}
         onKeyPress={ev => onKeyPress(ev, _toggle)}
@@ -108,7 +111,7 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
         {subtitle && <p className={s.subtitle}>{subtitle}</p>}
       </div>
       <animated.div style={{ overflow: 'hidden', ...props }}>
-        <div ref={ref} className={cn(s['collapse-content'], { [s.open]: open })}>
+        <div ref={ref} className={cn(s.content, { [s.open]: open })}>
           {children}
         </div>
       </animated.div>

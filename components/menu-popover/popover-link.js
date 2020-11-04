@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import cn from 'classnames'
 import { Arrow } from 'components/icons'
-import Portal from 'components/portal'
+import Portal from 'components/utils/portal'
 import s from './popover-link.module.css'
-import ClickOutside from 'components/click-outside'
+import ClickOutside from 'components/utils/click-outside'
 
 export default class PopOverLink extends Component {
   static defaultProps = { isOpen: null }

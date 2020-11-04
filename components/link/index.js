@@ -3,7 +3,6 @@ import NextLink from 'next/link'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import canPrefetch from 'lib/can-prefetch'
-
 import s from './link.module.css'
 
 const Link = ({

@@ -9,10 +9,10 @@ export default function Newsletter() {
   const { onEmail, loading, success, errorMessage } = useSubscribe()
 
   return (
-    <Container wide fade>
+    <Container wide fade padding>
       <Container padding>
         <div className={s.content}>
-          <aside className="tl">
+          <aside>
             <h2 aria-label="DON'T MISS OUT">
               <span className={sGradient.bg}>
                 <span className={cn(sGradient.fg, sGradient['fg-1'])}>DON'T MISS OUT</span>
@@ -28,11 +28,9 @@ export default function Newsletter() {
           </aside>
           <aside>
             {success ? (
-              <p className="fp tc">Thanks for subscribing!</p>
+              <p>Thanks for subscribing!</p>
             ) : (
-              <div className={cn(s['email-form'], 'tr')}>
-                <EmailForm errorMessage={errorMessage} loading={loading} onEmail={onEmail} />
-              </div>
+              <EmailForm errorMessage={errorMessage} loading={loading} onEmail={onEmail} />
             )}
           </aside>
         </div>

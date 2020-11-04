@@ -1,8 +1,8 @@
-import React from 'react'
+import { Component, cloneElement } from 'react'
 import cn from 'classnames'
 import s from './auto-complete.module.css'
 
-export default class AutoComplete extends React.Component {
+export default class AutoComplete extends Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -124,7 +124,7 @@ export default class AutoComplete extends React.Component {
 
     const el =
       children &&
-      React.cloneElement(children, {
+      cloneElement(children, {
         ref: 'input',
         onBlur,
         onFocus,
@@ -141,7 +141,7 @@ export default class AutoComplete extends React.Component {
       <div className={rootClassName}>
         {el}
         {hasSuggestion && (
-          <div className={s['suggestion-wrap']}>
+          <div className={s.wrap}>
             <div className={s.suggestion}>
               <span className={s.prefix}>{val}</span>
               <span onMouseDown={complete} onTouchStart={complete} className={s.completion}>

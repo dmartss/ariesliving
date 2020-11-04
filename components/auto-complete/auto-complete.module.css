@@ -6,7 +6,7 @@
   line-height: var(--input-height);
 }
 
-.suggestion-wrap {
+.wrap {
   margin-top: calc(-1 * var(--input-height));
   position: absolute;
   width: 100%;

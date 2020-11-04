@@ -23,7 +23,7 @@
   border: none;
 }
 
-.collapse-title {
+.title {
   text-transform: none;
   color: var(--aries-fg);
   cursor: pointer;
@@ -41,19 +41,19 @@
   margin-top: 24px;
 }
 
-.collapse-content {
+.content {
   font-size: 16px;
   line-height: 26px;
   overflow-y: hidden;
 }
 
-.collapse-content > div {
+.content > div {
   overflow-y: hidden;
 }
 
 /* Support box shadow on child elements */
-.collapse-content.open,
-.collapse-content.open > div {
+.content.open,
+.content.open > div {
   margin-left: -60px;
   margin-right: -60px;
   padding-left: 60px;

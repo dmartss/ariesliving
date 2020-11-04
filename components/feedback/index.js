@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import cn from 'classnames'
-import ClickOutside from 'components/click-outside'
+import ClickOutside from 'components/utils/click-outside'
 import { Checkmark } from 'components/icons'
 import Textarea from 'components/textarea'
 import Button from 'components/button'
 import Input from 'components/input'
+import { useFeedback } from 'lib/feedback-context'
 import EmojiSelector from './emoji-selector'
 import s from './feedback.module.css'
-import { useFeedback } from 'lib/feedback-context'
 
 const EMOJIS = new Map([
   ['🤩', 'f929'],

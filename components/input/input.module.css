@@ -20,11 +20,11 @@
   cursor: not-allowed;
 }
 
-.input-wrapper {
+.wrapper {
   margin-right: 0;
 }
 
-.input-wrapper {
+.wrapper {
   display: block;
   margin: 4px 10px;
   position: relative;
