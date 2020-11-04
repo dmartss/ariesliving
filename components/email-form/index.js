@@ -201,6 +201,9 @@ class EmailForm extends Component {
             transition: border-color 200ms ease-in-out;
             border-color: var(--accents-7);
           }
+          .focus.flex label {
+            border-color: #eaeaea;
+          }
 
           .error label {
             border-color: red;
