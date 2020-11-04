@@ -1,0 +1,229 @@
+.root {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+.root > div {
+  width: 240px;
+  max-width: 100%;
+}
+
+.root div.flex {
+  display: flex;
+  flex-direction: row;
+  width: 490px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email {
+  text-align: center;
+  margin: auto;
+  transition: border-bottom-color 100ms ease-in, color 100ms ease-in;
+  width: 100%;
+}
+
+.email.loading {
+  border-bottom-color: #888;
+}
+
+.email.error label {
+  border-color: red;
+}
+
+.root label {
+  background-color: transparent;
+  display: flex;
+  border-radius: var(--radius);
+  border: 1px solid #999;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.focus label {
+  transition: border-color 200ms ease-in-out;
+  border-color: var(--accents-7);
+}
+.focus.flex label {
+  border-color: #eaeaea;
+}
+
+.error label {
+  border-color: red;
+}
+
+.icon {
+  margin: 0 14px;
+  display: inline-flex;
+}
+
+.root input {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: var(--aries-fg);
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  padding: 4px 0;
+  margin: 0 auto;
+  line-height: 27px;
+  height: var(--input-height);
+  width: 100%;
+  box-shadow: none;
+}
+
+.ios input {
+  font-size: 16px;
+  height: 34px;
+  padding-bottom: 4px;
+}
+
+.focus {
+  border-bottom-color: #fff;
+}
+
+.root input::placeholder {
+  color: #999;
+  transition: color 200ms ease-in-out;
+}
+
+.root input:focus::placeholder {
+  color: var(--aries-fg);
+}
+
+.root input:focus {
+  outline: none;
+}
+
+.root input:disabled {
+  color: #666;
+}
+
+.root input::-ms-clear {
+  display: none;
+}
+
+.shaking {
+  animation: shake 1s both;
+}
+
+.loading_anim {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  background: #eee;
+  width: 100%;
+  height: 1px;
+  animation-name: waiting;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+
+.inverse .loading_anim {
+  background: #9b9b9b;
+}
+
+@keyframes waiting {
+  0% {
+    left: 0;
+    width: 50px;
+    opacity: 0;
+  }
+
+  50% {
+    width: 100px;
+    opacity: 1;
+    left: 50%;
+  }
+
+  100% {
+    width: 50px;
+    opacity: 0;
+    left: calc(100% - 50px);
+  }
+}
+
+.label {
+  color: #d6d6d6;
+  font-size: 12px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.error-message {
+  position: absolute;
+  color: red;
+  text-align: center;
+  font-size: 12px;
+  width: 110%;
+  margin: 0;
+  margin-left: -5%;
+  margin-top: 0.5rem;
+}
+
+.error-message span {
+  position: relative;
+  padding-left: 20px;
+}
+
+.error-message span::before {
+  display: block;
+  content: '';
+  width: 11px;
+  background: red;
+  border-radius: 2px;
+  height: 11px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.submit {
+  background: #fff;
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+  height: 50px;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .root > div.flex {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
