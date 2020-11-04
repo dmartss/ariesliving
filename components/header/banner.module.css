@@ -7,12 +7,14 @@
   height: var(--banner-height);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .inner {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -20,29 +22,15 @@
 
 .banner p {
   color: var(--aries-fg);
-  margin: 0 1.5rem;
-  transition: color 0.15s ease;
-}
-
-.mobile {
-  display: none;
 }
 
 @media (max-width: 640px) {
   .banner {
     height: unset;
   }
-  .desktop {
-    display: none;
-  }
-  .email-form {
-    padding: 5px;
-    margin: auto;
+  .inner {
     text-align: center;
-  }
-
-  .mobile {
-    display: block;
-    padding-bottom: 5px;
+    flex-direction: column;
+    justify-content: center;
   }
 }
