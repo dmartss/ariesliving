@@ -1,34 +1,34 @@
-.wrapper {
+.root {
   position: relative;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.team-member {
+.person {
   padding: var(--gap);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.team-member p:first-of-type {
+.person p:first-of-type {
   padding-top: var(--gap);
 }
-.team-member p {
+.person p {
   margin: 0 auto;
 }
 
-.team-member img {
+.person img {
   margin: 5px 0;
 }
 
 @media screen and (max-width: 640px) {
-  .wrapper p {
+  .root p {
     font-size: 14px;
   }
 
-  .team-member {
+  .person {
     flex: 50%;
     margin: auto;
   }

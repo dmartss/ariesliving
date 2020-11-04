@@ -31,11 +31,11 @@
   border-top: var(--border-2);
 }
 
-.max-width {
+.maxWidth {
   max-width: unset;
 }
 
-.overflow-hidden {
+.overflowHidden {
   overflow: hidden;
 }
 

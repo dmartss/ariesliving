@@ -257,12 +257,6 @@ a {
   box-shadow: var(--shadow-large);
 }
 
-.skeleton-container {
-  background: var(--aries-bg);
-  border-radius: var(--text-radius);
-  height: calc(((100vh - var(--gap-double))) - 50px);
-}
-
 .anchor {
   --anchor-height: calc(-1 * (var(--header-height)));
   top: var(--anchor-height);

@@ -28,8 +28,8 @@
   padding: 1px;
 }
 
-.room-types {
-  padding-top: var(--gap);
+.main > h3 {
+  padding-bottom: 1rem;
 }
 
 .flex {

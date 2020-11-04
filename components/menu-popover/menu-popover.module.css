@@ -10,8 +10,8 @@
 }
 
 .menu:hover,
-.menu.is-active :global(.arrow),
-.menu.is-active {
+.menu.isActive :global(.arrow),
+.menu.isActive {
   color: var(--aries-fg);
   fill: var(--aries-fg);
 }

@@ -22,7 +22,7 @@ export default function EmojiSelector({ onEmojiSelect, loading, EMOJIS }) {
   const onSelect = emoji => emoji !== current && setCurrent(emoji)
 
   return (
-    <div className={cn(s['emoji-selector'], { [s.loading]: loading })}>
+    <div className={cn(s.emojiSelector, { [s.loading]: loading })}>
       {Array.from(EMOJIS.values()).map(emoji => (
         <button
           type="button"

@@ -60,9 +60,7 @@ export default function Hotels({ id }) {
     </Provider>
   ) : (
     <Container padding>
-      <div className="skeleton-container">
-        <Skeleton style={{ height: 'calc(100%)' }} />
-      </div>
+      <Skeleton style={{ height: 'calc(100%)' }} />
     </Container>
   )
 }

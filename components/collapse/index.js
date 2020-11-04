@@ -6,6 +6,7 @@ import { ResizeObserver } from '@juggle/resize-observer'
 import { Provider, useCollapse } from 'lib/collapse-context'
 import { useIsMobile, useIsTablet } from 'lib/media-query'
 import { ChevronDown } from 'components/icons'
+import Text from 'components/text'
 import s from './collapse.module.css'
 
 export function CollapseGroup({ children }) {
@@ -15,7 +16,7 @@ export function CollapseGroup({ children }) {
   }
 
   return (
-    <div className={s['collapse-group']}>
+    <div className={s.collapseGroup}>
       <Provider value={{ selected, onChange }}>{children}</Provider>
     </div>
   )
@@ -102,7 +103,9 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
         onKeyPress={ev => onKeyPress(ev, _toggle)}
       >
         <div className={s.top}>
-          <h3 className="fw5">{title}</h3>
+          <Text variant="h3" weight="fw5">
+            {title}
+          </Text>
           <span className={cn(s.icon, { [s.open]: open })}>
             <ChevronDown />
           </span>

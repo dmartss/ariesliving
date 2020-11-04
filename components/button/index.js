@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import LoadingDots from 'components/loading-dots'
-import styles from './button.module.css'
+import s from './button.module.css'
 
 function Button({
   children,
@@ -16,14 +16,14 @@ function Button({
   ...props
 }) {
   const rootClassName = cn(
-    styles.root,
+    s.root,
     'fw4 no-drag',
     {
-      [styles.outline]: outline,
-      [styles.invert]: invert,
-      [styles.small]: small,
-      [styles.loading]: loading,
-      [styles.subscribe]: subscribe
+      [s.outline]: outline,
+      [s.invert]: invert,
+      [s.small]: small,
+      [s.loading]: loading,
+      [s.subscribe]: subscribe
     },
     className
   )
@@ -47,9 +47,9 @@ function Button({
 
   return (
     <button type="button" className={rootClassName} {...props}>
-      <span className={styles.text}>{children}</span>
+      <span className={s.text}>{children}</span>
       {loading && (
-        <span className={styles['loading-dots']}>
+        <span className={s.loadingDots}>
           <LoadingDots size={4} />
         </span>
       )}

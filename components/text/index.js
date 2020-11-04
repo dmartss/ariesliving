@@ -1,12 +1,22 @@
 import cn from 'classnames'
 import s from './text.module.css'
 
-const Text = ({ style, className = '', variant = 'body', children, ...props }) => {
+const Text = ({
+  style,
+  className = '',
+  variant = 'body',
+  children,
+  size,
+  weight,
+  color,
+  align,
+  ...props
+}) => {
   const componentsMap = {
     body: 'p',
     heading: 'h1',
-    pageHeading: 'h1',
-    sectionHeading: 'h2'
+    sectionHeading: 'h2',
+    h3: 'h3'
   }
 
   const Component = componentsMap[variant]
@@ -14,18 +24,17 @@ const Text = ({ style, className = '', variant = 'body', children, ...props }) =
   return (
     <Component
       className={cn(
-        s.root,
+        {},
         {
-          [s.pageHeading]: variant === 'pageHeading',
-          [s.sectionHeading]: variant === 'sectionHeading',
-          [s.fs]: props.fs,
-          [s.fp]: props.fp,
-          [s.fw4]: props.fw4,
-          [s.f5]: props.f5
+          [s[color]]: color,
+          [s[size]]: size,
+          [s[weight]]: weight,
+          [s[align]]: align
         },
         className
       )}
       style={style}
+      {...props}
     >
       {children}
     </Component>

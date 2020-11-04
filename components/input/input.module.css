@@ -10,11 +10,11 @@
   width: 100%;
 }
 
-.root.focused {
+.root.isFocused {
   border: 1px solid var(--accents-5);
 }
 
-.root.disabled {
+.root.isDisabled {
   background: var(--accents-1);
   border-color: var(--accents-2);
   cursor: not-allowed;
@@ -51,7 +51,7 @@
   appearance: none;
 }
 
-.root input:disabled {
+.root input:isdisabled {
   color: var(--accents-3);
   cursor: not-allowed;
 }
@@ -61,7 +61,7 @@
   color: var(--accents-3);
 }
 
-.root input:disabled::placeholder {
+.root input:isdisabled::placeholder {
   color: var(--accents-3);
 }
 

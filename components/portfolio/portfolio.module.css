@@ -34,7 +34,7 @@
   align-items: center;
 }
 
-.button-spacer {
+.buttonSpacer {
   padding: var(--gap) var(--gap-three-quarter);
 }
 

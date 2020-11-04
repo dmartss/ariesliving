@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import cn from 'classnames'
-import s from './input.module.css'
+import { root, wrapper, isFocused, isDisabled } from './input.module.css'
 
 export default class Input extends Component {
   state = { focused: this.props.autoFocus }
@@ -30,14 +30,14 @@ export default class Input extends Component {
 
     delete props.innerRef
 
-    const rootClassName = cn(s.root, {
-      [s.focused]: focused,
-      [s.disabled]: disabled
+    const rootClassName = cn(root, {
+      [isFocused]: focused,
+      [isDisabled]: disabled
     })
 
     return (
       <div className={rootClassName} {...props}>
-        <div className={s.wrapper}>
+        <div className={wrapper}>
           <input
             autoCapitalize="off"
             autoComplete="off"

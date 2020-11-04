@@ -5,7 +5,7 @@ import Link from 'components/link'
 import { HotelLogo } from 'components/icons'
 import * as PopOver from './popover-menu'
 import PopOverLink from './popover-link'
-import s from './menu-popover.module.css'
+import { header, content, menu, wrapper, isActive } from './menu-popover.module.css'
 
 function MenuItems({ list, title }) {
   return (
@@ -13,11 +13,11 @@ function MenuItems({ list, title }) {
       {list && (
         <>
           {title && (
-            <div className={s.header}>
+            <div className={header}>
               <h5 className="fp fw4">{title}</h5>
             </div>
           )}
-          <div className={s.content}>
+          <div className={content}>
             {list.map(({ title, hotel }, i) => (
               <PopOver.Item key={i}>
                 <Link href={`/hotels/${hotel}`} hotel={hotel}>
@@ -61,7 +61,7 @@ export default function MenuPopOver({
     Router.prefetch('/hotels/treehouse')
   }, [])
 
-  const rootClassName = cn(s.menu, { [s['is-active']]: isOpen }, className)
+  const rootClassName = cn(menu, { [isActive]: isOpen }, className)
 
   return (
     <span className={rootClassName} onMouseEnter={open} onMouseLeave={close}>
@@ -71,7 +71,7 @@ export default function MenuPopOver({
         onOpen={onPopOverOpen}
         to={
           <PopOver.Menu>
-            <div className={s.wrapper}>
+            <div className={wrapper}>
               {primaryList && <MenuItems list={primaryList} title={primaryTitle} />}
               {/* {secondaryList && <MenuItems list={secondaryList} title={secondaryTitle} />} */}
             </div>

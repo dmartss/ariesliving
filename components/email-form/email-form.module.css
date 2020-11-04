@@ -155,7 +155,7 @@
   text-align: center;
 }
 
-.error-message {
+.errorMessage {
   position: absolute;
   color: red;
   text-align: center;
@@ -166,12 +166,12 @@
   margin-top: 0.5rem;
 }
 
-.error-message span {
+.errorMessage span {
   position: relative;
   padding-left: 20px;
 }
 
-.error-message span::before {
+.errorMessage span::before {
   display: block;
   content: '';
   width: 11px;

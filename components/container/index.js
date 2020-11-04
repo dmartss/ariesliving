@@ -24,8 +24,8 @@ export default function Container({
       [s.fade]: fade,
       [s.dark]: dark,
       [s.gray]: gray,
-      [s['max-width']]: wide && !small,
-      [s['overflow-hidden']]: wide && !overflow,
+      [s.maxWidth]: wide && !small,
+      [s.overflowHidden]: wide && !overflow,
       tc: center
     },
     className
@@ -33,7 +33,7 @@ export default function Container({
 
   return (
     <>
-      {withAnchor && <div className="anchor" id={id} />}
+      {withAnchor && <div className="anchor" id={withAnchor} />}
       <div className={rootClassName} id={!withAnchor ? id : ''}>
         {children}
       </div>

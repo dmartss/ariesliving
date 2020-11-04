@@ -8,20 +8,3 @@
   text-shadow: 0px 0px 1px var(--aries-1);
   color: var(--aries-1);
 }
-
-.underline {
-  outline: none;
-  color: var(--fg);
-  text-decoration: none;
-
-  background-image: linear-gradient(to right, var(--gray), var(--gray));
-  background-size: 100% 1px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  text-shadow: 0.1em 0 var(--bg), -0.1em 0 var(--bg), 0.05em 0 var(--bg), -0.05em 0 var(--bg);
-}
-
-.underline:hover,
-.underline:focus {
-  color: var(--gray);
-}

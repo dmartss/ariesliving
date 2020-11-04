@@ -1,9 +1,10 @@
 import cn from 'classnames'
 import Container from 'components/container'
+import Text from 'components/text'
 import EmailForm from 'components/email-form'
 import useSubscribe from 'lib/use-subscribe'
-import s from './newsletter.module.css'
-import sGradient from 'styles/utils/gradient.module.css'
+import { content } from './newsletter.module.css'
+import { bg, fg, fg1, fg2 } from 'styles/utils/gradient.module.css'
 
 export default function Newsletter() {
   const { onEmail, loading, success, errorMessage } = useSubscribe()
@@ -11,20 +12,23 @@ export default function Newsletter() {
   return (
     <Container wide fade padding>
       <Container padding>
-        <div className={s.content}>
+        <div className={content}>
           <aside>
-            <h2 aria-label="DON'T MISS OUT">
-              <span className={sGradient.bg}>
-                <span className={cn(sGradient.fg, sGradient['fg-1'])}>DON'T MISS OUT</span>
+            <Text variant="sectionHeading" aria-label="DON'T MISS OUT">
+              <span className={bg}>
+                <span className={cn(fg, fg1)}>DON'T MISS OUT</span>
               </span>
-            </h2>
-            <h3 aria-label="Stay up to date with Aries Living" className="f4 fw5">
-              <span className={sGradient.bg}>
-                <span className={cn(sGradient.fg, sGradient['fg-2'])}>
-                  Stay up to date with Aries Living
-                </span>
+            </Text>
+            <Text
+              variant="h3"
+              aria-label="Stay up to date with Aries Living"
+              size="f4"
+              weight="fw5"
+            >
+              <span className={bg}>
+                <span className={cn(fg, fg2)}>Stay up to date with Aries Living</span>
               </span>
-            </h3>
+            </Text>
           </aside>
           <aside>
             {success ? (

@@ -13,13 +13,13 @@
   z-index: 1;
 }
 
-.fg-1 {
+.fg1 {
   --start-color: #89f7fe;
   --end-color: #66a6ff;
   --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
 }
 
-.fg-2 {
+.fg2 {
   --start-color: #b993d6;
   --end-color: #8ca6db;
   --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);

@@ -136,7 +136,7 @@ class EmailForm extends Component {
         </div>
 
         {errorMessage && (
-          <p className={s['error-message']}>
+          <p className={s.errorMessage}>
             <span>A network error has occurred. Please retry</span>
           </p>
         )}

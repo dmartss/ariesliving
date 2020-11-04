@@ -3,7 +3,7 @@ import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/ic
 import Link from 'components/link'
 import hotels from 'hotels'
 import Container from 'components/container'
-import sUtils from 'styles/utils/utils.module.css'
+import { themeIcon } from 'styles/utils/utils.module.css'
 import sHover from 'styles/utils/hover.module.css'
 import { memo } from 'react'
 import cn from 'classnames'
@@ -112,7 +112,7 @@ function Footer({ hotel }) {
                 icon: <Twitter className={sHover.icon} />
               },
               {
-                icon: <ThemeIcon className={cn(sHover.icon, sUtils['theme-icon'])} />
+                icon: <ThemeIcon className={cn(sHover.icon, themeIcon)} />
               }
             ]}
             copyright={LLC}

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import SectionHeader from 'components/section/section-header'
 import Container from 'components/container'
 import Text from 'components/text'
-import s from './team.module.css'
+import { root, person } from './team.module.css'
 
 const TEAM = Object.entries({
   'Max Khaghan': 'CEO',
@@ -13,16 +13,16 @@ const TEAM = Object.entries({
 
 export default function Team() {
   return (
-    <Container wide fade withAnchor id="team">
+    <Container wide fade withAnchor="team">
       <Container center padding>
         <SectionHeader
-          team
+          teamSection
           title="Team"
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />
-        <div className={s.wrapper}>
+        <div className={root}>
           {TEAM.map(([key, value]) => (
-            <div key={key} className={s['team-member']}>
+            <div key={key} className={person}>
               <Image
                 className="image shadow avatar"
                 width={100}
@@ -30,8 +30,8 @@ export default function Team() {
                 src="/team/dan.jpg"
                 alt={key}
               />
-              <Text fp>{key}</Text>
-              <Text fs>{value}</Text>
+              <Text color="fp">{key}</Text>
+              <Text color="fs">{value}</Text>
             </div>
           ))}
         </div>

@@ -9,6 +9,14 @@ import { useFeedback } from 'lib/feedback-context'
 import EmojiSelector from './emoji-selector'
 import s from './feedback.module.css'
 
+const SuccessMessage = () => (
+  <div className={s.successMessage}>
+    <Checkmark fill color="var(--aries-1)" size="var(--gap-double)" className={s.checkmark} />
+    <p>Your feedback has been received!</p>
+    <p>Thank you for your help.</p>
+  </div>
+)
+
 const EMOJIS = new Map([
   ['🤩', 'f929'],
   ['🙂', 'f600'],
@@ -238,7 +246,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
   }, [])
 
   const rootClassName = cn(
-    s['feedback-input'],
+    s.root,
     {
       [s.focused]: focused || open,
       [s.error]: errorMessage,
@@ -265,10 +273,10 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
           className={rootClassName}
           {...props}
         >
-          <form className={cn(s['feedback-wrapper'], { [s.blur]: !focused })} onSubmit={onSubmit}>
+          <form className={cn(s.wrapper, { [s.blur]: !focused })} onSubmit={onSubmit}>
             <div className={s.placeholder}>Contact</div>
             {!errorMessage && !success && (
-              <div className={s['input-wrapper']}>
+              <div className={s.inputWrapper}>
                 {email && (
                   <div className={s.input}>
                     <h5>Email</h5>
@@ -300,7 +308,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
             )}
 
             {errorMessage != null && (
-              <div className={s['error-message']}>
+              <div className={s.errorMessage}>
                 <span>{errorMessage}</span>
                 <Button
                   invert
@@ -317,18 +325,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
               </div>
             )}
 
-            {success && (
-              <div className={s['success-message']}>
-                <Checkmark
-                  fill
-                  color="var(--aries-1)"
-                  size="var(--gap-double)"
-                  className={s.checkmark}
-                />
-                <p>Your feedback has been received!</p>
-                <p>Thank you for your help.</p>
-              </div>
-            )}
+            {success && <SuccessMessage />}
 
             {!success && !errorMessage && (
               <div className={s.controls}>

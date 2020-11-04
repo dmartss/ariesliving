@@ -1,4 +1,4 @@
-.feedback-input {
+.root {
   --open-width: 339px;
   --open-height: 213px;
   --closed-width: 90px;
@@ -14,11 +14,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.feedback-input.email {
+.root.email {
   --open-height: 277px;
 }
 
-.feedback-input .feedback-wrapper {
+.root .wrapper {
   appearance: none;
   background: var(--aries-bg);
   border: var(--border-2);
@@ -42,14 +42,14 @@
   transition: all 200ms ease-in-out, border-radius 200ms step-start, border 200ms ease-in-out;
 
   &.blur {
-    .input-wrapper,
+    .inputWrapper,
     .controls {
       display: none;
     }
   }
 }
 
-.feedback-input.focused .feedback-wrapper {
+.root.focused .wrapper {
   width: var(--open-width);
   height: var(--open-height);
   border: none;
@@ -59,12 +59,12 @@
   transition: all 0ms ease-in-out, border-radius 0ms step-start, border 100ms ease-in-out;
 }
 
-.feedback-input:focus,
-.feedback-input:active {
+.root:focus,
+.root:active {
   outline: 0;
 }
 
-.feedback-input .feedback-wrapper .placeholder {
+.root .wrapper .placeholder {
   display: flex;
   position: absolute;
   top: -1px;
@@ -82,7 +82,7 @@
   cursor: text;
 }
 
-.feedback-input.focused .placeholder {
+.root.focused .placeholder {
   opacity: 0;
   pointer-events: none;
   top: 0px;
@@ -91,7 +91,7 @@
   transition: opacity 0.005s linear;
 }
 
-.feedback-input .input-wrapper {
+.root .inputWrapper {
   padding: var(--gap-three-quarter);
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -100,15 +100,15 @@
   text-align: initial;
 }
 
-.feedback-input.focused .input-wrapper {
+.root.focused .inputWrapper {
   opacity: 1;
 }
 
-.feedback-input .input:not(:last-child) {
+.root .input:not(:last-child) {
   margin-bottom: var(--gap-three-quarter);
 }
 
-.feedback-input .input h5 {
+.root .input h5 {
   margin: 0;
   font-weight: 500;
   font-size: 12px;
@@ -118,47 +118,47 @@
   color: var(--accents-5);
 }
 
-.feedback-input:hover .feedback-wrapper,
-.feedback-input:focus .feedback-wrapper,
-.feedback-input:active .feedback-wrapper {
+.root:hover .wrapper,
+.root:focus .wrapper,
+.root:active .wrapper {
   border-color: var(--font-primary);
 }
 
-.feedback-input:hover .input > *::placeholder,
-.feedback-input:focus .input > *::placeholder,
-.feedback-input:active .input > *::placeholder {
+.root:hover .input > *::placeholder,
+.root:focus .input > *::placeholder,
+.root:active .input > *::placeholder {
   color: var(--aries-fg);
 }
 
-.feedback-input .input > *::placeholder {
+.root .input > *::placeholder {
   color: var(--accents-5);
   transition: color 0.2s ease-in-out;
 }
 
-.feedback-input.error textarea,
-.feedback-input.loading textarea,
-.feedback-input.success textarea {
+.root.error textarea,
+.root.loading textarea,
+.root.success textarea {
   pointer-events: none;
 }
 
-.feedback-input.error textarea,
-.feedback-input.success textarea {
+.root.error textarea,
+.root.success textarea {
   color: transparent;
   user-select: none;
 }
 
-.feedback-input.loading textarea {
+.root.loading textarea {
   color: var(--accents-3);
 }
 
-.feedback-input .textarea-wrapper {
+.root .textarea-wrapper {
   height: var(--closed-height);
   width: var(--closed-width);
   transition: all 150ms ease-in-out, border-radius 150ms step-start;
 }
 
-.feedback-input .error-message,
-.feedback-input .success-message {
+.root .errorMessage,
+.root .successMessage {
   z-index: 1001;
   position: absolute;
   left: 0;
@@ -174,39 +174,39 @@
   flex-direction: column;
 }
 
-.feedback-input .success-message p {
+.root .successMessage p {
   line-height: normal;
   margin: 0;
   opacity: 0;
   animation: appear 500ms ease forwards;
 }
 
-.feedback-input .success-message .checkmark {
+.root .successMessage .checkmark {
   opacity: 0;
   animation: appear 200ms 100ms ease forwards;
 }
 
-.feedback-input .success-message p:first-of-type {
+.root .successMessage p:first-of-type {
   margin-top: var(--gap-three-quarter);
   margin-bottom: var(--gap-half);
   animation-delay: 300ms;
 }
 
-.feedback-input .success-message p:nth-of-type(2) {
+.root .successMessage p:nth-of-type(2) {
   animation-delay: 500ms;
 }
 
-.feedback-input .error-message > span {
+.root .errorMessage > span {
   color: var(--aries-error);
   margin-bottom: var(--gap-three-quarter);
 }
 
-.feedback-input .error-message a {
+.root .errorMessage a {
   color: var(--aries-fg);
   text-decoration: none;
 }
 
-.feedback-input .controls {
+.root .controls {
   pointer-events: none;
   width: var(--open-width);
   height: 64px;
@@ -221,16 +221,16 @@
   transition: opacity 0.2s ease;
 }
 
-.feedback-input.focused .controls {
+.root.focused .controls {
   pointer-events: inherit;
   opacity: 1;
 }
 
-.feedback-input .controls .emojis {
+.root .controls .emojis {
   width: 160px;
 }
 
-.feedback-input .controls .buttons {
+.root .controls .buttons {
   flex: 1;
   text-align: right;
   transition: opacity 200ms ease;
@@ -248,30 +248,30 @@
 
 /* At 951px the dots menu disappears and changes the width */
 @media (max-width: 951px) {
-  .feedback-input {
+  .root {
     --open-width: 300px;
   }
 }
 
 /* Emoji selector */
-.emoji-selector {
+.emojiSelector {
   display: flex;
   width: 210px;
   pointer-events: none;
 }
 
-.emoji-selector.loading {
+.emojiSelector.loading {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   cursor: default;
   pointer-events: none;
 }
 
-.feedback-input.focused .emoji-selector {
+.root.focused .emojiSelector {
   pointer-events: all;
 }
 
-.emoji-selector > button {
+.emojiSelector > button {
   outline: none;
   background: transparent;
   border: 0;
@@ -282,45 +282,45 @@
   border: var(--border-2);
 }
 
-.emoji-selector > .option.active {
+.emojiSelector > .option.active {
   transform: scale(1.12);
   border-color: var(--aries-warning);
 }
 
-.emoji-selector > button:hover,
-.emoji-selector > button:focus {
+.emojiSelector > button:hover,
+.emojiSelector > button:focus {
   background: var(--aries-bg);
   transform: scale(1.08);
 }
 
-.emoji-selector > button,
-.emoji-selector > button .inner {
+.emojiSelector > button,
+.emojiSelector > button .inner {
   display: inline-flex;
 }
 
-.emoji-selector > button {
+.emojiSelector > button {
   cursor: pointer;
   text-align: center;
 }
 
-.emoji-selector button + button {
+.emojiSelector button + button {
   margin-left: var(--gap-half);
 }
 
-.emoji-selector.loading > button {
+.emojiSelector.loading > button {
   cursor: default;
 }
 
-.emoji-selector > button:first-child {
+.emojiSelector > button:first-child {
   outline: none;
   pointer-events: all;
 }
 
-.emoji-selector.loading > button:first-child {
+.emojiSelector.loading > button:first-child {
   outline: none;
 }
 
-.emoji-selector > button .inner {
+.emojiSelector > button .inner {
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -329,6 +329,6 @@
   align-items: center;
 }
 
-.emoji-selector > button.option {
+.emojiSelector > button.option {
   transition: all 200ms cubic-bezier(0.5, -1, 0.5, 2);
 }

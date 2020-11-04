@@ -34,11 +34,7 @@ function Navbar() {
 
       <nav className={cn(s.desktopNav)}>
         <div className={s.links}>
-          <Link
-            href="/"
-            className={cn(s.logo, classes('first'), { [s['not-home']]: !home })}
-            title="Go to the homepage"
-          >
+          <Link href="/" className={cn(s.logo, classes('first'))} title="Go to the homepage">
             <Logo />
           </Link>
 
@@ -49,7 +45,7 @@ function Navbar() {
             <NavLinks desktop home={home} />
           </div>
 
-          <span className={cn(sUtils['theme-icon'], classes('sixth'), s.absolute, s.right)}>
+          <span className={cn(sUtils.themeIcon, classes('sixth'), s.absolute, s.right)}>
             <ThemeIcon />
           </span>
 

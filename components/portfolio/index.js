@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 import Container from 'components/container'
+import Text from 'components/text'
 import Button from 'components/button'
 import Image from 'next/image'
 import hotels from 'hotels'
-import s from './portfolio.module.css'
-import sUtils from 'styles/utils/utils.module.css'
+import { main, images, card, clickable, buttons, buttonSpacer } from './portfolio.module.css'
+import { lines } from 'styles/utils/utils.module.css'
 
 export default function Portfolio({ description, id, title }) {
   const [cardClickable, setCardClickable] = useState(false)
@@ -16,19 +17,25 @@ export default function Portfolio({ description, id, title }) {
   }, [])
 
   return (
-    <Container center wide withAnchor id={id}>
-      <div className={s.main}>
-        <h2 className={cn(sUtils.lines, 'fp fw4')}>{title}</h2>
+    <Container center wide withAnchor={id.toString()}>
+      <div className={main}>
+        <Text variant="sectionHeading" color="fp" weight="fw4" className={lines}>
+          {title}
+        </Text>
         <Container>
-          <div className={s['button-spacer']}>
-            <p className="fs fw3">{description}</p>
+          <div className={buttonSpacer}>
+            <Text color="fs" weight="fw4">
+              {description}
+            </Text>
           </div>
-          <div className={s.images}>
+          <div className={images}>
             {hotels.map(({ name, hotel, urls: { hotelSite, rezTripUrl } }) => (
-              <div className={cn(s.card, { [s.clickable]: cardClickable })} key={name}>
+              <div className={cn(card, { [clickable]: cardClickable })} key={name}>
                 <Link href={`hotels/${hotel}`}>
                   <div>
-                    <p className="f-reset fp f4 fw4">{name}</p>
+                    <Text color="fp" size="f4" weight="fw4">
+                      {name}
+                    </Text>
                     <Image
                       className="image shadow radius"
                       alt={hotel}
@@ -38,13 +45,13 @@ export default function Portfolio({ description, id, title }) {
                     />
                   </div>
                 </Link>
-                <div className={s.buttons}>
-                  <div className={s['button-spacer']}>
+                <div className={buttons}>
+                  <div className={buttonSpacer}>
                     <Button href={hotelSite} invert>
                       Learn More
                     </Button>
                   </div>
-                  <div className={s['button-spacer']}>
+                  <div className={buttonSpacer}>
                     <Button href={rezTripUrl} invert outline>
                       Book Now
                     </Button>

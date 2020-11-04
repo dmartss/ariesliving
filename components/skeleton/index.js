@@ -1,9 +1,11 @@
-import s from './skeleton.module.css'
+import { skeletonContainer, skeleton } from './skeleton.module.css'
 
 export default function Skeleton({ children, style }) {
   return (
-    <span className={s.skeleton} style={style}>
-      {children}
-    </span>
+    <div className={skeletonContainer}>
+      <span className={skeleton} style={style}>
+        {children}
+      </span>
+    </div>
   )
 }
