@@ -22,7 +22,6 @@
 
 .inner p {
   color: var(--aries-fg);
-  flex: 1;
 }
 
 @media (max-width: 640px) {
