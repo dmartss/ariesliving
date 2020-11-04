@@ -14,14 +14,15 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.banner p {
+.inner p {
   color: var(--aries-fg);
+  flex: 1;
 }
 
 @media (max-width: 640px) {
