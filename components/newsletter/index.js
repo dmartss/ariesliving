@@ -10,7 +10,7 @@ export default function Newsletter() {
 
   return (
     <Container wide fade>
-      <Container padding role="region">
+      <Container padding>
         <div className={s.content}>
           <aside className="tl">
             <h2 aria-label="DON'T MISS OUT">
