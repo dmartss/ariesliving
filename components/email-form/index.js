@@ -1,8 +1,7 @@
 import { Component } from 'react'
 import { validate } from 'email-validator'
-
 import cn from 'classnames'
-import AutoComplete from '../auto-complete'
+import AutoComplete from 'components/auto-complete'
 import Button from 'components/button'
 import EmailClosedIcon from 'components/icons/email-closed'
 import s from './email-form.module.css'
@@ -95,12 +94,12 @@ class EmailForm extends Component {
     const { ios, safari, error, focus, shaking } = this.state
     const { errorMessage, loading, flex, disabled } = this.props
 
-    const formClassName = cn(s.root, {
+    const rootClassName = cn(s.root, {
       [s.ios]: ios,
       [s['safari-browser']]: safari
     })
 
-    const rootClassName = cn(s.email, {
+    const emailClassName = cn(s.email, {
       [s.error]: error || errorMessage,
       [s.focus]: focus,
       [s.loading]: loading,
@@ -109,8 +108,8 @@ class EmailForm extends Component {
     })
 
     return (
-      <form className={formClassName} onSubmit={this.submit}>
-        <div className={rootClassName}>
+      <form className={rootClassName} onSubmit={this.submit}>
+        <div className={emailClassName}>
           <label htmlFor="email-input-field">
             <span className={s.icon}>
               <EmailClosedIcon height="15" width="15" fill="currentColor" />
