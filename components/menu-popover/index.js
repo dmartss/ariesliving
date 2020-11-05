@@ -10,26 +10,22 @@ import { header, content, menu, wrapper, isActive } from './menu-popover.module.
 function MenuItems({ list, title }) {
   return (
     <>
-      {list && (
-        <>
-          {title && (
-            <div className={header}>
-              <h5 className="fp fw4">{title}</h5>
-            </div>
-          )}
-          <div className={content}>
-            {list.map(({ title, hotel }, i) => (
-              <PopOver.Item key={i}>
-                <Link href={`/hotels/${hotel}`} hotel={hotel}>
-                  {title}
-                  <HotelLogo hotel={hotel} small />
-                </Link>
-                {i !== list.length - 1 && <PopOver.Divider />}
-              </PopOver.Item>
-            ))}
-          </div>
-        </>
+      {title && (
+        <div className={header}>
+          <h5 className="fp fw4">{title}</h5>
+        </div>
       )}
+      <div className={content}>
+        {list.map(({ title, hotel }, i) => (
+          <PopOver.Item key={i}>
+            <Link href={`/hotels/${hotel}`} hotel={hotel}>
+              {title}
+              <HotelLogo hotel={hotel} small />
+            </Link>
+            {i !== list.length - 1 && <PopOver.Divider />}
+          </PopOver.Item>
+        ))}
+      </div>
     </>
   )
 }
