@@ -23,7 +23,7 @@
   color: transparent;
 }
 
-.ios .suggestion {
+.isIos .suggestion {
   font-size: 16px;
   top: 2px;
 }
@@ -43,8 +43,8 @@
   z-index: -1;
 }
 
-.ff .suggestion .completion,
-.ff .suggestion .prefix {
+.isFf .suggestion .completion,
+.isFf .suggestion .prefix {
   height: 36px;
   line-height: 36px;
 }

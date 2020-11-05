@@ -10,10 +10,7 @@ export default class AutoComplete extends Component {
 
   componentDidMount() {
     const ua = navigator.userAgent
-    this.setState({
-      ios: /iPad|iPhone|iPod/.test(ua),
-      ff: /Firefox/.test(ua)
-    })
+    this.setState({ ios: /iPad|iPhone|iPod/.test(ua), ff: /Firefox/.test(ua) })
   }
 
   componentWillUnmount() {
@@ -133,8 +130,8 @@ export default class AutoComplete extends Component {
       })
 
     const rootClassName = cn(s.input, {
-      [s.ios]: ios,
-      [s.ff]: ff
+      [s.isIos]: ios,
+      [s.isFf]: ff
     })
 
     return (

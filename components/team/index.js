@@ -13,7 +13,7 @@ const TEAM = Object.entries({
 
 export default function Team() {
   return (
-    <Container wide fade withAnchor="team">
+    <Container wide fade withAnchor id="team">
       <Container center padding>
         <SectionHeader
           teamSection

@@ -17,7 +17,7 @@ export default function Portfolio({ description, id, title }) {
   }, [])
 
   return (
-    <Container center wide withAnchor={id.toString()}>
+    <Container center wide withAnchor id={id}>
       <div className={main}>
         <Text variant="sectionHeading" color="fp" weight="fw4" className={lines}>
           {title}

@@ -33,7 +33,7 @@ export default function Container({
 
   return (
     <>
-      {withAnchor && <div className="anchor" id={withAnchor} />}
+      {withAnchor && <div className="anchor" id={id} />}
       <div className={rootClassName} id={!withAnchor ? id : ''}>
         {children}
       </div>
