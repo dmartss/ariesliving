@@ -1,57 +1,50 @@
-import { Component } from 'react'
+import { forwardRef, memo, useState } from 'react'
 import cn from 'classnames'
-import styles from './textarea.module.css'
+import { root, isFocused, isDisabled } from './textarea.module.css'
 
-export default class Textarea extends Component {
-  state = { focused: this.props.autoFocus }
+const TextArea = (
+  { onChange, onFocus, onBlur, disabled, placeholder, type, children, ...props },
+  ref
+) => {
+  const [focused, setFocused] = useState(false)
 
-  handleChange = event => {
-    this.props.onChange(event.target.value)
+  const handleChange = e => {
+    onChange(e.target.value)
   }
 
-  handleRef = node => {
-    this.innerRef = node
-    if (this.props.innerRef) this.props.innerRef(node)
+  const handleFocus = e => {
+    setFocused(true)
+    if (onFocus) onFocus(e)
   }
 
-  handleFocus = event => {
-    this.setState({ focused: true })
-    if (this.props.onFocus) this.props.onFocus(event)
+  const handleBlur = e => {
+    setFocused(false)
+    if (onBlur) onBlur(e)
   }
 
-  handleBlur = event => {
-    this.setState({ focused: false })
-    if (this.props.onBlur) this.props.onBlur(event)
-  }
+  const rootClassName = cn(root, {
+    [isFocused]: focused,
+    [isDisabled]: disabled
+  })
 
-  render() {
-    const { children, disabled, placeholder, type, onChange, ...props } = this.props
-    const { focused } = this.state
-
-    delete props.innerRef
-
-    const rootClassName = cn(styles.root, {
-      [styles.focused]: focused,
-      [styles.disabled]: disabled
-    })
-
-    return (
-      <div className={rootClassName}>
-        <textarea
-          {...props}
-          autoCapitalize="off"
-          autoComplete="off"
-          autoCorrect="off"
-          type={type || 'text'}
-          disabled={disabled}
-          placeholder={placeholder}
-          ref={this.handleRef}
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          onChange={onChange ? this.handleChange : null}
-        />
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div className={rootClassName}>
+      <textarea
+        {...props}
+        ref={ref}
+        autoCapitalize="off"
+        autoComplete="off"
+        autoCorrect="off"
+        type={type || 'text'}
+        disabled={disabled}
+        placeholder={placeholder}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onChange={onChange ? handleChange : null}
+      />
+      {children}
+    </div>
+  )
 }
+
+export default memo(forwardRef(TextArea))

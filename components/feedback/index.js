@@ -295,7 +295,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
                     aria-label="Feedback input"
                     data-gramm-editor="false"
                     onChange={handleChange}
-                    innerRef={ref => (textAreaRef.current = ref)}
+                    ref={textAreaRef}
                     onFocus={() => setInputFocused(textAreaRef)}
                     disabled={loading === true || errorMessage != null}
                   />

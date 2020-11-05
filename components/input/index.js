@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { root, wrapper, isFocused, isDisabled } from './input.module.css'
 
 const Input = (
-  { onFocus, onBlur, onChange, disabled, placeholder, type, children, ...props },
+  { onChange, onFocus, onBlur, disabled, placeholder, type, children, ...props },
   ref
 ) => {
   const [focused, setFocused] = useState(false)
@@ -42,7 +42,7 @@ const Input = (
           placeholder={placeholder}
           title={placeholder}
           onBlur={handleBlur}
-          onChange={handleChange}
+          onChange={onChange ? handleChange : null}
           onFocus={handleFocus}
         />
         {children}
