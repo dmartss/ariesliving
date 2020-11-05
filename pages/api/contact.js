@@ -9,7 +9,9 @@ export default async (req, res) => {
     from: { email: 'website@ariesliving.com', name: email },
     subject: `New Message From - ${email}`,
     text: note,
-    html: `<p>${note}, ${label} ${emotion ?? ''}</p>`
+    html: `<p>Note: ${note}</p>\n
+           <p>Page: ${label}</p>\n
+           ${emotion ? `<p>Emotion: ${emotion}</p>` : ''}`
   }
 
   try {

@@ -10,7 +10,7 @@ import Container from 'components/container'
 
 export default function Home() {
   return (
-    <Provider value={{ label: 'home' }}>
+    <Provider value={{ label: 'Home' }}>
       <Page title="Aries Living - Home">
         <SkipNavContent />
         <Container>
