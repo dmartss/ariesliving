@@ -1,64 +1,56 @@
-import { Component } from 'react'
+import { forwardRef, memo, useState } from 'react'
 import cn from 'classnames'
 import { root, wrapper, isFocused, isDisabled } from './input.module.css'
 
-export default class Input extends Component {
-  state = { focused: this.props.autoFocus }
+const Input = ({ onFocus, onBlur, onChange, ...props }, ref) => {
+  const [focused, setFocused] = useState(false)
 
-  handleChange = event => {
-    this.props.onChange(event.target.value)
+  const handleChange = e => {
+    onChange(e.target.value)
   }
 
-  handleRef = node => {
-    this.innerRef = node
-    if (this.props.innerRef) this.props.innerRef(node)
+  const handleFocus = e => {
+    setFocused(true)
+    if (onFocus) onFocus(e)
   }
 
-  handleFocus = event => {
-    this.setState({ focused: true })
-    if (this.props.onFocus) this.props.onFocus(event)
+  const handleBlur = e => {
+    setFocused(false)
+    if (onBlur) onBlur(e)
   }
 
-  handleBlur = event => {
-    this.setState({ focused: false })
-    if (this.props.onBlur) this.props.onBlur(event)
-  }
+  const { children, disabled, placeholder, type } = props
 
-  render() {
-    const { children, disabled, placeholder, type, onChange, ...props } = this.props
-    const { focused } = this.state
+  const rootClassName = cn(root, {
+    [isFocused]: focused,
+    [isDisabled]: disabled
+  })
 
-    delete props.innerRef
-
-    const rootClassName = cn(root, {
-      [isFocused]: focused,
-      [isDisabled]: disabled
-    })
-
-    return (
-      <div className={rootClassName} {...props}>
-        <div className={wrapper}>
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            spellCheck="false"
-            type={type || 'text'}
-            autoFocus={typeof window !== 'undefined' && window.innerWidth <= 600 && false}
-            disabled={disabled}
-            placeholder={placeholder}
-            title={placeholder}
-            onBlur={this.handleBlur}
-            onChange={onChange ? this.handleChange : null}
-            onFocus={this.handleFocus}
-            ref={this.handleRef}
-          />
-          {children}
-        </div>
+  return (
+    <div className={rootClassName} {...props}>
+      <div className={wrapper}>
+        <input
+          ref={ref}
+          autoCapitalize="off"
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck="false"
+          type={type || 'text'}
+          autoFocus={typeof window !== 'undefined' && window.innerWidth <= 600 && false}
+          disabled={disabled}
+          placeholder={placeholder}
+          title={placeholder}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          onFocus={handleFocus}
+        />
+        {children}
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default forwardRef(Input)
 
 // import { useRef, useEffect, forwardRef, useState } from 'react'
 // import s from './input.module.css'

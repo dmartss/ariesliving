@@ -51,7 +51,7 @@
   appearance: none;
 }
 
-.root input:isdisabled {
+.root input:disabled {
   color: var(--accents-3);
   cursor: not-allowed;
 }
@@ -61,7 +61,7 @@
   color: var(--accents-3);
 }
 
-.root input:isdisabled::placeholder {
+.root input:disabled::placeholder {
   color: var(--accents-3);
 }
 

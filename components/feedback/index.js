@@ -74,10 +74,6 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
         setErrorMessage("Your feedback can't be empty")
         return
       }
-      if (value.trim().split(' ').length < 2) {
-        setErrorMessage('Please use at least 2 words')
-        return
-      }
 
       setLoading(true)
 
@@ -284,10 +280,10 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
                       type="email"
                       placeholder="Your email address..."
                       aria-label="Your email address"
-                      onChange={handleEmailChange}
-                      innerRef={ref => (emailInputRef.current = ref)}
+                      ref={emailInputRef}
                       onFocus={() => setInputFocused(emailInputRef)}
                       disabled={loading === true || errorMessage != null}
+                      onChange={handleEmailChange}
                     />
                   </div>
                 )}
