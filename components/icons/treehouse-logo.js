@@ -1,4 +1,4 @@
-export default function EivissaLogo({ small, size = 60 }) {
+export default function TreehouseLogo({ small, size = 60 }) {
   return (
     <svg
       className="hotel-logo"

@@ -38,8 +38,8 @@ export default function HomeLinks({ desktop, mobile, home }) {
                   hotel: 'ithaca-south-beach'
                 },
                 {
-                  title: 'Eivissa',
-                  hotel: 'eivissa'
+                  title: 'Treehouse',
+                  hotel: 'treehouse'
                 }
               ]}
             />
@@ -78,8 +78,13 @@ export default function HomeLinks({ desktop, mobile, home }) {
           >
             Ithaca
           </Link>
-          <Link href="/hotels/eivissa" hotel="eivissa" className={classes('fifth')} title="Eivissa">
-            Eivissa
+          <Link
+            href="/hotels/treehouse"
+            hotel="treehouse"
+            className={classes('fifth')}
+            title="Treehouse"
+          >
+            Treehouse
           </Link>
         </>
       )}
