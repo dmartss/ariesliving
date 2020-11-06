@@ -1,12 +1,7 @@
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: var(--gap-double);
-  font-size: 0.8888888888888888em;
-}
 .footer {
   padding: var(--gap-double) 0 var(--gap);
   min-height: 150px;
+  font-size: 0.8888888888888888em;
 }
 
 .footer a,
@@ -44,10 +39,6 @@
   margin-bottom: var(--gap-quarter);
 }
 @media screen and (max-width: 800px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .footer h4,
   .footer p {
     margin: 0;
@@ -55,7 +46,7 @@
 
   .footer p {
     display: block;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
   }
 }

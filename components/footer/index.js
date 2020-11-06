@@ -5,10 +5,11 @@ import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/ic
 import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
 import hotels from 'hotels'
 import Container from 'components/container'
+import Text from 'components/text'
+import Grid from 'components/grid'
 import { themeIcon } from 'styles/utils/utils.module.css'
 import { container, icon } from 'styles/utils/hover.module.css'
-import Text from 'components/text'
-import { copyRight, footer, grid } from './footer.module.css'
+import { copyRight, footer } from './footer.module.css'
 
 const FooterGroup = ({ title, children }) => (
   <div>
@@ -20,7 +21,7 @@ const FooterGroup = ({ title, children }) => (
 )
 
 const FooterLink = ({ href, className, external, children }) => (
-  <p>
+  <Text>
     {href ? (
       <Link href={href} external={external} className={className}>
         {children}
@@ -28,19 +29,19 @@ const FooterLink = ({ href, className, external, children }) => (
     ) : (
       children
     )}
-  </p>
+  </Text>
 )
 
 const SubFooter = ({ list, copyright }) => (
   <div className={copyRight}>
     <span>
-      {list.map(({ href, label, icon }, index) =>
+      {list.map(({ href, label, icon }, i) =>
         href ? (
-          <Link key={index} external href={href} aria-label={label} className={container}>
+          <Link key={i} external href={href} aria-label={label} className={container}>
             {icon}
           </Link>
         ) : (
-          <span key={index} className={container}>
+          <span key={i} className={container}>
             {icon}
           </span>
         )
@@ -59,7 +60,7 @@ function Footer({ hotel }) {
     <Container wide dark>
       <Container>
         <footer className={footer}>
-          <div className={grid}>
+          <Grid>
             <FooterGroup title="Brands">
               {hotels.map(({ name, hotel, urls: { hotelSite } }) => (
                 <FooterLink key={name} external className={hotel} href={hotelSite}>
@@ -84,7 +85,7 @@ function Footer({ hotel }) {
               <FooterLink>{ADDRESS[1]}</FooterLink>
               <FooterLink>{ADDRESS[2]}</FooterLink>
             </FooterGroup>
-          </div>
+          </Grid>
           <SubFooter
             list={[
               {
