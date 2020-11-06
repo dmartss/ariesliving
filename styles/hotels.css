@@ -1,8 +1,8 @@
-.treehouse {
-  --aries-1: var(--aries-treehouse-1);
-  --aries-selection: var(--aries-treehouse-1);
-  --start-color: var(--aries-treehouse-1);
-  --end-color: var(--aries-treehouse-2);
+.eivissa {
+  --aries-1: var(--aries-eivissa-1);
+  --aries-selection: var(--aries-eivissa-1);
+  --start-color: var(--aries-eivissa-1);
+  --end-color: var(--aries-eivissa-2);
   --gradient: linear-gradient(90deg, var(--start-color) 0%, var(--end-color) 100%);
   --font-primary: var(--start-color);
   --font-secondary: var(--end-color);

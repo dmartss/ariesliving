@@ -57,7 +57,7 @@ export default function MenuPopOver({
   const onPopOverOpen = useCallback(() => {
     Router.prefetch('/hotels/villa-paradiso')
     Router.prefetch('/hotels/ithaca-south-beach')
-    Router.prefetch('/hotels/treehouse')
+    Router.prefetch('/hotels/eivissa')
   }, [])
 
   const rootClassName = cn(menu, { [isActive]: isOpen }, className)
