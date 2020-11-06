@@ -1,6 +1,6 @@
 .root {
   --open-width: 339px;
-  --open-height: 213px;
+  --open-height: 277px;
   --closed-width: 90px;
   --closed-height: 32px;
 
@@ -12,10 +12,6 @@
   font-family: var(--fontFamily);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-.root.email {
-  --open-height: 277px;
 }
 
 .root .wrapper {
@@ -114,7 +110,7 @@
   font-size: 12px;
   text-transform: uppercase;
   margin-top: 0px;
-  margin-bottom: 8px;
+  margin-bottom: var(--gap-half);
   color: var(--accents-5);
 }
 
@@ -209,7 +205,7 @@
 .root .controls {
   pointer-events: none;
   width: var(--open-width);
-  height: 64px;
+  height: var(--gap-four);
   background-color: var(--aries-bg);
   display: flex;
   align-items: center;
@@ -321,8 +317,8 @@
 }
 
 .emojiSelector > button .inner {
-  height: 32px;
-  width: 32px;
+  height: var(--gap-double);
+  width: var(--gap-double);
   border-radius: 50%;
   display: flex;
   justify-content: center;

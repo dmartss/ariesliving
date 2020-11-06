@@ -32,7 +32,7 @@ function getEmoji(code) {
   return EMOJI_CODES.get(code)
 }
 
-const Feedback = ({ className, open, onClick, email, ...props }) => {
+const Feedback = ({ className, open, onClick, ...props }) => {
   const [emoji, setEmoji] = useState(null)
   const [loading, setLoading] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -247,8 +247,7 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
       [s.focused]: focused || open,
       [s.error]: errorMessage,
       [s.loading]: loading,
-      [s.success]: success,
-      [s.email]: email
+      [s.success]: success
     },
     className
   )
@@ -273,20 +272,18 @@ const Feedback = ({ className, open, onClick, email, ...props }) => {
             <div className={s.placeholder}>Contact</div>
             {!errorMessage && !success && (
               <div className={s.inputWrapper}>
-                {email && (
-                  <div className={s.input}>
-                    <h5>Email</h5>
-                    <Input
-                      type="email"
-                      placeholder="Your email address..."
-                      aria-label="Your email address"
-                      ref={emailInputRef}
-                      onFocus={() => setInputFocused(emailInputRef)}
-                      disabled={loading === true || errorMessage != null}
-                      onChange={handleEmailChange}
-                    />
-                  </div>
-                )}
+                <div className={s.input}>
+                  <h5>Email</h5>
+                  <Input
+                    type="email"
+                    placeholder="Your email address..."
+                    aria-label="Your email address"
+                    ref={emailInputRef}
+                    onFocus={() => setInputFocused(emailInputRef)}
+                    disabled={loading === true || errorMessage != null}
+                    onChange={handleEmailChange}
+                  />
+                </div>
 
                 <div className={s.input}>
                   <h5>Feedback</h5>

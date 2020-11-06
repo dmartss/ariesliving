@@ -19,7 +19,7 @@
   border-top: 1px solid var(--font-secondary);
   border-color: var(--font-secondary);
   margin: 0 var(--gap) 0 0;
-  flex: 1 0 20px;
+  flex: 1 0 1.25rem;
 }
 
 .lines:after {

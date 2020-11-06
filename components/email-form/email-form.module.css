@@ -67,7 +67,7 @@
   display: block;
   text-align: left;
   font-size: 14px;
-  padding: 4px 0;
+  padding: var(--gap-quarter) 0;
   margin: 0 auto;
   line-height: 27px;
   height: var(--input-height);
@@ -78,7 +78,7 @@
 .ios input {
   font-size: 16px;
   height: 34px;
-  padding-bottom: 4px;
+  padding-bottom: var(--gap-quarter);
 }
 
 .focus {
