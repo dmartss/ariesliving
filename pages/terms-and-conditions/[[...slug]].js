@@ -1,8 +1,8 @@
-import Container from 'components/container'
 import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Page from 'components/utils/page'
 import termsAndConditions from 'lib/terms-and-conditions'
+import TermsContent from 'components/terms-and-conditions'
 import { getSlug } from 'lib/utils'
 import hotels from 'hotels'
 import aries from 'aries'
@@ -38,13 +38,7 @@ export default function TermsAndConditions({ hotel, name, content }) {
 
   return (
     <Page tAndC title={title} description={title} keywords="Terms & Conditions" suffix={asPath}>
-      <Container padding small className={hotel}>
-        <h1>Terms & Conditions</h1>
-        <h1 className="fp f1">{header}</h1>
-        {content?.map((terms, i) => (
-          <p key={i}>{terms}</p>
-        ))}
-      </Container>
+      <TermsContent hotel={hotel} header={header} content={content} />
     </Page>
   )
 }
