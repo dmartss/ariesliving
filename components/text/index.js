@@ -16,7 +16,9 @@ const Text = ({
     body: 'p',
     heading: 'h1',
     sectionHeading: 'h2',
-    h3: 'h3'
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5'
   }
 
   const Component = componentsMap[variant]

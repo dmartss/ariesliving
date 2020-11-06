@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: var(--gap-double);
+  font-size: 0.8888888888888888em;
 }
 .footer {
   padding: var(--gap-double) 0 var(--gap);
@@ -10,7 +11,7 @@
 
 .footer a,
 .footer p,
-.copyright {
+.copyRight {
   color: var(--footer-text);
 }
 
@@ -21,16 +22,17 @@
 .footer span:last-child:hover {
   color: var(--aries-1);
 }
-.copyright {
+.copyRight {
   margin-top: var(--gap);
+  font-size: 0.7901234567901234em;
 }
-.copyright span {
+.copyRight span {
   display: inline-flex;
 }
-.copyright span a {
+.copyRight span a {
   padding-right: var(--gap-half);
 }
-.copyright div {
+.copyRight div {
   margin-top: var(--gap-half);
 }
 .footer h4 {

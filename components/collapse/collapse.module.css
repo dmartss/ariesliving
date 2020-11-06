@@ -6,6 +6,7 @@
   border-top: none;
   border-bottom: var(--border-2);
   padding: 24px 0;
+  text-align: left;
 }
 
 .collapse.border {

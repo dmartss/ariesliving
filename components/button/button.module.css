@@ -11,10 +11,10 @@
   border: 1px solid var(--aries-1);
   padding: var(--gap-quarter) var(--gap);
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
   font-size: inherit;
   line-height: inherit;
-  height: 2.81rem;
+  height: 2.5rem;
   transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
 }

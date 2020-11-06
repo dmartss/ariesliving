@@ -2,8 +2,8 @@ import cn from 'classnames'
 import Text from 'components/text'
 import { content, team } from './section.module.css'
 
-export default function SectionHeader({ title, description, teamSection = false }) {
-  const rootClassName = cn(content, { [team]: teamSection })
+export default function SectionHeader({ title, description }) {
+  const rootClassName = cn(content, { [team]: title === 'Team' })
   return (
     <div className={rootClassName}>
       <Text variant="sectionHeading" color="fp" weight="fw3">

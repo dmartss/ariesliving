@@ -39,6 +39,10 @@
   overflow: hidden;
 }
 
+.center {
+  text-align: center;
+}
+
 .root:after {
   content: '';
   display: table;

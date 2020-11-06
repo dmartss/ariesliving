@@ -4,17 +4,17 @@ import Banner from './banner'
 import Nav from './navbar'
 import { useNav } from 'lib/nav-context'
 import useOnScroll from 'lib/use-on-scroll'
-import s from './header.module.css'
+import { root, mobileShown, stick, fill, showBorder } from './header.module.css'
 
 const Header = ({ sticky = true, fillBg }) => {
   const { mobileNavShown } = useNav()
   const { headerLock, secondHeaderLock } = useOnScroll()
 
-  const rootClassName = cn(s.root, {
-    [s.mobileNavShown]: mobileNavShown,
-    [s.sticky]: sticky,
-    [s.fillBg]: fillBg,
-    [s.showBorder]: fillBg ? headerLock && secondHeaderLock : headerLock
+  const rootClassName = cn(root, {
+    [mobileShown]: mobileNavShown,
+    [stick]: sticky,
+    [fill]: fillBg,
+    [showBorder]: fillBg ? headerLock && secondHeaderLock : headerLock
   })
 
   return (

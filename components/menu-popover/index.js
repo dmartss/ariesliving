@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import Router from 'next/router'
 import cn from 'classnames'
+import Text from 'components/text'
 import Link from 'components/link'
 import { HotelLogo } from 'components/icons'
 import * as PopOver from './popover-menu'
@@ -12,7 +13,9 @@ function MenuItems({ list, title }) {
     <>
       {title && (
         <div className={header}>
-          <h5 className="fp fw4">{title}</h5>
+          <Text variant="h5" color="fp" weight="fw4">
+            {title}
+          </Text>
         </div>
       )}
       <div className={content}>

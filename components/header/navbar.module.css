@@ -25,13 +25,13 @@
   z-index: 1001;
 }
 
-.not-logo {
+.notLogo {
   display: flex;
   align-items: center;
   margin-left: auto;
 }
 
-.not-logo > a {
+.notLogo > a {
   margin: 0 var(--gap) 0 0;
 }
 
@@ -47,7 +47,7 @@
   .logo {
     margin: 0 auto;
   }
-  .not-logo {
+  .notLogo {
     display: none;
   }
 

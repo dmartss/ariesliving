@@ -17,7 +17,7 @@ function Button({
 }) {
   const rootClassName = cn(
     s.root,
-    'fw4 no-drag',
+    'no-drag',
     {
       [s.outline]: outline,
       [s.invert]: invert,

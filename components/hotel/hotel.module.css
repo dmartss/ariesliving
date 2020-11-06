@@ -29,7 +29,7 @@
 }
 
 .main > h3 {
-  padding-bottom: 1rem;
+  padding-bottom: var(--gap);
 }
 
 .flex {
@@ -37,7 +37,7 @@
 }
 
 .flex p:last-child {
-  padding-left: 1rem;
+  padding-left: var(--gap);
 }
 
 @media (max-width: 640px) {

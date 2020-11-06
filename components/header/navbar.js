@@ -38,9 +38,9 @@ function Navbar() {
             <Logo />
           </Link>
 
-          <div className={s['not-logo']}>
+          <div className={s.notLogo}>
             <div className={cn(s.feedback, classes('second'))}>
-              <HeaderFeedback email />
+              <HeaderFeedback />
             </div>
             <NavLinks desktop home={home} />
           </div>

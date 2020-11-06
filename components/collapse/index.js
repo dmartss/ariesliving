@@ -82,15 +82,11 @@ const Collapse = ({ title, subtitle, id, onToggle, card, size, children }) => {
     }
   }, [])
 
-  const rootClassName = cn(
-    s.collapse,
-    {
-      [s.card]: card,
-      [s.small]: size === 'small',
-      [s.border]: !collapseContext
-    },
-    'tl'
-  )
+  const rootClassName = cn(s.collapse, {
+    [s.card]: card,
+    [s.small]: size === 'small',
+    [s.border]: !collapseContext
+  })
 
   return (
     <div className={rootClassName} id={id}>

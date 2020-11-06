@@ -16,7 +16,6 @@ export default function Team() {
     <Container wide fade withAnchor id="team">
       <Container center padding>
         <SectionHeader
-          teamSection
           title="Team"
           description="The Aries Living Team has decades of experience in all facets of hospitality, technology, and real estate. This experience is applied with youthful energy, drawing up creative solutions to move the accommodations industry forward and to create more value for our assets."
         />

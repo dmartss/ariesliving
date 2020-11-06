@@ -26,7 +26,7 @@ export default function Container({
       [s.gray]: gray,
       [s.maxWidth]: wide && !small,
       [s.overflowHidden]: wide && !overflow,
-      tc: center
+      [s.center]: center
     },
     className
   )

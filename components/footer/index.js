@@ -1,17 +1,20 @@
-import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
-import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
+import { memo } from 'react'
+import cn from 'classnames'
 import Link from 'components/link'
+import { Facebook, Instagram, Twitter, ThemeIcon, Linkedin } from 'components/icons'
+import { ADDRESS, LLC, FACEBOOK, TWITTER, INSTAGRAM, LINKEDIN } from 'lib/constants'
 import hotels from 'hotels'
 import Container from 'components/container'
 import { themeIcon } from 'styles/utils/utils.module.css'
-import sHover from 'styles/utils/hover.module.css'
-import { memo } from 'react'
-import cn from 'classnames'
-import s from './footer.module.css'
+import { container, icon } from 'styles/utils/hover.module.css'
+import Text from 'components/text'
+import { copyRight, footer, grid } from './footer.module.css'
 
 const FooterGroup = ({ title, children }) => (
   <div>
-    <h4 className="fw5">{title}</h4>
+    <Text variant="h4" weight="fw5">
+      {title}
+    </Text>
     {children}
   </div>
 )
@@ -29,15 +32,15 @@ const FooterLink = ({ href, className, external, children }) => (
 )
 
 const SubFooter = ({ list, copyright }) => (
-  <div className={cn(s.copyright, 'f6')}>
+  <div className={copyRight}>
     <span>
       {list.map(({ href, label, icon }, index) =>
         href ? (
-          <Link key={index} external href={href} aria-label={label} className={sHover.container}>
+          <Link key={index} external href={href} aria-label={label} className={container}>
             {icon}
           </Link>
         ) : (
-          <span key={index} className={sHover.container}>
+          <span key={index} className={container}>
             {icon}
           </span>
         )
@@ -51,18 +54,12 @@ const SubFooter = ({ list, copyright }) => (
   </div>
 )
 
-// const Footer = ({ children, subFooter }) => (
-//   <footer className={s.footer}>
-//     <div className={cn(s.grid, 'f5')}>{children}</div>
-//   </footer>
-// )
-
 function Footer({ hotel }) {
   return (
     <Container wide dark>
       <Container>
-        <footer className={s.footer}>
-          <div className={cn(s.grid, 'f5')}>
+        <footer className={footer}>
+          <div className={grid}>
             <FooterGroup title="Brands">
               {hotels.map(({ name, hotel, urls: { hotelSite } }) => (
                 <FooterLink key={name} external className={hotel} href={hotelSite}>
@@ -93,26 +90,26 @@ function Footer({ hotel }) {
               {
                 href: INSTAGRAM,
                 label: 'Instagram',
-                icon: <Instagram className={sHover.icon} />
+                icon: <Instagram className={icon} />
               },
               {
                 href: LINKEDIN,
                 label: 'Linkedin',
-                icon: <Linkedin className={sHover.icon} />
+                icon: <Linkedin className={icon} />
               },
 
               {
                 href: FACEBOOK,
                 label: 'Facebook',
-                icon: <Facebook className={sHover.icon} />
+                icon: <Facebook className={icon} />
               },
               {
                 href: TWITTER,
                 label: 'Twitter',
-                icon: <Twitter className={sHover.icon} />
+                icon: <Twitter className={icon} />
               },
               {
-                icon: <ThemeIcon className={cn(sHover.icon, themeIcon)} />
+                icon: <ThemeIcon className={cn(icon, themeIcon)} />
               }
             ]}
             copyright={LLC}

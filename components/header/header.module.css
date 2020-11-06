@@ -10,7 +10,7 @@
   transition: all 0.3s ease;
 }
 
-.root.fillBg {
+.root.fill {
   background: var(--aries-bg);
 }
 
@@ -19,11 +19,11 @@
   background: var(--header-bg);
 }
 
-.root.mobileNavShown {
+.root.mobileShown {
   background: var(--aries-bg);
 }
 
-.root.sticky {
+.root.stick {
   position: sticky;
   top: 0;
 }
