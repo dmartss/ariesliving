@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import s from './container.module.css'
 
-export default function Container({
+const Container = ({
   center = false,
   dark = false,
   gray = false,
@@ -13,30 +13,45 @@ export default function Container({
   withAnchor = false,
   className,
   children,
-  id
-}) {
-  const rootClassName = cn(
-    s.root,
-    {
-      [s.padding]: padding,
-      [s.wide]: wide,
-      [s.small]: small,
-      [s.fade]: fade,
-      [s.dark]: dark,
-      [s.gray]: gray,
-      [s.maxWidth]: wide && !small,
-      [s.overflowHidden]: wide && !overflow,
-      [s.center]: center
-    },
-    className
+  Component = 'div',
+  id,
+  ...props
+}) => {
+  const container = (
+    <Component
+      className={cn(
+        s.root,
+        {
+          [s.padding]: padding,
+          [s.wide]: wide,
+          [s.small]: small,
+          [s.fade]: fade,
+          [s.dark]: dark,
+          [s.gray]: gray,
+          [s.maxWidth]: wide && !small,
+          [s.overflowHidden]: wide && !overflow,
+          [s.center]: center
+        },
+        className
+      )}
+      id={withAnchor ? '' : id}
+      {...props}
+    >
+      {children}
+    </Component>
   )
 
-  return (
-    <>
-      {withAnchor && <div className="anchor" id={id} />}
-      <div className={rootClassName} id={!withAnchor ? id : ''}>
-        {children}
-      </div>
-    </>
-  )
+  if (withAnchor) {
+    return (
+      <>
+        <div className="anchor" id={id} />
+        {container}
+      </>
+    )
+  }
+
+  return container
 }
+
+Container.displayName = 'Container'
+export default Container

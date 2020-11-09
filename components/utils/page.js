@@ -11,7 +11,6 @@ export default function Page({
   image = defaultOgImage,
   keywords = undefined,
   hotel = undefined,
-  fillBg = false,
   tAndC = false,
   suffix,
   children
@@ -55,7 +54,7 @@ export default function Page({
         <meta name="theme-color" content="#000" />
       </NextHead>
 
-      {!tAndC && <Header fillBg={fillBg} />}
+      {!tAndC && <Header />}
       {children}
       {!tAndC && <Footer hotel={hotel} />}
     </>

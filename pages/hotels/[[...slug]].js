@@ -51,7 +51,6 @@ export default function Hotels({ id }) {
           keywords={id.name}
           hotel={id.hotel}
           suffix={asPath}
-          fillBg
         >
           <SkipNavContent />
           <Hotel id={id} />
@@ -60,7 +59,7 @@ export default function Hotels({ id }) {
     </Provider>
   ) : (
     <Container padding>
-      <Skeleton style={{ height: 'calc(100%)' }} />
+      <Skeleton style={{ height: '100%' }} />
     </Container>
   )
 }

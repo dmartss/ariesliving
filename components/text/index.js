@@ -1,17 +1,7 @@
 import cn from 'classnames'
 import s from './text.module.css'
 
-const Text = ({
-  style,
-  className = '',
-  variant = 'body',
-  children,
-  size,
-  weight,
-  color,
-  align,
-  ...props
-}) => {
+const Text = ({ className = '', variant = 'body', children, size, weight, color, align }) => {
   const componentsMap = {
     body: 'p',
     heading: 'h1',
@@ -35,8 +25,6 @@ const Text = ({
         },
         className
       )}
-      style={style}
-      {...props}
     >
       {children}
     </Component>
