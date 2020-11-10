@@ -8,3 +8,14 @@
   text-shadow: 0px 0px 1px var(--aries-1);
   color: var(--aries-1);
 }
+
+.treehouse {
+  --aries-1: var(--aries-treehouse-1);
+}
+.ithaca-south-beach {
+  --aries-1: var(--aries-ithaca-1);
+}
+
+.villa-paradiso {
+  --aries-1: var(--aries-vp-1);
+}

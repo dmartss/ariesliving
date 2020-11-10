@@ -1,6 +1,5 @@
 @import './inter.css';
 @import './nprogress.css';
-@import './hotels.css';
 
 :root {
   /* Spacing */
@@ -32,8 +31,8 @@
   --aries-bg: #000;
   --aries-fg: #fff;
 
-  --aries-1: #00b0ee;
-  --aries-2: #0070f3;
+  --aries-1: #79ffe1;
+  /* --aries-1: #00b0ee; */
 
   --accents-1: #111;
   --accents-2: #333;

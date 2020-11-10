@@ -21,7 +21,7 @@ const FooterGroup = ({ title, children }) => (
 )
 
 const FooterLink = ({ href, className, external, children }) => (
-  <Text>
+  <p>
     {href ? (
       <Link href={href} external={external} className={className}>
         {children}
@@ -29,7 +29,7 @@ const FooterLink = ({ href, className, external, children }) => (
     ) : (
       children
     )}
-  </Text>
+  </p>
 )
 
 const SubFooter = ({ list, copyright }) => (

@@ -43,7 +43,7 @@ export default function Hotels({ id }) {
 
   return id ? (
     <Provider value={{ label: id.hotel }}>
-      <div className={id.hotel}>
+      <Container clean hotel={id.hotel}>
         <Page
           title={id.title}
           description={id.descriptionShort}
@@ -55,7 +55,7 @@ export default function Hotels({ id }) {
           <SkipNavContent />
           <Hotel id={id} />
         </Page>
-      </div>
+      </Container>
     </Provider>
   ) : (
     <Container padding>

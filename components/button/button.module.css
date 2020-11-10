@@ -97,7 +97,6 @@
 
 .root.subscribe.invert {
   background-color: var(--aries-1);
-  color: #fff;
   border: 1px solid var(--aries-1);
   width: 175px;
   height: 40px;

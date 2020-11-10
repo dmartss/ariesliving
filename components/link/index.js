@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import canPrefetch from 'lib/can-prefetch'
-import { reset, selected } from './link.module.css'
+import s, { reset, selected } from './link.module.css'
 
 const Link = ({
   external,
@@ -18,8 +18,9 @@ const Link = ({
   const { asPath } = useRouter()
 
   const rootClassName = cn(
-    hotel,
+    {},
     {
+      [s[hotel]]: hotel,
       [reset]: !hotel,
       [selected]: asPath.includes(hotel)
     },

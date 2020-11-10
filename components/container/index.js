@@ -11,6 +11,8 @@ const Container = ({
   overflow = false,
   fade = false,
   withAnchor = false,
+  hotel = null,
+  clean = false,
   className,
   children,
   Component = 'div',
@@ -19,21 +21,19 @@ const Container = ({
 }) => {
   const container = (
     <Component
-      className={cn(
-        s.root,
-        {
-          [s.padding]: padding,
-          [s.wide]: wide,
-          [s.small]: small,
-          [s.fade]: fade,
-          [s.dark]: dark,
-          [s.gray]: gray,
-          [s.maxWidth]: wide && !small,
-          [s.overflowHidden]: wide && !overflow,
-          [s.center]: center
-        },
-        className
-      )}
+      className={cn(className, {
+        [s.root]: !clean,
+        [s[hotel]]: hotel,
+        [s.padding]: padding,
+        [s.wide]: wide,
+        [s.small]: small,
+        [s.fade]: fade,
+        [s.dark]: dark,
+        [s.gray]: gray,
+        [s.maxWidth]: wide && !small,
+        [s.overflowHidden]: wide && !overflow,
+        [s.center]: center
+      })}
       id={withAnchor ? '' : id}
       {...props}
     >

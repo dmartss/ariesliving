@@ -43,10 +43,37 @@
   text-align: center;
 }
 
-.root:after {
-  content: '';
-  display: table;
-  clear: both;
+.treehouse {
+  --aries-1: var(--aries-treehouse-1);
+  --aries-selection: var(--aries-treehouse-1);
+  --start-color: var(--aries-treehouse-1);
+  --end-color: var(--aries-treehouse-2);
+  --gradient: linear-gradient(90deg, var(--start-color) 0%, var(--end-color) 100%);
+  --font-primary: var(--start-color);
+  --font-secondary: var(--end-color);
+}
+.ithaca-south-beach {
+  --aries-1: var(--aries-ithaca-1);
+  --aries-selection: var(--aries-ithaca-1);
+  --start-color: var(--aries-ithaca-1);
+  --end-color: var(--aries-ithaca-2);
+  --gradient: linear-gradient(90deg, var(--start-color) 0%, var(--end-color) 100%);
+  --font-primary: var(--start-color);
+  --font-secondary: var(--end-color);
+}
+
+.villa-paradiso {
+  --aries-1: var(--aries-vp-1);
+  --aries-selection: var(--aries-vp-1);
+  --start-color: var(--aries-vp-3);
+  --end-color: var(--aries-vp-1);
+  --gradient: linear-gradient(120deg, var(--start-color) 0%, var(--end-color) 100%);
+  --font-primary: var(--end-color);
+  --font-secondary: var(--start-color);
+}
+
+.aries-living {
+  --font-primary: var(--aries-1);
 }
 
 @media screen and (max-width: 960px) {

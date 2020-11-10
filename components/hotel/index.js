@@ -34,7 +34,7 @@ const HotelInfo = ({ description, rooms, roomTypes }) => (
     <div id="about" className="anchor double" />
 
     {description?.map((d, i) => (
-      <Text key={i}>{d}</Text>
+      <p key={i}>{d}</p>
     ))}
 
     <div id="rooms" className="anchor double" />
