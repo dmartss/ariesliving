@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { SkipNavContent } from '@reach/skip-nav'
 import Container from 'components/container'
 import Skeleton from 'components/skeleton'
 import Error from 'next/error'
@@ -8,7 +7,6 @@ import { getSlug } from 'lib/utils'
 import { FeedbackProvider } from 'lib/feedback-context'
 import { HotelProvider } from 'lib/hotel-context'
 import Hotel from 'components/hotel'
-import Page from 'components/utils/page'
 import hotels from 'hotels'
 
 export const getStaticPaths = () => ({
@@ -45,19 +43,7 @@ export default function Hotels({ id }) {
   return id ? (
     <FeedbackProvider value={{ label: id.hotel }}>
       <HotelProvider value={{ id }}>
-        <Container clean hotel={id.hotel}>
-          <Page
-            title={id.title}
-            description={id.descriptionShort}
-            image={id.defaultOgImage}
-            keywords={id.name}
-            hotel={id.hotel}
-            suffix={asPath}
-          >
-            <SkipNavContent />
-            <Hotel />
-          </Page>
-        </Container>
+        <Hotel suffix={asPath} />
       </HotelProvider>
     </FeedbackProvider>
   ) : (

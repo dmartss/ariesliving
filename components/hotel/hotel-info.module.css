@@ -1,0 +1,15 @@
+.main {
+  padding: 1px;
+}
+
+.main > h3 {
+  padding-bottom: var(--gap);
+}
+
+.flex {
+  display: inline-flex;
+}
+
+.flex p:last-child {
+  padding-left: var(--gap);
+}

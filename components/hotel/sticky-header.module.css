@@ -24,22 +24,6 @@
   font-size: 1.125em;
 }
 
-.main {
-  padding: 1px;
-}
-
-.main > h3 {
-  padding-bottom: var(--gap);
-}
-
-.flex {
-  display: inline-flex;
-}
-
-.flex p:last-child {
-  padding-left: var(--gap);
-}
-
 @media (max-width: 640px) {
   .top {
     padding: var(--gap) 0;
