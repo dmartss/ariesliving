@@ -5,7 +5,8 @@ import Skeleton from 'components/skeleton'
 import Error from 'next/error'
 import { useRouter } from 'next/router'
 import { getSlug } from 'lib/utils'
-import { Provider } from 'lib/feedback-context'
+import { FeedbackProvider } from 'lib/feedback-context'
+import { HotelProvider } from 'lib/hotel-context'
 import Hotel from 'components/hotel'
 import Page from 'components/utils/page'
 import hotels from 'hotels'
@@ -42,21 +43,23 @@ export default function Hotels({ id }) {
   }, [id, asPath])
 
   return id ? (
-    <Provider value={{ label: id.hotel }}>
-      <Container clean hotel={id.hotel}>
-        <Page
-          title={id.title}
-          description={id.descriptionShort}
-          image={id.defaultOgImage}
-          keywords={id.name}
-          hotel={id.hotel}
-          suffix={asPath}
-        >
-          <SkipNavContent />
-          <Hotel id={id} />
-        </Page>
-      </Container>
-    </Provider>
+    <FeedbackProvider value={{ label: id.hotel }}>
+      <HotelProvider value={{ id }}>
+        <Container clean hotel={id.hotel}>
+          <Page
+            title={id.title}
+            description={id.descriptionShort}
+            image={id.defaultOgImage}
+            keywords={id.name}
+            hotel={id.hotel}
+            suffix={asPath}
+          >
+            <SkipNavContent />
+            <Hotel />
+          </Page>
+        </Container>
+      </HotelProvider>
+    </FeedbackProvider>
   ) : (
     <Container padding>
       <Skeleton style={{ height: '100%' }} />
