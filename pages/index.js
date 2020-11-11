@@ -1,4 +1,4 @@
-import { Provider } from 'lib/feedback-context'
+import { FeedbackProvider } from 'lib/feedback-context'
 import { SkipNavContent } from '@reach/skip-nav'
 import Newsletter from 'components/newsletter'
 import Portfolio from 'components/portfolio'
@@ -10,7 +10,7 @@ import Container from 'components/container'
 
 export default function Home() {
   return (
-    <Provider value={{ label: 'Home' }}>
+    <FeedbackProvider value={{ label: 'Home' }}>
       <Page title="Aries Living - Home">
         <SkipNavContent />
         <Container>
@@ -41,6 +41,6 @@ export default function Home() {
         <Team />
         <Newsletter />
       </Page>
-    </Provider>
+    </FeedbackProvider>
   )
 }
