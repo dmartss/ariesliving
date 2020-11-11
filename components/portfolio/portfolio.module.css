@@ -14,18 +14,18 @@
 .card {
   display: flex;
   flex-direction: column;
-}
 
-.card.clickable {
-  cursor: pointer;
-}
+  &.clickable {
+    cursor: pointer;
+  }
 
-.card.clickable p {
-  transition: color 0.2s ease-in;
-}
+  &.clickable p {
+    transition: color 0.2s ease-in;
+  }
 
-.card.clickable:hover :global(p) {
-  color: var(--aries-1);
+  &.clickable:hover :global(p) {
+    color: var(--aries-1);
+  }
 }
 
 .buttons {

@@ -102,4 +102,8 @@
   .wide {
     padding: 0 0;
   }
+
+  .mobileCenter {
+    text-align: center;
+  }
 }

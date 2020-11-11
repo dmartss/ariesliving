@@ -1,26 +1,18 @@
 .banner {
   --aries-fg: #fff;
   --aries-bg: #000;
-  width: 100%;
   background: var(--aries-bg);
   color: var(--aries-fg);
   height: var(--banner-height);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: var(--gap);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-}
-
-.inner p {
-  color: var(--aries-fg);
 }
 
 @media (max-width: 640px) {
@@ -28,7 +20,6 @@
     height: unset;
   }
   .inner {
-    text-align: center;
     flex-direction: column;
     justify-content: center;
   }

@@ -4,30 +4,38 @@
   cursor: pointer;
   display: flex;
   padding: 0;
-}
-.line {
-  fill: none;
-  stroke-width: 3;
-  stroke: var(--aries-fg);
-  transition: stroke-dasharray 400ms var(--cubic-transition),
-    stroke-dashoffset 400ms var(--cubic-transition), stroke 600ms var(--cubic-transition);
-}
-.line1,
-.line3 {
-  stroke-dasharray: 60 207;
-}
-.line2 {
-  stroke-dasharray: 60 60;
-}
-.opened .line {
-  stroke: var(--aries-1);
-}
-.opened .line1,
-.opened .line3 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-}
-.opened .line2 {
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
+
+  & .line {
+    fill: none;
+    stroke-width: 3;
+    stroke: var(--aries-fg);
+    transition: stroke-dasharray 400ms var(--cubic-transition),
+      stroke-dashoffset 400ms var(--cubic-transition), stroke 600ms var(--cubic-transition);
+
+    &.line1,
+    &.line3 {
+      stroke-dasharray: 60 207;
+    }
+
+    &.line2 {
+      stroke-dasharray: 60 60;
+    }
+  }
+
+  &.opened {
+    & .line {
+      stroke: var(--aries-1);
+
+      &.line1,
+      &.line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+
+      &.line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+      }
+    }
+  }
 }

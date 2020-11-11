@@ -15,12 +15,8 @@
   .content {
     display: flex;
     flex-direction: column;
-  }
-  .content h2,
-  .content h3 {
     text-align: center;
   }
-
   .content > aside:first-child {
     padding-bottom: var(--gap);
   }

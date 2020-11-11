@@ -7,6 +7,11 @@
 
 .reverse {
   flex-direction: row-reverse;
+
+  & .content {
+    margin: 0 var(--gap-triple) 0 0;
+    text-align: left;
+  }
 }
 
 .content {
@@ -15,20 +20,15 @@
   flex-direction: column;
   justify-content: center;
   text-align: right;
-}
 
-.reverse .content {
-  margin: 0 var(--gap-triple) 0 0;
-  text-align: left;
-}
+  &.team {
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.content.team {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.content > h2 {
-  margin-top: var(--gap);
+  & > h2 {
+    margin-top: var(--gap);
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -45,10 +45,12 @@
     text-align: center;
   }
 
-  .content > h2 {
-    margin-bottom: 0;
-  }
-  .content p {
-    font-size: 16px;
+  .content {
+    & > h2 {
+      margin-bottom: 0;
+    }
+    & p {
+      font-size: 16px;
+    }
   }
 }
